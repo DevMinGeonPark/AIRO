@@ -1,0 +1,78 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mts",
+    ".next-airo-paths/types/**/*.ts",
+    ".next-airo-paths/dev/types/**/*.ts",
+    ".next-airo-dev/types/**/*.ts",
+    ".next-airo-dev/dev/types/**/*.ts",
+    ".next-airo-swift/types/**/*.ts",
+    ".next-airo-swift/dev/types/**/*.ts",
+    ".next-airo-ivory/types/**/*.ts",
+    ".next-airo-ivory/dev/types/**/*.ts",
+    ".next-airo-blue/types/**/*.ts",
+    ".next-airo-blue/dev/types/**/*.ts",
+    ".next-airo-aligned/types/**/*.ts",
+    ".next-airo-aligned/dev/types/**/*.ts",
+    ".next-airo-card-clean/types/**/*.ts",
+    ".next-airo-card-clean/dev/types/**/*.ts",
+    ".next-airo-conversation/types/**/*.ts",
+    ".next-airo-conversation/dev/types/**/*.ts",
+    ".next-airo-outings/types/**/*.ts",
+    ".next-airo-outings/dev/types/**/*.ts",
+    ".next-airo-continuous/types/**/*.ts",
+    ".next-airo-continuous/dev/types/**/*.ts",
+    ".next-airo-invitation/types/**/*.ts",
+    ".next-airo-invitation/dev/types/**/*.ts",
+    ".next-airo-choice/types/**/*.ts",
+    ".next-airo-choice/dev/types/**/*.ts",
+    ".next-airo-editorial/types/**/*.ts",
+    ".next-airo-editorial/dev/types/**/*.ts",
+    ".next-airo-city-stories/types/**/*.ts",
+    ".next-airo-city-stories/dev/types/**/*.ts",
+    ".next-airo-lower/types/**/*.ts",
+    ".next-airo-lower/dev/types/**/*.ts",
+    ".next-airo-lower-details/types/**/*.ts",
+    ".next-airo-lower-details/dev/types/**/*.ts",
+    ".next-airo-route-motion/types/**/*.ts",
+    ".next-airo-route-motion/dev/types/**/*.ts",
+    ".next-airo-footer/types/**/*.ts",
+    ".next-airo-footer/dev/types/**/*.ts",
+    ".next-airo-mcp/types/**/*.ts",
+    ".next-airo-mcp/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

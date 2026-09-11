@@ -1,0 +1,133 @@
+/* Shared touch layouts; desktop sizes and the existing palette stay in their own styles. */
+html { -webkit-text-size-adjust: 100%; }
+input, textarea, select { scroll-margin-block: 90px; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+.app-mobile-nav a { display: inline-flex; align-items: center; min-height: 44px; flex-shrink: 0; padding-inline: 8px; white-space: nowrap; }
+.workspace-action { flex-shrink: 0; white-space: nowrap; }
+.workspace-map-pin { display: grid; place-items: center; }
+.place-card-close { position: absolute; top: 4px; right: 4px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; }
+.workspace-place-card > div:not(:last-child) { padding-right: 28px; overflow-wrap: anywhere; }
+.chat-bubble { overflow-wrap: anywhere; min-width: 0; }
+.plan-scroll, .chat-scroll, .workspace-days, .workspace-toolbar { overscroll-behavior: contain; }
+
+@media (max-width: 1023px) {
+  .app-header { padding-top: env(safe-area-inset-top); }
+  .trip-workspace { position: fixed; inset-inline: 0; top: var(--visible-top, 0px); height: var(--visible-height, 100dvh); overflow: hidden; }
+  .trip-workspace .app-header { position: relative; top: auto; order: 0; }
+  .workspace-toolbar { order: 1; scrollbar-width: thin; padding-inline: max(8px, env(safe-area-inset-left)) max(8px, env(safe-area-inset-right)); }
+  .workspace-panes { order: 2; }
+  .workspace-tabs { order: 3; border-top: 1px solid var(--border); border-bottom: 0; background: var(--card); padding: 0 max(8px, env(safe-area-inset-right)) env(safe-area-inset-bottom) max(8px, env(safe-area-inset-left)); }
+  .workspace-tabs button { touch-action: manipulation; }
+  .workspace-action { min-height: 44px; }
+  .workspace-days button { min-width: 44px; min-height: 44px; }
+  .trip-workspace[data-editing='true'] :is(.plan-tools, .plan-footer) { display: none; }
+  .trip-workspace[data-editing='true'] .plan-scroll { scroll-padding-bottom: 24px; }
+  .workspace-map-pin { width: 44px; height: 44px; }
+  .workspace-map-pin > span { width: 24px; height: 24px; font-size: 11px; }
+  .place-card-close { width: 44px; height: 44px; }
+  .workspace-place-card { padding-top: 16px; }
+  .workspace-place-card > div:not(:last-child) { padding-right: 32px; }
+  .stop-edit { min-width: 44px; min-height: 44px; top: 0; right: 0; }
+  .chat-composer { padding-bottom: 12px; }
+  .chat-composer input { min-width: 0; flex: 1; }
+  html[data-keyboard-open='true'] .trip-workspace :is(.workspace-toolbar, .workspace-tabs, .app-header-center) { display: none; }
+  html[data-keyboard-open='true'] .trip-workspace .app-header-row { min-height: 48px; }
+  html[data-keyboard-open='true'] .trip-workspace .app-header { padding-top: 0; }
+  .landing dialog.destination-panel.mobile-destination-dialog {
+    position: fixed; inset: auto; top: calc(var(--visible-top, 0px) + max(12px, env(safe-area-inset-top)));
+    left: max(12px, env(safe-area-inset-left)); right: max(12px, env(safe-area-inset-right));
+    width: auto; height: calc(var(--visible-height, 100dvh) - max(12px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom)));
+    max-width: 620px; max-height: none; margin: 0 auto; padding: 16px; color: #F3F1EA;
+    background: #171717; border: 1px solid #FFFFFF30; border-radius: 20px;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .mobile-destination-dialog::backdrop { background: #000B; backdrop-filter: blur(6px); }
+  .landing .mobile-destination-dialog .destination-dialog-heading { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; margin-bottom: 12px; }
+  .landing .mobile-destination-dialog .destination-dialog-heading h2 { margin: 0; font-size: 18px; }
+  .landing .mobile-destination-dialog .destination-dialog-heading button { display: grid; place-items: center; min-width: 44px; min-height: 44px; border-radius: 50%; background: #262626; }
+  .landing .mobile-destination-dialog .destination-search { min-height: 48px; flex-shrink: 0; }
+  .landing .mobile-destination-dialog .destination-search input { font-size: 16px; min-height: 44px; }
+  .landing .mobile-destination-dialog .destination-search button { min-width: 44px; min-height: 44px; }
+  .landing .mobile-destination-dialog .destination-filters { flex-shrink: 0; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  .landing .mobile-destination-dialog .destination-filters button { min-height: 44px; flex-shrink: 0; padding-inline: 14px; }
+  .landing .mobile-destination-dialog .destination-options { flex: 1; min-height: 0; overflow-y: auto; }
+  .landing .mobile-destination-dialog .destination-options button { min-height: 66px; }
+  .landing .mobile-destination-dialog .destination-options strong { font-size: 15px; white-space: normal; overflow-wrap: anywhere; }
+  .landing .mobile-destination-dialog .destination-options button > span { font-size: 12px; }
+  .landing .mobile-destination-dialog .destination-result-count { flex-shrink: 0; }
+  .landing .mobile-destination-dialog .destination-empty button { min-height: 44px; }
+}
+
+@media (max-width: 639px) {
+  .app-header-row:has(.app-header-center) { flex-wrap: wrap; column-gap: 12px; row-gap: 0; }
+  .app-header-row:has(.app-header-center) > a, .app-header-row:has(.app-header-center) > div:last-child { min-height: 60px; display: flex; align-items: center; }
+  .app-header-center { order: 3; flex-basis: 100%; padding-bottom: 12px; }
+  .app-header-center h1 { font-size: 15px; }
+}
+
+@media (max-width: 767px) {
+  body .landing { --landing-nav-height: 72px; }
+  body .landing .landing-nav { padding-top: env(safe-area-inset-top); }
+  body .landing .mobile-nav { margin-right: 8px; }
+  body .landing .mobile-nav summary { display: grid; place-items: center; min-width: 44px; min-height: 44px; font-size: 14px; padding: 0; }
+  body .landing .nav-start { min-height: 44px; }
+  body .landing .globe-regions button { min-height: 44px; }
+  body .landing .hero-playback { top: 395px; bottom: auto; left: auto; right: 24px; }
+  body .landing .hero-playback .motion-toggle { width: 44px; height: 44px; min-width: 44px; }
+  body .landing .story-map .map-control-bar button { width: 44px; height: 44px; }
+  body .landing .hero-days button { min-height: 44px; }
+  body .landing .globe-bottom { bottom: calc(30px + env(safe-area-inset-bottom)); }
+  body .landing .globe-regions { bottom: calc(96px + env(safe-area-inset-bottom)); }
+  body .landing .globe-attribution { bottom: max(2px, env(safe-area-inset-bottom)); }
+  body .landing .landing-footer { padding-bottom: env(safe-area-inset-bottom); }
+  body .landing .mobile-nav[open] nav { max-width: calc(100vw - 40px); max-height: calc(var(--visible-height, 100dvh) - 96px); overflow-y: auto; }
+}
+
+@media (pointer: coarse), (max-width: 767px) {
+  input:not([type='checkbox']):not([type='radio']), textarea, select { font-size: 16px; }
+  [data-slot='input'], [data-slot='button'], select { min-height: 44px; }
+  .maplibregl-ctrl button { width: 44px; height: 44px; }
+  .stop-edit + button { min-height: 60px; }
+}
+
+@media (orientation: landscape) and (max-height: 500px) and (pointer: coarse) {
+  body .landing .hero-grid.landing-container { min-height: 620px; height: 620px; }
+  body .landing .hero-copy { top: 104px; transform: none; }
+  body .landing .hero-copy h1 { font-size: 42px; }
+  body .landing .hero-description { font-size: 14px; margin-top: 16px; }
+  body .landing .hero-actions { margin-top: 18px; }
+  body .landing .hero-note { display: none; }
+}
+
+.public-mobile-nav { display: none; }
+@media (max-width: 767px) {
+  .public-header { padding-top: env(safe-area-inset-top); }
+  .public-mobile-nav { display: block; position: relative; margin-left: auto; margin-right: 12px; }
+  .public-mobile-nav + a { margin-left: 0; }
+  .public-mobile-nav summary { list-style: none; display: grid; place-items: center; width: 44px; min-height: 44px; font-size: 13px; cursor: pointer; }
+  .public-mobile-nav summary::-webkit-details-marker { display: none; }
+  .public-mobile-nav nav { position: absolute; right: 0; top: calc(100% + 8px); min-width: 180px; padding: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 16px 40px #0003; }
+  .public-mobile-nav nav a { display: flex; align-items: center; min-height: 44px; padding-inline: 14px; font-size: 14px; border-radius: 8px; }
+  .public-mobile-nav nav a:hover { background: var(--secondary); }
+  .trip-budget button, .trip-budget header a { min-height: 44px; }
+  .trip-budget header { padding-top: env(safe-area-inset-top); }
+  .trip-budget header a { display: inline-flex; align-items: center; }
+  .trip-resources > div a, .trip-resources label:has(input[type='file']), .trip-resources article button { display: inline-flex; align-items: center; min-height: 44px; }
+  .trip-resources article button[aria-pressed] { justify-content: center; min-width: 44px; flex-shrink: 0; }
+  .trip-resources h1, .trip-resources article p { overflow-wrap: anywhere; }
+  footer li a { display: inline-flex; align-items: center; min-height: 44px; }
+  main > a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+
+.resource-map-pin { display: grid; place-items: center; }
+@media (pointer: coarse), (max-width: 767px) { .resource-map-pin { width: 44px; height: 44px; } }
+
+@media (max-width: 1023px) {
+  .workspace-panes { overflow: hidden; }
+  .workspace-panes > :is(aside, section, .workspace-map) { flex: 1 1 0%; min-height: 0; max-height: 100%; overflow: hidden; }
+  .workspace-tabs { position: relative; z-index: 30; }
+}
+@media (max-width: 767px) {
+  body .landing .hero-section[data-arrival='landed'] .hero-actions { visibility: hidden; }
+  body .landing .globe-return { min-height: 44px; }
+}

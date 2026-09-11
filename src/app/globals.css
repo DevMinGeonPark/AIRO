@@ -1,0 +1,203 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-lime: var(--brand-blue);
+  --color-primary-hover: var(--primary-hover);
+  --color-brand-ink: var(--brand-ink);
+  --color-route-ground: var(--route-ground);
+  --color-route-flight: var(--route-flight);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-geist-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --brand-blue: #86A5FF;
+  --brand-blue-hover: #9BB5FF;
+  --brand-blue-deep: #335CCC;
+  --brand-blue-deep-hover: #244BAD;
+  --brand-blue-soft: #EAF0FF;
+  --background: #F5F7FC;
+  --foreground: #202631;
+  --card: #FFFFFF;
+  --card-foreground: #202631;
+  --popover: #FFFFFF;
+  --popover-foreground: #202631;
+  --primary: var(--brand-blue-deep);
+  --primary-hover: var(--brand-blue-deep-hover);
+  --primary-foreground: #FFFFFF;
+  --secondary: #E9EDF5;
+  --secondary-foreground: #364258;
+  --muted: #EEF1F7;
+  --muted-foreground: #626B7C;
+  --accent: #EAF0FF;
+  --accent-foreground: #2E477D;
+  --destructive: #BD3939;
+  --border: #DDE3EE;
+  --input: #C7D1E3;
+  --ring: var(--brand-blue-deep);
+  --chart-1: var(--brand-blue-deep);
+  --chart-2: #4E6487;
+  --chart-3: #64748B;
+  --chart-4: #9671BD;
+  --chart-5: #436CA4;
+  --radius: 0.875rem;
+  --sidebar: #EEF1F7;
+  --sidebar-foreground: #202631;
+  --sidebar-primary: var(--brand-blue-deep);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EAF0FF;
+  --sidebar-accent-foreground: #2E477D;
+  --sidebar-border: #DDE3EE;
+  --sidebar-ring: var(--brand-blue-deep);
+  --brand-lime: var(--brand-blue);
+  --brand-ink: #0A0A0A;
+  --route-ground: var(--brand-blue-deep);
+  --route-flight: #9565B8;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0A0A0A;
+  --foreground: #F3F1EA;
+  --card: #171717;
+  --card-foreground: #F3F1EA;
+  --popover: #171717;
+  --popover-foreground: #F3F1EA;
+  --primary: var(--brand-blue);
+  --primary-hover: var(--brand-blue-hover);
+  --primary-foreground: #0A0A0A;
+  --secondary: #262626;
+  --secondary-foreground: #F3F1EA;
+  --muted: #262626;
+  --muted-foreground: #A3A3A3;
+  --accent: #262626;
+  --accent-foreground: #F3F1EA;
+  --destructive: #F87171;
+  --border: #FFFFFF1A;
+  --input: #FFFFFF26;
+  --ring: var(--brand-blue);
+  --chart-1: var(--brand-blue);
+  --chart-2: #A3A3A3;
+  --chart-3: #D4D4D4;
+  --chart-4: #A9BDD8;
+  --chart-5: #64748B;
+  --sidebar: #171717;
+  --sidebar-foreground: #F3F1EA;
+  --sidebar-primary: var(--brand-blue);
+  --sidebar-primary-foreground: #0A0A0A;
+  --sidebar-accent: #262626;
+  --sidebar-accent-foreground: #F3F1EA;
+  --sidebar-border: #FFFFFF1A;
+  --sidebar-ring: var(--brand-blue);
+  --brand-lime: var(--brand-blue);
+  --brand-ink: #0A0A0A;
+  --route-ground: var(--brand-blue);
+  --route-flight: #A9BDD8;
+}
+
+.airo-mark {
+  background-color: var(--primary);
+  -webkit-mask: url("/brand/airo-mark-swift-gpt.webp") center / contain no-repeat;
+  mask: url("/brand/airo-mark-swift-gpt.webp") center / contain no-repeat;
+}
+
+.airo-logo {
+  width: 148px;
+  height: 54px;
+  color: var(--primary);
+  background-color: currentColor;
+  -webkit-mask: url("/brand/airo-logo-swift-gpt.webp") center / contain no-repeat;
+  mask: url("/brand/airo-logo-swift-gpt.webp") center / contain no-repeat;
+}
+
+@media (max-width: 767px) {
+  .airo-logo { width: 116px; height: 44px; }
+}
+
+@layer base {
+  h1, h2, h3 {
+    word-break: keep-all;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  .maplibregl-popup-content {
+    @apply bg-transparent! shadow-none! p-0! rounded-none!;
+  }
+  .maplibregl-popup-tip {
+    @apply hidden!;
+  }
+  .maplibregl-ctrl-attrib {
+    @apply bg-background! text-muted-foreground! border-border! rounded-md! border! shadow-sm!;
+  }
+  .maplibregl-ctrl-attrib a {
+    @apply text-muted-foreground!;
+  }
+  .maplibregl-ctrl-attrib a:hover {
+    @apply text-foreground!;
+  }
+  .maplibregl-ctrl-attrib-button {
+    @apply bg-transparent! dark:invert;
+  }
+}
+@layer components {
+  .sky {
+    background-image: radial-gradient(ellipse at 80% 10%, #d9ecb877, transparent 55%), linear-gradient(155deg, #e2efe4, var(--background) 72%);
+  }
+  .dark .sky {
+    background-image: radial-gradient(ellipse at 80% 10%, #FFFFFF08, transparent 55%), linear-gradient(155deg, #171717, var(--background) 72%);
+  }
+  .workspace-action {
+    @apply inline-flex items-center gap-1.5 rounded-lg px-3 py-2 transition-colors hover:bg-secondary;
+  }
+}
