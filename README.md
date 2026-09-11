@@ -175,6 +175,20 @@ sequenceDiagram
 
 AIRO 서버는 OpenAI 토큰을 받지 않습니다. 기기 비밀은 사용자 PC의 로컬 파일에만 있고 DB에는 SHA-256만 저장합니다. 도구는 워커가 아니라 로그인한 브라우저가 실행하므로 편집 권한은 끝까지 사용자 세션에 묶입니다.
 
+## 두 가지 에디션
+
+| | **Cloud** | **Community (self-hosted)** |
+| --- | --- | --- |
+| 어디서 | https://airo.dev-heptivision.com | 내 서버. `docker compose up -d` |
+| 계정 | 이메일·Google 로그인 | 소유자 1명, 비밀번호 |
+| 저장소 | Supabase | 내 PostgreSQL + PostgREST |
+| AI | 서버 키 또는 내 Codex | 내 OpenAI 키 또는 내 Codex |
+| MCP | API 키 + OAuth | API 키 |
+| 요금 | 무료 여행 3개, 유료 플랜 예정 | 없음. 한도 없음 |
+| 라이선스 | 코어 AGPL-3.0 + `src/ee/` 상용 | AGPL-3.0 |
+
+같은 저장소, 같은 커밋, 같은 SQL입니다. 환경변수 `NEXT_PUBLIC_AIRO_EDITION=community` 하나로 갈립니다. 설치는 [SELF_HOSTING.md](SELF_HOSTING.md).
+
 ## 기술 스택
 
 Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Supabase (Auth, Postgres, RLS) · MapLibre GL · OpenAI API · `@modelcontextprotocol/sdk` · GSAP/Motion/Lenis · Playwright
@@ -204,16 +218,21 @@ Supabase 설정이 없으면 개발 서버는 `.demo-db.json` 파일 저장소�
 | 문서 | 내용 |
 | --- | --- |
 | [OPERATIONS.md](OPERATIONS.md) | 개발·운영 연결·개인 자료 이식·검증 절차 |
-| [DEPLOYMENT.md](DEPLOYMENT.md) | 운영 배포 기록과 현재 값 |
+| [SELF_HOSTING.md](SELF_HOSTING.md) | Community Edition을 내 서버에 docker compose로 올리기 |
+| [docs/ops/DEPLOYMENT.md](docs/ops/DEPLOYMENT.md) | Cloud 운영 배포 기록과 현재 값 |
 | [AUTH_SETUP.md](AUTH_SETUP.md) | Supabase Auth·Google 로그인 설정 |
 | [MCP_SETUP.md](MCP_SETUP.md) · [MCP_IMPLEMENTATION.md](MCP_IMPLEMENTATION.md) | MCP 서버 설정과 구현 |
 | [CODEX_CONNECTION.md](CODEX_CONNECTION.md) | Codex 브리지 구조와 계정 경계 |
 | [BRAND.md](BRAND.md) · [DESIGN.md](DESIGN.md) | 로고·색상·화면 기준 |
-| [UNIFICATION.md](UNIFICATION.md) · [COMMERCIAL_SERVICE.md](COMMERCIAL_SERVICE.md) | 개인 서비스에서 계정형 서비스로 옮긴 기록 |
+| [docs/ops/UNIFICATION.md](docs/ops/UNIFICATION.md) · [docs/ops/COMMERCIAL_SERVICE.md](docs/ops/COMMERCIAL_SERVICE.md) | 개인 서비스에서 계정형 서비스로 옮긴 기록 |
 
 ## 상태
 
-결제와 공개 공유는 아직 없습니다. 무료 플랜은 여행 3개입니다. Codex 플러그인의 공식 디렉터리 등록은 진행 중이며 지금은 Git 마켓플레이스 설치를 제공합니다.
+결제와 공개 공유는 아직 없습니다. Cloud 무료 플랜은 여행 3개입니다. Codex 플러그인의 공식 디렉터리 등록은 진행 중이며 지금은 Git 마켓플레이스 설치를 제공합니다.
+
+## 라이선스
+
+코어는 [AGPL-3.0](LICENSE)입니다. 내 서버에 올려 쓰는 데 아무 제한이 없고, 이 코드를 고쳐 남에게 서비스로 제공하면 그 소스도 공개해야 합니다. `src/ee/`(호스팅 플랜·결제)는 [별도 상용 라이선스](src/ee/LICENSE)이며 Community Edition에서는 비활성입니다.
 
 <!-- HUMANIZE-SUMMARY v1.6.1
 run_id: 2026-09-11-001
