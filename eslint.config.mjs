@@ -13,6 +13,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local release snapshots and vendored browser bundles are not our source.
+    ".private/**",
+    "public/vendor/**",
     // shadcn/mapcn 레지스트리에서 그대로 받아온 벤더 코드. 우리가 손대지 않는다.
     "src/components/ui/**",
   ]),
