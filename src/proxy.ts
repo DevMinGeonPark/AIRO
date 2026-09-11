@@ -20,7 +20,10 @@ export async function proxy(request: NextRequest) {
   if (((api && path !== "/api/mcp") || path === "/auth/signout" || path === "/auth/local") && !["GET", "HEAD", "OPTIONS"].includes(request.method)) {
     const origin = request.headers.get("origin");
     const allowed = [request.nextUrl.origin, process.env.AIRO_SITE_URL, process.env.NEXT_PUBLIC_SITE_URL];
-    if ((origin && !allowed.includes(origin)) || request.headers.get("sec-fetch-site") === "cross-site")
+    // Behind a TLS-terminating proxy the browser's Origin is https://<host> while Next sees http; same host is still same site.
+    const originHost = (() => { try { return origin ? new URL(origin).host : null; } catch { return null; } })();
+    const sameHost = originHost !== null && originHost === (request.headers.get("x-forwarded-host")?.split(",")[0].trim() || request.headers.get("host"));
+    if ((origin && !allowed.includes(origin) && !sameHost) || request.headers.get("sec-fetch-site") === "cross-site")
       return NextResponse.json({ error: "허용되지 않은 요청입니다." }, { status: 403 });
   }
   if (!supabaseConfigured) {

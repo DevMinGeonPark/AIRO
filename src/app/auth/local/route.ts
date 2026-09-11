@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { localAuth, siteUrl } from "@/lib/supabase/config";
-import { checkPassword, sessionCookie } from "@/lib/supabase/local";
+import { localAuth } from "@/lib/supabase/config";
+import { checkPassword, requestOrigin, sessionCookie } from "@/lib/supabase/local";
 import { safeNext } from "@/lib/auth-redirect";
 
 /** Community edition owner login. Origin is checked in proxy.ts. */
@@ -10,7 +10,8 @@ export async function POST(request: Request) {
   const password = form?.get("password"), next = safeNext(typeof form?.get("next") === "string" ? String(form.get("next")) : null);
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "local";
   const result = typeof password === "string" && password.length <= 256 ? checkPassword(password, ip) : "bad";
-  const origin = process.env.NODE_ENV === "production" ? siteUrl : new URL(request.url).origin;
+  // Redirect and cookie flags follow the address the browser used, not AIRO_SITE_URL: self-hosters reach one server by several names.
+  const origin = requestOrigin(request);
   if (result !== "ok") {
     const url = new URL("/login", origin);
     url.searchParams.set("next", next);
