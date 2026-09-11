@@ -120,7 +120,8 @@ export function AppHeader({
           <DarkToggle />
           {showSignOut && (
             <form action="/auth/signout" method="post">
-              <Button variant="ghost" size="sm" className="rounded-full">
+              {/* base-ui Button renders type="button"; a plain form needs an explicit submit. */}
+              <Button type="submit" variant="ghost" size="sm" className="rounded-full">
                 로그아웃
               </Button>
             </form>
