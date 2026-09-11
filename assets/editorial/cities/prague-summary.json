@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Prague",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Prague</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1085",
+  "titles": {
+    "canonical": "Prague",
+    "normalized": "Prague",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Prague</span></span>"
+  },
+  "pageid": 23844,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Prague_%286365119737%29.jpg/330px-Prague_%286365119737%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 196
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Prague_%286365119737%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3840,
+    "height": 2284
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373399735",
+  "tid": "ad51c33c-a95f-11f1-9367-bca010125f30",
+  "timestamp": "2026-09-05T19:26:22Z",
+  "description": "Capital and largest city of the Czech Republic",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 50.0875,
+    "lon": 14.42138889
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Prague",
+      "revisions": "https://en.wikipedia.org/wiki/Prague?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Prague?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Prague"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Prague",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Prague",
+      "edit": "https://en.wikipedia.org/wiki/Prague?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Prague"
+    }
+  },
+  "extract": "Prague is the capital and largest city of the Czech Republic and the historical capital of Bohemia. Located on the Vltava River, the city has a population of about 1.4 million, making it the twelfth-largest city in the European Union. Its metropolitan area is home to approximately 2.3 million people.",
+  "extract_html": "<p><b>Prague</b> is the capital and largest city of the Czech Republic and the historical capital of Bohemia. Located on the Vltava River, the city has a population of about 1.4 million, making it the twelfth-largest city in the European Union. Its metropolitan area is home to approximately 2.3 million people.</p>"
+}

@@ -1,0 +1,128 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "normalized": [
+      {
+        "from": "File:2022_Views_from_Diamond_Head_02.jpg",
+        "to": "File:2022 Views from Diamond Head 02.jpg"
+      }
+    ],
+    "pages": {
+      "114414337": {
+        "pageid": 114414337,
+        "ns": 6,
+        "title": "File:2022 Views from Diamond Head 02.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/2022_Views_from_Diamond_Head_02.jpg/960px-2022_Views_from_Diamond_Head_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 960,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/2022_Views_from_Diamond_Head_02.jpg/1920px-2022_Views_from_Diamond_Head_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/2022_Views_from_Diamond_Head_02.jpg/960px-2022_Views_from_Diamond_Head_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 960,
+              "height": 640,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/2022_Views_from_Diamond_Head_02.jpg/1920px-2022_Views_from_Diamond_Head_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/2022_Views_from_Diamond_Head_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2022_Views_from_Diamond_Head_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=114414337",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-01-18 16:30:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2022 Views from Diamond Head 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Views from Diamond Head|Self-published work|Files with coordinates missing SDC location of creation|2022 in Honolulu|United States photographs taken on 2022-01-14|January 2022 in Hawaii|Honolulu skylines|Files by User:Farragutful",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "21.261944",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-157.805556",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Views from <a href=\"https://en.wikipedia.org/wiki/Diamond_Head,_Hawaii\" class=\"extiw\" title=\"en:Diamond Head, Hawaii\">Diamond Head</a> in <a href=\"https://en.wikipedia.org/wiki/Honolulu\" class=\"extiw\" title=\"en:Honolulu\">Honolulu, Hawaii</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 14 January 2022 16:45:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Farragutful\" title=\"User:Farragutful\">Farragutful</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Mexico City",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Mexico City</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1489",
+  "titles": {
+    "canonical": "Mexico_City",
+    "normalized": "Mexico City",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Mexico City</span></span>"
+  },
+  "pageid": 18987,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg/330px-Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 173
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg/3840px-Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 6405,
+    "height": 3358
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373111568",
+  "tid": "bd5a8fe9-a80f-11f1-9a6f-f5636822dac7",
+  "timestamp": "2026-09-04T03:21:38Z",
+  "description": "Capital and most populous city of Mexico",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 19.43333333,
+    "lon": -99.13333333
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Mexico_City",
+      "revisions": "https://en.wikipedia.org/wiki/Mexico_City?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Mexico_City?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Mexico_City"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Mexico_City",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Mexico_City",
+      "edit": "https://en.wikipedia.org/wiki/Mexico_City?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Mexico_City"
+    }
+  },
+  "extract": "Mexico City is the capital and largest city of Mexico, as well as the most populous city in North America. It is one of the world's leading cultural and financial centers and, according to the Globalization and World Cities Research Network's 2024 ranking, is classified as an Alpha world city. Located in the Valley of Mexico on the high Mexican Central Plateau, the city sits at an altitude of 2,240 meters. It is divided into 16 boroughs, or alcaldías, which are further subdivided into neighborhoods, or colonias.",
+  "extract_html": "<p><b>Mexico City</b> is the capital and largest city of Mexico, as well as the most populous city in North America. It is one of the world's leading cultural and financial centers and, according to the Globalization and World Cities Research Network's 2024 ranking, is classified as an Alpha world city. Located in the Valley of Mexico on the high Mexican Central Plateau, the city sits at an altitude of 2,240 meters. It is divided into 16 boroughs, or <i>alcaldías</i>, which are further subdivided into neighborhoods, or <span><i lang=\"es\">colonias</i></span>.</p>"
+}

@@ -1,0 +1,17 @@
+# Interactive design research — 2026-09-08
+
+Research is based on current public pages, desktop browser captures and actual scroll input. These are design judgments from the observed pages, not claims that AIRO has won an award or matches the referenced sites' quality. Screenshots are research references only and are not used as product artwork.
+
+| Source | Evidence inspected | What makes the observed composition work | AIRO application |
+| --- | --- | --- | --- |
+| [KYRO](https://kyro.team/) | `references/kyro-0.png`, `-900.png`, `-1800.png`, `-3000.png`; actual mouse-wheel progression | The same phone remains a stable point of reference. Scroll draws a route, closes its outline and then communicates the claimed area. One continuous product action explains the value. | Make one travel request create places and a connected itinerary; keep a stable geographic composition so the change can be followed. Preserve light warm brand colors, not KYRO's dark/neon palette. |
+| [Linear](https://linear.app/) | `references/linear-0.png`, `-900.png`, `-1800.png`; live product preview | Product UI is large enough to read, with grouped panels and real content. Heading and product proof share a consistent page grid. | Give conversation and itinerary readable type; avoid tiny UI floating over an oversized empty map. |
+| [Superlist](https://www.superlist.com/) | `references/superlist-0.png`, `-1800.png`, `-3000.png`; live feature sequence | Familiar product content, distinct feature crops, and consistent type hierarchy make each scene purposeful. | Vary feature compositions around actual travel actions instead of repeating anonymous cards. Keep AIRO light and quiet. |
+| [Chartogne-Taillet, Awwwards](https://www.awwwards.com/sites/chartogne-taillet) | Published SOTD record and [map interaction element](https://www.awwwards.com/inspiration/chartogn-taillet-dive-through-the-wines-plots); site's public entrance `references/chartogne-0.png` | Published examples connect a geographic map with an authored visual language. The public entrance itself consistently uses engraved linework, cream paper and restrained red. | A map needs deliberate art direction: restrained roads, readable place hierarchy and consistent travel imagery. No claim of testing the experience beyond the site's age-confirmation entrance. |
+| [Apple AirPods Pro](https://www.apple.com/airpods-pro/) | Current product page structure and public product imagery | Product detail supports each message; precision of the asset matters as much as scale and motion. | Do not substitute a large generic pin for product proof. Keep the real travel interaction as the hero object. |
+
+## Diagnosis of current AIRO
+
+The previous hero's large pseudo-3D pin says "map" but not "AI travel planning". A huge geographic canvas with 10–12px interface text produces a poor scale relationship. Opening a separate exploration state hides the message without explaining how a conversation changes an itinerary. Warm watercolor, faux-material pin and green utility map compete as separate styles. The next design must unify those elements and make the causal sequence legible.
+
+Fable 5.1 provided the initial critique and art direction, directly implemented the lower sections, and reviewed actual rendered screenshots in three subsequent rounds. Reviews 01/03/04/05 and implementation 02 preserve the collaboration. The final requested replay-button position was applied and verified against all pin and readout bounding boxes in assets/validation/final-smoke.json.

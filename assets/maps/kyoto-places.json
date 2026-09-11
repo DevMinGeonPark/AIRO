@@ -1,0 +1,578 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-09-08T04:08:23Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 243776548,
+  "lat": 35.0136547,
+  "lon": 135.6778518,
+  "tags": {
+    "highway": "traffic_signals",
+    "name": "渡月橋",
+    "name:en": "Togetsukyo"
+  }
+},
+{
+  "type": "node",
+  "id": 3597606073,
+  "lat": 35.0271932,
+  "lon": 135.7950598,
+  "tags": {
+    "board_type": "history",
+    "check_date": "2023-09-25",
+    "information": "board",
+    "name": "哲学の道",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 3608536680,
+  "lat": 35.0279862,
+  "lon": 135.7916687,
+  "tags": {
+    "information": "board",
+    "name": "哲学の道",
+    "source": "survey",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 3618535899,
+  "lat": 35.0271715,
+  "lon": 135.7950639,
+  "tags": {
+    "board_type": "notice",
+    "check_date": "2025-11-03",
+    "information": "board",
+    "name": "哲学の道",
+    "note": "石碑",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 4233370290,
+  "lat": 35.0042456,
+  "lon": 135.7712126,
+  "tags": {
+    "name": "先斗町",
+    "name:en": "Pontochō",
+    "name:zh": "先斗町",
+    "tourism": "attraction",
+    "website": "https://www.japan-guide.com/e/e3921.html"
+  }
+},
+{
+  "type": "node",
+  "id": 4264119277,
+  "lat": 35.0159298,
+  "lon": 135.6769952,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "天龍寺",
+    "name:en": "Tenryuji Temple",
+    "name:zh": "天龙寺",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7056457712,
+  "lat": 35.0110907,
+  "lon": 135.7925106,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "南禅寺",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7108605498,
+  "lat": 35.0010473,
+  "lon": 135.7726287,
+  "tags": {
+    "board_type": "history",
+    "check_date": "2025-11-02",
+    "information": "board",
+    "name": "建仁寺",
+    "name:ja_rm": "Kenninji",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7997414034,
+  "lat": 35.0009941,
+  "lon": 135.7726186,
+  "tags": {
+    "historic": "memorial",
+    "material": "stone",
+    "name": "建仁寺"
+  }
+},
+{
+  "type": "way",
+  "id": 105817561,
+  "center": {
+    "lat": 35.0269122,
+    "lon": 135.7984287
+  },
+  "tags": {
+    "addr:block_number": "2",
+    "addr:city": "京都市",
+    "addr:country": "JP",
+    "addr:postcode": "606-8402",
+    "addr:province": "京都府",
+    "addr:quarter": "銀閣寺町",
+    "addr:suburb": "左京区",
+    "alt_name": "Higashiyama Jisho-ji",
+    "amenity": "place_of_worship",
+    "contact:phone": "+81 0757715725",
+    "contact:tripadvisor": "321398",
+    "contact:website": "http://www.shokoku-ji.jp/g_about.html",
+    "denomination": "rinzai",
+    "denomination:ja": "臨済宗",
+    "heritage": "1",
+    "heritage:operator": "whc",
+    "historic": "heritage",
+    "landuse": "religious",
+    "name": "銀閣寺",
+    "name:en": "Ginkakuji",
+    "name:es": "Ginkaku-ji",
+    "name:fr": "Temple du pavillon d'argent",
+    "name:ja-Hira": "ぎんかくじ",
+    "name:ja-Latn": "Ginkaku-ji",
+    "name:ko": "지쇼지",
+    "name:pl": "Srebrny Pawilon",
+    "name:ru": "Гинкакудзи",
+    "name:th": "วัดกิงกะกุ",
+    "name:vi": "Ginkakuji",
+    "name:zh": "慈照寺",
+    "note": "創建1490年 足利義政",
+    "official_name": "慈照寺",
+    "official_name:en": "Jishō Temple",
+    "official_name:fr": "Temple Jishō",
+    "official_name:ja-Hira": "じゅしょうじ",
+    "official_name:ja-Latn": "Jishō-ji",
+    "official_name:ru": "Дзисёдзи",
+    "ref:whc": "688-014",
+    "religion": "buddhist",
+    "whc:criteria": "(ii),(iv)",
+    "whc:inscription_date": "1994",
+    "wikidata": "Q257473",
+    "wikimedia_commons": "Category:Ginkaku-ji",
+    "wikipedia": "ja:慈照寺"
+  }
+},
+{
+  "type": "way",
+  "id": 190875728,
+  "center": {
+    "lat": 35.0274772,
+    "lon": 135.7943648
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "footway": "crossing",
+    "highway": "footway",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi"
+  }
+},
+{
+  "type": "way",
+  "id": 196173119,
+  "center": {
+    "lat": 35.0236583,
+    "lon": 135.7962159
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "highway": "footway",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi",
+    "surface": "cobblestone"
+  }
+},
+{
+  "type": "way",
+  "id": 196173120,
+  "center": {
+    "lat": 35.0224971,
+    "lon": 135.7950059
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "highway": "footway",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi",
+    "surface": "cobblestone",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 196173123,
+  "center": {
+    "lat": 35.0209497,
+    "lon": 135.7940609
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "highway": "footway",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi",
+    "surface": "grass_paver"
+  }
+},
+{
+  "type": "way",
+  "id": 352013907,
+  "center": {
+    "lat": 35.0116224,
+    "lon": 135.7926827
+  },
+  "tags": {
+    "alt_name:en": "Southern Zen Temple",
+    "alt_name:fr": "Temple Zen du Sud",
+    "amenity": "place_of_worship",
+    "contact:facebook": "KyotoNanzenji",
+    "contact:instagram": "daihonzan_nanzenji",
+    "contact:phone": "+81-75-771-0365",
+    "contact:tripadvisor": "321091",
+    "contact:twitter": "nanzenji_kyoto",
+    "contact:website": "http://nanzenji.com/",
+    "denomination": "rinzai",
+    "name": "南禅寺",
+    "name:de": "Nanzenji-Tempel",
+    "name:en": "Nanzen-ji",
+    "name:es": "Nanzen-ji",
+    "name:fr": "Temple Nanzen",
+    "name:ja-Hira": "なんぜんじ",
+    "name:ja-Latn": "Nanzen-ji",
+    "opening_hours": "Mar-Nov Mo-Su 08:40-17:00; Dec-Feb Mo-Su 08:40-16:30; Dec 28-Dec 31 off",
+    "religion": "buddhist",
+    "start_date": "1291",
+    "wikidata": "Q1089767",
+    "wikimedia_commons": "Category:Nanzenji",
+    "wikipedia": "ja:南禅寺"
+  }
+},
+{
+  "type": "way",
+  "id": 353972653,
+  "center": {
+    "lat": 35.0270499,
+    "lon": 135.7951906
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "highway": "footway",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi",
+    "surface": "paving_stones"
+  }
+},
+{
+  "type": "way",
+  "id": 409723494,
+  "center": {
+    "lat": 35.0161665,
+    "lon": 135.6746179
+  },
+  "tags": {
+    "addr:full": "〒616-8385 京都府京都市右京区嵯峨天龍寺芒ノ馬場町68",
+    "alt_name:fr": "Temple du dragon céleste",
+    "amenity": "place_of_worship",
+    "charge:adult": "500 JPY",
+    "charge:child": "500 JPY;300 JPY;0 JPY",
+    "contact:fax": "+81 75-864-2424",
+    "contact:instagram": "heavenly_dragon.temple",
+    "contact:phone": "+81 75-881-1235",
+    "contact:tripadvisor": "1386106",
+    "contact:twitter": "tenryu_ji",
+    "contact:website": "https://www.tenryuji.com/",
+    "denomination": "rinzai",
+    "denomination:ja": "臨済宗",
+    "fee": "yes",
+    "heritage": "1",
+    "heritage:operator": "whc",
+    "historic": "heritage",
+    "name": "天龍寺",
+    "name:en": "Tenryū Temple",
+    "name:fr": "Temple Tenryū",
+    "name:ja-Hira": "てんりゅうじ",
+    "name:ja-Latn": "Tenryū-ji",
+    "name:ru": "Тэнрюдзи",
+    "opening_hours": "Mo-Su 08:30-17:00",
+    "ref:whc": "688-012",
+    "religion": "buddhist",
+    "source": "Bing, Survey",
+    "start_date": "1345",
+    "whc:criteria": "(ii),(iv)",
+    "whc:inscription_date": "1994",
+    "wikidata": "Q1759226",
+    "wikimedia_commons": "Category:Tenryū-ji (Kyoto)",
+    "wikipedia": "ja:天龍寺"
+  }
+},
+{
+  "type": "way",
+  "id": 519319727,
+  "center": {
+    "lat": 35.0128677,
+    "lon": 135.6777631
+  },
+  "tags": {
+    "alt_name:en": "Moon Crossing Bridge",
+    "alt_name:fr": "Pont de la Traversée de la Lune",
+    "bridge:structure": "beam",
+    "contact:tripadvisor": "1633241",
+    "layer": "1",
+    "man_made": "bridge",
+    "name": "渡月橋",
+    "name:de": "Togetsu Brücke",
+    "name:en": "Togetsu Bridge",
+    "name:fr": "Pont Togetsu",
+    "name:ja": "渡月橋",
+    "name:ja-Hira": "とげつきょう",
+    "name:ja-Latn": "Togetsu-kyō",
+    "name:zh": "渡月橋",
+    "start_date": "86",
+    "tourism": "viewpoint",
+    "wikidata": "Q11561923",
+    "wikimedia_commons": "Category:Togetsukyo",
+    "wikipedia": "ja:渡月橋"
+  }
+},
+{
+  "type": "way",
+  "id": 593317511,
+  "center": {
+    "lat": 35.0169035,
+    "lon": 135.7955075
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "highway": "footway",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 593317542,
+  "center": {
+    "lat": 35.0261867,
+    "lon": 135.7956249
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "highway": "footway",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi",
+    "surface": "paving_stones"
+  }
+},
+{
+  "type": "way",
+  "id": 593317547,
+  "center": {
+    "lat": 35.0247303,
+    "lon": 135.7961851
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "highway": "footway",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi",
+    "surface": "paving_stones"
+  }
+},
+{
+  "type": "way",
+  "id": 760889100,
+  "center": {
+    "lat": 35.0001782,
+    "lon": 135.7746022
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "charge:adult": "800 JPY",
+    "charge:child": "500 JPY",
+    "charge:disabled": "0 JPY",
+    "check_date": "2023-10-27",
+    "contact:instagram": "spirit_of_kenninji",
+    "contact:phone": "+81 75-561-6363",
+    "contact:tripadvisor": "1386175",
+    "contact:website": "https://www.kenninji.jp/",
+    "denomination": "zen",
+    "fee": "yes",
+    "fixme": "領域は推定",
+    "name": "建仁寺",
+    "name:en": "Kennin-ji",
+    "name:es": "Templo Kenninji",
+    "name:etymology": "建仁",
+    "name:etymology:wikidata": "Q1195433",
+    "name:fr": "Temple Kennin",
+    "name:ja": "建仁寺",
+    "name:ja-Hira": "けんにんじ",
+    "name:ja-Latn": "Kenninji",
+    "name:ko": "켄인지",
+    "official_name": "禅居庵 建仁寺",
+    "official_name:ja-Hira": "ぜん きょ あん けんにんじ",
+    "official_name:ja-Latn": "Zuiryusan Kennin-ji",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "religion": "buddhist",
+    "start_date": "1202",
+    "wikidata": "Q1440954",
+    "wikimedia_commons": "Category:Kennin-ji",
+    "wikipedia": "ja:建仁寺"
+  }
+},
+{
+  "type": "way",
+  "id": 772134672,
+  "center": {
+    "lat": 35.0050295,
+    "lon": 135.7647092
+  },
+  "tags": {
+    "addr:street": "錦小路通",
+    "amenity": "marketplace",
+    "building": "roof",
+    "building:levels": "2",
+    "contact:facebook": "錦市場",
+    "contact:instagram": "kyoto_nishiki_official",
+    "contact:tripadvisor": "554672",
+    "contact:website": "https://www.kyoto-nishiki.or.jp/index.html",
+    "contact:youtube": "UCC1tLu3RCEtztFZ74eMlq2A",
+    "indoor": "no",
+    "level": "0",
+    "location": "surface",
+    "name": "錦市場",
+    "name:en": "Nishiki Market",
+    "name:fr": "Marché de Nishiki",
+    "name:ja-Hira": "にしき いちば",
+    "name:ja-Latn": "Nishiki-ichiba",
+    "name:th": "ตลาดนิชิกิ",
+    "name:zh": "锦市场",
+    "name:zh-Hans": "锦市场",
+    "name:zh-Hant": "錦市場",
+    "opening_hours": "Mo-Su,PH 10:00-18:00+",
+    "operator": "京都錦市場商店街振興組合",
+    "operator:en": "Nishiki Market Shopping Street Promotion Association",
+    "operator:fr": "Association de promotion du quartier commerçant du marché Nishiki de Kyoto",
+    "operator:ja": "京都錦市場商店街振興組合",
+    "operator:ja-Latn": "Kyōto nishikishijō shōten-gai shinkō kumiai",
+    "operator:type": "cooperative",
+    "ownership": "private",
+    "tourism": "attraction",
+    "wikidata": "Q11650434",
+    "wikimedia_commons": "Category:Nishiki Ichiba",
+    "wikipedia": "ja:錦市場"
+  }
+},
+{
+  "type": "way",
+  "id": 1338584977,
+  "center": {
+    "lat": 35.0185874,
+    "lon": 135.7947520
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "highway": "footway",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "relation",
+  "id": 18344117,
+  "center": {
+    "lat": 35.0215812,
+    "lon": 135.7946821
+  },
+  "tags": {
+    "alt_name:fr": "Promenade du philosophe",
+    "contact:tripadvisor": "545965",
+    "contact:website": "https://tetsugakunomichi.jp/",
+    "name": "哲学の道",
+    "name:de": "Philosophenweg",
+    "name:en": "Philosopher's Walk",
+    "name:fr": "Chemin de la philosophie",
+    "name:it": "Passeggiata del filosofo",
+    "name:ja-Hira": "てつがくのみち",
+    "name:ja-Latn": "Tetsugaku no michi",
+    "network": "lwn",
+    "route": "foot",
+    "start_date": "1890",
+    "tourism": "attraction",
+    "type": "route",
+    "wikidata": "Q1510488",
+    "wikimedia_commons": "Category:Tetsugaku no Michi",
+    "wikipedia": "ja:哲学の道"
+  }
+}
+
+  ]
+}

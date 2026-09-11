@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Vancouver",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Vancouver</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q24639",
+  "titles": {
+    "canonical": "Vancouver",
+    "normalized": "Vancouver",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Vancouver</span></span>"
+  },
+  "pageid": 32706,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Skyline_of_Vancouver%2C_Canada.jpg/330px-Skyline_of_Vancouver%2C_Canada.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 198
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Skyline_of_Vancouver%2C_Canada.jpg/3840px-Skyline_of_Vancouver%2C_Canada.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 7302,
+    "height": 4381
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1370029174",
+  "tid": "e7833312-9b32-11f1-97ae-a3ce0bb3307c",
+  "timestamp": "2026-08-18T18:30:36Z",
+  "description": "City in British Columbia, Canada",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 49.26083333,
+    "lon": -123.11388889
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Vancouver",
+      "revisions": "https://en.wikipedia.org/wiki/Vancouver?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Vancouver?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Vancouver"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Vancouver",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Vancouver",
+      "edit": "https://en.wikipedia.org/wiki/Vancouver?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Vancouver"
+    }
+  },
+  "extract": "Vancouver is a major city in Western Canada, located in the Lower Mainland region of British Columbia. As the most populous city in the province, the 2021 Canadian census recorded 662,248 people in the city, up from 631,486 in 2016. The Metro Vancouver area had a population of 2.6 million in 2021, making it the third-largest metropolitan area in Canada. Greater Vancouver, along with the Fraser Valley, comprises the Lower Mainland with a regional population of over 3 million. Vancouver has the highest population density in Canada, with over 5,700 inhabitants per square kilometre (15,000/sq mi), and the fourth highest in North America.",
+  "extract_html": "<p><b>Vancouver</b> is a major city in Western Canada, located in the Lower Mainland region of British Columbia. As the most populous city in the province, the 2021 Canadian census recorded 662,248 people in the city, up from 631,486 in 2016. The Metro Vancouver area had a population of 2.6<span class=\"nowrap\"> </span>million in 2021, making it the third-largest metropolitan area in Canada. Greater Vancouver, along with the Fraser Valley, comprises the Lower Mainland with a regional population of over 3<span class=\"nowrap\"> </span>million. Vancouver has the highest population density in Canada, with over 5,700 inhabitants per square kilometre (15,000/sq mi), and the fourth highest in North America.</p>"
+}

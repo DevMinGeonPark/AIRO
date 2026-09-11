@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Cairo",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Cairo</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q85",
+  "titles": {
+    "canonical": "Cairo",
+    "normalized": "Cairo",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Cairo</span></span>"
+  },
+  "pageid": 6293,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Cairo_Opera_House%2C_Al_Hurriyah_Park_and_the_Nile_river_%2814797782354%29.jpg/330px-Cairo_Opera_House%2C_Al_Hurriyah_Park_and_the_Nile_river_%2814797782354%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 219
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Cairo_Opera_House%2C_Al_Hurriyah_Park_and_the_Nile_river_%2814797782354%29.jpg/3840px-Cairo_Opera_House%2C_Al_Hurriyah_Park_and_the_Nile_river_%2814797782354%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 4288,
+    "height": 2848
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373782101",
+  "tid": "4244f22c-ab0b-11f1-abb6-5bd412dc47c2",
+  "timestamp": "2026-09-07T22:27:07Z",
+  "description": "Capital and largest city of Egypt",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 30.04444444,
+    "lon": 31.23583333
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Cairo",
+      "revisions": "https://en.wikipedia.org/wiki/Cairo?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Cairo?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Cairo"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Cairo",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Cairo",
+      "edit": "https://en.wikipedia.org/wiki/Cairo?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Cairo"
+    }
+  },
+  "extract": "Cairo is the capital and largest city of Egypt and the Cairo Governorate. It is home to more than 9.8 million people. It is also part of the largest urban agglomeration in Africa, the Arab world, and the Middle East. The Greater Cairo metropolitan area is one of the largest in the world by population with over 22 million people. Areas of what would become Cairo were inhabited from pre-dynastic and early-dynastic ancient Egypt c. 6000 years ago, as the Giza pyramid complex and the ancient cities of Memphis and Heliopolis are today within the city.",
+  "extract_html": "<p><b>Cairo</b> is the capital and largest city of Egypt and the Cairo Governorate. It is home to more than 9.8 million people. It is also part of the largest urban agglomeration in Africa, the Arab world, and the Middle East. The Greater Cairo metropolitan area is one of the largest in the world by population with over 22 million people. Areas of what would become Cairo were inhabited from pre-dynastic and early-dynastic ancient Egypt c. 6000 years ago, as the Giza pyramid complex and the ancient cities of Memphis and Heliopolis are today within the city.</p>"
+}

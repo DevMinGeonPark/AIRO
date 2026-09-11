@@ -1,0 +1,115 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "normalized": [
+      {
+        "from": "File:Zanzibar_sultan_palace.jpg",
+        "to": "File:Zanzibar sultan palace.jpg"
+      }
+    ],
+    "pages": {
+      "1998699": {
+        "pageid": 1998699,
+        "ns": 6,
+        "title": "File:Zanzibar sultan palace.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Zanzibar_sultan_palace.jpg/960px-Zanzibar_sultan_palace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 960,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/7/73/Zanzibar_sultan_palace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Zanzibar_sultan_palace.jpg/960px-Zanzibar_sultan_palace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 960,
+              "height": 640,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/7/73/Zanzibar_sultan_palace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Zanzibar_sultan_palace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Zanzibar_sultan_palace.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1998699",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-04-25 16:24:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Zanzibar sultan palace",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "GFDL|CC-BY-SA-2.5,2.0,1.0|Files with no machine-readable source|Sultan's Palace, Zanzibar|House of Wonders (Beit al Ajaib)|License migration redundant|Self-published work|Assumed own work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p><a href=\"https://en.wikipedia.org/wiki/en:Zanzibar\" class=\"extiw\" title=\"w:en:Zanzibar\">Zanzibar</a> with the Sultan's Palace.\n</p>\nPhotograped by <a rel=\"nofollow\" class=\"external text\" href=\"https://sites.google.com/site/thebrockeninglory/\">Brocken Inaglory</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "25 April 2007 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "No machine-readable author provided. <a href=\"//commons.wikimedia.org/wiki/User:Mbz1\" title=\"User:Mbz1\">Mbz1</a> assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

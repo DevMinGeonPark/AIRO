@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Melbourne",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Melbourne</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q3141",
+  "titles": {
+    "canonical": "Melbourne",
+    "normalized": "Melbourne",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Melbourne</span></span>"
+  },
+  "pageid": 17306237,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Melbourne_skyline_sor.jpg/330px-Melbourne_skyline_sor.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 234
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/74/Melbourne_skyline_sor.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 2048,
+    "height": 1454
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373698005",
+  "tid": "18f77abd-aab1-11f1-b442-c12661c3aef8",
+  "timestamp": "2026-09-07T11:41:43Z",
+  "description": "Capital city of Victoria, Australia",
+  "description_source": "local",
+  "coordinates": {
+    "lat": -37.81416667,
+    "lon": 144.96305556
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Melbourne",
+      "revisions": "https://en.wikipedia.org/wiki/Melbourne?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Melbourne?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Melbourne"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Melbourne",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Melbourne",
+      "edit": "https://en.wikipedia.org/wiki/Melbourne?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Melbourne"
+    }
+  },
+  "extract": "Melbourne is the capital and most populous city of the Australian state of Victoria and the second-most populous city in Australia. The city's name generally refers to a 9,993-square-kilometre (3,858 sq mi) area, comprising an urban agglomeration of 31 local government areas. The name is also used specifically to refer to the local government area, also named the City of Melbourne led by Lord Mayor Nicholas Reece, whose administrative area is centred on the Melbourne central business district and some immediate surrounds.",
+  "extract_html": "<p><b>Melbourne</b> is the capital and most populous city of the Australian state of Victoria and the second-most populous city in Australia. The city's name generally refers to a 9,993-square-kilometre (3,858 sq mi) area, comprising an urban agglomeration of 31 local government areas. The name is also used specifically to refer to the local government area, also named the City of Melbourne led by Lord Mayor Nicholas Reece, whose administrative area is centred on the Melbourne central business district and some immediate surrounds.</p>"
+}

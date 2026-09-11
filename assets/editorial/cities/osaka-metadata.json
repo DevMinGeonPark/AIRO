@@ -1,0 +1,123 @@
+{
+  "continue": {
+    "iistart": "2009-09-06T12:24:20Z",
+    "continue": "||"
+  },
+  "query": {
+    "normalized": [
+      {
+        "from": "File:Osaka_Castle_03bs3200.jpg",
+        "to": "File:Osaka Castle 03bs3200.jpg"
+      }
+    ],
+    "pages": {
+      "7745274": {
+        "pageid": 7745274,
+        "ns": 6,
+        "title": "File:Osaka Castle 03bs3200.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/960px-Osaka_Castle_03bs3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 960,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/1920px-Osaka_Castle_03bs3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/960px-Osaka_Castle_03bs3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 960,
+              "height": 640,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/1920px-Osaka_Castle_03bs3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Osaka_Castle_03bs3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_03bs3200.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7745274",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-09-06 12:27:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Osaka Castle 03bs3200",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "GFDL|Taken with Sony DSLR-A700|License migration redundant|Self-published work|FoP-Japan|September 2009 in Osaka|Japan photographs taken on 2009-09-05|Views of Osaka Castle and Osaka Business Park from the Osaka Museum of History|2009 at Osaka Castle",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<b><a href=\"https://en.wikipedia.org/wiki/Osaka_Castle\" class=\"extiw\" title=\"en:Osaka Castle\">Osaka Castle</a></b> in Chuo-ku, <a href=\"//commons.wikimedia.org/wiki/Osaka\" class=\"mw-redirect\" title=\"Osaka\">Osaka</a>, Osaka prefecture, <a href=\"//commons.wikimedia.org/wiki/Japan\" class=\"mw-redirect\" title=\"Japan\">Japan</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 5 September 2009",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/user:663highland\" class=\"extiw\" title=\"ja:user:663highland\">663highland</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "GFDL+creative commons2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

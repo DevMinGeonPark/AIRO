@@ -1,0 +1,128 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "normalized": [
+      {
+        "from": "File:Basílica_Catedral_Metropolitana_de_Lima_(cropped).jpg",
+        "to": "File:Basílica Catedral Metropolitana de Lima (cropped).jpg"
+      }
+    ],
+    "pages": {
+      "137029690": {
+        "pageid": 137029690,
+        "ns": 6,
+        "title": "File:Basílica Catedral Metropolitana de Lima (cropped).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg/960px-Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 960,
+            "thumbheight": 648,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg/1920px-Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg/960px-Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 960,
+              "height": 648,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg/1920px-Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_(cropped).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=137029690",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-09-05 15:11:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Basílica Catedral Metropolitana de Lima (cropped)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Archiepiscopal Palace of Lima|Self-published work|Extracted images|Images from Wiki Loves Monuments 2016|Files with coordinates missing SDC location of creation|Images from Wiki Loves Monuments 2016 in Peru|Uploaded via Campaign:wlm-pe|Images from Wiki Loves Monuments missing SDC location of creation|Facade of the Catedral de Lima",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-12.045681",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-77.029792",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "El 11 de marzo de 1540, cinco años después de fundada la ciudad de Lima, se inauguró la primera iglesia levantada por Francisco Pizarro. El 14 de mayo de 1541 fue elegida en Catedral por Pablo III y en Iglesia Metropolitana en 1546. Uno de los momentos más importantes en su historia fue la visita del Papa Juan Pablo II el 1ero de febrero de 1985, en que por primera vez un sucesor de Pedro estuvo en ella.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-02-29 17:41:09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:DafeRuiho&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:DafeRuiho (page does not exist)\">David Felipe Ruiz Hoyos</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

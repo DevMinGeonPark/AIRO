@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-09-08",
+  "cliVersion": "1.1.24",
+  "plan": "free",
+  "availableCredits": 10,
+  "model": "nano_banana_pro",
+  "modelResolution": "2k (default)",
+  "totalEstimatedCredits": 14,
+  "shortfallCredits": 4,
+  "generatedCount": 0,
+  "hardLimit": 10,
+  "authorizedLimit": 7,
+  "reserveRequiresExplicitApproval": [
+    8,
+    9,
+    10
+  ],
+  "assets": [
+    {
+      "purpose": "히어로 배경 텍스처",
+      "file": "hero-bg",
+      "ratio": "16:9",
+      "prompt": "abstract stylized map of Kyoto seen from above, thin winding river lines and soft green temple grounds, faint dotted walking route, a few tiny orange pin markers, soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+      "model": "nano_banana_pro",
+      "costResult": {
+        "credits": 2
+      },
+      "savePath": "public/gen/hero-bg.webp",
+      "maxWidth": 1920
+    },
+    {
+      "purpose": "미리보기 Day 1 장면",
+      "file": "day1-philosophers-path",
+      "ratio": "4:3",
+      "prompt": "Philosopher's Path in Kyoto, stone canal walkway lined with trees, dappled afternoon light, a small wooden bench, soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+      "model": "nano_banana_pro",
+      "costResult": {
+        "credits": 2
+      },
+      "savePath": "public/gen/day1-philosophers-path.webp",
+      "maxWidth": 1920
+    },
+    {
+      "purpose": "미리보기 Day 2 장면",
+      "file": "day2-cafe",
+      "ratio": "4:3",
+      "prompt": "cozy Kyoto machiya cafe interior seen from the street, warm lantern glow, a cup of coffee on a wooden counter by the window, soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+      "model": "nano_banana_pro",
+      "costResult": {
+        "credits": 2
+      },
+      "savePath": "public/gen/day2-cafe.webp",
+      "maxWidth": 1920
+    },
+    {
+      "purpose": "미리보기 Day 3 장면",
+      "file": "day3-arashiyama",
+      "ratio": "4:3",
+      "prompt": "Arashiyama bamboo grove path in Kyoto, tall bamboo, soft light filtering through, a quiet empty path, soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+      "model": "nano_banana_pro",
+      "costResult": {
+        "credits": 2
+      },
+      "savePath": "public/gen/day3-arashiyama.webp",
+      "maxWidth": 1920
+    },
+    {
+      "purpose": "기능 03 여행 준비를 한곳에",
+      "file": "feature-prep",
+      "ratio": "1:1",
+      "prompt": "flat lay of travel keepsakes on cream paper: a folded map, train ticket stub, small notebook, a coin, a matcha sweet wrapper, arranged loosely, soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+      "model": "nano_banana_pro",
+      "costResult": {
+        "credits": 2
+      },
+      "savePath": "public/gen/feature-prep.webp",
+      "maxWidth": 1920
+    },
+    {
+      "purpose": "CTA 배경",
+      "file": "cta-journey",
+      "ratio": "21:9",
+      "prompt": "a long gentle road curving toward distant soft hills at golden hour, a single tiny orange location pin at the horizon, wide open sky, soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+      "model": "nano_banana_pro",
+      "costResult": {
+        "credits": 2
+      },
+      "savePath": "public/gen/cta-journey.webp",
+      "maxWidth": 1920
+    },
+    {
+      "purpose": "OG 소셜 이미지",
+      "file": "og-image",
+      "ratio": "16:9",
+      "prompt": "wide illustration of a traveler's desk by a window overlooking Kyoto rooftops at dawn, an open notebook with a hand-drawn route, a phone showing a simple map, soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+      "model": "nano_banana_pro",
+      "costResult": {
+        "credits": 2
+      },
+      "savePath": "public/gen/og-image.webp",
+      "crop": {
+        "width": 1200,
+        "height": 630
+      }
+    }
+  ],
+  "status": "superseded",
+  "supersededBy": "User requested built-in GPT Images 2; no Higgsfield generation."
+}

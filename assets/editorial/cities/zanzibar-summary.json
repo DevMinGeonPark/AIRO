@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Stone Town",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Stone Town</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q844417",
+  "titles": {
+    "canonical": "Stone_Town",
+    "normalized": "Stone Town",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Stone Town</span></span>"
+  },
+  "pageid": 611866,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Zanzibar_sultan_palace.jpg/330px-Zanzibar_sultan_palace.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/73/Zanzibar_sultan_palace.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 1536,
+    "height": 1024
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1367612832",
+  "tid": "9a8c4d2c-8fb3-11f1-99f9-eef701f3da3e",
+  "timestamp": "2026-08-04T03:21:38Z",
+  "description": "Old town of Zanzibar City, Tanzania",
+  "description_source": "local",
+  "coordinates": {
+    "lat": -6.1624,
+    "lon": 39.1913
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Stone_Town",
+      "revisions": "https://en.wikipedia.org/wiki/Stone_Town?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Stone_Town?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Stone_Town"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Stone_Town",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Stone_Town",
+      "edit": "https://en.wikipedia.org/wiki/Stone_Town?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Stone_Town"
+    }
+  },
+  "extract": "The Stone Town of Zanzibar, also known as Mji Mkongwe, is the old part of Zanzibar City, the main city of Zanzibar, in Tanzania. The newer portion of the city is known as Ng'ambo, Swahili for 'the other side'. Stone Town is located on the western coast of Unguja, the main island of the Zanzibar Archipelago. Former capital of the Sultanate of Zanzibar, and flourishing centre of the spice trade as well as the Indian Ocean slave trade in the 19th century, it retained its importance as the main city of Zanzibar during the period of the British protectorate. When Tanganyika and Zanzibar joined each other to form the United Republic of Tanzania, Zanzibar kept a semi-autonomous status, with Stone Town as its local government seat.",
+  "extract_html": "<p>The <b>Stone Town of Zanzibar</b>, also known as <span><span style=\"font-style:normal\"><b>Mji Mkongwe</b></span></span>, is the old part of Zanzibar City, the main city of Zanzibar, in Tanzania. The newer portion of the city is known as Ng'ambo, Swahili for 'the other side'. Stone Town is located on the western coast of Unguja, the main island of the Zanzibar Archipelago. Former capital of the Sultanate of Zanzibar, and flourishing centre of the spice trade as well as the Indian Ocean slave trade in the 19th century, it retained its importance as the main city of Zanzibar during the period of the British protectorate. When Tanganyika and Zanzibar joined each other to form the United Republic of Tanzania, Zanzibar kept a semi-autonomous status, with Stone Town as its local government seat.</p>"
+}

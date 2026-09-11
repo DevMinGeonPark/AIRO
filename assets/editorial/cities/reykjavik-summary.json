@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Reykjavík",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Reykjavík</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1764",
+  "titles": {
+    "canonical": "Reykjavík",
+    "normalized": "Reykjavík",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Reykjavík</span></span>"
+  },
+  "pageid": 25798,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Reykjav%C3%ADk%2C_view_from_Hallgr%C3%ADmskirkja_%282%29.jpg/330px-Reykjav%C3%ADk%2C_view_from_Hallgr%C3%ADmskirkja_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 219
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Reykjav%C3%ADk%2C_view_from_Hallgr%C3%ADmskirkja_%282%29.jpg/3840px-Reykjav%C3%ADk%2C_view_from_Hallgr%C3%ADmskirkja_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 4928,
+    "height": 3264
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1368089559",
+  "tid": "06a8c4a0-91f3-11f1-b588-7e05f8763e04",
+  "timestamp": "2026-08-07T00:00:40Z",
+  "description": "Capital and most populous city of Iceland",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 64.14583333,
+    "lon": -21.9425
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Reykjav%C3%ADk",
+      "revisions": "https://en.wikipedia.org/wiki/Reykjav%C3%ADk?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Reykjav%C3%ADk?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Reykjav%C3%ADk"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Reykjav%C3%ADk",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Reykjav%C3%ADk",
+      "edit": "https://en.wikipedia.org/wiki/Reykjav%C3%ADk?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Reykjav%C3%ADk"
+    }
+  },
+  "extract": "Reykjavík is the capital and largest city of Iceland. It is located on the southern shore of the Faxaflói bay in southwest Iceland and has a latitude of 64°08′ N, making it the world's northernmost capital of a sovereign state. Reykjavík has a population of around 140,000 as of 2026, and the surrounding Capital Region has a population of around 252,000, constituting approximately 64% of Iceland's population.",
+  "extract_html": "<p><b>Reykjavík</b> is the capital and largest city of Iceland. It is located on the southern shore of the Faxaflói bay in southwest Iceland and has a latitude of 64°08′ N, making it the world's northernmost capital of a sovereign state. Reykjavík has a population of around 140,000 as of 2026, and the surrounding Capital Region has a population of around 252,000, constituting approximately 64% of Iceland's population.</p>"
+}

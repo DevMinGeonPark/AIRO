@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Lima",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Lima</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q2868",
+  "titles": {
+    "canonical": "Lima",
+    "normalized": "Lima",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Lima</span></span>"
+  },
+  "pageid": 85423,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg/330px-Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 223
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/69/Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3439,
+    "height": 2323
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1372754069",
+  "tid": "c4519788-a67d-11f1-9dbf-ca8ad398ba15",
+  "timestamp": "2026-09-02T03:24:12Z",
+  "description": "Capital and largest city of Peru",
+  "description_source": "local",
+  "coordinates": {
+    "lat": -12.06,
+    "lon": -77.0375
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Lima",
+      "revisions": "https://en.wikipedia.org/wiki/Lima?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Lima?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Lima"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Lima",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Lima",
+      "edit": "https://en.wikipedia.org/wiki/Lima?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Lima"
+    }
+  },
+  "extract": "Lima is the capital and largest city of Peru, as well as a primate city. It is located in the valleys of the Chillón, Rímac and Lurín Rivers, in the desert zone of the central coastal part of the country, overlooking the Pacific Ocean. The city is considered the political, cultural, financial and commercial center of Peru. Jurisdictionally, the metropolis extends mainly within the province of Lima and in a smaller portion, to the west, within the Constitutional Province of Callao, where the seaport and the Jorge Chávez Airport are located. Both provinces have had regional autonomy since 2002.",
+  "extract_html": "<p><b>Lima</b> is the capital and largest city of Peru, as well as a primate city. It is located in the valleys of the Chillón, Rímac and Lurín Rivers, in the desert zone of the central coastal part of the country, overlooking the Pacific Ocean. The city is considered the political, cultural, financial and commercial center of Peru. Jurisdictionally, the metropolis extends mainly within the province of Lima and in a smaller portion, to the west, within the Constitutional Province of Callao, where the seaport and the Jorge Chávez Airport are located. Both provinces have had regional autonomy since 2002.</p>"
+}

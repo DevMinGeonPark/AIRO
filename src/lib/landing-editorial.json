@@ -1,0 +1,638 @@
+{
+  "kyoto": {
+    "featureTitle": "교토의 고요",
+    "featureDescription": "작은 정원에 오래 머물기.",
+    "description": [
+      "절의 정원을 걷고,",
+      "찻집에서 쉬다."
+    ],
+    "image": "/travel/cities/kyoto.jpg",
+    "imageAlt": "교토의 풍경",
+    "featureImage": "/travel/cities/kyoto.jpg",
+    "featureImageAlt": "교토의 풍경"
+  },
+  "seoul": {
+    "featureTitle": "서울의 골목",
+    "featureDescription": "오래된 길에서 새 취향 찾기.",
+    "description": [
+      "궁궐 담장을 따라,",
+      "골목의 취향을 만나다."
+    ],
+    "image": "/travel/cities/seoul.jpg",
+    "imageAlt": "서울의 풍경",
+    "featureImage": "/travel/cities/seoul.jpg",
+    "featureImageAlt": "서울의 풍경"
+  },
+  "busan": {
+    "featureTitle": "바다의 오후",
+    "featureDescription": "파도 소리에 발걸음 맞추기.",
+    "description": [
+      "항구의 맛을 만나고,",
+      "바닷가를 거닐다."
+    ],
+    "image": "/travel/cities/busan.jpg",
+    "imageAlt": "부산의 풍경",
+    "featureImage": "/travel/cities/busan.jpg",
+    "featureImageAlt": "부산의 풍경"
+  },
+  "jeju": {
+    "featureTitle": "바람의 방향",
+    "featureDescription": "오름 너머 바다를 향해서.",
+    "description": [
+      "오름의 바람을 따라,",
+      "푸른 바다에 닿다."
+    ],
+    "image": "/travel/cities/jeju.jpg",
+    "imageAlt": "제주의 풍경",
+    "featureImage": "/travel/cities/jeju.jpg",
+    "featureImageAlt": "제주의 풍경"
+  },
+  "tokyo": {
+    "featureTitle": "도쿄의 장면",
+    "featureDescription": "한 골목씩 취향을 모으기.",
+    "description": [
+      "도시의 리듬을 따라,",
+      "작은 취향을 찾다."
+    ],
+    "image": "/travel/cities/tokyo.jpg",
+    "imageAlt": "도쿄의 풍경",
+    "featureImage": "/travel/cities/tokyo.jpg",
+    "featureImageAlt": "도쿄의 풍경"
+  },
+  "osaka": {
+    "featureTitle": "맛있는 산책",
+    "featureDescription": "맛보고 걷고, 다시 한 입.",
+    "description": [
+      "시장의 맛을 고르고,",
+      "강변의 불빛을 걷다."
+    ],
+    "image": "/travel/cities/osaka.jpg",
+    "imageAlt": "오사카의 풍경",
+    "featureImage": "/travel/cities/osaka.jpg",
+    "featureImageAlt": "오사카의 풍경"
+  },
+  "taipei": {
+    "featureTitle": "찻잔의 온도",
+    "featureDescription": "차 한 잔 뒤, 야시장으로.",
+    "description": [
+      "오래된 거리에서,",
+      "차와 야식을 만나다."
+    ],
+    "image": "/travel/cities/taipei.jpg",
+    "imageAlt": "타이베이의 풍경",
+    "featureImage": "/travel/cities/taipei.jpg",
+    "featureImageAlt": "타이베이의 풍경"
+  },
+  "bangkok": {
+    "featureTitle": "강변의 빛",
+    "featureDescription": "황금빛 지붕 아래 쉬어가기.",
+    "description": [
+      "강 위의 빛을 보고,",
+      "시장 골목에 머물다."
+    ],
+    "image": "/travel/cities/bangkok.jpg",
+    "imageAlt": "방콕의 풍경",
+    "featureImage": "/travel/cities/bangkok.jpg",
+    "featureImageAlt": "방콕의 풍경"
+  },
+  "singapore": {
+    "featureTitle": "정원의 도시",
+    "featureDescription": "초록과 스카이라인 사이로.",
+    "description": [
+      "도시의 정원을 걷고,",
+      "물가의 밤을 만나다."
+    ],
+    "image": "/travel/cities/singapore.jpg",
+    "imageAlt": "싱가포르의 풍경",
+    "featureImage": "/travel/cities/singapore.jpg",
+    "featureImageAlt": "싱가포르의 풍경"
+  },
+  "paris": {
+    "featureTitle": "센강의 오후",
+    "featureDescription": "강가에서 한 페이지 더.",
+    "description": [
+      "미술관을 나와,",
+      "센강 곁에서 쉬다."
+    ],
+    "image": "/travel/cities/paris.jpg",
+    "imageAlt": "파리의 풍경",
+    "featureImage": "/travel/cities/paris.jpg",
+    "featureImageAlt": "파리의 풍경"
+  },
+  "london": {
+    "featureTitle": "런던의 여백",
+    "featureDescription": "공원과 책방을 번갈아 걷기.",
+    "description": [
+      "템스강을 따라 걷고,",
+      "공원에서 쉬다."
+    ],
+    "image": "/travel/cities/london.jpg",
+    "imageAlt": "런던의 풍경",
+    "featureImage": "/travel/cities/london.jpg",
+    "featureImageAlt": "런던의 풍경"
+  },
+  "new-york": {
+    "featureTitle": "도시의 리듬",
+    "featureDescription": "바쁜 거리에서 느리게 걷기.",
+    "description": [
+      "미술관에 들르고,",
+      "공원의 여백을 걷다."
+    ],
+    "image": "/travel/cities/new-york.jpg",
+    "imageAlt": "뉴욕의 풍경",
+    "featureImage": "/travel/cities/new-york.jpg",
+    "featureImageAlt": "뉴욕의 풍경"
+  },
+  "sydney": {
+    "featureTitle": "항구의 햇살",
+    "featureDescription": "바닷바람을 따라 오래 걷기.",
+    "description": [
+      "항구의 곡선을 따라,",
+      "해변에서 쉬다."
+    ],
+    "image": "/travel/cities/sydney.jpg",
+    "imageAlt": "시드니의 풍경",
+    "featureImage": "/travel/cities/sydney.jpg",
+    "featureImageAlt": "시드니의 풍경"
+  },
+  "hong-kong": {
+    "featureTitle": "빛나는 항구",
+    "featureDescription": "골목을 지나, 바다 건너로.",
+    "description": [
+      "골목의 맛을 만나고,",
+      "항구의 불빛을 보다."
+    ],
+    "image": "/travel/cities/hong-kong.jpg",
+    "imageAlt": "홍콩의 풍경",
+    "featureImage": "/travel/cities/hong-kong.jpg",
+    "featureImageAlt": "홍콩의 풍경"
+  },
+  "beijing": {
+    "featureTitle": "성문 너머",
+    "featureDescription": "후통에서 천천히 쉬어가기.",
+    "description": [
+      "성벽의 시간을 걷고,",
+      "후통에서 쉬다."
+    ],
+    "image": "/travel/cities/beijing.jpg",
+    "imageAlt": "베이징의 풍경",
+    "featureImage": "/travel/cities/beijing.jpg",
+    "featureImageAlt": "베이징의 풍경"
+  },
+  "shanghai": {
+    "featureTitle": "강변의 저녁",
+    "featureDescription": "오래된 정원에서 강변으로.",
+    "description": [
+      "정원의 고요를 지나,",
+      "강변의 빛을 만나다."
+    ],
+    "image": "/travel/cities/shanghai.jpg",
+    "imageAlt": "상하이의 풍경",
+    "featureImage": "/travel/cities/shanghai.jpg",
+    "featureImageAlt": "상하이의 풍경"
+  },
+  "hanoi": {
+    "featureTitle": "호숫가 아침",
+    "featureDescription": "커피 한 잔으로 하루 열기.",
+    "description": [
+      "호숫가를 거닐고,",
+      "오래된 골목에 들다."
+    ],
+    "image": "/travel/cities/hanoi.jpg",
+    "imageAlt": "하노이의 풍경",
+    "featureImage": "/travel/cities/hanoi.jpg",
+    "featureImageAlt": "하노이의 풍경"
+  },
+  "ho-chi-minh": {
+    "featureTitle": "커피의 도시",
+    "featureDescription": "향을 따라 골목을 건너기.",
+    "description": [
+      "도시의 길을 걷고,",
+      "진한 커피에 쉬다."
+    ],
+    "image": "/travel/cities/ho-chi-minh.jpg",
+    "imageAlt": "호찌민의 풍경",
+    "featureImage": "/travel/cities/ho-chi-minh.jpg",
+    "featureImageAlt": "호찌민의 풍경"
+  },
+  "kuala-lumpur": {
+    "featureTitle": "초록의 쉼표",
+    "featureDescription": "도심의 숲에서 숨 고르기.",
+    "description": [
+      "다채로운 거리를 지나,",
+      "도시의 숲에서 쉬다."
+    ],
+    "image": "/travel/cities/kuala-lumpur.jpg",
+    "imageAlt": "쿠알라룸푸르의 풍경",
+    "featureImage": "/travel/cities/kuala-lumpur.jpg",
+    "featureImageAlt": "쿠알라룸푸르의 풍경"
+  },
+  "bali": {
+    "featureTitle": "우붓의 초록",
+    "featureDescription": "발걸음도 마음도 느리게.",
+    "description": [
+      "초록빛 길을 따라,",
+      "고요한 마당에 쉬다."
+    ],
+    "image": "/travel/cities/bali.jpg",
+    "imageAlt": "발리의 풍경",
+    "featureImage": "/travel/cities/bali.jpg",
+    "featureImageAlt": "발리의 풍경"
+  },
+  "delhi": {
+    "featureTitle": "정원과 성벽",
+    "featureDescription": "오래된 도시의 결을 따라.",
+    "description": [
+      "성문 안으로 들어,",
+      "정원의 그늘에 쉬다."
+    ],
+    "image": "/travel/cities/delhi.jpg",
+    "imageAlt": "델리의 풍경",
+    "featureImage": "/travel/cities/delhi.jpg",
+    "featureImageAlt": "델리의 풍경"
+  },
+  "dubai": {
+    "featureTitle": "물가의 시간",
+    "featureDescription": "높은 도시에서 옛 수로로.",
+    "description": [
+      "도시의 높이를 보고,",
+      "오래된 수로를 걷다."
+    ],
+    "image": "/travel/cities/dubai.jpg",
+    "imageAlt": "두바이의 풍경",
+    "featureImage": "/travel/cities/dubai.jpg",
+    "featureImageAlt": "두바이의 풍경"
+  },
+  "istanbul": {
+    "featureTitle": "두 대륙 사이",
+    "featureDescription": "물결을 따라 하루 건너기.",
+    "description": [
+      "오래된 시장을 지나,",
+      "해협의 바람을 만나다."
+    ],
+    "image": "/travel/cities/istanbul.jpg",
+    "imageAlt": "이스탄불의 풍경",
+    "featureImage": "/travel/cities/istanbul.jpg",
+    "featureImageAlt": "이스탄불의 풍경"
+  },
+  "rome": {
+    "featureTitle": "로마의 오후",
+    "featureDescription": "느리게 걷고, 오래 머물기.",
+    "description": [
+      "유적 사이를 걷고,",
+      "광장에서 쉬다."
+    ],
+    "image": "/travel/rome-skyline.jpg",
+    "imageAlt": "석양 아래 성 베드로 대성당과 로마 도시 전경",
+    "featureImage": "/travel/rome-alley.jpg",
+    "featureImageAlt": "따뜻한 빛이 드는 로마의 골목"
+  },
+  "barcelona": {
+    "featureTitle": "건축과 바다",
+    "featureDescription": "건물의 선을 따라 해변까지.",
+    "description": [
+      "건축의 색을 보고,",
+      "바닷바람에 쉬다."
+    ],
+    "image": "/travel/cities/barcelona.jpg",
+    "imageAlt": "바르셀로나의 풍경",
+    "featureImage": "/travel/cities/barcelona.jpg",
+    "featureImageAlt": "바르셀로나의 풍경"
+  },
+  "lisbon": {
+    "featureTitle": "언덕의 빛",
+    "featureDescription": "전차를 보내고 천천히 걷기.",
+    "description": [
+      "전차가 지나는 언덕,",
+      "햇살 든 광장에 쉬다."
+    ],
+    "image": "/travel/cities/lisbon.jpg",
+    "imageAlt": "리스본의 풍경",
+    "featureImage": "/travel/cities/lisbon.jpg",
+    "featureImageAlt": "리스본의 풍경"
+  },
+  "amsterdam": {
+    "featureTitle": "운하의 속도",
+    "featureDescription": "물길 곁에 한 박자 쉬기.",
+    "description": [
+      "작은 다리를 건너,",
+      "운하 곁에서 쉬다."
+    ],
+    "image": "/travel/cities/amsterdam.png",
+    "imageAlt": "암스테르담의 풍경",
+    "featureImage": "/travel/cities/amsterdam.png",
+    "featureImageAlt": "암스테르담의 풍경"
+  },
+  "berlin": {
+    "featureTitle": "도시의 흔적",
+    "featureDescription": "역사와 오늘을 나란히 걷기.",
+    "description": [
+      "역사의 흔적을 따라,",
+      "예술의 거리에 들다."
+    ],
+    "image": "/travel/cities/berlin.jpg",
+    "imageAlt": "베를린의 풍경",
+    "featureImage": "/travel/cities/berlin.jpg",
+    "featureImageAlt": "베를린의 풍경"
+  },
+  "prague": {
+    "featureTitle": "돌다리 너머",
+    "featureDescription": "붉은 지붕 아래 오래 걷기.",
+    "description": [
+      "돌다리 위를 걷고,",
+      "광장의 시간을 보다."
+    ],
+    "image": "/travel/cities/prague.jpg",
+    "imageAlt": "프라하의 풍경",
+    "featureImage": "/travel/cities/prague.jpg",
+    "featureImageAlt": "프라하의 풍경"
+  },
+  "vienna": {
+    "featureTitle": "빈의 선율",
+    "featureDescription": "정원을 걷다 커피 한 잔.",
+    "description": [
+      "음악의 여운을 따라,",
+      "정원에서 쉬다."
+    ],
+    "image": "/travel/cities/vienna.jpg",
+    "imageAlt": "빈의 풍경",
+    "featureImage": "/travel/cities/vienna.jpg",
+    "featureImageAlt": "빈의 풍경"
+  },
+  "budapest": {
+    "featureTitle": "다뉴브의 저녁",
+    "featureDescription": "다리 위에서 노을 기다리기.",
+    "description": [
+      "강 양쪽을 거닐고,",
+      "다리 위 노을을 보다."
+    ],
+    "image": "/travel/cities/budapest.jpg",
+    "imageAlt": "부다페스트의 풍경",
+    "featureImage": "/travel/cities/budapest.jpg",
+    "featureImageAlt": "부다페스트의 풍경"
+  },
+  "athens": {
+    "featureTitle": "신화의 골목",
+    "featureDescription": "오래된 돌길에서 오늘 찾기.",
+    "description": [
+      "유적의 시간을 지나,",
+      "동네의 일상을 만나다."
+    ],
+    "image": "/travel/cities/athens.jpg",
+    "imageAlt": "아테네의 풍경",
+    "featureImage": "/travel/cities/athens.jpg",
+    "featureImageAlt": "아테네의 풍경"
+  },
+  "reykjavik": {
+    "featureTitle": "북쪽의 색",
+    "featureDescription": "낮은 지붕과 먼 하늘 사이.",
+    "description": [
+      "북쪽의 빛을 따라,",
+      "항구의 색을 만나다."
+    ],
+    "image": "/travel/cities/reykjavik.jpg",
+    "imageAlt": "레이캬비크의 풍경",
+    "featureImage": "/travel/cities/reykjavik.jpg",
+    "featureImageAlt": "레이캬비크의 풍경"
+  },
+  "cairo": {
+    "featureTitle": "나일강의 오후",
+    "featureDescription": "강바람 곁에서 시간 보내기.",
+    "description": [
+      "도시의 시간을 걷고,",
+      "나일강 곁에서 쉬다."
+    ],
+    "image": "/travel/cities/cairo.jpg",
+    "imageAlt": "카이로의 풍경",
+    "featureImage": "/travel/cities/cairo.jpg",
+    "featureImageAlt": "카이로의 풍경"
+  },
+  "marrakesh": {
+    "featureTitle": "붉은 골목",
+    "featureDescription": "정원의 그늘로 한 걸음 더.",
+    "description": [
+      "붉은 골목을 지나,",
+      "정원의 그늘에 쉬다."
+    ],
+    "image": "/travel/cities/marrakesh.jpg",
+    "imageAlt": "마라케시의 풍경",
+    "featureImage": "/travel/cities/marrakesh.jpg",
+    "featureImageAlt": "마라케시의 풍경"
+  },
+  "cape-town": {
+    "featureTitle": "산과 바다",
+    "featureDescription": "산을 바라보다 바닷가로.",
+    "description": [
+      "산의 윤곽을 따라,",
+      "바다의 바람을 만나다."
+    ],
+    "image": "/travel/cities/cape-town.jpg",
+    "imageAlt": "케이프타운의 풍경",
+    "featureImage": "/travel/cities/cape-town.jpg",
+    "featureImageAlt": "케이프타운의 풍경"
+  },
+  "nairobi": {
+    "featureTitle": "초록빛 하루",
+    "featureDescription": "도심의 공원에서 숨 고르기.",
+    "description": [
+      "도시의 이야기를 듣고,",
+      "초록빛 길에서 쉬다."
+    ],
+    "image": "/travel/cities/nairobi.jpg",
+    "imageAlt": "나이로비의 풍경",
+    "featureImage": "/travel/cities/nairobi.jpg",
+    "featureImageAlt": "나이로비의 풍경"
+  },
+  "zanzibar": {
+    "featureTitle": "바닷바람의 결",
+    "featureDescription": "향신료 골목에서 물가까지.",
+    "description": [
+      "향신료 골목을 지나,",
+      "바닷바람에 머물다."
+    ],
+    "image": "/travel/cities/zanzibar.jpg",
+    "imageAlt": "잔지바르의 풍경",
+    "featureImage": "/travel/cities/zanzibar.jpg",
+    "featureImageAlt": "잔지바르의 풍경"
+  },
+  "dakar": {
+    "featureTitle": "대서양의 색",
+    "featureDescription": "예술과 바다를 번갈아 보기.",
+    "description": [
+      "도시의 예술을 보고,",
+      "대서양 곁에서 쉬다."
+    ],
+    "image": "/travel/cities/dakar.jpg",
+    "imageAlt": "다카르의 풍경",
+    "featureImage": "/travel/cities/dakar.jpg",
+    "featureImageAlt": "다카르의 풍경"
+  },
+  "los-angeles": {
+    "featureTitle": "영화 같은 날",
+    "featureDescription": "햇살 아래 장면을 모으기.",
+    "description": [
+      "예술의 거리를 걷고,",
+      "태평양 노을을 보다."
+    ],
+    "image": "/travel/cities/los-angeles.jpg",
+    "imageAlt": "로스앤젤레스의 풍경",
+    "featureImage": "/travel/cities/los-angeles.jpg",
+    "featureImageAlt": "로스앤젤레스의 풍경"
+  },
+  "san-francisco": {
+    "featureTitle": "언덕의 바람",
+    "featureDescription": "언덕을 넘어 다리를 향해.",
+    "description": [
+      "언덕의 집들을 지나,",
+      "바다 위 다리를 보다."
+    ],
+    "image": "/travel/cities/san-francisco.jpg",
+    "imageAlt": "샌프란시스코의 풍경",
+    "featureImage": "/travel/cities/san-francisco.jpg",
+    "featureImageAlt": "샌프란시스코의 풍경"
+  },
+  "vancouver": {
+    "featureTitle": "숲 곁의 바다",
+    "featureDescription": "공원에서 해변까지 천천히.",
+    "description": [
+      "숲길의 공기를 마시고,",
+      "바닷가에서 쉬다."
+    ],
+    "image": "/travel/cities/vancouver.jpg",
+    "imageAlt": "밴쿠버의 풍경",
+    "featureImage": "/travel/cities/vancouver.jpg",
+    "featureImageAlt": "밴쿠버의 풍경"
+  },
+  "toronto": {
+    "featureTitle": "호숫가 도시",
+    "featureDescription": "시장 구경 뒤 물가에 앉기.",
+    "description": [
+      "다채로운 거리를 걷고,",
+      "호숫가에 머물다."
+    ],
+    "image": "/travel/cities/toronto.jpg",
+    "imageAlt": "토론토의 풍경",
+    "featureImage": "/travel/cities/toronto.jpg",
+    "featureImageAlt": "토론토의 풍경"
+  },
+  "mexico-city": {
+    "featureTitle": "광장의 색",
+    "featureDescription": "예술과 맛을 한 걸음마다.",
+    "description": [
+      "광장의 역사를 보고,",
+      "예술의 골목을 걷다."
+    ],
+    "image": "/travel/cities/mexico-city.jpg",
+    "imageAlt": "멕시코시티의 풍경",
+    "featureImage": "/travel/cities/mexico-city.jpg",
+    "featureImageAlt": "멕시코시티의 풍경"
+  },
+  "havana": {
+    "featureTitle": "파스텔의 오후",
+    "featureDescription": "바랜 벽과 바닷바람 사이.",
+    "description": [
+      "파스텔 골목을 걷고,",
+      "말레콘에서 쉬다."
+    ],
+    "image": "/travel/cities/havana.jpg",
+    "imageAlt": "아바나의 풍경",
+    "featureImage": "/travel/cities/havana.jpg",
+    "featureImageAlt": "아바나의 풍경"
+  },
+  "rio-de-janeiro": {
+    "featureTitle": "바다의 리듬",
+    "featureDescription": "산과 해변 사이에 머물기.",
+    "description": [
+      "언덕의 색을 만나고,",
+      "해변의 리듬을 걷다."
+    ],
+    "image": "/travel/cities/rio-de-janeiro.jpg",
+    "imageAlt": "리우데자네이루의 풍경",
+    "featureImage": "/travel/cities/rio-de-janeiro.jpg",
+    "featureImageAlt": "리우데자네이루의 풍경"
+  },
+  "buenos-aires": {
+    "featureTitle": "탱고의 저녁",
+    "featureDescription": "광장에서 골목으로 느리게.",
+    "description": [
+      "오래된 광장을 지나,",
+      "탱고의 골목을 걷다."
+    ],
+    "image": "/travel/cities/buenos-aires.jpg",
+    "imageAlt": "부에노스아이레스의 풍경",
+    "featureImage": "/travel/cities/buenos-aires.jpg",
+    "featureImageAlt": "부에노스아이레스의 풍경"
+  },
+  "lima": {
+    "featureTitle": "태평양의 산책",
+    "featureDescription": "광장을 지나 바닷가까지.",
+    "description": [
+      "광장의 시간을 보고,",
+      "태평양 곁에서 쉬다."
+    ],
+    "image": "/travel/cities/lima.jpg",
+    "imageAlt": "리마의 풍경",
+    "featureImage": "/travel/cities/lima.jpg",
+    "featureImageAlt": "리마의 풍경"
+  },
+  "bogota": {
+    "featureTitle": "고원의 색",
+    "featureDescription": "벽화 골목에서 그림 한 장.",
+    "description": [
+      "색을 품은 골목에서,",
+      "고원의 하루를 걷다."
+    ],
+    "image": "/travel/cities/bogota.jpg",
+    "imageAlt": "보고타의 풍경",
+    "featureImage": "/travel/cities/bogota.jpg",
+    "featureImageAlt": "보고타의 풍경"
+  },
+  "santiago": {
+    "featureTitle": "산 아래의 하루",
+    "featureDescription": "도시 너머 산을 바라보기.",
+    "description": [
+      "광장의 길을 따라,",
+      "안데스산맥을 바라보다."
+    ],
+    "image": "/travel/cities/santiago.jpg",
+    "imageAlt": "산티아고의 풍경",
+    "featureImage": "/travel/cities/santiago.jpg",
+    "featureImageAlt": "산티아고의 풍경"
+  },
+  "melbourne": {
+    "featureTitle": "골목의 취향",
+    "featureDescription": "커피 한 잔, 골목 한 바퀴.",
+    "description": [
+      "벽화 골목을 거닐고,",
+      "커피 한 잔에 쉬다."
+    ],
+    "image": "/travel/cities/melbourne.jpg",
+    "imageAlt": "멜버른의 풍경",
+    "featureImage": "/travel/cities/melbourne.jpg",
+    "featureImageAlt": "멜버른의 풍경"
+  },
+  "auckland": {
+    "featureTitle": "두 항구 사이",
+    "featureDescription": "초록빛 언덕에서 바다 보기.",
+    "description": [
+      "언덕의 초록을 지나,",
+      "두 항구를 거닐다."
+    ],
+    "image": "/travel/cities/auckland.jpg",
+    "imageAlt": "오클랜드의 풍경",
+    "featureImage": "/travel/cities/auckland.jpg",
+    "featureImageAlt": "오클랜드의 풍경"
+  },
+  "honolulu": {
+    "featureTitle": "태평양의 휴식",
+    "featureDescription": "파도 곁에서 하루 늦추기.",
+    "description": [
+      "해변의 햇살을 따라,",
+      "파도 곁에서 쉬다."
+    ],
+    "image": "/travel/cities/honolulu.jpg",
+    "imageAlt": "호놀룰루의 풍경",
+    "featureImage": "/travel/cities/honolulu.jpg",
+    "featureImageAlt": "호놀룰루의 풍경"
+  }
+}

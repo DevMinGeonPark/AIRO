@@ -1,0 +1,199 @@
+/* The zoomed-in demo is a conversation with an editable road itinerary. */
+.landing {
+  --conversation-width: 380px;
+  & .conversation-demo { position: absolute; inset: 0; background: var(--map-paper); }
+  & .conversation-toolbar { position: absolute; z-index: 6; top: calc(var(--landing-nav-height) + 14px); left: var(--landing-inset-left); right: var(--landing-inset-right); display: flex; align-items: center; gap: 24px; min-height: 44px; }
+  & .conversation-toolbar > button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--muted-foreground); font-size: 12px; }
+  & .conversation-toolbar > button:hover { color: var(--foreground); }
+  & .conversation-toolbar ol { margin: 0 auto; padding: 0; display: flex; gap: 18px; list-style: none; }
+  & .conversation-toolbar li { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted-foreground); white-space: nowrap; }
+  & .conversation-toolbar li > span { display: grid; place-items: center; width: 22px; height: 22px; border: 1px solid var(--border); border-radius: 50%; font-size: 10px; }
+  & .conversation-toolbar li > svg { margin-left: 6px; opacity: .5; }
+  & .conversation-toolbar li[data-active='true'] { color: var(--primary); }
+  & .conversation-toolbar li[data-active='true'] > span { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+  & .conversation-panel { position: absolute; z-index: 5; left: var(--landing-inset-left); top: calc(var(--landing-nav-height) + 82px); bottom: 44px; width: var(--conversation-width); max-height: 720px; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 20px; background: color-mix(in srgb, var(--card) 97%, transparent); box-shadow: 0 20px 64px #00000018; overflow: hidden; }
+  & .conversation-panel > header { display: flex; align-items: center; gap: 10px; padding: 18px 20px; flex-shrink: 0; border-bottom: 1px solid var(--border); }
+  & .conversation-panel h2 { font-size: 14px; font-weight: 600; line-height: 1.5; letter-spacing: -.025em; outline: none; }
+  & .conversation-panel header p { margin-top: 2px; font-size: 10px; color: var(--muted-foreground); }
+  & .conversation-panel header > .motion-toggle { margin-left: auto; width: 36px; height: 36px; flex-shrink: 0; }
+  & .conversation-categories { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 7px 12px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  & .conversation-categories button { display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 40px; padding: 0 3px; border: 1px solid transparent; border-radius: 9px; color: var(--muted-foreground); font-size: 11px; white-space: nowrap; transition: color .2s, background .2s; }
+  & .conversation-categories button:hover { color: var(--foreground); background: var(--secondary); }
+  & .conversation-categories button[aria-pressed='true'] { color: var(--primary); border-color: color-mix(in srgb, var(--primary) 35%, transparent); background: color-mix(in srgb, var(--primary) 10%, var(--card)); }
+  & .conversation-categories button:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+  & .conversation-categories svg { flex-shrink: 0; }
+  & .conversation-messages { position: relative; min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--border) transparent; padding: 22px 20px; }
+  & .conversation-demo[data-manual='false'] .conversation-messages { overscroll-behavior: auto; }
+  & :is(.conversation-user, .conversation-ai) { margin-bottom: 22px; }
+  & :is(.conversation-user, .conversation-ai) > span { display: flex; align-items: center; gap: 5px; margin-bottom: 8px; font-size: 10px; font-weight: 600; color: var(--muted-foreground); }
+  & .conversation-user > span { justify-content: flex-end; }
+  & .conversation-user > p { margin-left: 22px; padding: 13px 15px; border-radius: 14px 14px 3px 14px; background: var(--secondary); color: var(--foreground); font-size: 13px; line-height: 1.75; word-break: keep-all; overflow-wrap: anywhere; }
+  & .conversation-ai > span { color: var(--primary); }
+  & .conversation-ai > p, & .conversation-choices > p { font-size: 13px; line-height: 1.75; letter-spacing: -.015em; word-break: keep-all; overflow-wrap: anywhere; }
+  & .conversation-ai strong { font-weight: 600; }
+  & .conversation-choices { margin-bottom: 22px; }
+  & .conversation-choices > p { margin-bottom: 12px; }
+  & .conversation-choices > div { display: grid; gap: 8px; }
+  & .dining-choice { display: flex; align-items: center; gap: 11px; width: 100%; min-height: 69px; padding: 11px 12px; text-align: left; border: 1px solid var(--border); border-radius: 12px; background: var(--card); transition: border-color .2s, background .2s; }
+  & .dining-choice:hover { border-color: var(--primary); }
+  & .dining-choice[data-selected='true'] { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 7%, var(--card)); }
+  & .dining-choice-number { width: 25px; height: 25px; border-radius: 50%; display: grid; place-items: center; color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, var(--card)); font-size: 11px; flex-shrink: 0; }
+  & .dining-choice-info { flex: 1; min-width: 0; }
+  & .dining-choice-info > strong { display: block; font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  & .dining-choice-info > small { display: flex; align-items: center; gap: 7px; margin-top: 5px; color: var(--muted-foreground); font-size: 10px; }
+  & .dining-choice-info small > i { width: 2px; height: 2px; border-radius: 50%; background: currentColor; }
+  & .dining-choice-check { width: 18px; height: 18px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 50%; color: var(--primary-foreground); flex-shrink: 0; }
+  & .dining-choice[data-selected='true'] .dining-choice-check { border-color: var(--primary); background: var(--primary); }
+  & .conversation-result > .conversation-ai { margin-bottom: 0; }
+  & .dining-saved-stops { margin-top: 16px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 12px; list-style: none; }
+  & .dining-saved-stops li { display: flex; align-items: center; gap: 9px; min-height: 35px; font-size: 11px; }
+  & .dining-saved-stops li > i { width: 6px; height: 6px; margin-inline: 3px; border-radius: 50%; background: var(--muted-foreground); }
+  & .dining-saved-stops li > svg { flex-shrink: 0; }
+  & .dining-saved-stops li[data-added='true'] { color: var(--primary); font-weight: 600; }
+  & .dining-saved-stops li > span { margin-left: auto; font-size: 9px; font-weight: 400; white-space: nowrap; }
+  & .conversation-compose { padding: 14px; border-top: 1px solid var(--border); flex-shrink: 0; }
+  & .conversation-compose form { display: flex; align-items: center; gap: 8px; padding: 5px 5px 5px 12px; border: 1px solid var(--border); background: var(--background); border-radius: 12px; }
+  & .conversation-compose form:focus-within { border-color: var(--primary); }
+  & .conversation-compose input { width: 100%; min-width: 0; outline: none; background: transparent; font-size: 12px; line-height: 1.5; }
+  & .conversation-compose form button { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; background: var(--primary); color: var(--primary-foreground); border-radius: 9px; }
+  & .conversation-compose form button:disabled { opacity: .4; cursor: default; }
+  & .dining-next { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 44px; padding: 0 14px; border-radius: 11px; background: var(--primary); color: var(--primary-foreground); font-size: 12px; font-weight: 600; }
+  & .dining-finish { margin-bottom: 7px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  & .dining-finish > button { min-height: 44px; font-size: 11px; color: var(--muted-foreground); }
+  & .dining-finish > a { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 13px; background: var(--primary); color: var(--primary-foreground); border-radius: 10px; font-size: 11px; font-weight: 600; }
+  & .dining-input-error { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; font-size: 11px; color: var(--foreground); }
+  & .dining-input-error button { margin-left: auto; }
+  & .dining-map { position: absolute; inset: 0; overflow: hidden; }
+  & .dining-map::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--map-paper), transparent 60%), linear-gradient(var(--map-paper), transparent 23%, transparent 85%, var(--map-paper)); }
+  & .dining-map-window { position: absolute; top: calc(var(--landing-nav-height) + 110px); left: calc(var(--landing-inset-left) + var(--conversation-width) + 45px); right: var(--landing-inset-right); bottom: 160px; pointer-events: none; }
+  & .dining-map-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  & .dining-street { stroke: #FFFFFF; }
+  & .dining-landmark { position: absolute; z-index: 2; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none; color: var(--primary); }
+  & .dining-landmark > span { position: absolute; top: calc(100% + 7px); width: max-content; max-width: 180px; padding: 4px 8px; border-radius: 6px; background: var(--card); color: var(--foreground); border: 1px solid var(--border); text-align: center; font-size: 12px; font-weight: 500; }
+  & .dining-origin > i { display: block; width: 12px; height: 12px; border-radius: 50%; background: var(--foreground); border: 3px solid var(--card); box-shadow: 0 0 0 1px var(--border); }
+  & .dining-target > svg { width: 32px; height: 32px; stroke: var(--primary-foreground); stroke-width: 1.3px; }
+  & .dining-food-pin { position: absolute; z-index: 3; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; gap: 3px; width: 44px; height: 44px; border: 1px solid var(--primary); border-radius: 50%; background: var(--card); color: var(--primary); box-shadow: 0 2px 12px #00000020; font-size: 10px; }
+  & .dining-food-pin[data-selected='true'] { background: var(--primary); color: var(--primary-foreground); box-shadow: 0 0 0 5px color-mix(in srgb, var(--primary) 12%, transparent); }
+  & .dining-confirmed-pin { position: absolute; z-index: 4; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; gap: 3px; width: 42px; height: 32px; border: 2px solid var(--card); border-radius: 10px; background: var(--primary); color: var(--primary-foreground); box-shadow: 0 2px 12px #00000030; pointer-events: none; }
+  & .dining-food-pin > i { display: grid; place-items: center; position: absolute; right: -2px; top: -2px; width: 15px; height: 15px; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); border: 2px solid var(--card); }
+  & .dining-map-summary { position: absolute; z-index: 3; bottom: 51px; left: calc(var(--landing-inset-left) + var(--conversation-width) + 54px); padding: 14px 18px; border: 1px solid var(--border); border-radius: 14px; background: color-mix(in srgb, var(--card) 94%, transparent); min-width: 185px; }
+  & .dining-map-summary > span { display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--muted-foreground); }
+  & .dining-map-summary > span > i { width: 5px; height: 5px; border-radius: 50%; background: var(--primary); }
+  & .dining-map-summary > strong { display: flex; align-items: center; gap: 14px; font-size: 19px; font-weight: 600; margin-top: 7px; }
+  & .dining-map-summary small { color: var(--muted-foreground); font-size: 11px; font-weight: 400; }
+  & .dining-map-summary p { display: flex; align-items: center; gap: 5px; margin-top: 7px; color: var(--primary); font-size: 10px; }
+  & .dining-attribution { position: absolute; z-index: 3; right: var(--landing-inset-right); bottom: 12px; font-size: 9px; color: var(--muted-foreground); }
+  & .dining-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: var(--map-paper); font-size: 14px; }
+  & .dining-loading button { min-height: 44px; color: var(--primary); }
+  & .dining-typing > span { margin-left: 4px; letter-spacing: 3px; }
+}
+.dark .landing .dining-street { stroke: #343434; }
+
+@media (max-width: 1200px) {
+  .landing { --conversation-width: 340px; }
+  .landing .conversation-toolbar ol { gap: 12px; }
+}
+@media (max-width: 900px) and (min-height: 501px) {
+  .landing {
+    --conversation-height: clamp(260px, 46svh, 430px);
+    --conversation-bottom: max(18px, env(safe-area-inset-bottom));
+    & .conversation-toolbar { top: calc(var(--landing-nav-height) + 6px + env(safe-area-inset-top)); gap: 10px; }
+    & .conversation-toolbar ol { gap: 8px; margin: 0 0 0 auto; }
+    & .conversation-toolbar li { gap: 5px; font-size: 10px; }
+    & .conversation-toolbar li > span { width: 18px; height: 18px; font-size: 9px; }
+    & .conversation-toolbar li > svg { display: none; }
+    & .conversation-toolbar .conversation-replay { margin-left: 2px; }
+    & .conversation-replay > span { display: none; }
+    & .conversation-panel { top: auto; bottom: var(--conversation-bottom); left: var(--landing-inset-left); right: var(--landing-inset-right); height: var(--conversation-height); width: auto; border-radius: 16px; }
+    & .conversation-panel > header { padding: 9px 13px; gap: 8px; }
+    & .conversation-panel h2 { font-size: 12px; }
+    & .conversation-panel header p { font-size: 9px; }
+    & .conversation-panel header > .motion-toggle { width: 44px; height: 36px; }
+    & .conversation-categories { padding: 4px 8px; gap: 3px; }
+    & .conversation-categories button { min-height: 40px; font-size: 10px; gap: 4px; }
+    & .conversation-messages { padding: 13px; }
+    & :is(.conversation-user, .conversation-ai, .conversation-choices) { margin-bottom: 13px; }
+    & :is(.conversation-user, .conversation-ai) > span { font-size: 9px; margin-bottom: 5px; }
+    & .conversation-user > p { padding: 9px 12px; font-size: 12px; line-height: 1.6; }
+    & .conversation-ai > p, & .conversation-choices > p { font-size: 12px; line-height: 1.6; }
+    & .conversation-choices > p { margin-bottom: 7px; }
+    & .dining-desktop-break { display: none; }
+    & .conversation-choices > div { gap: 5px; }
+    & .dining-choice { min-height: 48px; padding: 7px 9px; gap: 8px; border-radius: 9px; }
+    & .dining-choice-info > strong { font-size: 12px; }
+    & .dining-choice-info > small { font-size: 9px; margin-top: 3px; }
+    & .conversation-compose { padding: 8px; }
+    & .conversation-compose form { padding: 3px 3px 3px 9px; }
+    & .conversation-compose input { font-size: 16px; }
+    & .conversation-compose form button { width: 40px; height: 40px; }
+    & .dining-map-window { left: var(--landing-inset-left); right: var(--landing-inset-right); top: calc(var(--landing-nav-height) + 57px + env(safe-area-inset-top)); bottom: calc(var(--conversation-height) + var(--conversation-bottom) + 50px); }
+    & .dining-landmark > span { font-size: 10px; max-width: 130px; }
+    & .dining-map-summary { left: auto; right: var(--landing-inset-right); bottom: calc(var(--conversation-height) + var(--conversation-bottom) + 10px); display: flex; align-items: center; gap: 12px; min-width: 0; padding: 6px 9px; border-radius: 8px; }
+    & .dining-map-summary > span { font-size: 9px; }
+    & .dining-map-summary > strong { font-size: 12px; margin: 0; gap: 7px; }
+    & .dining-map-summary small { font-size: 9px; }
+    & .dining-map-summary p { display: none; }
+    & .dining-attribution { bottom: 3px; font-size: 8px; }
+    & .dining-map::after { background: linear-gradient(var(--map-paper), transparent 24%, transparent 45%, var(--map-paper) 70%); }
+    & .dining-saved-stops { margin-top: 10px; }
+    & .dining-saved-stops li { min-height: 27px; font-size: 10px; }
+  }
+}
+@media (max-width: 380px) and (min-height: 501px) {
+  .landing .conversation-toolbar { gap: 6px; }
+  .landing .conversation-toolbar > button { gap: 5px; font-size: 10px; }
+  .landing .conversation-toolbar ol { gap: 5px; }
+  .landing .conversation-toolbar li { gap: 3px; font-size: 9px; }
+}
+@media (max-width: 380px) and (min-height: 501px) and (max-height: 700px) {
+  .landing {
+    --conversation-height: 304px;
+    & .conversation-panel > header { padding: 6px 10px; }
+    & .conversation-panel header > .airo-mark { width: 24px; height: 24px; }
+    & .conversation-panel header p { display: none; }
+    & .conversation-messages { padding: 6px 9px; }
+    & .conversation-choices > p { display: none; }
+    & .conversation-choices > div { gap: 4px; }
+    & .dining-choice { min-height: 44px; padding-block: 5px; }
+    & .conversation-compose { padding: 6px; }
+    & .dining-map-summary { display: none; }
+    & .dining-map-window { bottom: calc(var(--conversation-height) + var(--conversation-bottom) + 12px); }
+  }
+}
+@media (max-width: 900px) {
+  .landing .conversation-demo:has(.conversation-compose input:focus) { position: fixed; top: var(--visible-top, 0px); bottom: auto; height: var(--visible-height, 100dvh); }
+  .landing .conversation-demo:has(.conversation-compose input:focus) .conversation-panel { top: calc(var(--landing-nav-height) + 8px); bottom: 8px; height: auto; max-height: none; }
+  .landing .conversation-demo:has(.conversation-compose input:focus) :is(.conversation-toolbar, .dining-map-summary) { visibility: hidden; }
+}
+@media (max-width: 1023px) and (max-height: 500px) {
+  .landing {
+    --conversation-width: 35%;
+    & .conversation-toolbar { top: calc(var(--landing-nav-height) + 4px); }
+    & .conversation-toolbar ol { gap: 12px; }
+    & .conversation-panel { top: calc(var(--landing-nav-height) + 57px); bottom: 18px; }
+    & .conversation-panel > header { padding: 8px 10px; }
+    & .conversation-panel h2 { font-size: 11px; }
+    & .conversation-panel header p { display: none; }
+    & .conversation-categories { padding: 3px 6px; gap: 2px; }
+    & .conversation-categories button { min-height: 36px; font-size: 10px; gap: 3px; }
+    & .conversation-categories svg { width: 12px; }
+    & .conversation-messages { padding: 10px; }
+    & :is(.conversation-user, .conversation-ai, .conversation-choices) { margin-bottom: 12px; }
+    & :is(.conversation-user, .conversation-ai) > span { margin-bottom: 4px; font-size: 9px; }
+    & .conversation-user > p, & .conversation-ai > p, & .conversation-choices > p { font-size: 11px; line-height: 1.5; }
+    & .conversation-user > p { margin-left: 12px; padding: 9px; }
+    & .dining-desktop-break { display: none; }
+    & .conversation-compose { padding: 6px; }
+    & .conversation-compose input { font-size: 16px; }
+    & .conversation-compose form button { width: 40px; height: 40px; }
+    & .dining-choice { min-height: 44px; padding: 6px 8px; gap: 6px; }
+    & .dining-choice-info > strong { font-size: 11px; }
+    & .dining-choice-info > small { font-size: 9px; }
+    & .dining-map-window { top: calc(var(--landing-nav-height) + 73px); bottom: 85px; left: calc(var(--landing-inset-left) + var(--conversation-width) + 25px); }
+    & .dining-map-summary { bottom: 24px; left: calc(var(--landing-inset-left) + var(--conversation-width) + 30px); padding: 8px 12px; }
+    & .dining-map-summary > strong { font-size: 13px; margin-top: 4px; }
+    & .dining-map-summary p { display: none; }
+    & .dining-attribution { bottom: 5px; }
+    & .dining-landmark > span { font-size: 10px; }
+  }
+}

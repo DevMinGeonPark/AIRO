@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Hanoi",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Hanoi</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1858",
+  "titles": {
+    "canonical": "Hanoi",
+    "normalized": "Hanoi",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Hanoi</span></span>"
+  },
+  "pageid": 56667,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Hanoi_skyline_with_Ba_Vi_Mountain.jpg/330px-Hanoi_skyline_with_Ba_Vi_Mountain.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 176
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Hanoi_skyline_with_Ba_Vi_Mountain.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 2048,
+    "height": 1093
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373238015",
+  "tid": "63060fb0-a899-11f1-960f-b0c111d023f3",
+  "timestamp": "2026-09-04T19:46:57Z",
+  "description": "Capital and centrally-governed city of Vietnam",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 21,
+    "lon": 105.85
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Hanoi",
+      "revisions": "https://en.wikipedia.org/wiki/Hanoi?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Hanoi?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Hanoi"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Hanoi",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Hanoi",
+      "edit": "https://en.wikipedia.org/wiki/Hanoi?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Hanoi"
+    }
+  },
+  "extract": "Hanoi is the capital and second-most populous centrally-governed city of Vietnam. It covers an area of 3,358.6 km2 (1,296.8 mi2), and as of 2025 has a population of 8,807,523. Hanoi had the second-highest gross regional domestic product of all Vietnamese provinces and centrally-governed city at US$48 billion in 2023, behind Ho Chi Minh City. It hosts 78 foreign embassies, the headquarters of the Vietnam People's Army (VPA), its Vietnam National University system, and other governmental organizations. Hanoi had 18.7 million domestic and international visitors in 2022. It hosts the Imperial Citadel of Thăng Long, Ho Chi Minh Mausoleum, Hoàn Kiếm Lake, West Lake, and Ba Vì National Park near the outskirts of the municipality. Hanoi's urban area has architectural styles, including pre-colonial Vietnamese architecture, French colonial architecture, brutalist apartments and disorganized alleys and tube houses stemming from the city's growth in the 20th century.",
+  "extract_html": "<p><b>Hanoi</b> is the capital and second-most populous centrally-governed city of Vietnam. It covers an area of 3,358.6 km<sup>2</sup> (1,296.8 mi<sup>2</sup>), and as of 2025 has a population of 8,807,523. Hanoi had the second-highest gross regional domestic product of all Vietnamese provinces and centrally-governed city at US$48 billion in 2023, behind Ho Chi Minh City. It hosts 78 foreign embassies, the headquarters of the Vietnam People's Army (VPA), its Vietnam National University system, and other governmental organizations. Hanoi had 18.7 million domestic and international visitors in 2022. It hosts the Imperial Citadel of Thăng Long, Ho Chi Minh Mausoleum, Hoàn Kiếm Lake, West Lake, and Ba Vì National Park near the outskirts of the municipality. Hanoi's urban area has architectural styles, including pre-colonial Vietnamese architecture, French colonial architecture, brutalist apartments and disorganized alleys and tube houses stemming from the city's growth in the 20th century.</p>"
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "file": "hero-bg",
+    "prompt": "Use case: illustration-story. Asset type: AIRO travel landing page hero background, landscape 16:9. Primary request: abstract stylized map of Kyoto seen from above, thin winding river lines and soft green temple grounds, faint dotted walking route, a few tiny orange pin markers. An extremely delicate, understated editorial watercolor on warm #FAF7F2 paper, spacious and calm. No interface, no typography. soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+    "original": "/Users/mini-mingeon/.codex/generated_images/01a07edc-c6cb-7663-9b11-66583f551e35/exec-28586d98-b510-4319-b337-e44f2ff722bd.png",
+    "source": "assets/source/hero-bg.png",
+    "output": "public/gen/hero-bg.webp",
+    "provider": "built-in image_gen",
+    "model": "GPT Image 2",
+    "cost": "Not exposed by built-in tool; no Higgsfield credits used"
+  },
+  {
+    "file": "day1-philosophers-path",
+    "prompt": "Use case: illustration-story. Asset type: premium AIRO travel website illustration. Aspect ratio 4:3. Primary request: Philosopher's Path in Kyoto, stone canal walkway lined with trees, dappled afternoon light, a small wooden bench. Editorial watercolor painting with understated delicate brushwork, calm leisurely travel mood, absolutely no photographic or 3D rendering style. soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+    "original": "/Users/mini-mingeon/.codex/generated_images/01a07edc-c6cb-7663-9b11-66583f551e35/exec-418df1a9-77b9-4cb4-a656-0790a7eea9bf.png",
+    "source": "assets/source/day1-philosophers-path.png",
+    "output": "public/gen/day1-philosophers-path.webp",
+    "provider": "built-in image_gen",
+    "model": "GPT Image 2",
+    "cost": "Not exposed by built-in tool; no Higgsfield credits used"
+  },
+  {
+    "file": "day2-cafe",
+    "prompt": "Use case: illustration-story. Asset type: premium AIRO travel website illustration. Aspect ratio 4:3. Primary request: cozy Kyoto machiya cafe interior seen from the street, warm lantern glow, a cup of coffee on a wooden counter by the window. Editorial watercolor painting with understated delicate brushwork, calm leisurely travel mood, absolutely no photographic or 3D rendering style. soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+    "original": "/Users/mini-mingeon/.codex/generated_images/01a07edc-c6cb-7663-9b11-66583f551e35/exec-fbec9978-3ade-47d3-b558-fbb80fee937f.png",
+    "source": "assets/source/day2-cafe.png",
+    "output": "public/gen/day2-cafe.webp",
+    "provider": "built-in image_gen",
+    "model": "GPT Image 2",
+    "cost": "Not exposed by built-in tool; no Higgsfield credits used"
+  },
+  {
+    "file": "day3-arashiyama",
+    "prompt": "Use case: illustration-story. Asset type: premium AIRO travel website illustration. Aspect ratio 4:3. Primary request: Arashiyama bamboo grove path in Kyoto, tall bamboo, soft light filtering through, a quiet empty path. Editorial watercolor painting with understated delicate brushwork, calm leisurely travel mood, absolutely no photographic or 3D rendering style. soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+    "original": "/Users/mini-mingeon/.codex/generated_images/01a07edc-c6cb-7663-9b11-66583f551e35/exec-f8aeec13-c330-4f1c-a7eb-791ccf49a1df.png",
+    "source": "assets/source/day3-arashiyama.png",
+    "output": "public/gen/day3-arashiyama.webp",
+    "provider": "built-in image_gen",
+    "model": "GPT Image 2",
+    "cost": "Not exposed by built-in tool; no Higgsfield credits used"
+  },
+  {
+    "file": "feature-prep",
+    "prompt": "Use case: illustration-story. Asset type: premium AIRO travel website illustration. Aspect ratio 1:1. Primary request: flat lay of travel keepsakes on cream paper: a folded map, train ticket stub, small notebook, a coin, a matcha sweet wrapper, arranged loosely. Editorial watercolor painting with understated delicate brushwork, calm leisurely travel mood, absolutely no photographic or 3D rendering style. soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+    "original": "/Users/mini-mingeon/.codex/generated_images/01a07edc-c6cb-7663-9b11-66583f551e35/exec-e5fad8b0-1e88-4d9b-923f-d1ab8a19817e.png",
+    "source": "assets/source/feature-prep.png",
+    "output": "public/gen/feature-prep.webp",
+    "provider": "built-in image_gen",
+    "model": "GPT Image 2",
+    "cost": "Not exposed by built-in tool; no Higgsfield credits used"
+  },
+  {
+    "file": "cta-journey",
+    "prompt": "Use case: illustration-story. Asset type: premium AIRO travel website illustration. Aspect ratio 21:9. Primary request: a long gentle road curving toward distant soft hills at golden hour, a single tiny orange location pin at the horizon, wide open sky. Editorial watercolor painting with understated delicate brushwork, calm leisurely travel mood, absolutely no photographic or 3D rendering style. soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+    "original": "/Users/mini-mingeon/.codex/generated_images/01a07edc-c6cb-7663-9b11-66583f551e35/exec-0aed471c-e420-49a0-ad50-11d3e06118d0.png",
+    "source": "assets/source/cta-journey.png",
+    "output": "public/gen/cta-journey.webp",
+    "provider": "built-in image_gen",
+    "model": "GPT Image 2",
+    "cost": "Not exposed by built-in tool; no Higgsfield credits used"
+  },
+  {
+    "file": "og-image",
+    "prompt": "Use case: illustration-story. Asset type: premium AIRO travel website illustration. Aspect ratio 16:9. Primary request: wide illustration of a traveler's desk by a window overlooking Kyoto rooftops at dawn, an open notebook with a hand-drawn route, a phone showing a simple map. Editorial watercolor painting with understated delicate brushwork, calm leisurely travel mood, absolutely no photographic or 3D rendering style. soft gouache and watercolor illustration, warm off-white paper texture, muted terracotta orange accents, cream and sand palette, gentle morning light, minimal, airy, generous negative space, no text, no letters, no logos, no watermark, no people faces",
+    "original": "/Users/mini-mingeon/.codex/generated_images/01a07edc-c6cb-7663-9b11-66583f551e35/exec-2523cdad-a09a-4733-b3c1-534206a673e8.png",
+    "source": "assets/source/og-image.png",
+    "output": "public/gen/og-image.webp",
+    "provider": "built-in image_gen",
+    "model": "GPT Image 2",
+    "cost": "Not exposed by built-in tool; no Higgsfield credits used"
+  }
+]

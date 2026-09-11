@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Seoul",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Seoul</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q8684",
+  "titles": {
+    "canonical": "Seoul",
+    "normalized": "Seoul",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Seoul</span></span>"
+  },
+  "pageid": 19159283,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg/330px-%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 249
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg/3840px-%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 4434,
+    "height": 3341
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373872845",
+  "tid": "23cf0dfb-ab84-11f1-9073-27fffa151a69",
+  "timestamp": "2026-09-08T12:52:25Z",
+  "description": "Capital and largest city of South Korea",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 37.56,
+    "lon": 126.99
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Seoul",
+      "revisions": "https://en.wikipedia.org/wiki/Seoul?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Seoul?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Seoul"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Seoul",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Seoul",
+      "edit": "https://en.wikipedia.org/wiki/Seoul?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Seoul"
+    }
+  },
+  "extract": "Seoul, officially Seoul Special Metropolitan City, is the capital and largest city of South Korea, and the largest city in the whole of Korea. The broader Seoul Metropolitan Area, encompassing Seoul, Gyeonggi Province and Incheon, emerged as the world's sixth largest metropolitan economy in 2022, behind New York, Tokyo, Los Angeles, Paris, and London, and hosts more than half of South Korea's population. Although Seoul's population peaked at over 10 million, it has gradually decreased since 2014, standing at about 9.6 million residents as of 2024.",
+  "extract_html": "<p><b>Seoul</b>, officially <b>Seoul Special Metropolitan City</b>, is the capital and largest city of South Korea, and the largest city in the whole of Korea. The broader Seoul Metropolitan Area, encompassing Seoul, Gyeonggi Province and Incheon, emerged as the world's sixth largest metropolitan economy in 2022, behind New York, Tokyo, Los Angeles, Paris, and London, and hosts more than half of South Korea's population. Although Seoul's population peaked at over 10 million, it has gradually decreased since 2014, standing at about 9.6 million residents as of 2024.</p>"
+}

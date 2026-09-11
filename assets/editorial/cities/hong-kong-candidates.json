@@ -1,0 +1,563 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "gsroffset": 5,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": {
+      "73646437": {
+        "pageid": 73646437,
+        "ns": 6,
+        "title": "File:Hong Kong Skyline (157974881).jpeg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Hong_Kong_Skyline_%28157974881%29.jpeg/960px-Hong_Kong_Skyline_%28157974881%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 960,
+            "thumbheight": 600,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Hong_Kong_Skyline_%28157974881%29.jpeg/1920px-Hong_Kong_Skyline_%28157974881%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Hong_Kong_Skyline_%28157974881%29.jpeg/960px-Hong_Kong_Skyline_%28157974881%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 960,
+              "height": 600,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Hong_Kong_Skyline_%28157974881%29.jpeg/1920px-Hong_Kong_Skyline_%28157974881%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Hong_Kong_Skyline_%28157974881%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hong_Kong_Skyline_(157974881).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=73646437",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-10-16 07:21:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "<div class=\"fn\">\nHong Kong Skyline</div>",
+                "source": "commons-desc-page"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Files with coordinates missing SDC location of creation|Photos imported with import-500px|Skylines of Hong Kong",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "22.271005",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "114.150831",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a rel=\"nofollow\" class=\"external text\" href=\"https://500px.com/deensel\">Mike</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "<div class=\"description\">\n500px provided description: Hong Kong Skyline [#sky ,#sunset ,#island ,#harbour ,#cityscape ,#asia ,#skyline ,#skyscraper ,#hongkong ,#peak ,#china ,#dramatic ,#highrise ,#hong kong ,#skyscrapers ,#scenic ,#victoria ,#golden hour ,#megalopolis ,#victoria peak]</div>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "before 10 June 2016, 14:04:47 (UTC)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Imported from <a rel=\"nofollow\" class=\"external text\" href=\"https://500px.com/photo/157974881/hong-kong-skyline-by-mike\">500px</a> (<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/201807id_/https://drscdn.500px.org/photo/157974881/m%3D2048/v2?webp=true&amp;sig=77d89ac2bdeb1fa46450445155ef0e65df1bcb00f6d09b2e9cdf23331829d246\">archived version</a>) by <a rel=\"nofollow\" class=\"external text\" href=\"https://www.archiveteam.org/index.php?title=500px\">the Archive Team</a>. (<a href=\"https://iw.toolforge.org/import-500px/photo/157974881\" class=\"extiw\" title=\"toolforge:import-500px/photo/157974881\">detail page</a>)",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/3.0/deed.en\">Attribution 3.0 Unported</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/3.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 3.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 3.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "73621656": {
+        "pageid": 73621656,
+        "ns": 6,
+        "title": "File:Hong Kong Skyline (162584267).jpeg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Hong_Kong_Skyline_%28162584267%29.jpeg/960px-Hong_Kong_Skyline_%28162584267%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 960,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Hong_Kong_Skyline_%28162584267%29.jpeg/1920px-Hong_Kong_Skyline_%28162584267%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Hong_Kong_Skyline_%28162584267%29.jpeg/960px-Hong_Kong_Skyline_%28162584267%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 960,
+              "height": 640,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Hong_Kong_Skyline_%28162584267%29.jpeg/1920px-Hong_Kong_Skyline_%28162584267%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Hong_Kong_Skyline_%28162584267%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hong_Kong_Skyline_(162584267).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=73621656",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-10-15 05:52:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "<div class=\"fn\">\nHong Kong Skyline</div>",
+                "source": "commons-desc-page"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Files with coordinates missing SDC location of creation|Photos imported with import-500px|Skylines of Hong Kong",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "22.266359",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "114.198324",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a rel=\"nofollow\" class=\"external text\" href=\"https://500px.com/deensel\">Mike</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "<div class=\"description\">\n500px provided description: Hong Kong Skyline [#sunset ,#cityscape ,#skyline ,#harbor ,#skyscrapers ,#golden hour ,#victoria harbour ,#Hong Kong]</div>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "before 11 July 2016, 17:17:39 (UTC)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Imported from <a rel=\"nofollow\" class=\"external text\" href=\"https://500px.com/photo/162584267/hong-kong-skyline-by-mike\">500px</a> (<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/201807id_/https://drscdn.500px.org/photo/162584267/m%3D2048/v2?webp=true&amp;sig=73e467a7d3a717afc32f208e0391410a84a09d3cedd98bedc881d68cb7edca08\">archived version</a>) by <a rel=\"nofollow\" class=\"external text\" href=\"https://www.archiveteam.org/index.php?title=500px\">the Archive Team</a>. (<a href=\"https://iw.toolforge.org/import-500px/photo/162584267\" class=\"extiw\" title=\"toolforge:import-500px/photo/162584267\">detail page</a>)",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/3.0/deed.en\">Attribution 3.0 Unported</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/3.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 3.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 3.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "7546508": {
+        "pageid": 7546508,
+        "ns": 6,
+        "title": "File:Hong Kong Skyline Panorama - Dec 2008.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg/960px-Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 960,
+            "thumbheight": 159,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg/1920px-Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg/960px-Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 960,
+              "height": 159,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg/1920px-Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hong_Kong_Skyline_Panorama_-_Dec_2008.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7546508",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-08-12 19:51:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hong Kong Skyline Panorama - Dec 2008",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "GFDL|Taken with Canon EOS 5D|License migration redundant|Self-published work|Large images|Featured night photography|Featured pictures of Hong Kong|Featured pictures on Wikipedia, Turkish|Featured pictures of cityscapes|Photographs by User:Diliff|Photographs taken on 2007-12-10|Featured pictures by User:Diliff|Hong Kong skylines (Hong Kong Island) - Panoramics|Panoramic photographs of sunsets|Sunset skylines",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured|potd",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A 12 segment panoramic image of the Hong Kong skyline at dusk, with Christmas lighting in December 2008.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "December 2008 (10 December 2007, according to <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Exif\" class=\"extiw\" title=\"en:Exif\">Exif</a></span> data)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Diliff\" title=\"User:Diliff\">Diliff</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<div dir=\"ltr\"><b><span style=\"font-size:x-large;\">Summary:</span><div style=\"clear:both;\"></div><div style=\"clear:both;\"></div>In using this image or any subsequent derivatives of it, you are required to release the image under the same license. As such, any reproduction of this image, in any medium, must appear with a copy of, or full URL of the license.<div style=\"clear:both;\"></div>Attribution of this image to the author (DAVID ILIFF) is also required, preferably in a prominent location near the image.<div style=\"clear:both;\"></div>No other conditions may be added to, or removed from this license without the permission of the author and copyright holder.<div style=\"clear:both;\"></div><div style=\"clear:both;\"></div>Suggested attribution: \"Photo by DAVID ILIFF. License: <a rel=\"nofollow\" class=\"external free\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\">https://creativecommons.org/licenses/by-sa/3.0/</a>\"</b><div style=\"clear:both;\"></div><div style=\"clear:both;\"></div>Please review the full license requirements carefully before using this image. If you would like to clarify the terms of the license or negotiate less restrictive commercial licensing outside of the bounds of GFDL/CC-BY-SA, please <a href=\"//commons.wikimedia.org/wiki/Special:EmailUser/Diliff\" title=\"Special:EmailUser/Diliff\">contact me by email</a>, or if you don't have a Wikipedia account you can either <a class=\"external text\" data-mw-original-href=\"http://en.wikipedia.org/w/index.php?title=User_talk:Diliff&amp;action=edit&amp;section=new\" href=\"https://en.wikipedia.org/w/index.php?title=User_talk:Diliff&amp;action=edit&amp;section=new\">leave a message on my talk page</a> with your contact details and your request, or you can <a rel=\"nofollow\" class=\"external text\" href=\"https://www.facebook.com/diliff\">contact me on Facebook</a>. Please also send a 'friend request' to ensure that I am aware of your message.</div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "503141": {
+        "pageid": 503141,
+        "ns": 6,
+        "title": "File:Hong Kong Sunset.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Hong_Kong_Sunset.jpg/960px-Hong_Kong_Sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 960,
+            "thumbheight": 548,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/4/43/Hong_Kong_Sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Hong_Kong_Sunset.jpg/960px-Hong_Kong_Sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 960,
+              "height": 548,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/4/43/Hong_Kong_Sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Hong_Kong_Sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hong_Kong_Sunset.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=503141",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2006-01-08 17:10:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hong Kong Sunset",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Files with no machine-readable source|Self-published work|PD-self|Assumed own work|Yellow sunsets of Hong Kong|Hong Kong skylines (Central and Western District)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Photo by Paddy Briggs",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "8 January 2006 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "No machine-readable author provided. <a href=\"//commons.wikimedia.org/wiki/User:Itsmine\" title=\"User:Itsmine\">Itsmine</a> assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "33950724": {
+        "pageid": 33950724,
+        "ns": 6,
+        "title": "File:Hong Kong at Dusk (SKY-SUNSET) VI (6180539177).jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Hong_Kong_at_Dusk_%28SKY-SUNSET%29_VI_%286180539177%29.jpg/960px-Hong_Kong_at_Dusk_%28SKY-SUNSET%29_VI_%286180539177%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 960,
+            "thumbheight": 753,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/9/91/Hong_Kong_at_Dusk_%28SKY-SUNSET%29_VI_%286180539177%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Hong_Kong_at_Dusk_%28SKY-SUNSET%29_VI_%286180539177%29.jpg/960px-Hong_Kong_at_Dusk_%28SKY-SUNSET%29_VI_%286180539177%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 960,
+              "height": 753,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/9/91/Hong_Kong_at_Dusk_%28SKY-SUNSET%29_VI_%286180539177%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Hong_Kong_at_Dusk_%28SKY-SUNSET%29_VI_%286180539177%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hong_Kong_at_Dusk_(SKY-SUNSET)_VI_(6180539177).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=33950724",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-07-13 10:25:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hong Kong at Dusk (SKY-SUNSET) VI (6180539177)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Olympus E-300|Sunsets of Hong Kong|Flickr images reviewed by FlickreviewR|Hong Kong photographs taken on 2005-10-11|Hong Kong skylines (Central and Western District)|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Hong Kong at Dusk (SKY/SUNSET) VI<br>\n</p>\nNeeds additional description",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2005-10-11 09:33",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/davelau/6180539177/\">Hong Kong at Dusk (SKY/SUNSET) VI</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/8285539@N07\">Chi King</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

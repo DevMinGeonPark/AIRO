@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Seongsan Ilchulbong",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Seongsan Ilchulbong</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q122225",
+  "titles": {
+    "canonical": "Seongsan_Ilchulbong",
+    "normalized": "Seongsan Ilchulbong",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Seongsan Ilchulbong</span></span>"
+  },
+  "pageid": 33690776,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Seongsan_Ilchulbong_from_the_air.jpg/330px-Seongsan_Ilchulbong_from_the_air.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 215
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Seongsan_Ilchulbong_from_the_air.jpg/3840px-Seongsan_Ilchulbong_from_the_air.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 5641,
+    "height": 3675
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1355979541",
+  "tid": "b8cb1ac2-57da-11f1-809e-f56c8142c41b",
+  "timestamp": "2026-05-25T01:40:34Z",
+  "description": "Volcano in Jeju Province, South Korea",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 33.4585,
+    "lon": 126.942
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Seongsan_Ilchulbong",
+      "revisions": "https://en.wikipedia.org/wiki/Seongsan_Ilchulbong?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Seongsan_Ilchulbong?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Seongsan_Ilchulbong"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Seongsan_Ilchulbong",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Seongsan_Ilchulbong",
+      "edit": "https://en.wikipedia.org/wiki/Seongsan_Ilchulbong?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Seongsan_Ilchulbong"
+    }
+  },
+  "extract": "Seongsan Ilchulbong (Korean: 성산일출봉), also called Sunrise Peak, is a volcano on eastern Jeju Island, in Seongsan-ri, Seogwipo, Jeju Province, South Korea. It is 182 meters high and has a volcanic crater at the top.",
+  "extract_html": "<p><b>Seongsan Ilchulbong</b> (Korean: 성산일출봉), also called <b>Sunrise Peak</b>, is a volcano on eastern Jeju Island, in Seongsan-ri, Seogwipo, Jeju Province, South Korea. It is 182 meters high and has a volcanic crater at the top.</p>"
+}

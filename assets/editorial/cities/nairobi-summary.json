@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Nairobi",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Nairobi</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q3870",
+  "titles": {
+    "canonical": "Nairobi",
+    "normalized": "Nairobi",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Nairobi</span></span>"
+  },
+  "pageid": 21482,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Nairobi_skyline_from_Gem_Hotel.jpg/330px-Nairobi_skyline_from_Gem_Hotel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Nairobi_skyline_from_Gem_Hotel.jpg/3840px-Nairobi_skyline_from_Gem_Hotel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 7360,
+    "height": 4912
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373755654",
+  "tid": "7ad7d1e5-aaf1-11f1-92c9-632fcf4606fc",
+  "timestamp": "2026-09-07T19:22:35Z",
+  "description": "Capital and largest city of Kenya",
+  "description_source": "local",
+  "coordinates": {
+    "lat": -1.28638889,
+    "lon": 36.81722222
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Nairobi",
+      "revisions": "https://en.wikipedia.org/wiki/Nairobi?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Nairobi?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Nairobi"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Nairobi",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Nairobi",
+      "edit": "https://en.wikipedia.org/wiki/Nairobi?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Nairobi"
+    }
+  },
+  "extract": "Nairobi, is the capital and largest city of Kenya, located in the south-central part of the country. As of 2026, it has a population of 5.6 million and a metropolitan population of 15.95 million, making it the 8th most populous city in Africa and the 4th most populous metropolitan area. The city goes beyond its borders and has expanded into neighbouring counties, making it the 4th largest metropolitan area in Africa.",
+  "extract_html": "<p><b>Nairobi</b>, is the capital and largest city of Kenya, located in the south-central part of the country. As of 2026, it has a population of 5.6 million and a metropolitan population of 15.95 million, making it the 8th most populous city in Africa and the 4th most populous metropolitan area. The city goes beyond its borders and has expanded into neighbouring counties, making it the 4th largest metropolitan area in Africa.</p>"
+}

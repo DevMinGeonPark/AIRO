@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Budapest",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Budapest</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1781",
+  "titles": {
+    "canonical": "Budapest",
+    "normalized": "Budapest",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Budapest</span></span>"
+  },
+  "pageid": 36787,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg/330px-View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 171
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/53/View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 2500,
+    "height": 1293
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373853674",
+  "tid": "a1d0ebc5-ab67-11f1-8cb9-eade24796553",
+  "timestamp": "2026-09-08T09:28:21Z",
+  "description": "Capital and largest city of Hungary",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 47.4925,
+    "lon": 19.05138889
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Budapest",
+      "revisions": "https://en.wikipedia.org/wiki/Budapest?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Budapest?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Budapest"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Budapest",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Budapest",
+      "edit": "https://en.wikipedia.org/wiki/Budapest?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Budapest"
+    }
+  },
+  "extract": "Budapest is the capital and most populous city of Hungary. It is Hungary's primate city with 1.7 million inhabitants and its greater metro area has a population of about 3.3 million, representing one-third of the country's population and producing more than 40% of the country's economic output. Budapest is the political, economic, and cultural center of the country, among the ten largest cities in the European Union and the second largest urban area in Central and Eastern Europe. Budapest stands on the River Danube and is strategically located at the center of the Pannonian Basin, lying on ancient trade routes linking the hills of Transdanubia with the Great Plain.",
+  "extract_html": "<p><b>Budapest</b> is the capital and most populous city of Hungary. It is Hungary's primate city with 1.7 million inhabitants and its greater metro area has a population of about 3.3 million, representing one-third of the country's population and producing more than 40% of the country's economic output. Budapest is the political, economic, and cultural center of the country, among the ten largest cities in the European Union and the second largest urban area in Central and Eastern Europe. Budapest stands on the River Danube and is strategically located at the center of the Pannonian Basin, lying on ancient trade routes linking the hills of Transdanubia with the Great Plain.</p>"
+}

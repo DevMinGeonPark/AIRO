@@ -1,0 +1,37 @@
+/* The globe's own canvas remains in place after descent; only UI is revealed. */
+.landing .hero-section {
+  --background: #0A0A0A; --foreground: #F3F1EA; --card: #171717; --card-foreground: #F3F1EA;
+  --secondary: #262626; --secondary-foreground: #F3F1EA; --muted: #262626; --muted-foreground: #A3A3A3; --border: #333333;
+  --primary: var(--brand-blue); --primary-hover: var(--brand-blue-hover); --primary-foreground: #0A0A0A;
+  --ink: #F3F1EA; --ink-soft: #A3A3A3; --map-paper: #0A0A0A; color: var(--foreground);
+}
+.landing:has(.hero-section) .landing-nav {
+  --background: #0A0A0A; --foreground: #F3F1EA; --border: #333333; --card: #171717; --secondary: #262626;
+  --primary: var(--brand-blue); --primary-hover: var(--brand-blue-hover); --primary-foreground: #0A0A0A;
+  & .airo-logo { color: var(--brand-blue); }
+  & .nav-glass { background: #0A0A0ABF; border-color: #FFFFFF1A; }
+  & .mobile-nav nav { background: #171717; border-color: #333333; color: #F3F1EA; }
+  & .mobile-nav nav a:hover { background: #262626; }
+  & :is(.nav-link, .nav-start, .mobile-nav summary) { color: #D4D4D4; }
+  & .nav-start:hover { color: #0A0A0A; }
+}
+.landing .hero-section:is([data-arrival='flying'], [data-arrival='landed']) { height: 350svh; }
+.landing .hero-section:is([data-arrival='flying'], [data-arrival='landed']) .hero-grid { position: sticky; top: 0; }
+.landing :is(.conversation-map-layer, .conversation-globe-layer) { position: absolute; inset: 0; }
+.landing .conversation-globe-layer { z-index: 0; }
+.landing .conversation-map-layer { z-index: 1; opacity: 0; pointer-events: none; transition: opacity .8s ease; }
+.landing .conversation-map-layer[data-visible='true'] { opacity: 1; }
+.landing .conversation-map-layer :is(button, a, input, .conversation-panel) { pointer-events: auto; }
+.landing :is(.conversation-demo, .dining-loading) { background: transparent; animation: none; }
+.landing .dining-map::after { display: none; }
+body .landing .hero-section:is([data-arrival='flying'], [data-arrival='landed']) .hero-copy { display: block; opacity: 0 !important; pointer-events: none; transition: opacity .7s ease; }
+body .landing .hero-section:is([data-arrival='flying'], [data-arrival='landed']) .hero-copy a { pointer-events: none; }
+body .landing .hero-section[data-arrival='landed'] .hero-copy::before { display: none; }
+.landing :is(.conversation-panel, .conversation-toolbar) { transform: translateY(14px); transition: transform .8s ease; }
+.landing .conversation-map-layer[data-visible='true'] :is(.conversation-panel, .conversation-toolbar) { transform: none; }
+.landing .globe-arrival[data-flying='true'] :is(.destination-picker, .globe-regions, .globe-caption, .globe-bottom) { opacity: 0; pointer-events: none; transition: opacity .6s ease; }
+.landing .globe-arrival[data-landed='true'] :is(.globe-flight-status, .globe-attribution) { opacity: 0; pointer-events: none; }
+.landing .conversation-scroll-cue { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .landing .conversation-map-layer, .landing :is(.conversation-panel, .conversation-toolbar) { transition: none; transform: none; }
+}

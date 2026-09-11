@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Santiago",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Santiago</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q2887",
+  "titles": {
+    "canonical": "Santiago",
+    "normalized": "Santiago",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Santiago</span></span>"
+  },
+  "pageid": 51572,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Palacio_de_La_Moneda_-_miguelreflex.jpg/330px-Palacio_de_La_Moneda_-_miguelreflex.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Palacio_de_La_Moneda_-_miguelreflex.jpg/3840px-Palacio_de_La_Moneda_-_miguelreflex.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 4272,
+    "height": 2848
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373401984",
+  "tid": "d70bea17-a961-11f1-9054-4f6c6a737b3c",
+  "timestamp": "2026-09-05T19:41:51Z",
+  "description": "Capital and largest city of Chile",
+  "description_source": "local",
+  "coordinates": {
+    "lat": -33.4375,
+    "lon": -70.65
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Santiago",
+      "revisions": "https://en.wikipedia.org/wiki/Santiago?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Santiago?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Santiago"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Santiago",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Santiago",
+      "edit": "https://en.wikipedia.org/wiki/Santiago?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Santiago"
+    }
+  },
+  "extract": "Santiago, also known as Santiago de Chile, is the capital and largest city of Chile and one of the largest cities in the Americas. Located in the Chilean Central Valley within the Santiago Basin, between the Andes to the east and the Chilean Coastal Range to the west, it anchors the Santiago Metropolitan Region and its conurbation of Greater Santiago, which comprises more than forty communes and concentrates over a third of the national population and around 45% of Chile's GDP. Most of the city lies between 500 and 650 meters above sea level, with recent urban growth extending into the Andean foothills.",
+  "extract_html": "<p><b>Santiago</b>, also known as <b>Santiago de Chile</b>, is the capital and largest city of Chile and one of the largest cities in the Americas. Located in the Chilean Central Valley within the Santiago Basin, between the Andes to the east and the Chilean Coastal Range to the west, it anchors the Santiago Metropolitan Region and its conurbation of Greater Santiago, which comprises more than forty communes and concentrates over a third of the national population and around 45% of Chile's GDP. Most of the city lies between 500 and 650 meters above sea level, with recent urban growth extending into the Andean foothills.</p>"
+}

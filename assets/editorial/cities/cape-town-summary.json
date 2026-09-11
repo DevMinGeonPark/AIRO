@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Cape Town",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Cape Town</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q5465",
+  "titles": {
+    "canonical": "Cape_Town",
+    "normalized": "Cape Town",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Cape Town</span></span>"
+  },
+  "pageid": 6653,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Camps_bay_%2853460319478%29_%28cropped%29.jpg/330px-Camps_bay_%2853460319478%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 191
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Camps_bay_%2853460319478%29_%28cropped%29.jpg/3840px-Camps_bay_%2853460319478%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 5400,
+    "height": 3120
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373871421",
+  "tid": "d782cb4f-ab81-11f1-8ed0-88eaebc6b420",
+  "timestamp": "2026-09-08T12:35:58Z",
+  "description": "Legislative capital of South Africa",
+  "description_source": "local",
+  "coordinates": {
+    "lat": -33.92527778,
+    "lon": 18.42388889
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Cape_Town",
+      "revisions": "https://en.wikipedia.org/wiki/Cape_Town?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Cape_Town?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Cape_Town"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Cape_Town",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Cape_Town",
+      "edit": "https://en.wikipedia.org/wiki/Cape_Town?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Cape_Town"
+    }
+  },
+  "extract": "Cape Town is the legislative capital of South Africa. It is the country's oldest city and the seat of the Parliament of South Africa. Cape Town is the country's second-largest city by population, after Johannesburg, and the largest city in the Western Cape. The city is part of the City of Cape Town metropolitan municipality.",
+  "extract_html": "<p><b>Cape Town</b> is the legislative capital of South Africa. It is the country's oldest city and the seat of the Parliament of South Africa. Cape Town is the country's second-largest city by population, after Johannesburg, and the largest city in the Western Cape. The city is part of the City of Cape Town metropolitan municipality.</p>"
+}

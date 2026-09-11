@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Marrakesh",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Marrakesh</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q101625",
+  "titles": {
+    "canonical": "Marrakesh",
+    "normalized": "Marrakesh",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Marrakesh</span></span>"
+  },
+  "pageid": 20513,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Pavillon_Menarag%C3%A4rten.jpg/330px-Pavillon_Menarag%C3%A4rten.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 219
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Pavillon_Menarag%C3%A4rten.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 1024,
+    "height": 680
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373905732",
+  "tid": "956d8154-aba9-11f1-8298-3e6acd59af61",
+  "timestamp": "2026-09-08T17:20:27Z",
+  "description": "City in Marrakesh–Safi, Morocco",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 31.63,
+    "lon": -8.00888889
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Marrakesh",
+      "revisions": "https://en.wikipedia.org/wiki/Marrakesh?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Marrakesh?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Marrakesh"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Marrakesh",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Marrakesh",
+      "edit": "https://en.wikipedia.org/wiki/Marrakesh?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Marrakesh"
+    }
+  },
+  "extract": "Marrakesh or Marrakech is the fourth-largest city in Morocco. It is one of the four imperial cities of Morocco and is the capital of the Marrakesh-Safi region. The city lies west of the foothills of the Atlas Mountains.",
+  "extract_html": "<p><b>Marrakesh</b> or <b>Marrakech</b> is the fourth-largest city in Morocco. It is one of the four imperial cities of Morocco and is the capital of the Marrakesh-Safi region. The city lies west of the foothills of the Atlas Mountains.</p>"
+}

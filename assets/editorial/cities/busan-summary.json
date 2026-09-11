@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Busan",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Busan</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q16520",
+  "titles": {
+    "canonical": "Busan",
+    "normalized": "Busan",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Busan</span></span>"
+  },
+  "pageid": 68115,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Gwangan_Bridge1.jpg/330px-Gwangan_Bridge1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Gwangan_Bridge1.jpg/3840px-Gwangan_Bridge1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 4000,
+    "height": 2250
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1371919345",
+  "tid": "e0a7b7bb-a38d-11f1-9173-51faf2ca1228",
+  "timestamp": "2026-08-29T09:41:58Z",
+  "description": "City in South Korea",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.18,
+    "lon": 129.075
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Busan",
+      "revisions": "https://en.wikipedia.org/wiki/Busan?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Busan?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Busan"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Busan",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Busan",
+      "edit": "https://en.wikipedia.org/wiki/Busan?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Busan"
+    }
+  },
+  "extract": "Busan, officially Busan Metropolitan City, is the second most populous city in South Korea, after Seoul; it has a population of over 3.3 million as of 2024. It is the economic, cultural and educational center of southeastern South Korea, with its port being South Korea's busiest and the sixth-busiest in the world. The surrounding \"Southeastern Maritime Industrial Region\" is South Korea's largest industrial area. The large volumes of port traffic and urban population in excess of 1 million makes Busan a Large-Port metropolis using the Southampton System of Port-City classification. As of 2025, Busan Port is the primary port in Korea and the world's sixth-largest container port.",
+  "extract_html": "<p><b>Busan</b>, officially <b>Busan Metropolitan City</b>, is the second most populous city in South Korea, after Seoul; it has a population of over 3.3 million as of 2024. It is the economic, cultural and educational center of southeastern South Korea, with its port being South Korea's busiest and the sixth-busiest in the world. The surrounding \"Southeastern Maritime Industrial Region\" is South Korea's largest industrial area. The large volumes of port traffic and urban population in excess of 1 million makes Busan a Large-Port metropolis using the Southampton System of Port-City classification. As of 2025, Busan Port is the primary port in Korea and the world's sixth-largest container port.</p>"
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "name": "hero-day1",
+    "scroll": 0,
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "day": "1",
+    "phase": "intro",
+    "coordinate": "35.02691° N  135.79843° E",
+    "scale": "0.44000"
+  },
+  {
+    "name": "hero-day2",
+    "scroll": 1080,
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "day": "2",
+    "phase": "days",
+    "coordinate": "35.00018° N  135.77460° E",
+    "scale": "0.58803"
+  },
+  {
+    "name": "hero-day3",
+    "scroll": 1836,
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "day": "3",
+    "phase": "days",
+    "coordinate": "35.01765° N  135.67308° E",
+    "scale": "0.64000"
+  },
+  {
+    "name": "hero-overview",
+    "scroll": 2650,
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "day": "3",
+    "phase": "overview",
+    "coordinate": "35.01359° N  135.73576° E",
+    "scale": "0.17737"
+  },
+  {
+    "name": "hero-375-day1",
+    "scroll": 0,
+    "width": 375,
+    "height": 812,
+    "overflow": false,
+    "day": "1",
+    "phase": "intro",
+    "coordinate": "35.02691° N  135.79843° E",
+    "scale": "0.15194"
+  },
+  {
+    "name": "hero-375-day3",
+    "scroll": 0,
+    "width": 375,
+    "height": 812,
+    "overflow": false,
+    "day": "3",
+    "phase": "intro",
+    "coordinate": "35.01765° N  135.67308° E",
+    "scale": "0.36034"
+  },
+  {
+    "name": "hero-375-card",
+    "scroll": 98,
+    "width": 375,
+    "height": 812,
+    "overflow": false,
+    "day": "3",
+    "phase": "intro",
+    "coordinate": "35.01765° N  135.67308° E",
+    "scale": "0.36034"
+  },
+  {
+    "name": "hero-768-day1",
+    "scroll": 0,
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "day": "1",
+    "phase": "intro",
+    "coordinate": "35.02691° N  135.79843° E",
+    "scale": "0.44000"
+  },
+  {
+    "name": "hero-reduced",
+    "scroll": 0,
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "day": "1",
+    "phase": "intro",
+    "coordinate": "35.01359° N  135.73576° E",
+    "scale": "0.17737"
+  }
+]

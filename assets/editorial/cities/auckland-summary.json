@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Auckland",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Auckland</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q37100",
+  "titles": {
+    "canonical": "Auckland",
+    "normalized": "Auckland",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Auckland</span></span>"
+  },
+  "pageid": 18660332,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Auckland_skyline_-_May_2024_%282%29.jpg/330px-Auckland_skyline_-_May_2024_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 179
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Auckland_skyline_-_May_2024_%282%29.jpg/3840px-Auckland_skyline_-_May_2024_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 3895,
+    "height": 2116
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1374008996",
+  "tid": "a5727874-ac1c-11f1-957d-0415733a09ee",
+  "timestamp": "2026-09-09T07:04:06Z",
+  "description": "Largest city in New Zealand",
+  "description_source": "local",
+  "coordinates": {
+    "lat": -36.8492,
+    "lon": 174.7653
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Auckland",
+      "revisions": "https://en.wikipedia.org/wiki/Auckland?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Auckland?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Auckland"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Auckland",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Auckland",
+      "edit": "https://en.wikipedia.org/wiki/Auckland?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Auckland"
+    }
+  },
+  "extract": "Auckland is a large metropolitan city in the North Island of New Zealand. It has an urban population of about 1,547,200. It is located in the greater Auckland Region, the area governed by Auckland Council, which includes outlying rural areas and the islands of the Hauraki Gulf, and which has a total population of 1,816,000 as of June 2025. It is the most populous city of New Zealand and the fifth-most populous city in Oceania.",
+  "extract_html": "<p><b>Auckland</b> is a large metropolitan city in the North Island of New Zealand. It has an urban population of about 1,547,200. It is located in the greater Auckland Region, the area governed by Auckland Council, which includes outlying rural areas and the islands of the Hauraki Gulf, and which has a total population of 1,816,000 as of June 2025. It is the most populous city of New Zealand and the fifth-most populous city in Oceania.</p>"
+}

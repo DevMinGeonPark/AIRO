@@ -1,0 +1,8 @@
+{
+  "cities": 53,
+  "targets": 106,
+  "newRoutes": 689,
+  "allEdgesVerified": true,
+  "maxSnapMeters": 183.86,
+  "maxPlaceSnapMeters": 61.95
+}
