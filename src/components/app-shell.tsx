@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import type { Plan } from "@/lib/types";
+import { planLabel } from "@/ee/plans";
 
 /* ── 다크 모드 ──────────────────────────────────────────────────────
  * 상태는 <html class="dark"> 하나. 헤더 토글이 그걸 뒤집고, 지도처럼
@@ -113,7 +114,7 @@ export function AppHeader({
               href="/pricing"
               className="text-muted-foreground hover:text-foreground hidden rounded-full border px-2.5 py-1 text-xs transition-colors sm:block"
             >
-              {plan === "pro" ? "프로" : "무료"}
+              {planLabel(plan)}
             </Link>
           )}
           <DarkToggle />

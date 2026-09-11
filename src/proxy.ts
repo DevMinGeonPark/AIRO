@@ -5,7 +5,9 @@ import {
   SUPABASE_URL,
   supabaseConfigured,
   demoEnabled,
+  localAuth,
 } from "@/lib/supabase/config";
+import { localSession, SESSION_COOKIE } from "@/lib/supabase/local";
 
 /**
  * /app/* 보호 + 세션 쿠키 갱신.
@@ -15,9 +17,9 @@ export async function proxy(request: NextRequest) {
   const path = request.nextUrl.pathname;
   const privatePage = path === "/app" || path.startsWith("/app/");
   const api = path.startsWith("/api/");
-  if (((api && path !== "/api/mcp") || path === "/auth/signout") && !["GET", "HEAD", "OPTIONS"].includes(request.method)) {
+  if (((api && path !== "/api/mcp") || path === "/auth/signout" || path === "/auth/local") && !["GET", "HEAD", "OPTIONS"].includes(request.method)) {
     const origin = request.headers.get("origin");
-    const allowed = [request.nextUrl.origin, process.env.NEXT_PUBLIC_SITE_URL];
+    const allowed = [request.nextUrl.origin, process.env.AIRO_SITE_URL, process.env.NEXT_PUBLIC_SITE_URL];
     if ((origin && !allowed.includes(origin)) || request.headers.get("sec-fetch-site") === "cross-site")
       return NextResponse.json({ error: "허용되지 않은 요청입니다." }, { status: 403 });
   }
@@ -28,6 +30,24 @@ export async function proxy(request: NextRequest) {
   }
   // MCP authenticates its own Bearer token; public pages need no auth request.
   if (path === "/api/mcp" || path === "/api/bridge/worker" || (!api && !privatePage)) return NextResponse.next();
+
+  const toLogin = (response: NextResponse) => {
+    if (api) return NextResponse.json({ error: "로그인이 필요합니다." }, { status: 401 });
+    const url = request.nextUrl.clone();
+    url.pathname = "/login";
+    url.search = "";
+    url.searchParams.set("next", path + request.nextUrl.search);
+    const redirect = NextResponse.redirect(url);
+    for (const cookie of response.cookies.getAll()) redirect.cookies.set(cookie);
+    return redirect;
+  };
+
+  if (localAuth) {
+    const response = NextResponse.next({ request });
+    if (!localSession(request.cookies.get(SESSION_COOKIE)?.value)) return toLogin(response);
+    response.headers.set("Cache-Control", "private, no-store");
+    return response;
+  }
 
   let response = NextResponse.next({ request });
   const supabase = createServerClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
@@ -46,16 +66,7 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user && (privatePage || api)) {
-    if (api) return NextResponse.json({ error: "로그인이 필요합니다." }, { status: 401 });
-    const url = request.nextUrl.clone();
-    url.pathname = "/login";
-    url.search = "";
-    url.searchParams.set("next", path + request.nextUrl.search);
-    const redirect = NextResponse.redirect(url);
-    for (const cookie of response.cookies.getAll()) redirect.cookies.set(cookie);
-    return redirect;
-  }
+  if (!user) return toLogin(response);
   response.headers.set("Cache-Control", "private, no-store");
   return response;
 }

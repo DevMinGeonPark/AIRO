@@ -1,0 +1,19 @@
+AIRO Enterprise / Cloud License
+
+Copyright (c) 2026 AIRO (heptivision). All rights reserved.
+
+The files in this directory (src/ee) and anything that imports from them for
+the purpose of operating a hosted, paid, or multi-tenant AIRO service are
+licensed under this commercial license and are NOT covered by the AGPL-3.0
+license that applies to the rest of this repository.
+
+You may view, modify and run this code only:
+  1. for development and testing of the AIRO project, or
+  2. as part of a self-hosted, single-owner AIRO Community Edition deployment
+     that does not charge users, where these files are inactive by
+     configuration (NEXT_PUBLIC_AIRO_EDITION=community).
+
+Operating a paid, subscription or hosted-for-others AIRO service using this
+code requires a separate commercial agreement with the copyright holder.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
