@@ -2,7 +2,7 @@ import { mkdir, writeFile, readFile, copyFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { resolve } from 'node:path';
-const version='0.2.0', codexVersion='0.154.0';
+const version='0.2.1', codexVersion='0.154.0';
 const platforms=[['darwin-arm64','bun-darwin-arm64','aarch64-apple-darwin'],['darwin-x64','bun-darwin-x64','x86_64-apple-darwin'],['linux-x64','bun-linux-x64-baseline','x86_64-unknown-linux-musl'],['linux-arm64','bun-linux-arm64','aarch64-unknown-linux-musl'],['win32-x64','bun-windows-x64-baseline','x86_64-pc-windows-msvc']];
 const output=resolve('public/downloads'), temp=resolve('.private/plugin-build');
 await mkdir(output,{recursive:true});await mkdir(temp,{recursive:true});
