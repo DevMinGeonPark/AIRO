@@ -1,0 +1,14 @@
+node_modules
+.next
+.next-*
+.git
+.private
+.backups
+.demo-db.json*
+.env*
+tsconfig.tsbuildinfo
+public/downloads
+public/plugins
+assets/*
+!assets/imagegen-manifest.json
+!assets/source

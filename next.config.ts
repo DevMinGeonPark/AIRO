@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Keep validation builds separate from the running deployment.
   distDir: process.env.NEXT_DIST_DIR ?? ".next",
+  // Docker image (community edition) ships the standalone server.
+  output: process.env.NEXT_OUTPUT_STANDALONE ? "standalone" : undefined,
   outputFileTracingExcludes: {
     "/*": ["./.private/**", "./.backups/**", "./.demo-db.json*", "./.env*"],
   },

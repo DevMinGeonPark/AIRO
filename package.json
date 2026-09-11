@@ -2,6 +2,7 @@
   "name": "airo",
   "version": "0.1.0",
   "private": true,
+  "license": "AGPL-3.0-only",
   "scripts": {
     "test:codex": "node scripts/test-codex-bridge.mjs",
     "plugin:build": "node scripts/build-codex-plugin.mjs",
@@ -37,7 +38,8 @@
     "test:city-stories": "node scripts/test-city-stories.mjs",
     "test:cumulative-journey": "node scripts/test-cumulative-roads.mjs && node scripts/test-cumulative-journey.mjs",
     "test:lower": "node scripts/test-lower-landing.mjs",
-    "test:auth": "node scripts/test-auth-flow.mjs"
+    "test:auth": "node scripts/test-auth-flow.mjs",
+    "test:community": "node scripts/test-community.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
