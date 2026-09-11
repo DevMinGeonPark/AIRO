@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Spanish Steps",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Spanish Steps</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q848072",
+  "titles": {
+    "canonical": "Spanish_Steps",
+    "normalized": "Spanish Steps",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Spanish Steps</span></span>"
+  },
+  "pageid": 361971,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Piazza_di_Spagna_%28Rome%29_0004.jpg/330px-Piazza_di_Spagna_%28Rome%29_0004.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 440
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Piazza_di_Spagna_%28Rome%29_0004.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 1200,
+    "height": 1600
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1370159897",
+  "tid": "24e7cca3-9bcc-11f1-ab38-01edf46502bc",
+  "timestamp": "2026-08-19T12:47:32Z",
+  "description": "Stairs in Rome, Italy",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.9061,
+    "lon": 12.4828
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Spanish_Steps",
+      "revisions": "https://en.wikipedia.org/wiki/Spanish_Steps?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Spanish_Steps?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Spanish_Steps"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Spanish_Steps",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Spanish_Steps",
+      "edit": "https://en.wikipedia.org/wiki/Spanish_Steps?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Spanish_Steps"
+    }
+  },
+  "extract": "The Spanish Steps in Rome, Italy, climb a steep slope between the Piazza di Spagna at the base and the Piazza Trinità dei Monti, dominated by the Trinità dei Monti church, at the top.",
+  "extract_html": "<p>The <b>Spanish Steps</b> in Rome, Italy, climb a steep slope between the Piazza di Spagna at the base and the Piazza Trinità dei Monti, dominated by the Trinità dei Monti church, at the top.</p>"
+}

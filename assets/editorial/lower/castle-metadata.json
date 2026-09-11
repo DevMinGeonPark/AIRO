@@ -1,0 +1,118 @@
+{
+  "continue": {
+    "iistart": "2014-12-15T21:59:18Z",
+    "continue": "||"
+  },
+  "query": {
+    "normalized": [
+      {
+        "from": "File:Castel_Sant'Angelo_at_Night.jpg",
+        "to": "File:Castel Sant'Angelo at Night.jpg"
+      }
+    ],
+    "pages": {
+      "37316339": {
+        "pageid": 37316339,
+        "ns": 6,
+        "title": "File:Castel Sant'Angelo at Night.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Castel_Sant%27Angelo_at_Night.jpg/1280px-Castel_Sant%27Angelo_at_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1200,
+            "thumbheight": 1075,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Castel_Sant%27Angelo_at_Night.jpg/3840px-Castel_Sant%27Angelo_at_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Castel_Sant%27Angelo_at_Night.jpg/1280px-Castel_Sant%27Angelo_at_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1200,
+              "height": 1075,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Castel_Sant%27Angelo_at_Night.jpg/3840px-Castel_Sant%27Angelo_at_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Castel_Sant%27Angelo_at_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Castel_Sant%27Angelo_at_Night.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=37316339",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-12-16 12:20:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Castel Sant'Angelo at Night",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Nikon D3200|Views of Castel Sant'Angelo from Ponte Sant'Angelo|Self-published work|Castel Sant'Angelo (Rome) at night|December 2014 in Rome|Italy photographs taken on 2014-12-15|Angels of Ponte Sant'Angelo (Rome)|Ponte Sant'Angelo (Rome) at night",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Castel S'Angelo at Night",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 15 December 2014, 23:17:39",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Livioandronico2013\" title=\"User:Livioandronico2013\">Livioandronico2013</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Capitoline Hill",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Capitoline Hill</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q34925",
+  "titles": {
+    "canonical": "Capitoline_Hill",
+    "normalized": "Capitoline Hill",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Capitoline Hill</span></span>"
+  },
+  "pageid": 144901,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg/330px-Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 244
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 1481,
+    "height": 1093
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1372367320",
+  "tid": "c8bf6ba9-a536-11f1-a1bc-30a96c6ec638",
+  "timestamp": "2026-08-31T12:23:34Z",
+  "description": "One of the seven hills of Rome, Italy",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.89333333,
+    "lon": 12.48305556
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Capitoline_Hill",
+      "revisions": "https://en.wikipedia.org/wiki/Capitoline_Hill?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Capitoline_Hill?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Capitoline_Hill"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Capitoline_Hill",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Capitoline_Hill",
+      "edit": "https://en.wikipedia.org/wiki/Capitoline_Hill?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Capitoline_Hill"
+    }
+  },
+  "extract": "The Capitolium or Capitoline Hill, between the Forum and the Campus Martius, is one of the Seven Hills of Rome.",
+  "extract_html": "<p>The <b>Capitolium</b> or <b>Capitoline Hill</b>, between the Forum and the Campus Martius, is one of the Seven Hills of Rome.</p>"
+}

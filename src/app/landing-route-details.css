@@ -1,0 +1,73 @@
+/* Keep each marker centered on the first place-name line, even when it wraps. */
+.lower-route-stops {
+  --route-marker-size: 29px;
+  --route-name-line: 30px;
+  --route-time-line: 17px;
+  --route-time-gap: 4px;
+  --route-marker-top: calc(var(--route-time-line) + var(--route-time-gap) + (var(--route-name-line) - var(--route-marker-size)) / 2);
+  --route-connector-gap: 6px;
+}
+
+.lower-route-stops button {
+  display: grid;
+  grid-template-columns: var(--route-marker-size) minmax(0, 1fr);
+  align-items: start;
+  column-gap: 18px;
+}
+
+.lower-route-stops .lower-stop-number {
+  width: var(--route-marker-size);
+  height: var(--route-marker-size);
+  margin-top: var(--route-marker-top);
+  font-variant-numeric: tabular-nums;
+}
+
+.lower-route-stop-copy {
+  min-width: 0;
+}
+
+.lower-route-stops time {
+  display: block;
+  line-height: var(--route-time-line);
+  margin-bottom: var(--route-time-gap);
+  font-variant-numeric: tabular-nums;
+}
+
+.lower-route-stops h4 {
+  line-height: var(--route-name-line);
+  overflow-wrap: anywhere;
+}
+
+.lower-route-stops p {
+  overflow-wrap: anywhere;
+}
+
+.lower-route-stops li:not(:last-child)::after {
+  left: calc((var(--route-marker-size) - 1px) / 2);
+  top: calc(var(--route-marker-top) + var(--route-marker-size) + var(--route-connector-gap));
+  bottom: calc(var(--route-connector-gap) - var(--route-marker-top));
+  pointer-events: none;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .lower-route-schedule .lower-day-tabs button {
+    min-width: 0;
+    padding-inline: 6px;
+  }
+
+  .lower-route-stops button {
+    column-gap: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .lower-route-stops {
+    --route-marker-size: 27px;
+    --route-name-line: 27px;
+    --route-time-line: 16px;
+  }
+
+  .lower-route-stops button {
+    column-gap: 16px;
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Piazza Navona",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Piazza Navona</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q463400",
+  "titles": {
+    "canonical": "Piazza_Navona",
+    "normalized": "Piazza Navona",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Piazza Navona</span></span>"
+  },
+  "pageid": 634993,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Piazza_Navona_%28Rome%29_at_night.jpg/330px-Piazza_Navona_%28Rome%29_at_night.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 233
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Piazza_Navona_%28Rome%29_at_night.jpg/3840px-Piazza_Navona_%28Rome%29_at_night.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 9031,
+    "height": 6389
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1368540824",
+  "tid": "9bd9d33c-941a-11f1-b790-8887c5afc6fc",
+  "timestamp": "2026-08-09T17:49:03Z",
+  "description": "Public square in Rome, Italy",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.899,
+    "lon": 12.4731
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Piazza_Navona",
+      "revisions": "https://en.wikipedia.org/wiki/Piazza_Navona?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Piazza_Navona?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Piazza_Navona"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Piazza_Navona",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Piazza_Navona",
+      "edit": "https://en.wikipedia.org/wiki/Piazza_Navona?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Piazza_Navona"
+    }
+  },
+  "extract": "Piazza Navona is a public open space in Rome, Italy. It is built on the site of the 1st century AD Stadium of Domitian and follows the form of the open space of the stadium in an elongated oval. The ancient Romans went there to watch the agones (\"games\"), and hence it was known as \"Circus Agonalis\".",
+  "extract_html": "<p><b>Piazza Navona</b> is a public open space in Rome, Italy. It is built on the site of the 1st century AD Stadium of Domitian and follows the form of the open space of the stadium in an elongated oval. The ancient Romans went there to watch the <i>agones</i> (\"games\"), and hence it was known as \"<i>Circus Agonalis</i>\".</p>"
+}

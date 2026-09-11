@@ -1,0 +1,111 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "normalized": [
+      {
+        "from": "File:Piazza_di_Spagna_(Rome)_0004.jpg",
+        "to": "File:Piazza di Spagna (Rome) 0004.jpg"
+      }
+    ],
+    "pages": {
+      "21658766": {
+        "pageid": 21658766,
+        "ns": 6,
+        "title": "File:Piazza di Spagna (Rome) 0004.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Piazza_di_Spagna_%28Rome%29_0004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 1200,
+            "thumbheight": 1600,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Piazza_di_Spagna_%28Rome%29_0004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1200,
+              "height": 1600
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Piazza_di_Spagna_%28Rome%29_0004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Piazza_di_Spagna_(Rome)_0004.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=21658766",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-09-26 18:54:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Piazza di Spagna (Rome) 0004",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Fontana della Barcaccia (Rome)|Trinità dei Monti (Rome) - Scalinata|Self-published work|Trinità dei Monti (Rome) - Remote views",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fontana della Barcaccia - Trinità dei Monti - Piazza di Spagna - Rome",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-26 20:53:35",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Arnaud_25\" title=\"User:Arnaud 25\">Arnaud 25</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

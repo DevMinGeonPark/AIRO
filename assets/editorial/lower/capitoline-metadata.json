@@ -1,0 +1,131 @@
+{
+  "continue": {
+    "iistart": "2013-02-15T17:09:02Z",
+    "continue": "||"
+  },
+  "query": {
+    "normalized": [
+      {
+        "from": "File:Maquette_de_Rome_(musée_de_la_civilisation_romaine,_Rome)_(5911810278).jpg",
+        "to": "File:Maquette de Rome (musée de la civilisation romaine, Rome) (5911810278).jpg"
+      }
+    ],
+    "pages": {
+      "24668983": {
+        "pageid": 24668983,
+        "ns": 6,
+        "title": "File:Maquette de Rome (musée de la civilisation romaine, Rome) (5911810278).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg/1280px-Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1200,
+            "thumbheight": 886,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg/1280px-Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1200,
+              "height": 886,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Maquette_de_Rome_%28mus%C3%A9e_de_la_civilisation_romaine%2C_Rome%29_%285911810278%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Maquette_de_Rome_(mus%C3%A9e_de_la_civilisation_romaine,_Rome)_(5911810278).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=24668983",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-06-29 13:20:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Maquette de Rome (musée de la civilisation romaine, Rome) (5911810278)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Sony DSC-H5|Temple of Jupiter (Capitoline Hill)|Scale model of ancient Rome (Rome)|Flickr images reviewed by File Upload Bot (Magnus Manske)|Photographs by Jean-Pierre Dalbéra|Files with coordinates missing SDC location of creation|Italy photographs taken on 2011-06-10|Capitolium (Rome)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "41.831030",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.477548",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "La <a class=\"external text\" href=\"https://ca.wikipedia.org/wiki/Capitoli\">colina del Capitoli</a>, gràcies a la seva posició estratègica, va ser la fortalesa natural de Roma, amb la vall del Tíber a una banda i la del Fòrum a l'altra.\n<p>Sobre el cim septentrional, fortificat, es va construir el temple dedicat a la <a class=\"external text\" href=\"https://ca.wikipedia.org/wiki/Tr%C3%ADada_capitolina\">Tríada Capitolina</a>, Júpiter, Juno i Minerva, el <a class=\"external text\" href=\"https://ca.wikipedia.org/wiki/Temple_de_J%C3%BApiter_Capitol%C3%AD\">Temple de Júpiter Capitolí</a>.\n</p>\nLa fotografia mostra aquest temple i el seu entorn a la maqueta de Roma en temps de Constantí I (306-337 dC) a escala 1:250 dissenyada inicialment per Italo Gismondi entre 1933 i 1937 i que es troba al Museo della Civiltà Romana.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-06-10 12:26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/dalbera/5911810278/\">Maquette de Rome (musée de la civilisation romaine, Rome)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/72746018@N00\">Jean-Pierre Dalbéra</a> from Paris, France",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

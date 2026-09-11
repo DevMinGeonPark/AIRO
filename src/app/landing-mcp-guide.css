@@ -1,0 +1,54 @@
+.lower-integration{scroll-margin-top:110px}
+.mcp-quick-start{margin-top:42px;border-top:1px solid var(--lower-border);scroll-margin-top:110px}
+.mcp-quick-start>header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:30px 0}
+.mcp-quick-start .mcp-quick-eyebrow{font-size:11px;color:var(--lower-blue);margin-bottom:10px}
+.mcp-quick-start>header h3{font-size:30px;line-height:1.5;word-break:keep-all}
+.mcp-quick-start>header>p{font-size:12px;line-height:1.8;color:var(--lower-muted)}
+.mcp-quick-steps{list-style:none;padding:0;border-top:1px solid #292e35}
+.mcp-quick-steps>li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;padding:27px 0;border-bottom:1px solid #292e35}
+.mcp-step-label{font-size:11px;line-height:24px;color:var(--lower-blue);font-variant-numeric:tabular-nums}
+.mcp-quick-steps h4{font-size:16px;font-weight:500;line-height:24px;letter-spacing:-.025em}
+.mcp-quick-steps p{max-width:800px;font-size:13px;line-height:1.85;color:#b2bac6;margin-top:12px;word-break:keep-all;overflow-wrap:anywhere}
+.mcp-quick-start a{color:var(--lower-blue);text-decoration:none}
+.mcp-quick-start a:hover{text-decoration:underline;text-underline-offset:4px}
+.mcp-quick-start a svg{display:inline;vertical-align:-2px}
+.mcp-quick-start strong{font-weight:500;color:#e1e6ee}
+.mcp-quick-start code{font-size:12px;overflow-wrap:anywhere}
+.mcp-auth-choice{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}
+.mcp-auth-choice button{min-height:40px;padding:8px 13px;border:1px solid #353d4b;border-radius:7px;background:transparent;color:#aeb9ca;font-size:11px}
+.mcp-auth-choice button[aria-pressed=true]{color:#b6caff;border-color:#7e9fe57a;background:#86a5ff0b}
+.mcp-quick-steps p.mcp-setup-pending{padding:12px 15px;border-left:2px solid #86a5ff75;background:#86a5ff08;color:#bdc9df}
+.mcp-setup-code{margin-top:14px;min-width:0;max-width:100%}
+.mcp-setup-code pre{max-width:100%;padding:18px 82px 18px 18px;border:1px solid #303847;background:#10141b;border-radius:8px;font-size:12px;line-height:1.8;color:#d4dcec;white-space:pre-wrap;overflow-wrap:anywhere}
+.mcp-setup-code>button{top:9px;right:9px;min-width:54px;min-height:38px;border-color:#3d485b;background:#151c28;color:#bbccef;border-radius:6px}
+.mcp-quick-steps p.mcp-step-check{color:#c5d4f4;margin-top:16px}
+.mcp-quick-start details{margin-top:16px;font-size:12px;line-height:1.8;color:#b4bdcc}
+.mcp-quick-start summary{cursor:pointer;width:fit-content;min-height:36px;padding:6px 0;color:#c2ccdc;font-size:12px}
+.mcp-quick-start summary:focus-visible{outline:2px solid var(--lower-blue);outline-offset:4px}
+.mcp-quick-start .mcp-key-help{border-left:1px solid #343e4f;padding-left:17px}
+.mcp-prompt-code pre{font-family:inherit;font-size:13px;color:#dce5f8}
+.mcp-quick-start .mcp-example-route{display:flex;flex-wrap:wrap;align-items:center;gap:12px;font-size:14px;color:#d9e3f6}
+.mcp-example-route span{color:#6f8cbf}
+.mcp-open-trip{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:12px;font-size:13px;border-bottom:1px solid #718fc7}
+.mcp-quick-help{padding:9px 0 0}
+.mcp-quick-help ul{list-style:disc;padding-left:18px;max-width:820px}
+.mcp-quick-help li{margin:9px 0;word-break:keep-all}
+.mcp-quick-help>a,.mcp-full-guide{display:inline-flex;align-items:center;gap:7px;min-height:44px;font-size:12px;color:var(--lower-blue)}
+.lower-integration .lower-tool-tabs{flex-wrap:wrap}
+@media(max-width:767px){
+  .mcp-quick-start{margin-top:30px}
+  .mcp-quick-start>header{display:block;padding:24px 0}
+  .mcp-quick-start>header h3{font-size:25px}
+  .mcp-quick-start>header>p{margin-top:10px;font-size:11px}
+  .mcp-quick-start>header>p br{display:none}
+  .mcp-quick-steps>li{grid-template-columns:minmax(0,1fr);gap:9px;padding:23px 0}
+  .mcp-step-label{font-size:10px}
+  .mcp-quick-steps h4{font-size:15px}
+  .mcp-quick-steps p{font-size:12px;line-height:1.9}
+  .mcp-auth-choice button{min-height:44px}
+  .mcp-setup-code pre{padding:57px 13px 16px;font-size:10px;line-height:1.9}
+  .mcp-setup-code code{font-size:11px}
+  .mcp-setup-code>button{min-height:40px}
+  .mcp-quick-start .mcp-example-route{gap:9px;font-size:12px}
+  .mcp-quick-start summary{min-height:44px;padding-top:10px;font-size:11px}
+}

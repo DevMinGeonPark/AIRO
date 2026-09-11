@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Roman Forum",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Roman Forum</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q180212",
+  "titles": {
+    "canonical": "Roman_Forum",
+    "normalized": "Roman Forum",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Roman Forum</span></span>"
+  },
+  "pageid": 92894,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Foro_Romano_Musei_Capitolini_Roma.jpg/330px-Foro_Romano_Musei_Capitolini_Roma.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 135
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Foro_Romano_Musei_Capitolini_Roma.jpg/3840px-Foro_Romano_Musei_Capitolini_Roma.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 17000,
+    "height": 6980
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1365546567",
+  "tid": "d1707546-8641-11f1-9a16-97213195e57c",
+  "timestamp": "2026-07-23T02:54:27Z",
+  "description": "Ancient Roman centre of Rome, Italy",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.8922,
+    "lon": 12.4852
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Roman_Forum",
+      "revisions": "https://en.wikipedia.org/wiki/Roman_Forum?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Roman_Forum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Roman_Forum"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Roman_Forum",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Roman_Forum",
+      "edit": "https://en.wikipedia.org/wiki/Roman_Forum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Roman_Forum"
+    }
+  },
+  "extract": "The Roman Forum, also known by its Latin name Forum Romanum, is a rectangular forum (plaza) surrounded by the ruins of several important ancient government buildings at the centre of the city of Rome. Citizens of the ancient city referred to this space, originally a marketplace, as the Forum Magnum, or simply the Forum.",
+  "extract_html": "<p>The <b>Roman Forum</b>, also known by its Latin name <b>Forum Romanum</b>, is a rectangular forum (plaza) surrounded by the ruins of several important ancient government buildings at the centre of the city of Rome. Citizens of the ancient city referred to this space, originally a marketplace, as the <i><span><i lang=\"la\">Forum Magnum</i></span></i>, or simply the <i><span><i lang=\"la\">Forum</i></span></i>.</p>"
+}
