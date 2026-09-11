@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Noto Serif KR';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=3JnoSDn90Gmq2mr3blnHaTZXbOtLJDvui3JOncjmeM5z4ZvTefxux7SCDdwc8VlyjYm0F618UZk6uYcnVxd8_gDb_d4Z__Wb00Q_kzlLMMY0e7cnDYJ_usF8_znx2qrT8EiYhEsGWW4rHG72h1GcpDvF4hGpE_DY-gwDJu8XYBBP92Qh72FDFhXrDyTFGgzRdDv5BTDzkOcsrLRfcEaFGzk6dSQfIO4R_pX6THzpByTxxcNmYzD43j4Yuf9vfojkr65MXcLKXMtgHvgC8uxxe6dbixYPE3tUcagVyryn9uVzD6hJItLm71PPxrI2ShoMR_rCUHZptKkq-n3nsIl3OagWU5UQ7Be0H3YzuDSKBYNDDXu3mGjuXra2i6j3Rq_wB8O-qUUZvCcUU0vB8bPoT1BqJE2te3Dy35JYFQtT4xtDnZARndd3YQOM_q4uzp55Gw-OEl9jvFHBV1At9A&skey=de7c49c7501994cc&v=v31) format('woff2');
+  unicode-range: U+20, U+ac00, U+ace0, U+ad50, U+b098, U+b124, U+b178, U+b180, U+b274, U+b2c8, U+b2e4, U+b2f4, U+b358, U+b370, U+b378, U+b3c4, U+b450, U+b4dc, U+b77c, U+b780, U+b79c, U+b7f0, U+b808, U+b85c, U+b860, U+b8e8, U+b8f0, U+b8f8, U+b974, U+b978, U+b97c, U+b9ac, U+b9b0, U+b9c8, U+ba55, U+ba5c, U+bbfc, U+bc14, U+bc1c, U+bc29, U+bc34, U+bc84, U+bca0, U+bcf4, U+bcf8, U+bd80, U+bd88, U+be44, U+be48, U+c0ac, U+c0b0, U+c0c1, U+c0cc, U+c11c, U+c140, U+c2a4, U+c2dc, U+c2f1, U+c544, U+c54c, U+c554, U+c564, U+c5d0, U+c624, U+c695, U+c6b0, U+c6b4, U+c6b8, U+c758, U+c774, U+c790, U+c794, U+c81c, U+c824, U+c8fc, U+c9c0, U+c9d5, U+cc0c, U+ce74, U+ceac, U+cf00, U+cf54-cf55, U+cf69, U+cfc4, U+cfe0, U+d06c, U+d074, U+d0c0, U+d0c4, U+d14c, U+d1a0, U+d2b8, U+d2f0, U+d30c, U+d398, U+d3ec, U+d478, U+d504, U+d558, U+d638, U+d64d, U+d6c4;
+}

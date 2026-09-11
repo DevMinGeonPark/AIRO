@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Marina Bay, Singapore",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Marina Bay, Singapore</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q40129",
+  "titles": {
+    "canonical": "Marina_Bay,_Singapore",
+    "normalized": "Marina Bay, Singapore",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Marina Bay, Singapore</span></span>"
+  },
+  "pageid": 1703187,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Marina_Bay_Singapore-3499.jpg/330px-Marina_Bay_Singapore-3499.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Marina_Bay_Singapore-3499.jpg/3840px-Marina_Bay_Singapore-3499.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 6131,
+    "height": 4087
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1367951583",
+  "tid": "f50ce4be-914c-11f1-9c7e-c3bd6ba42684",
+  "timestamp": "2026-08-06T04:11:54Z",
+  "description": "Bay in the Central Area of Singapore",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 1.28444444,
+    "lon": 103.85583333
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Marina_Bay%2C_Singapore",
+      "revisions": "https://en.wikipedia.org/wiki/Marina_Bay%2C_Singapore?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Marina_Bay%2C_Singapore?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Marina_Bay%2C_Singapore"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Marina_Bay%2C_Singapore",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Marina_Bay%2C_Singapore",
+      "edit": "https://en.wikipedia.org/wiki/Marina_Bay%2C_Singapore?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Marina_Bay%2C_Singapore"
+    }
+  },
+  "extract": "Marina Bay is a bay located in the Central Area of Singapore, surrounded by the perimeter of four other planning areas, the Downtown Core, Marina East, Marina South and Straits View. The area surrounding the bay itself, also called Marina Bay, is a 360 hectare extension to the adjacent Central Business District. It is also the new downtown of Singapore, built on Singapore's reclaimed land.",
+  "extract_html": "<p><b>Marina Bay</b> is a bay located in the Central Area of Singapore, surrounded by the perimeter of four other planning areas, the Downtown Core, Marina East, Marina South and Straits View. The area surrounding the bay itself, also called Marina Bay, is a 360 hectare extension to the adjacent Central Business District. It is also the new downtown of Singapore, built on Singapore's reclaimed land.</p>"
+}

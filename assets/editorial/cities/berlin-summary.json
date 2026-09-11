@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Berlin",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Berlin</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q64",
+  "titles": {
+    "canonical": "Berlin",
+    "normalized": "Berlin",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Berlin</span></span>"
+  },
+  "pageid": 3354,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg/330px-Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 192
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg/3840px-Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 5464,
+    "height": 3186
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373239903",
+  "tid": "787c399d-a89b-11f1-bf83-008c275c3131",
+  "timestamp": "2026-09-04T20:01:52Z",
+  "description": "Capital and largest city of Germany",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 52.52,
+    "lon": 13.405
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Berlin",
+      "revisions": "https://en.wikipedia.org/wiki/Berlin?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Berlin?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Berlin"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Berlin",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Berlin",
+      "edit": "https://en.wikipedia.org/wiki/Berlin?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Berlin"
+    }
+  },
+  "extract": "Berlin is the capital and largest city of Germany. With 3.7 million inhabitants, it has the highest population within its city limits of any city in the European Union. The city is also one of the states of Germany, being the third-smallest state in the country by area. Berlin is surrounded by the state of Brandenburg, bordering Brandenburg's capital Potsdam to the southwest. The urban area of Berlin has a population of 4.5 million, making it the second most populous in Germany after the Ruhr. The Berlin-Brandenburg capital region has around 6.2 million inhabitants and is Germany's second-largest metropolitan region after the Rhine-Ruhr region, as well as the fifth-biggest metropolitan region by GDP in the European Union.",
+  "extract_html": "<p><b>Berlin</b> is the capital and largest city of Germany. With 3.7 million inhabitants, it has the highest population within its city limits of any city in the European Union. The city is also one of the states of Germany, being the third-smallest state in the country by area. Berlin is surrounded by the state of Brandenburg, bordering Brandenburg's capital Potsdam to the southwest. The urban area of Berlin has a population of 4.5 million, making it the second most populous in Germany after the Ruhr. The Berlin-Brandenburg capital region has around 6.2 million inhabitants and is Germany's second-largest metropolitan region after the Rhine-Ruhr region, as well as the fifth-biggest metropolitan region by GDP in the European Union.</p>"
+}

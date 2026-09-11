@@ -1,0 +1,124 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-09-08T04:20:27Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 11366266684,
+  "lat": 35.0186488,
+  "lon": 135.6741007,
+  "tags": {
+    "camera:direction": "325",
+    "camera:mount": "pole",
+    "contact:webcam": "https://www.youtube.com/watch?v=Op-lf2NRMzs",
+    "man_made": "surveillance",
+    "name": "京都 嵯峨嵐山 竹林の小径ライブ中継カメラ",
+    "name:en": "Kyoto Saga Arashiyama Bamboo Forest Path Live Broadcast Camera",
+    "operator": "京都市観光協会公式",
+    "surveillance": "webcam",
+    "surveillance:type": "camera"
+  }
+},
+{
+  "type": "node",
+  "id": 13751633772,
+  "lat": 35.0167957,
+  "lon": 135.6712658,
+  "tags": {
+    "attraction": "nature",
+    "direction": "70;250",
+    "name": "竹林の道",
+    "name:en": "Arashiyama Bamboo Forest",
+    "name:fr": "Chemin forestier de bambous",
+    "name:ja-Latn": "Chikurin-no-michi",
+    "note": "これは普通の道。車など使用可。 This is a public road open to normal traffic.",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "way",
+  "id": 105574212,
+  "center": {
+    "lat": 35.0174578,
+    "lon": 135.6743482
+  },
+  "tags": {
+    "bicycle": "yes",
+    "foot": "yes",
+    "highway": "unclassified",
+    "lane_markings": "no",
+    "lit": "yes",
+    "motor_vehicle": "yes",
+    "name": "竹林の道",
+    "name:en": "Bamboo Groves",
+    "name:fr": "Chemin forestier de bambous",
+    "name:ja-Latn": "Chikurin-no-michi",
+    "note": "これは普通の道。車など使用可。 This is a public road open to normal traffic.",
+    "surface": "concrete"
+  }
+},
+{
+  "type": "way",
+  "id": 1150077273,
+  "center": {
+    "lat": 35.0168743,
+    "lon": 135.6712001
+  },
+  "tags": {
+    "alt_name:en": "Arashiyama Bamboo Forest",
+    "attraction": "nature",
+    "bicycle": "yes",
+    "foot": "yes",
+    "highway": "track",
+    "motor_vehicle": "yes",
+    "name": "竹林の道",
+    "name:en": "Bamboo Groves",
+    "name:fr": "Chemin forestier de bambous",
+    "name:ja-Latn": "Chikurin-no-michi",
+    "note": "これは普通の道。車など使用可。 This is a public road open to normal traffic.",
+    "surface": "asphalt",
+    "tourism": "attraction",
+    "tracktype": "grade2"
+  }
+},
+{
+  "type": "relation",
+  "id": 17656638,
+  "center": {
+    "lat": 35.0176471,
+    "lon": 135.6730827
+  },
+  "tags": {
+    "contact:tripadvisor": "15710337",
+    "fee": "no",
+    "genus": "Phyllostachys",
+    "landuse": "forest",
+    "leaf_cycle": "deciduous",
+    "leaf_type": "broadleaved",
+    "name": "嵐山竹林",
+    "name:en": "Arashiyama Bamboo Grove",
+    "name:fr": "Bambouseraie d'Arashiyama",
+    "name:ja-Hira": "あらしやま ちくりん",
+    "name:ja-Latn": "Arashiyama chikurin",
+    "name:pl": "Las bambusowy Arashiyama",
+    "name:ru": "Бамбуковая роща",
+    "name:th": "ป่าไผ่ arashiyama",
+    "opening_hours": "24/7",
+    "species": "Phyllostachys edulis",
+    "taxon:en": "Mōsō bamboo",
+    "taxon:fr": "Bambou Mōsō",
+    "tourism": "attraction",
+    "type": "multipolygon",
+    "wikidata": "Q23579173",
+    "wikimedia_commons": "Category:Sagano Bamboo forest",
+    "wikipedia": "en:Bamboo Forest (Kyoto, Japan)"
+  }
+}
+
+  ]
+}

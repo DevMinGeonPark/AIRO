@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Toronto",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Toronto</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q172",
+  "titles": {
+    "canonical": "Toronto",
+    "normalized": "Toronto",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Toronto</span></span>"
+  },
+  "pageid": 64646,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Toronto_Skyline_from_Olympic_Island%2C_June_20_2026_%285-3_cropped%29.jpg/330px-Toronto_Skyline_from_Olympic_Island%2C_June_20_2026_%285-3_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 198
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Toronto_Skyline_from_Olympic_Island%2C_June_20_2026_%285-3_cropped%29.jpg/3840px-Toronto_Skyline_from_Olympic_Island%2C_June_20_2026_%285-3_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 6632,
+    "height": 3982
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373801905",
+  "tid": "c6ee3974-ab20-11f1-8737-98a2f7068350",
+  "timestamp": "2026-09-08T01:01:09Z",
+  "description": "Most populous city in Canada",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 43.6525,
+    "lon": -79.38166667
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Toronto",
+      "revisions": "https://en.wikipedia.org/wiki/Toronto?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Toronto?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Toronto"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Toronto",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Toronto",
+      "edit": "https://en.wikipedia.org/wiki/Toronto?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Toronto"
+    }
+  },
+  "extract": "Toronto is the most populous city in Canada and the capital city of the Canadian province of Ontario. It is located on a harbour at the northwestern shore of Lake Ontario. The city is the fourth-most populous city in North America, behind Mexico City, New York City, and Los Angeles, with a census population of 2,794,356 as of 2021. The Greater Toronto Area (GTA) is constituted of Toronto proper and four surrounding regions, Peel, York, Durham, and Halton, and has a population of 6,712,341, while the Toronto census metropolitan area (CMA), with a somewhat different definition, has a population of 7,106,379. Toronto is an international centre of business, finance, arts, sports, and culture, and is recognized as one of the most multicultural and cosmopolitan cities in the world.",
+  "extract_html": "<p><b>Toronto</b> is the most populous city in Canada and the capital city of the Canadian province of Ontario. It is located on a harbour at the northwestern shore of Lake Ontario. The city is the fourth-most populous city in North America, behind Mexico City, New York City, and Los Angeles, with a census population of 2,794,356 as of 2021. The Greater Toronto Area (GTA) is constituted of Toronto proper and four surrounding regions, Peel, York, Durham, and Halton, and has a population of 6,712,341, while the Toronto census metropolitan area (CMA), with a somewhat different definition, has a population of 7,106,379. Toronto is an international centre of business, finance, arts, sports, and culture, and is recognized as one of the most multicultural and cosmopolitan cities in the world.</p>"
+}

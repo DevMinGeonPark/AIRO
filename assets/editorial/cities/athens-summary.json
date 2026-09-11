@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Athens",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Athens</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1524",
+  "titles": {
+    "canonical": "Athens",
+    "normalized": "Athens",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Athens</span></span>"
+  },
+  "pageid": 1216,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Athens_Acropolis_at_Daybreak.jpg/330px-Athens_Acropolis_at_Daybreak.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Athens_Acropolis_at_Daybreak.jpg/3840px-Athens_Acropolis_at_Daybreak.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 6004,
+    "height": 3377
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373666113",
+  "tid": "cb134f91-aa79-11f1-9834-0325d75d7617",
+  "timestamp": "2026-09-07T05:05:50Z",
+  "description": "Capital and largest city of Greece",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 37.98416667,
+    "lon": 23.72805556
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Athens",
+      "revisions": "https://en.wikipedia.org/wiki/Athens?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Athens?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Athens"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Athens",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Athens",
+      "edit": "https://en.wikipedia.org/wiki/Athens?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Athens"
+    }
+  },
+  "extract": "Athens is the capital and largest city of Greece. A significant coastal urban area in the Mediterranean, Athens is also the capital of the Attica region and is the southernmost capital on the European mainland. With its urban area's population numbering over 3.6 million, it is the eighth-largest urban area in the European Union (EU). The Municipality of Athens, which constitutes a small administrative unit of the entire urban area, had a population of 643,452 in 2021, within its official limits, and a land area of 38.96 square kilometres.",
+  "extract_html": "<p><b>Athens</b> is the capital and largest city of Greece. A significant coastal urban area in the Mediterranean, Athens is also the capital of the Attica region and is the southernmost capital on the European mainland. With its urban area's population numbering over 3.6 million, it is the eighth-largest urban area in the European Union (EU). The Municipality of Athens, which constitutes a small administrative unit of the entire urban area, had a population of 643,452 in 2021, within its official limits, and a land area of 38.96 square kilometres.</p>"
+}

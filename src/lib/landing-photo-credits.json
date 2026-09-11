@@ -1,0 +1,642 @@
+[
+  {
+    "id": "kyoto",
+    "city": "교토",
+    "image": "/travel/cities/kyoto.jpg",
+    "author": "Nina R from Africa",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kyoto,_Japan_(49667780482).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "seoul",
+    "city": "서울",
+    "image": "/travel/cities/seoul.jpg",
+    "author": "Eunmi Park",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "busan",
+    "city": "부산",
+    "image": "/travel/cities/busan.jpg",
+    "author": "Glabb",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Gwangan_Bridge1.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "jeju",
+    "city": "제주",
+    "image": "/travel/cities/jeju.jpg",
+    "author": "Korea.net / Korean Culture and Information Service",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Seongsan_Ilchulbong_from_the_air.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "tokyo",
+    "city": "도쿄",
+    "image": "/travel/cities/tokyo.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Shinjuku_2009_January.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "osaka",
+    "city": "오사카",
+    "image": "/travel/cities/osaka.jpg",
+    "author": "663highland",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_03bs3200.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "taipei",
+    "city": "타이베이",
+    "image": "/travel/cities/taipei.jpg",
+    "author": "毛貓大少爺",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Taipei_Skyline_2022.06.29.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "bangkok",
+    "city": "방콕",
+    "image": "/travel/cities/bangkok.jpg",
+    "author": "Ninara from Helsinki, Finland",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:4Y1A1159_Bangkok_(33536795515).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "singapore",
+    "city": "싱가포르",
+    "image": "/travel/cities/singapore.jpg",
+    "author": "Bijay Chaurasia",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Marina_Bay_Singapore-3499.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "paris",
+    "city": "파리",
+    "image": "/travel/cities/paris.jpg",
+    "author": "Yann Caradec from Paris, France",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques,_Paris_ao%C3%BBt_2014_(2).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "london",
+    "city": "런던",
+    "image": "/travel/cities/london.jpg",
+    "author": "Ilya Grigorik",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:London_Skyline_(125508655).jpeg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "new-york",
+    "city": "뉴욕",
+    "image": "/travel/cities/new-york.jpg",
+    "author": "Dllu",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_(cropped).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "sydney",
+    "city": "시드니",
+    "image": "/travel/cities/sydney.jpg",
+    "author": "Benh LIEU SONG (Flickr)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_and_Harbour_Bridge_Dusk_(2)_2019-06-21.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "hong-kong",
+    "city": "홍콩",
+    "image": "/travel/cities/hong-kong.jpg",
+    "author": "Mike",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hong_Kong_Skyline_(157974881).jpeg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "beijing",
+    "city": "베이징",
+    "image": "/travel/cities/beijing.jpg",
+    "author": "N509FZ",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_Beijing_CBD_with_B-5906_approaching_(20211016171955)_(1).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "shanghai",
+    "city": "상하이",
+    "image": "/travel/cities/shanghai.jpg",
+    "author": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Huangpu_Park_20124-Shanghai_(32208802494).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "hanoi",
+    "city": "하노이",
+    "image": "/travel/cities/hanoi.jpg",
+    "author": "Quangnlnhe182394",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Hanoi_skyline_with_Ba_Vi_Mountain.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "ho-chi-minh",
+    "city": "호찌민",
+    "image": "/travel/cities/ho-chi-minh.jpg",
+    "author": "Steffen Schmitz (more photos)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_City,_City_Hall,_2020-01_CN-03.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "kuala-lumpur",
+    "city": "쿠알라룸푸르",
+    "image": "/travel/cities/kuala-lumpur.jpg",
+    "author": "Renek78",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bukit_Bintang_junction_in_2024_2.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "bali",
+    "city": "발리",
+    "image": "/travel/cities/bali.jpg",
+    "author": "Thomas Fuhrmann",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rice_terraces_on_Bali_-_Tegalalang_Rice_Terrace_-_Indonesia_04.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "delhi",
+    "city": "델리",
+    "image": "/travel/cities/delhi.jpg",
+    "author": "Marcin Białek",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jama_Masjid_2011.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "dubai",
+    "city": "두바이",
+    "image": "/travel/cities/dubai.jpg",
+    "author": "Norlando Pobre",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dubai_Marina_Skyline.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "istanbul",
+    "city": "이스탄불",
+    "image": "/travel/cities/istanbul.jpg",
+    "author": "Hunanuk",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Historical_peninsula_and_modern_skyline_of_Istanbul.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "barcelona",
+    "city": "바르셀로나",
+    "image": "/travel/cities/barcelona.jpg",
+    "author": "M McBey",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Evening_light_over_Barcelona.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "lisbon",
+    "city": "리스본",
+    "image": "/travel/cities/lisbon.jpg",
+    "author": "Vitor Oliveira from Torres Vedras, PORTUGAL",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lisboa_-_Portugal_(52597836992).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "amsterdam",
+    "city": "암스테르담",
+    "image": "/travel/cities/amsterdam.png",
+    "author": "Andrés Barrios",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "berlin",
+    "city": "베를린",
+    "image": "/travel/cities/berlin.jpg",
+    "author": "File:Museumsinsel Berlin Juli 2021 1 (cropped).jpg: Kasa Fue\nderivative work: Georgfotoart",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Museumsinsel_Berlin_Juli_2021_1_(cropped)_b.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "prague",
+    "city": "프라하",
+    "image": "/travel/cities/prague.jpg",
+    "author": "Moyan Brenn from Italy",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Prague_(6365119737).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "vienna",
+    "city": "빈",
+    "image": "/travel/cities/vienna.jpg",
+    "author": "Superbass",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Schoenbrunn_philharmoniker_2012.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "budapest",
+    "city": "부다페스트",
+    "image": "/travel/cities/budapest.jpg",
+    "author": "Visions of Domino",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_from_Gell%C3%A9rt_Hill_to_the_Danube,_Hungary_-_Budapest_(28493220635).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "athens",
+    "city": "아테네",
+    "image": "/travel/cities/athens.jpg",
+    "author": "Andrew Parlette",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Athens_Acropolis_at_Daybreak.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "reykjavik",
+    "city": "레이캬비크",
+    "image": "/travel/cities/reykjavik.jpg",
+    "author": "Olga Ernst",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Reykjav%C3%ADk,_view_from_Hallgr%C3%ADmskirkja_(2).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "cairo",
+    "city": "카이로",
+    "image": "/travel/cities/cairo.jpg",
+    "author": "Jorge Láscar from Melbourne, Australia",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cairo_Opera_House,_Al_Hurriyah_Park_and_the_Nile_river_(14797782354).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "marrakesh",
+    "city": "마라케시",
+    "image": "/travel/cities/marrakesh.jpg",
+    "author": "Acp",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Pavillon_Menarag%C3%A4rten.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "cape-town",
+    "city": "케이프타운",
+    "image": "/travel/cities/cape-town.jpg",
+    "author": "Der Berzerker from Washington, DC, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Camps_bay_(53460319478)_(cropped).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "nairobi",
+    "city": "나이로비",
+    "image": "/travel/cities/nairobi.jpg",
+    "author": "Daniel Case",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nairobi_skyline_from_Gem_Hotel.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "zanzibar",
+    "city": "잔지바르",
+    "image": "/travel/cities/zanzibar.jpg",
+    "author": "No machine-readable author provided. Mbz1 assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Zanzibar_sultan_palace.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "dakar",
+    "city": "다카르",
+    "image": "/travel/cities/dakar.jpg",
+    "author": "mostroneddo",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dakar-Ind%C3%A9pendance.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "los-angeles",
+    "city": "로스앤젤레스",
+    "image": "/travel/cities/los-angeles.jpg",
+    "author": "Gnaphron",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hollywood_sign_(8485145044).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "san-francisco",
+    "city": "샌프란시스코",
+    "image": "/travel/cities/san-francisco.jpg",
+    "author": "Frank Schulenburg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Battery_East.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "vancouver",
+    "city": "밴쿠버",
+    "image": "/travel/cities/vancouver.jpg",
+    "author": "Quintin Soloviev",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_Vancouver,_Canada.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "toronto",
+    "city": "토론토",
+    "image": "/travel/cities/toronto.jpg",
+    "author": "Dillan Payne",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Toronto_Skyline_from_Olympic_Island,_June_20_2026_(5-3_cropped).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "mexico-city",
+    "city": "멕시코시티",
+    "image": "/travel/cities/mexico-city.jpg",
+    "author": "Gobierno CDMX",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Sobrevuelos_CDMX_HJ2A4913_(25514321687)_(cropped).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "havana",
+    "city": "아바나",
+    "image": "/travel/cities/havana.jpg",
+    "author": "RenaatPeeters",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:DJI_0197_crp_wiki.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "rio-de-janeiro",
+    "city": "리우데자네이루",
+    "image": "/travel/cities/rio-de-janeiro.jpg",
+    "author": "Rafael Rabello de Barros",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cidade_Maravilhosa.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "buenos-aires",
+    "city": "부에노스아이레스",
+    "image": "/travel/cities/buenos-aires.jpg",
+    "author": "Deensel",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Puerto_Madero,_Buenos_Aires_(40689219792)_(cropped).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "lima",
+    "city": "리마",
+    "image": "/travel/cities/lima.jpg",
+    "author": "David Felipe Ruiz Hoyos",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_(cropped).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "bogota",
+    "city": "보고타",
+    "image": "/travel/cities/bogota.jpg",
+    "author": "Pedro Szekely from Los Angeles, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bogota,_Colombia_(36668708290).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "santiago",
+    "city": "산티아고",
+    "image": "/travel/cities/santiago.jpg",
+    "author": "Miguel hernandez",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Palacio_de_La_Moneda_-_miguelreflex.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "melbourne",
+    "city": "멜버른",
+    "image": "/travel/cities/melbourne.jpg",
+    "author": "Melbpal",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Melbourne_skyline_sor.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "auckland",
+    "city": "오클랜드",
+    "image": "/travel/cities/auckland.jpg",
+    "author": "elpinto007",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Auckland_skyline_-_May_2024_(2).jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "honolulu",
+    "city": "호놀룰루",
+    "image": "/travel/cities/honolulu.jpg",
+    "author": "Farragutful",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2022_Views_from_Diamond_Head_02.jpg",
+    "changes": "Displayed resized and cropped to fit the card; original photograph retained."
+  },
+  {
+    "id": "rome",
+    "city": "로마",
+    "image": "/travel/rome-skyline.jpg",
+    "author": "Nicolas Jehly",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "source": "https://unsplash.com/photos/aCHQLKWrAbI",
+    "changes": "Displayed resized and cropped to fit."
+  },
+  {
+    "id": "rome-alley",
+    "city": "로마 골목",
+    "image": "/travel/rome-alley.jpg",
+    "author": "Tobias Tullius",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "source": "https://unsplash.com/photos/Jfm2JZ6XguM",
+    "changes": "Displayed resized and cropped to fit."
+  },
+  {
+    "id": "rome-pantheon",
+    "city": "판테온",
+    "image": "/travel/rome/pantheon.jpg",
+    "author": "NikonZ7II",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pantheon_(Rome)_-_Right_side_and_front.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-trevi",
+    "city": "트레비 분수",
+    "image": "/travel/rome/trevi.jpg",
+    "author": "NikonZ7II",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-colosseum",
+    "city": "콜로세움",
+    "image": "/travel/rome/colosseum.jpg",
+    "author": "FeaturedPics",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-forum",
+    "city": "포로 로마노",
+    "image": "/travel/rome/forum.jpg",
+    "author": "This Photo was taken by Wolfgang Moroder.  \n\nFeel free to use my photos, but please mention me as the author and send me a  message. \n\n\n\nThis image is not in the public domain. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media, if applicable terms of the licenses listed here not appropriate.\n\n\n\nPlease do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Foro_Romano_Musei_Capitolini_Roma.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-spanish-steps",
+    "city": "스페인 광장",
+    "image": "/travel/rome/spanish-steps.jpg",
+    "author": "Arnaud 25",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Piazza_di_Spagna_(Rome)_0004.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-castle",
+    "city": "산탄젤로성",
+    "image": "/travel/rome/castle.jpg",
+    "author": "Livioandronico2013",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Castel_Sant%27Angelo_at_Night.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-st-peters",
+    "city": "성베드로 광장",
+    "image": "/travel/rome/st-peters.jpg",
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Square,_Vatican_City_-_April_2007.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-navona",
+    "city": "나보나 광장",
+    "image": "/travel/rome/navona.jpg",
+    "author": "NikonZ7II",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Piazza_Navona_(Rome)_at_night.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-cafe",
+    "city": "로마 안티코 카페 그레코",
+    "image": "/travel/rome/cafe.jpg",
+    "author": "Elisabetta Stringhi from Italia",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Antico_caff%C3%A9_greco_(14869700159).jpg",
+    "changes": "Displayed resized and cropped; original retained."
+  },
+  {
+    "id": "rome-capitoline",
+    "city": "로마 캄피돌리오 광장",
+    "image": "/travel/rome/capitoline.jpg",
+    "author": "Jensens",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campidoglio_Roma.jpg",
+    "changes": "Displayed resized and cropped; original retained."
+  }
+]

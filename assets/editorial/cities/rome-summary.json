@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Rome",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Rome</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q220",
+  "titles": {
+    "canonical": "Rome",
+    "normalized": "Rome",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Rome</span></span>"
+  },
+  "pageid": 25458,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg/330px-Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 219
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3500,
+    "height": 2325
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373799336",
+  "tid": "197a26c3-ab1e-11f1-a19d-4d8a5bb838f5",
+  "timestamp": "2026-09-08T00:41:59Z",
+  "description": "Capital and largest city of Italy",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.89333333,
+    "lon": 12.48277778
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Rome",
+      "revisions": "https://en.wikipedia.org/wiki/Rome?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Rome?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Rome"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Rome",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Rome",
+      "edit": "https://en.wikipedia.org/wiki/Rome?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Rome"
+    }
+  },
+  "extract": "Rome is the capital city and most populated comune (municipality) of Italy. It is also the administrative centre of the Lazio region and of the Metropolitan City of Rome. A special comune named Roma Capitale with a population of 2.7 million in an area of 1,287.36 km2 (497.1 mi2), Rome is the third most populous city in the European Union by population within city limits. The Metropolitan City of Rome Capital, with a population of 4.2 million, is the most populous metropolitan city in Italy. Its metropolitan area is the third-most populous within Italy. Rome is located in the central-western portion of the Italian Peninsula, within Lazio (Latium), along the shores of the Tiber Valley. Vatican City—the smallest country in the world and headquarters of the worldwide Catholic Church under the governance of the Holy See—is an independent country within Rome's municipal boundaries, the only existing example of a country within a city. Rome is often referred to as the \"City of Seven Hills\" due to its geography, and also as the \"Eternal City\". Rome is generally considered to be one of the cradles of Western civilization and Western Christian culture, and the centre of the Catholic Church.",
+  "extract_html": "<p><b>Rome</b> is the capital city and most populated <span><i lang=\"it\">comune</i></span> (municipality) of Italy. It is also the administrative centre of the Lazio region and of the Metropolitan City of Rome. A special <span><i lang=\"it\">comune</i></span> named <span><i lang=\"it\">Roma Capitale</i></span> with a population of 2.7 million in an area of 1,287.36 km<sup>2</sup> (497.1 mi<sup>2</sup>), Rome is the third most populous city in the European Union by population within city limits. The Metropolitan City of Rome Capital, with a population of 4.2 million, is the most populous metropolitan city in Italy. Its metropolitan area is the third-most populous within Italy. Rome is located in the central-western portion of the Italian Peninsula, within Lazio (Latium), along the shores of the Tiber Valley. Vatican City—the smallest country in the world and headquarters of the worldwide Catholic Church under the governance of the Holy See—is an independent country within Rome's municipal boundaries, the only existing example of a country within a city. Rome is often referred to as the \"City of Seven Hills\" due to its geography, and also as the \"Eternal City\". Rome is generally considered to be one of the cradles of Western civilization and Western Christian culture, and the centre of the Catholic Church.</p>"
+}

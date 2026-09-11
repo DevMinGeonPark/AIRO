@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Istanbul",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Istanbul</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q406",
+  "titles": {
+    "canonical": "Istanbul",
+    "normalized": "Istanbul",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Istanbul</span></span>"
+  },
+  "pageid": 3391396,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Historical_peninsula_and_modern_skyline_of_Istanbul.jpg/330px-Historical_peninsula_and_modern_skyline_of_Istanbul.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 159
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Historical_peninsula_and_modern_skyline_of_Istanbul.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3301,
+    "height": 1595
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1370867842",
+  "tid": "d9e6f541-9efa-11f1-9703-96aeb6ae7be0",
+  "timestamp": "2026-08-23T13:59:26Z",
+  "description": "Largest city in Turkey",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.01361111,
+    "lon": 28.955
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Istanbul",
+      "revisions": "https://en.wikipedia.org/wiki/Istanbul?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Istanbul?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Istanbul"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Istanbul",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Istanbul",
+      "edit": "https://en.wikipedia.org/wiki/Istanbul?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Istanbul"
+    }
+  },
+  "extract": "Istanbul is the largest city in Turkey, a megacity, constituting the country's economic, cultural, and historical center. With a population of over 15 million, it is home to 18% of the population of Turkey. Istanbul is among the largest cities in Europe and in the world by population. It is a city on two continents; about two-thirds of its population live in Europe and the rest in Asia. Istanbul straddles the Bosphorus – one of the world's busiest waterways – in northwestern Turkey, between the Sea of Marmara and the Black Sea. Its area of 5,461 square kilometers (2,109 mi2) is coterminous with Istanbul Province.",
+  "extract_html": "<p><b>Istanbul</b> is the largest city in Turkey, a megacity, constituting the country's economic, cultural, and historical center. With a population of over 15 million, it is home to 18% of the population of Turkey. Istanbul is among the largest cities in Europe and in the world by population. It is a city on two continents; about two-thirds of its population live in Europe and the rest in Asia. Istanbul straddles the Bosphorus – one of the world's busiest waterways – in northwestern Turkey, between the Sea of Marmara and the Black Sea. Its area of 5,461 square kilometers (2,109 mi<sup>2</sup>) is coterminous with Istanbul Province.</p>"
+}

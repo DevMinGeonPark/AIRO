@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Los Angeles",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Los Angeles</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q65",
+  "titles": {
+    "canonical": "Los_Angeles",
+    "normalized": "Los Angeles",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Los Angeles</span></span>"
+  },
+  "pageid": 18110,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Hollywood_sign_%288485145044%29.jpg/330px-Hollywood_sign_%288485145044%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Hollywood_sign_%288485145044%29.jpg/3840px-Hollywood_sign_%288485145044%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 3888,
+    "height": 2592
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373317649",
+  "tid": "99c042dc-a8fa-11f1-a623-2908317147b3",
+  "timestamp": "2026-09-05T07:22:50Z",
+  "description": "Most populous city in California, US",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 34.05,
+    "lon": -118.25
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Los_Angeles",
+      "revisions": "https://en.wikipedia.org/wiki/Los_Angeles?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Los_Angeles?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Los_Angeles"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Los_Angeles",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Los_Angeles",
+      "edit": "https://en.wikipedia.org/wiki/Los_Angeles?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Los_Angeles"
+    }
+  },
+  "extract": "Los Angeles is the most populous city in the U.S. state of California, and the commercial, financial, and cultural center of Southern California. With an estimated 3.87 million residents within the city limits as of 2025, it is the second-most populous city in the United States, behind New York City, and the largest city in the Western United States. The city has an ethnically and culturally diverse population, and is the principal city of a metropolitan area of 12.9 million people (2024). Greater Los Angeles, a combined statistical area that includes the Los Angeles and Riverside–San Bernardino metropolitan areas, is a sprawling metropolis of over 18 million residents.",
+  "extract_html": "<p><b>Los Angeles</b> is the most populous city in the U.S. state of California, and the commercial, financial, and cultural center of Southern California. With an estimated 3.87 million residents within the city limits as of 2025, it is the second-most populous city in the United States, behind New York City, and the largest city in the Western United States. The city has an ethnically and culturally diverse population, and is the principal city of a metropolitan area of 12.9 million people (2024). Greater Los Angeles, a combined statistical area that includes the Los Angeles and Riverside–San Bernardino metropolitan areas, is a sprawling metropolis of over 18 million residents.</p>"
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Bogotá",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Bogotá</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q2841",
+  "titles": {
+    "canonical": "Bogotá",
+    "normalized": "Bogotá",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Bogotá</span></span>"
+  },
+  "pageid": 211271,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bogota%2C_Colombia_%2836668708290%29.jpg/330px-Bogota%2C_Colombia_%2836668708290%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 248
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/20/Bogota%2C_Colombia_%2836668708290%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3000,
+    "height": 2250
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373631032",
+  "tid": "f46eaf94-aa56-11f1-bece-2a9278db1e5b",
+  "timestamp": "2026-09-07T00:56:27Z",
+  "description": "Capital and largest city of Colombia",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 4.71111111,
+    "lon": -74.07222222
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Bogot%C3%A1",
+      "revisions": "https://en.wikipedia.org/wiki/Bogot%C3%A1?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Bogot%C3%A1?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Bogot%C3%A1"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Bogot%C3%A1",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Bogot%C3%A1",
+      "edit": "https://en.wikipedia.org/wiki/Bogot%C3%A1?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Bogot%C3%A1"
+    }
+  },
+  "extract": "Bogotá is the capital and largest city of Colombia. The city is administered as the Capital District, as well as the capital of, though not politically part of, the surrounding department of Cundinamarca. Bogotá is a territorial entity of the first order, with the same administrative status as the departments of Colombia. It is the main political, economic, administrative, industrial, cultural, aeronautical, technological, scientific, medical, educational and airport center of the country and northern South America.",
+  "extract_html": "<p><b>Bogotá</b> is the capital and largest city of Colombia. The city is administered as the Capital District, as well as the capital of, though not politically part of, the surrounding department of Cundinamarca. Bogotá is a territorial entity of the first order, with the same administrative status as the departments of Colombia. It is the main political, economic, administrative, industrial, cultural, aeronautical, technological, scientific, medical, educational and airport center of the country and northern South America.</p>"
+}

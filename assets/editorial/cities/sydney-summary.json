@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Sydney",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Sydney</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q3130",
+  "titles": {
+    "canonical": "Sydney",
+    "normalized": "Sydney",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Sydney</span></span>"
+  },
+  "pageid": 27862,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg/330px-Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 165
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg/3840px-Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 6173,
+    "height": 3087
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373638647",
+  "tid": "32bb9f27-aa5e-11f1-a72d-f6b93ac74960",
+  "timestamp": "2026-09-07T01:48:18Z",
+  "description": "Capital city of New South Wales, Australia",
+  "description_source": "local",
+  "coordinates": {
+    "lat": -33.86777778,
+    "lon": 151.21
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Sydney",
+      "revisions": "https://en.wikipedia.org/wiki/Sydney?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Sydney?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Sydney"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Sydney",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Sydney",
+      "edit": "https://en.wikipedia.org/wiki/Sydney?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Sydney"
+    }
+  },
+  "extract": "Sydney is the capital of the state of New South Wales and the largest city in both the state and Australia. The metropolis surrounds Sydney Harbour and extends about 80 kilometres (50 mi) from the Pacific Ocean in the east to the Blue Mountains in the west, and about 80 kilometres (50 mi) from Ku-ring-gai Chase National Park and the Hawkesbury River in the north and north-west, to the Royal National Park and Macarthur in the south and south-west. Greater Sydney consists of 658 suburbs, spread across 33 local government areas. Residents of the city are colloquially known as \"Sydneysiders\". The estimated population in June 2025 was 5,638,830, which is about 66% of the state's population. The city's nicknames include the Emerald City and the Harbour City.",
+  "extract_html": "<p><b>Sydney</b> is the capital of the state of New South Wales and the largest city in both the state and Australia. The metropolis surrounds Sydney Harbour and extends about 80 kilometres (50 mi) from the Pacific Ocean in the east to the Blue Mountains in the west, and about 80 kilometres (50 mi) from Ku-ring-gai Chase National Park and the Hawkesbury River in the north and north-west, to the Royal National Park and Macarthur in the south and south-west. Greater Sydney consists of 658 suburbs, spread across 33 local government areas. Residents of the city are colloquially known as \"Sydneysiders\". The estimated population in June 2025 was 5,638,830, which is about 66% of the state's population. The city's nicknames include the <b>Emerald City</b> and the <b>Harbour City</b>.</p>"
+}

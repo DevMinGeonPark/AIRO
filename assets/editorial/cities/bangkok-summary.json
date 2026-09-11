@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Bangkok",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Bangkok</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1861",
+  "titles": {
+    "canonical": "Bangkok",
+    "normalized": "Bangkok",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Bangkok</span></span>"
+  },
+  "pageid": 56615,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/4Y1A1159_Bangkok_%2833536795515%29.jpg/330px-4Y1A1159_Bangkok_%2833536795515%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/7d/4Y1A1159_Bangkok_%2833536795515%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 2999,
+    "height": 1999
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1372917180",
+  "tid": "7d20e475-a729-11f1-91e2-dda22977d498",
+  "timestamp": "2026-09-02T23:53:26Z",
+  "description": "Capital and largest city of Thailand",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 13.7525,
+    "lon": 100.49416667
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Bangkok",
+      "revisions": "https://en.wikipedia.org/wiki/Bangkok?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Bangkok?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Bangkok"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Bangkok",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Bangkok",
+      "edit": "https://en.wikipedia.org/wiki/Bangkok?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Bangkok"
+    }
+  },
+  "extract": "Bangkok, known in Thai as Krung Thep Maha Nakhon and colloquially as Krung Thep, is the capital and largest city of the Kingdom of Thailand. The city occupies 1,568.7 square kilometres (605.7 sq mi) in the Chao Phraya River delta in central Thailand and has an estimated population of 9.1 million people as of 2024, 15.9% of the country's population. Over 17.4 million people live within the surrounding Bangkok Metropolitan Region as of the 2021 estimate, making Bangkok a megacity and an extreme primate city, dwarfing Thailand's other urban centres in both size and importance to the national economy.",
+  "extract_html": "<p><b>Bangkok</b>, known in Thai as <b>Krung Thep Maha Nakhon</b> and colloquially as <b>Krung Thep</b>, is the capital and largest city of the Kingdom of Thailand. The city occupies 1,568.7 square kilometres (605.7 sq mi) in the Chao Phraya River delta in central Thailand and has an estimated population of 9.1 million people as of 2024, 15.9% of the country's population. Over 17.4 million people live within the surrounding Bangkok Metropolitan Region as of the 2021 estimate, making Bangkok a megacity and an extreme primate city, dwarfing Thailand's other urban centres in both size and importance to the national economy.</p>"
+}

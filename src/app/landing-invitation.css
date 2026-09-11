@@ -1,0 +1,51 @@
+/* A short invitation and a visual itinerary replace the paragraph-heavy hero. */
+body .landing .hero-section[data-arrival] .hero-copy { width: min(440px, 39vw); }
+body .landing .hero-section[data-arrival] .hero-copy h1 { font-size: clamp(32px, 3.35vw, 50px); line-height: 1.2; letter-spacing: -.055em; }
+.landing .invitation-visual { width: min(360px, 100%); margin-top: 28px; }
+.landing .invitation-message { display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 15px 18px; border: 1px solid #FFFFFF20; border-radius: 18px 18px 18px 4px; background: #171717D9; font-size: 13px; color: #C8C8C8; }
+.landing .invitation-message > svg { flex-shrink: 0; color: var(--brand-blue); }
+.landing .invitation-message strong { font-weight: 500; color: #F3F1EA; }
+.landing .invitation-message-dot { width: 5px; height: 5px; flex-shrink: 0; margin-left: auto; border-radius: 50%; background: var(--brand-blue); box-shadow: 0 0 12px #86A5FF50; }
+.landing .invitation-thread { position: relative; display: flex; justify-content: space-between; align-items: flex-start; margin-top: 24px; padding-inline: 15px; height: 114px; }
+.landing .invitation-line { position: absolute; inset: 0; width: 100%; height: 86px; pointer-events: none; stroke: #39435E; stroke-width: 1.2px; }
+.landing .invitation-trace { stroke: var(--brand-blue); stroke-dasharray: .16 .84; animation: invitation-travel 7s ease-in-out infinite; opacity: .85; }
+.landing .invitation-stop { position: relative; display: grid; justify-items: center; gap: 10px; min-width: 58px; }
+.landing .invitation-stop:nth-of-type(2) { margin-top: 30px; }
+.landing .invitation-stop > span { display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid #86A5FF50; border-radius: 15px; background: #14171F; color: var(--brand-blue); }
+.landing .invitation-stop small { color: #9B9DA4; font-size: 11px; white-space: nowrap; }
+body .landing .hero-section[data-arrival] .hero-actions { margin-top: 12px; gap: 22px; }
+.landing[data-motion='off'] .invitation-trace, .landing[data-motion='reduced'] .invitation-trace { animation: none; stroke-dasharray: none; opacity: .45; }
+@keyframes invitation-travel { 0%, 15% { stroke-dashoffset: 1; } 75%, 100% { stroke-dashoffset: 0; } }
+@media (max-width: 767px), (max-width: 1023px) and (max-height: 500px) {
+  body .landing .hero-section[data-arrival] .hero-copy { width: auto; }
+  body .landing .hero-section[data-arrival] .hero-copy h1 { font-size: clamp(22px, 3.45svh, 28px); line-height: 1.13; letter-spacing: -.045em; }
+  .landing .invitation-visual { width: 100%; margin-top: 10px; }
+  .landing .invitation-message { min-height: 32px; padding: 7px 10px; border-radius: 10px 10px 10px 3px; gap: 8px; font-size: 11px; }
+  .landing .invitation-message > svg { width: 13px; height: 13px; }
+  .landing .invitation-thread { height: 20px; margin-top: 7px; padding: 0; justify-content: flex-start; gap: 24px; }
+  .landing .invitation-line { display: none; }
+  .landing .invitation-stop { display: flex; gap: 5px; min-width: 0; }
+  .landing .invitation-stop:nth-of-type(2) { margin: 0; }
+  .landing .invitation-stop + .invitation-stop::before { content: ''; position: absolute; width: 11px; height: 1px; background: #52607E; left: -18px; top: 9px; }
+  .landing .invitation-stop > span { width: 17px; height: 18px; border: 0; background: none; border-radius: 0; }
+  .landing .invitation-stop svg { width: 13px; height: 13px; }
+  .landing .invitation-stop small { font-size: 9px; }
+}
+@media (max-width: 767px) and (min-height: 701px) and (max-height: 790px) {
+  .landing .invitation-visual { margin-top: 6px; }
+  .landing .invitation-message { min-height: 28px; padding-block: 4px; }
+  .landing .invitation-thread { margin-top: 3px; }
+}
+@media (max-width: 767px) and (max-height: 700px) {
+  body .landing .hero-section[data-arrival] .hero-copy h1 { font-size: 22px; }
+  .landing .invitation-message { display: none; }
+  .landing .invitation-visual { margin-top: 5px; }
+  .landing .invitation-thread { margin-top: 0; }
+}
+@media (max-width: 1023px) and (max-height: 500px) and (orientation: landscape) {
+  body .landing .hero-section[data-arrival] .hero-copy { width: 33%; }
+  body .landing .hero-section[data-arrival] .hero-copy h1 { font-size: 22px; }
+  .landing .invitation-message { display: none; }
+  .landing .invitation-visual { margin-top: 6px; }
+  .landing .invitation-thread { margin-top: 0; gap: 20px; }
+}

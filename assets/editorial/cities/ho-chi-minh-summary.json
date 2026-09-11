@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Ho Chi Minh City",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Ho Chi Minh City</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1854",
+  "titles": {
+    "canonical": "Ho_Chi_Minh_City",
+    "normalized": "Ho Chi Minh City",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Ho Chi Minh City</span></span>"
+  },
+  "pageid": 66956,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Ho_Chi_Minh_City%2C_City_Hall%2C_2020-01_CN-03.jpg/330px-Ho_Chi_Minh_City%2C_City_Hall%2C_2020-01_CN-03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 253
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/86/Ho_Chi_Minh_City%2C_City_Hall%2C_2020-01_CN-03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3699,
+    "height": 2839
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373807401",
+  "tid": "682bbf63-ab26-11f1-b632-a06f61775cb9",
+  "timestamp": "2026-09-08T01:41:27Z",
+  "description": "Largest city in Vietnam",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 10.77555556,
+    "lon": 106.70194444
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City",
+      "revisions": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Ho_Chi_Minh_City"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Ho_Chi_Minh_City",
+      "edit": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Ho_Chi_Minh_City"
+    }
+  },
+  "extract": "Ho Chi Minh City, also known as Saigon, is the most populous city and centrally-governed city of Vietnam, with a population of more than 14 million in 2025. Its geography is defined by rivers and canals, of which the largest is the Saigon River.",
+  "extract_html": "<p><b>Ho Chi Minh City</b>, also known as <b>Saigon</b>, is the most populous city and centrally-governed city of Vietnam, with a population of more than 14 million in 2025. Its geography is defined by rivers and canals, of which the largest is the Saigon River.</p>"
+}

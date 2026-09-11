@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Dubai Marina",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Dubai Marina</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1135647",
+  "titles": {
+    "canonical": "Dubai_Marina",
+    "normalized": "Dubai Marina",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Dubai Marina</span></span>"
+  },
+  "pageid": 2438171,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Dubai_Marina_Skyline.jpg/330px-Dubai_Marina_Skyline.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Dubai_Marina_Skyline.jpg/3840px-Dubai_Marina_Skyline.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 6000,
+    "height": 4000
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1369116914",
+  "tid": "4ec45d6e-96b3-11f1-a854-f95c76acd6e2",
+  "timestamp": "2026-08-13T01:07:09Z",
+  "description": "District in Dubai, United Arab Emirates",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 25.08135,
+    "lon": 55.144075
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Dubai_Marina",
+      "revisions": "https://en.wikipedia.org/wiki/Dubai_Marina?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Dubai_Marina?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Dubai_Marina"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Dubai_Marina",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Dubai_Marina",
+      "edit": "https://en.wikipedia.org/wiki/Dubai_Marina?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Dubai_Marina"
+    }
+  },
+  "extract": "Dubai Marina, also known as Marsa Dubai, is a district in Dubai, United Arab Emirates. It is built around an artificially constructed canal along a 3-kilometre (2 mi) stretch of the Persian Gulf shoreline. In 2024 it had a population of 70,550.",
+  "extract_html": "<p><b>Dubai Marina</b>, also known as <b>Marsa Dubai</b>, is a district in Dubai, United Arab Emirates. It is built around an artificially constructed canal along a 3-kilometre (2 mi) stretch of the Persian Gulf shoreline. In 2024 it had a population of 70,550.</p>"
+}

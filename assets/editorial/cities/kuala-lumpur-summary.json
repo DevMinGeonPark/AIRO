@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Kuala Lumpur",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Kuala Lumpur</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1865",
+  "titles": {
+    "canonical": "Kuala_Lumpur",
+    "normalized": "Kuala Lumpur",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Kuala Lumpur</span></span>"
+  },
+  "pageid": 16854,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Bukit_Bintang_junction_in_2024_2.jpg/330px-Bukit_Bintang_junction_in_2024_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Bukit_Bintang_junction_in_2024_2.jpg/3840px-Bukit_Bintang_junction_in_2024_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 4000,
+    "height": 2252
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373365247",
+  "tid": "bf7239ea-a944-11f1-9f37-99b3215d6d93",
+  "timestamp": "2026-09-05T16:13:36Z",
+  "description": "Capital city of Malaysia",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 3.14777778,
+    "lon": 101.69527778
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Kuala_Lumpur",
+      "revisions": "https://en.wikipedia.org/wiki/Kuala_Lumpur?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Kuala_Lumpur?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Kuala_Lumpur"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Kuala_Lumpur",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Kuala_Lumpur",
+      "edit": "https://en.wikipedia.org/wiki/Kuala_Lumpur?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Kuala_Lumpur"
+    }
+  },
+  "extract": "Kuala Lumpur (KL), officially the Federal Territory of Kuala Lumpur, is the capital city and a federal territory of Malaysia. It is the most populous city in the country, covering an area of 243 km2 (94 sq mi) with a population of 2,111,536 as of 2026. Greater Kuala Lumpur, which itself includes the Klang Valley, is an urban agglomeration of 8.81 million people as of 2024. It is among the fastest growing metropolitan regions in Southeast Asia, in terms of both population and economic development.",
+  "extract_html": "<p><b>Kuala Lumpur</b> (<b>KL</b>), officially the <b>Federal Territory of Kuala Lumpur</b>, is the capital city and a federal territory of Malaysia. It is the most populous city in the country, covering an area of 243 km<sup>2</sup> (94 sq mi) with a population of 2,111,536 as of 2026. Greater Kuala Lumpur, which itself includes the Klang Valley, is an urban agglomeration of 8.81 million people as of 2024. It is among the fastest growing metropolitan regions in Southeast Asia, in terms of both population and economic development.</p>"
+}

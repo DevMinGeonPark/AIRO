@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Rio de Janeiro",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Rio de Janeiro</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q8678",
+  "titles": {
+    "canonical": "Rio_de_Janeiro",
+    "normalized": "Rio de Janeiro",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Rio de Janeiro</span></span>"
+  },
+  "pageid": 25936,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/330px-Cidade_Maravilhosa.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 176
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/98/Cidade_Maravilhosa.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3648,
+    "height": 1948
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1372312190",
+  "tid": "be8277ac-a500-11f1-9099-d4a1432d5271",
+  "timestamp": "2026-08-31T05:56:44Z",
+  "description": "Second-largest city in Brazil",
+  "description_source": "local",
+  "coordinates": {
+    "lat": -22.91111111,
+    "lon": -43.20555556
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Rio_de_Janeiro",
+      "revisions": "https://en.wikipedia.org/wiki/Rio_de_Janeiro?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Rio_de_Janeiro?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Rio_de_Janeiro"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Rio_de_Janeiro",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Rio_de_Janeiro",
+      "edit": "https://en.wikipedia.org/wiki/Rio_de_Janeiro?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Rio_de_Janeiro"
+    }
+  },
+  "extract": "Rio de Janeiro, also known simply as Rio, is the capital and largest city of the state of Rio de Janeiro. It is the second-largest city in Brazil after São Paulo, and the largest by international tourists. It has a population of 6 million in the city proper, and 13 million people in its metropolitan area as of 2025. It is also the sixth-most-populous city in the Americas.",
+  "extract_html": "<p><b>Rio de Janeiro</b>, also known simply as <b>Rio</b>, is the capital and largest city of the state of Rio de Janeiro. It is the second-largest city in Brazil after São Paulo, and the largest by international tourists. It has a population of 6 million in the city proper, and 13 million people in its metropolitan area as of 2025. It is also the sixth-most-populous city in the Americas.</p>"
+}

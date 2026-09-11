@@ -1,0 +1,1560 @@
+{
+  "cities": 53,
+  "categories": [
+    "restaurant",
+    "cafe",
+    "bar",
+    "dessert"
+  ],
+  "newPlaces": 477,
+  "newRouteLegs": 954,
+  "maxSnapDistanceMeters": 183.85884519196748,
+  "maxPlaceSnapDistanceMeters": 61.94700910246386,
+  "baselineAccessSnaps": [
+    {
+      "city": "rio-de-janeiro",
+      "endpoint": "origin",
+      "snapDistanceMeters": 183.859,
+      "matchesOriginalRoute": true
+    }
+  ],
+  "perCity": {
+    "kyoto": {
+      "cafe": {
+        "names": [
+          "ロリアン",
+          "サンタムール",
+          "FLOWER COFFEE"
+        ],
+        "maxSnapDistanceMeters": 11.58,
+        "maxRouteDistanceKm": 2.231
+      },
+      "bar": {
+        "names": [
+          "Beer Komachi (Yoko)",
+          "Katharsis",
+          "樽八"
+        ],
+        "maxSnapDistanceMeters": 12.86,
+        "maxRouteDistanceKm": 5.314
+      },
+      "dessert": {
+        "names": [
+          "Pomme",
+          "Soft ice cream",
+          "八ツ橋西尾為忠商店"
+        ],
+        "maxSnapDistanceMeters": 11.58,
+        "maxRouteDistanceKm": 2.292
+      }
+    },
+    "lima": {
+      "cafe": {
+        "names": [
+          "Coffee Shop Urqu",
+          "a mini",
+          "ChocoMuseo"
+        ],
+        "maxSnapDistanceMeters": 23.63,
+        "maxRouteDistanceKm": 0.477
+      },
+      "bar": {
+        "names": [
+          "Museo del Pisco",
+          "Tintaya Café Bar",
+          "Mi Tercer Lugar"
+        ],
+        "maxSnapDistanceMeters": 23.63,
+        "maxRouteDistanceKm": 1.533
+      },
+      "dessert": {
+        "names": [
+          "Bagueteria y Pastelería Jimmy's",
+          "Esbari",
+          "Los Huerfanos"
+        ],
+        "maxSnapDistanceMeters": 23.63,
+        "maxRouteDistanceKm": 2.041
+      }
+    },
+    "amsterdam": {
+      "cafe": {
+        "names": [
+          "De Roos",
+          "Blauwe Theehuis",
+          "Joe & The Juice"
+        ],
+        "maxSnapDistanceMeters": 26.52,
+        "maxRouteDistanceKm": 1.515
+      },
+      "bar": {
+        "names": [
+          "Tunes Bar",
+          "De Posthoorn",
+          "Cobra Café"
+        ],
+        "maxSnapDistanceMeters": 11.12,
+        "maxRouteDistanceKm": 1.435
+      },
+      "dessert": {
+        "names": [
+          "Miuz Gelato Artigianale",
+          "Vlaamsch Broodhuis",
+          "Simon Meijssen"
+        ],
+        "maxSnapDistanceMeters": 11.04,
+        "maxRouteDistanceKm": 2.283
+      }
+    },
+    "athens": {
+      "cafe": {
+        "names": [
+          "Espresso Da Vinci",
+          "Το καφενεδάκι",
+          "Κλεψύδρα"
+        ],
+        "maxSnapDistanceMeters": 26.25,
+        "maxRouteDistanceKm": 2.307
+      },
+      "bar": {
+        "names": [
+          "dioskouri",
+          "Wine with Eleni",
+          "Μεθυστάνες"
+        ],
+        "maxSnapDistanceMeters": 26.25,
+        "maxRouteDistanceKm": 1.97
+      },
+      "dessert": {
+        "names": [
+          "Arte",
+          "Da vinci gelato",
+          "Αρτοποιότης Ο Τάκης"
+        ],
+        "maxSnapDistanceMeters": 26.25,
+        "maxRouteDistanceKm": 2.022
+      }
+    },
+    "auckland": {
+      "cafe": {
+        "names": [
+          "Wander",
+          "The Store",
+          "Mensa"
+        ],
+        "maxSnapDistanceMeters": 14.17,
+        "maxRouteDistanceKm": 1.742
+      },
+      "bar": {
+        "names": [
+          "The Blue Frog",
+          "16 Tun",
+          "Captain's Bar"
+        ],
+        "maxSnapDistanceMeters": 14.17,
+        "maxRouteDistanceKm": 1.871
+      },
+      "dessert": {
+        "names": [
+          "Tuck Shop",
+          "Scratch Bakers",
+          "Gelatiamo"
+        ],
+        "maxSnapDistanceMeters": 16.78,
+        "maxRouteDistanceKm": 1.81
+      }
+    },
+    "bali": {
+      "cafe": {
+        "names": [
+          "edit krisna coffe",
+          "Downtown Ubud Coffee&Gelato",
+          "ary's bookcafe organic & vegetarian food"
+        ],
+        "maxSnapDistanceMeters": 9.08,
+        "maxRouteDistanceKm": 0.219
+      },
+      "bar": {
+        "names": [
+          "Oops Cafe",
+          "Barbershop Ubud",
+          "THE ROOF at Sala"
+        ],
+        "maxSnapDistanceMeters": 7.07,
+        "maxRouteDistanceKm": 0.446
+      },
+      "dessert": {
+        "names": [
+          "MIXUE",
+          "Leoni",
+          "Dairy Queen"
+        ],
+        "maxSnapDistanceMeters": 12.91,
+        "maxRouteDistanceKm": 0.287
+      }
+    },
+    "bangkok": {
+      "cafe": {
+        "names": [
+          "Coffee at Arun temple",
+          "Goodjob",
+          "Golden Place ท่าเตียน"
+        ],
+        "maxSnapDistanceMeters": 16.45,
+        "maxRouteDistanceKm": 1.777
+      },
+      "bar": {
+        "names": [
+          "Eagle nest",
+          "The Deck",
+          "Motu Bangkok"
+        ],
+        "maxSnapDistanceMeters": 17.56,
+        "maxRouteDistanceKm": 2.469
+      },
+      "dessert": {
+        "names": [
+          "Au bon pain",
+          "Priscilla Ice Cream",
+          "Farm to Table"
+        ],
+        "maxSnapDistanceMeters": 16.45,
+        "maxRouteDistanceKm": 2.997
+      }
+    },
+    "barcelona": {
+      "cafe": {
+        "names": [
+          "Elocuente",
+          "Antico",
+          "WER-HAUS"
+        ],
+        "maxSnapDistanceMeters": 31.86,
+        "maxRouteDistanceKm": 1.98
+      },
+      "bar": {
+        "names": [
+          "La clave",
+          "CocoVail - WINGS",
+          "Bar Dow Jones"
+        ],
+        "maxSnapDistanceMeters": 31.86,
+        "maxRouteDistanceKm": 2.057
+      },
+      "dessert": {
+        "names": [
+          "Vivari",
+          "turris",
+          "365 Café"
+        ],
+        "maxSnapDistanceMeters": 31.86,
+        "maxRouteDistanceKm": 2.064
+      }
+    },
+    "beijing": {
+      "cafe": {
+        "names": [
+          "ChaPanda",
+          "Poetry Cafe",
+          "Xunchang Alley Moxiao Wine House"
+        ],
+        "maxSnapDistanceMeters": 29.45,
+        "maxRouteDistanceKm": 2.772
+      },
+      "bar": {
+        "names": [
+          "C2H60 (Bar)",
+          "Fruityspace",
+          "Half Coffee, Capital Spirits"
+        ],
+        "maxSnapDistanceMeters": 29.45,
+        "maxRouteDistanceKm": 4.547
+      },
+      "dessert": {
+        "names": [
+          "野人先生",
+          "九十葉",
+          "Golden Phoenix"
+        ],
+        "maxSnapDistanceMeters": 54.82,
+        "maxRouteDistanceKm": 4.037
+      }
+    },
+    "berlin": {
+      "cafe": {
+        "names": [
+          "HonigStein Cafe",
+          "Starbucks",
+          "Café Lebensart"
+        ],
+        "maxSnapDistanceMeters": 11.84,
+        "maxRouteDistanceKm": 3.074
+      },
+      "bar": {
+        "names": [
+          "Kerb Berlin",
+          "The Curtain Club",
+          "Capital Beach"
+        ],
+        "maxSnapDistanceMeters": 11.84,
+        "maxRouteDistanceKm": 3.34
+      },
+      "dessert": {
+        "names": [
+          "Wiedemann",
+          "Traumbäckerei",
+          "Steinecke"
+        ],
+        "maxSnapDistanceMeters": 11.84,
+        "maxRouteDistanceKm": 3.389
+      }
+    },
+    "bogota": {
+      "cafe": {
+        "names": [
+          "Juan Valdez Café",
+          "The Corner",
+          "Arte y Pasión Cafe"
+        ],
+        "maxSnapDistanceMeters": 43.89,
+        "maxRouteDistanceKm": 0.737
+      },
+      "bar": {
+        "names": [
+          "El Irish",
+          "Tejo Ancestral",
+          "cafebar"
+        ],
+        "maxSnapDistanceMeters": 43.89,
+        "maxRouteDistanceKm": 0.957
+      },
+      "dessert": {
+        "names": [
+          "Florida pan",
+          "Scoops",
+          "El Castillo"
+        ],
+        "maxSnapDistanceMeters": 43.89,
+        "maxRouteDistanceKm": 0.849
+      }
+    },
+    "budapest": {
+      "cafe": {
+        "names": [
+          "Flat White Art",
+          "Tárnok kávézó és étterem",
+          "Panoramia"
+        ],
+        "maxSnapDistanceMeters": 16.92,
+        "maxRouteDistanceKm": 1.134
+      },
+      "bar": {
+        "names": [
+          "Budapest Terrace",
+          "Hunyadi Lakásbisztró",
+          "Leo Rooftop"
+        ],
+        "maxSnapDistanceMeters": 16.92,
+        "maxRouteDistanceKm": 1.617
+      },
+      "dessert": {
+        "names": [
+          "Zebra kürtős",
+          "Chimney Cake",
+          "Kolibri"
+        ],
+        "maxSnapDistanceMeters": 16.92,
+        "maxRouteDistanceKm": 1.551
+      }
+    },
+    "buenos-aires": {
+      "cafe": {
+        "names": [
+          "Starbucks",
+          "Green Eat",
+          "Rosso Café Argentina"
+        ],
+        "maxSnapDistanceMeters": 12.04,
+        "maxRouteDistanceKm": 1.152
+      },
+      "bar": {
+        "names": [
+          "Bar Ecuador",
+          "Florida 165",
+          "The Brighton"
+        ],
+        "maxSnapDistanceMeters": 12.04,
+        "maxRouteDistanceKm": 1.203
+      },
+      "dessert": {
+        "names": [
+          "Almacén de Medialunas Valerdo",
+          "Dulce de Leche",
+          "Persicco"
+        ],
+        "maxSnapDistanceMeters": 18.28,
+        "maxRouteDistanceKm": 1.331
+      }
+    },
+    "busan": {
+      "cafe": {
+        "names": [
+          "이디야커피",
+          "Starbucks",
+          "Goni's Coffee"
+        ],
+        "maxSnapDistanceMeters": 15.99,
+        "maxRouteDistanceKm": 3.023
+      },
+      "bar": {
+        "names": [
+          "Tia Pub",
+          "Cock'stail",
+          "Blue Lagoon Brewhouse"
+        ],
+        "maxSnapDistanceMeters": 6.44,
+        "maxRouteDistanceKm": 3.294
+      },
+      "dessert": {
+        "names": [
+          "Tall Ice cream",
+          "Baskin Robbins",
+          "파리바게뜨"
+        ],
+        "maxSnapDistanceMeters": 13.54,
+        "maxRouteDistanceKm": 2.861
+      }
+    },
+    "cairo": {
+      "cafe": {
+        "names": [
+          "Onaty",
+          "Caf",
+          "EUGÉNIE CAFE"
+        ],
+        "maxSnapDistanceMeters": 43.33,
+        "maxRouteDistanceKm": 2.68
+      },
+      "bar": {
+        "names": [
+          "OPIA lounge and bar",
+          "Lotus Bar",
+          "Estoril"
+        ],
+        "maxSnapDistanceMeters": 43.33,
+        "maxRouteDistanceKm": 3.489
+      },
+      "dessert": {
+        "names": [
+          "عجايبى",
+          "El Abd",
+          "Elabd patisserie"
+        ],
+        "maxSnapDistanceMeters": 43.33,
+        "maxRouteDistanceKm": 3.921
+      }
+    },
+    "cape-town": {
+      "cafe": {
+        "names": [
+          "Royal Tea",
+          "Enmasse",
+          "Vovo Telo"
+        ],
+        "maxSnapDistanceMeters": 53.67,
+        "maxRouteDistanceKm": 0.754
+      },
+      "bar": {
+        "names": [
+          "Cultivar Wine Bar",
+          "Tiger's Milk",
+          "Cause and Effect"
+        ],
+        "maxSnapDistanceMeters": 53.67,
+        "maxRouteDistanceKm": 0.82
+      },
+      "dessert": {
+        "names": [
+          "Unframed",
+          "Wedgewood",
+          "Marcel's"
+        ],
+        "maxSnapDistanceMeters": 53.67,
+        "maxRouteDistanceKm": 0.772
+      }
+    },
+    "dakar": {
+      "cafe": {
+        "names": [
+          "l'Elysée",
+          "176 Bakery",
+          "Mims"
+        ],
+        "maxSnapDistanceMeters": 28.06,
+        "maxRouteDistanceKm": 1.735
+      },
+      "bar": {
+        "names": [
+          "Le Viking",
+          "Café l'Impérial",
+          "Le Bar Sakhamon"
+        ],
+        "maxSnapDistanceMeters": 30.69,
+        "maxRouteDistanceKm": 2.391
+      },
+      "dessert": {
+        "names": [
+          "Éric Kayser",
+          "Mammamia",
+          "Chocomenthe"
+        ],
+        "maxSnapDistanceMeters": 28.06,
+        "maxRouteDistanceKm": 1.527
+      }
+    },
+    "delhi": {
+      "cafe": {
+        "names": [
+          "Sharma Milk Point",
+          "Jugmug",
+          "Stri Shakti Canteen"
+        ],
+        "maxSnapDistanceMeters": 28.33,
+        "maxRouteDistanceKm": 2.698
+      },
+      "bar": {
+        "names": [
+          "The Gem Bar",
+          "Sam's bar",
+          "Hawkers"
+        ],
+        "maxSnapDistanceMeters": 12.77,
+        "maxRouteDistanceKm": 7.055
+      },
+      "dessert": {
+        "names": [
+          "Japani Samosa, opposite Moti Cinema",
+          "Old Famous",
+          "Bishan Swaroop"
+        ],
+        "maxSnapDistanceMeters": 32.51,
+        "maxRouteDistanceKm": 1.334
+      }
+    },
+    "dubai": {
+      "cafe": {
+        "names": [
+          "At.Mosphere Burj Khalifa",
+          "TEN 11 Coffee Boutique , Dubai Mall",
+          "Caribou Coffee"
+        ],
+        "maxSnapDistanceMeters": 42.18,
+        "maxRouteDistanceKm": 1.555
+      },
+      "bar": {
+        "names": [
+          "The Irish Vicker's",
+          "NEOS",
+          "Cabana"
+        ],
+        "maxSnapDistanceMeters": 32.48,
+        "maxRouteDistanceKm": 2.807
+      },
+      "dessert": {
+        "names": [
+          "La Fragola",
+          "Paul",
+          "Gelato Divino"
+        ],
+        "maxSnapDistanceMeters": 32.48,
+        "maxRouteDistanceKm": 2.023
+      }
+    },
+    "hanoi": {
+      "cafe": {
+        "names": [
+          "Cộng Cà Phê",
+          "Cà Phê No.1",
+          "Cà Phê Lalang"
+        ],
+        "maxSnapDistanceMeters": 71.61,
+        "maxRouteDistanceKm": 1.462
+      },
+      "bar": {
+        "names": [
+          "Peachy Craft",
+          "Quán Pub King Pirates",
+          "Quán Beer 2ku"
+        ],
+        "maxSnapDistanceMeters": 71.61,
+        "maxRouteDistanceKm": 1.485
+      },
+      "dessert": {
+        "names": [
+          "Cửa Hàng Bánh Mì Gia Thanh",
+          "Ho Lo",
+          "Cửa Hàng Bánh Rán Cổ Truyền Mật Đường"
+        ],
+        "maxSnapDistanceMeters": 71.61,
+        "maxRouteDistanceKm": 1.429
+      }
+    },
+    "havana": {
+      "cafe": {
+        "names": [
+          "Santo Domingo",
+          "Cafe Ambos Mundos",
+          "Café Suiza"
+        ],
+        "maxSnapDistanceMeters": 26.56,
+        "maxRouteDistanceKm": 0.707
+      },
+      "bar": {
+        "names": [
+          "La Reliquia",
+          "카페 파리스",
+          "La Boca del Lobo"
+        ],
+        "maxSnapDistanceMeters": 26.56,
+        "maxRouteDistanceKm": 0.771
+      },
+      "dessert": {
+        "names": [
+          "San José",
+          "Al Pirata",
+          "Mango"
+        ],
+        "maxSnapDistanceMeters": 26.56,
+        "maxRouteDistanceKm": 0.707
+      }
+    },
+    "ho-chi-minh": {
+      "cafe": {
+        "names": [
+          "Cà Phê Au Parc",
+          "Central Parc Bánh Mì",
+          "Thuc Coffee"
+        ],
+        "maxSnapDistanceMeters": 34.23,
+        "maxRouteDistanceKm": 0.885
+      },
+      "bar": {
+        "names": [
+          "Angels' Share",
+          "Quán Bar Rabbit Hole",
+          "Quán Next Bar"
+        ],
+        "maxSnapDistanceMeters": 34.23,
+        "maxRouteDistanceKm": 1.05
+      },
+      "dessert": {
+        "names": [
+          "Yatai takoyaki",
+          "Tous les Jours",
+          "Bánh Mì Biết Nói Bread Talk"
+        ],
+        "maxSnapDistanceMeters": 34.23,
+        "maxRouteDistanceKm": 1.384
+      }
+    },
+    "hong-kong": {
+      "cafe": {
+        "names": [
+          "Espuma",
+          "Black Sugar Coffee",
+          "Fineprint"
+        ],
+        "maxSnapDistanceMeters": 14.3,
+        "maxRouteDistanceKm": 2.126
+      },
+      "bar": {
+        "names": [
+          "Blaze Craft",
+          "Baci",
+          "The Globe"
+        ],
+        "maxSnapDistanceMeters": 13.77,
+        "maxRouteDistanceKm": 2.242
+      },
+      "dessert": {
+        "names": [
+          "玉葉甜品",
+          "Mr Simms Olde Sweet Shoppe",
+          "Bakehouse"
+        ],
+        "maxSnapDistanceMeters": 13.77,
+        "maxRouteDistanceKm": 2.07
+      }
+    },
+    "honolulu": {
+      "cafe": {
+        "names": [
+          "Barefoot Beach Cafe",
+          "Kai Coffee",
+          "Goofy"
+        ],
+        "maxSnapDistanceMeters": 48.4,
+        "maxRouteDistanceKm": 1.453
+      },
+      "bar": {
+        "names": [
+          "The Beach Bar",
+          "Hula’s Bar and Lei Stand",
+          "Queensbreak Bar"
+        ],
+        "maxSnapDistanceMeters": 61.95,
+        "maxRouteDistanceKm": 1.766
+      },
+      "dessert": {
+        "names": [
+          "Asato's",
+          "Häagen-Dazs",
+          "Sin-Ice-Stir Shave Ice"
+        ],
+        "maxSnapDistanceMeters": 48.4,
+        "maxRouteDistanceKm": 1.438
+      }
+    },
+    "istanbul": {
+      "cafe": {
+        "names": [
+          "Topkapı Cafe",
+          "Müzenin Kahvesi",
+          "Sur Cafe"
+        ],
+        "maxSnapDistanceMeters": 49.26,
+        "maxRouteDistanceKm": 0.956
+      },
+      "bar": {
+        "names": [
+          "The North Shield Pub",
+          "Just Bar",
+          "SAH BAR"
+        ],
+        "maxSnapDistanceMeters": 49.26,
+        "maxRouteDistanceKm": 1.342
+      },
+      "dessert": {
+        "names": [
+          "şöhret kuruyemiş turkish ice cream",
+          "Şayan Baklava Ayasofya",
+          "Turkish Ice Cream"
+        ],
+        "maxSnapDistanceMeters": 49.26,
+        "maxRouteDistanceKm": 0.921
+      }
+    },
+    "jeju": {
+      "cafe": {
+        "names": [
+          "우린커피",
+          "꼬엥",
+          "제주야놀자"
+        ],
+        "maxSnapDistanceMeters": 9.76,
+        "maxRouteDistanceKm": 8.33
+      },
+      "bar": {
+        "names": [
+          "혼술바",
+          "제주한잔",
+          "싱긋제주혼술바"
+        ],
+        "maxSnapDistanceMeters": 8.49,
+        "maxRouteDistanceKm": 8.23
+      },
+      "dessert": {
+        "names": [
+          "동문올레찐빵",
+          "Tiamo Gelato",
+          "올레찹쌀꽈배기"
+        ],
+        "maxSnapDistanceMeters": 15.73,
+        "maxRouteDistanceKm": 8.519
+      }
+    },
+    "kuala-lumpur": {
+      "cafe": {
+        "names": [
+          "Starbucks's",
+          "Raflis Vietnam Coffee",
+          "Habibi Juice"
+        ],
+        "maxSnapDistanceMeters": 4.97,
+        "maxRouteDistanceKm": 1.912
+      },
+      "bar": {
+        "names": [
+          "Cathy Pub",
+          "Marini's on 57 - Rooftop Bar",
+          "Blue Boy Bar"
+        ],
+        "maxSnapDistanceMeters": 13.51,
+        "maxRouteDistanceKm": 1.928
+      },
+      "dessert": {
+        "names": [
+          "Kenny Hills",
+          "Slicer's Gelato",
+          "Hot Crush"
+        ],
+        "maxSnapDistanceMeters": 13.81,
+        "maxRouteDistanceKm": 1.816
+      }
+    },
+    "lisbon": {
+      "cafe": {
+        "names": [
+          "Saint Antony Bakery",
+          "Tertúlia Maravilha",
+          "Merceraria Castello"
+        ],
+        "maxSnapDistanceMeters": 15.91,
+        "maxRouteDistanceKm": 1.32
+      },
+      "bar": {
+        "names": [
+          "Wine Bar do Castelo",
+          "Bartô",
+          "Crafty Corner"
+        ],
+        "maxSnapDistanceMeters": 21.09,
+        "maxRouteDistanceKm": 1.217
+      },
+      "dessert": {
+        "names": [
+          "Pastelaria Santo António",
+          "Natur",
+          "Gelato Therapy - La Fabrica Della Felicitá"
+        ],
+        "maxSnapDistanceMeters": 15.91,
+        "maxRouteDistanceKm": 1.559
+      }
+    },
+    "london": {
+      "cafe": {
+        "names": [
+          "Treats",
+          "Zen Cafe",
+          "Jewel Tower Cafe"
+        ],
+        "maxSnapDistanceMeters": 34.66,
+        "maxRouteDistanceKm": 1.218
+      },
+      "bar": {
+        "names": [
+          "St Stephen's Tavern",
+          "The Red Lion",
+          "Marriott Gillray’s Steakhouse & Bar"
+        ],
+        "maxSnapDistanceMeters": 34.66,
+        "maxRouteDistanceKm": 1.226
+      },
+      "dessert": {
+        "names": [
+          "Simit Sarayi",
+          "The Royal Parks Ice-cream",
+          "Amorino"
+        ],
+        "maxSnapDistanceMeters": 34.66,
+        "maxRouteDistanceKm": 2.094
+      }
+    },
+    "los-angeles": {
+      "cafe": {
+        "names": [
+          "G&B",
+          "Colburn Café",
+          "Corner Bakery"
+        ],
+        "maxSnapDistanceMeters": 15.3,
+        "maxRouteDistanceKm": 1.016
+      },
+      "bar": {
+        "names": [
+          "Golden Road Brewery",
+          "La Cita",
+          "The Grayson"
+        ],
+        "maxSnapDistanceMeters": 15.3,
+        "maxRouteDistanceKm": 0.921
+      },
+      "dessert": {
+        "names": [
+          "La Huerta",
+          "Big Man Bakes",
+          "SomiSomi"
+        ],
+        "maxSnapDistanceMeters": 15.3,
+        "maxRouteDistanceKm": 2.138
+      }
+    },
+    "marrakesh": {
+      "cafe": {
+        "names": [
+          "Kesh Cup",
+          "Café Mouassine",
+          "Abaq"
+        ],
+        "maxSnapDistanceMeters": 12.69,
+        "maxRouteDistanceKm": 0.966
+      },
+      "bar": {
+        "names": [
+          "Piano Bar",
+          "Riad Monceau",
+          "Kabana"
+        ],
+        "maxSnapDistanceMeters": 21.84,
+        "maxRouteDistanceKm": 2.433
+      },
+      "dessert": {
+        "names": [
+          "Chez Hassan",
+          "Patosserie Marrocain",
+          "Mehdi Boulangerie et Patisserie"
+        ],
+        "maxSnapDistanceMeters": 12.69,
+        "maxRouteDistanceKm": 1.611
+      }
+    },
+    "melbourne": {
+      "cafe": {
+        "names": [
+          "Midtown",
+          "Code Black Coffee",
+          "Max Brenner"
+        ],
+        "maxSnapDistanceMeters": 10.69,
+        "maxRouteDistanceKm": 1.438
+      },
+      "bar": {
+        "names": [
+          "The Luwow Tiki Bar And Shop",
+          "Red Violin",
+          "Hairy Little Sista"
+        ],
+        "maxSnapDistanceMeters": 10.69,
+        "maxRouteDistanceKm": 1.367
+      },
+      "dessert": {
+        "names": [
+          "Breadlicious",
+          "Miilk Cake Studio",
+          "Breadtop"
+        ],
+        "maxSnapDistanceMeters": 10.69,
+        "maxRouteDistanceKm": 1.371
+      }
+    },
+    "mexico-city": {
+      "cafe": {
+        "names": [
+          "Starbucks",
+          "Café La Pagoda",
+          "Helados Santa Clara"
+        ],
+        "maxSnapDistanceMeters": 55.41,
+        "maxRouteDistanceKm": 1.055
+      },
+      "bar": {
+        "names": [
+          "Zinco Jazz Club",
+          "Hilaria Gastrobar",
+          "Cantina La Ópera"
+        ],
+        "maxSnapDistanceMeters": 55.41,
+        "maxRouteDistanceKm": 1.109
+      },
+      "dessert": {
+        "names": [
+          "Maison Kayser",
+          "Santa Clara",
+          "Dulcería de Celaya"
+        ],
+        "maxSnapDistanceMeters": 55.41,
+        "maxRouteDistanceKm": 1.122
+      }
+    },
+    "nairobi": {
+      "cafe": {
+        "names": [
+          "Java House",
+          "Pointzero Cafe",
+          "Noma Cafeé"
+        ],
+        "maxSnapDistanceMeters": 17.97,
+        "maxRouteDistanceKm": 3.062
+      },
+      "bar": {
+        "names": [
+          "Safari Terrace",
+          "MAD HOUSE",
+          "Railways Club Hall"
+        ],
+        "maxSnapDistanceMeters": 26.21,
+        "maxRouteDistanceKm": 3.182
+      },
+      "dessert": {
+        "names": [
+          "Geco Café",
+          "Pradip Enterprises",
+          "Yolo Ice Cream"
+        ],
+        "maxSnapDistanceMeters": 20.88,
+        "maxRouteDistanceKm": 4.102
+      }
+    },
+    "new-york": {
+      "cafe": {
+        "names": [
+          "Le Pain Quotidien",
+          "Petrie Court Café",
+          "Ballfields Café"
+        ],
+        "maxSnapDistanceMeters": 77.21,
+        "maxRouteDistanceKm": 2.96
+      },
+      "bar": {
+        "names": [
+          "The Cantor Roof Garden Bar",
+          "Great Hall Balcony Café & Bar",
+          "The Empire Rooftop"
+        ],
+        "maxSnapDistanceMeters": 77.21,
+        "maxRouteDistanceKm": 2.96
+      },
+      "dessert": {
+        "names": [
+          "It'Sugar",
+          "Venchi",
+          "Breads Bakery"
+        ],
+        "maxSnapDistanceMeters": 77.21,
+        "maxRouteDistanceKm": 2.683
+      }
+    },
+    "osaka": {
+      "cafe": {
+        "names": [
+          "Starbucks",
+          "きみといちご",
+          "Alcyon"
+        ],
+        "maxSnapDistanceMeters": 6.08,
+        "maxRouteDistanceKm": 0.786
+      },
+      "bar": {
+        "names": [
+          "スナックわか",
+          "Nakayoshi",
+          "天坪屋"
+        ],
+        "maxSnapDistanceMeters": 11.15,
+        "maxRouteDistanceKm": 0.624
+      },
+      "dessert": {
+        "names": [
+          "CREMIA",
+          "玉製家",
+          "よしや"
+        ],
+        "maxSnapDistanceMeters": 11.18,
+        "maxRouteDistanceKm": 0.978
+      }
+    },
+    "paris": {
+      "cafe": {
+        "names": [
+          "Le Galliera",
+          "L'Etoile Vénitienne",
+          "Comptoir de l'Arc"
+        ],
+        "maxSnapDistanceMeters": 27.05,
+        "maxRouteDistanceKm": 2.606
+      },
+      "bar": {
+        "names": [
+          "Café Léon",
+          "Readymade",
+          "Le Rooftop"
+        ],
+        "maxSnapDistanceMeters": 27.05,
+        "maxRouteDistanceKm": 2.607
+      },
+      "dessert": {
+        "names": [
+          "La pâtisserie Cyril Lignac",
+          "Les délices de Chaillot",
+          "Boulangerie Bonon"
+        ],
+        "maxSnapDistanceMeters": 27.05,
+        "maxRouteDistanceKm": 2.647
+      }
+    },
+    "prague": {
+      "cafe": {
+        "names": [
+          "Café Gaspar Kasper",
+          "Trdlokafe",
+          "Grand Café Orient"
+        ],
+        "maxSnapDistanceMeters": 11.53,
+        "maxRouteDistanceKm": 0.677
+      },
+      "bar": {
+        "names": [
+          "House Party",
+          "Delije",
+          "Nemo Cabaret Club"
+        ],
+        "maxSnapDistanceMeters": 18.83,
+        "maxRouteDistanceKm": 0.716
+      },
+      "dessert": {
+        "names": [
+          "Bohemian Muse",
+          "Mad Rabbit",
+          "Candy Topia"
+        ],
+        "maxSnapDistanceMeters": 7.83,
+        "maxRouteDistanceKm": 0.574
+      }
+    },
+    "reykjavik": {
+      "cafe": {
+        "names": [
+          "Kaffibrennslan",
+          "Mál og Menning",
+          "Gardurinn"
+        ],
+        "maxSnapDistanceMeters": 42.84,
+        "maxRouteDistanceKm": 1.263
+      },
+      "bar": {
+        "names": [
+          "Veður",
+          "Matbar",
+          "Miami"
+        ],
+        "maxSnapDistanceMeters": 42.84,
+        "maxRouteDistanceKm": 1.265
+      },
+      "dessert": {
+        "names": [
+          "Brauð & Co",
+          "Sæta Húsið",
+          "Sandholt Bakery"
+        ],
+        "maxSnapDistanceMeters": 42.84,
+        "maxRouteDistanceKm": 1.311
+      }
+    },
+    "rio-de-janeiro": {
+      "cafe": {
+        "names": [
+          "Nectar",
+          "Kicê Sucos",
+          "Tula"
+        ],
+        "maxSnapDistanceMeters": 183.86,
+        "maxRouteDistanceKm": 3.852
+      },
+      "bar": {
+        "names": [
+          "Tô Nem Aí",
+          "Coisas de Bamba",
+          "La Cueva Quilombera"
+        ],
+        "maxSnapDistanceMeters": 183.86,
+        "maxRouteDistanceKm": 3.852
+      },
+      "dessert": {
+        "names": [
+          "Sorvete Itália",
+          "Gelateria Piemonte",
+          "Sorveteria Benza"
+        ],
+        "maxSnapDistanceMeters": 183.86,
+        "maxRouteDistanceKm": 3.85
+      }
+    },
+    "rome": {
+      "cafe": {
+        "names": [
+          "Caffeteria del Parco",
+          "Squisito Cook",
+          "Terrazza bar"
+        ],
+        "maxSnapDistanceMeters": 28.33,
+        "maxRouteDistanceKm": 1.845
+      },
+      "bar": {
+        "names": [
+          "Shamrock Pub Roma",
+          "94tele",
+          "BrewDog Rome"
+        ],
+        "maxSnapDistanceMeters": 28.33,
+        "maxRouteDistanceKm": 2.089
+      },
+      "dessert": {
+        "names": [
+          "Flor Gelato",
+          "Gelateria",
+          "Don Nino"
+        ],
+        "maxSnapDistanceMeters": 28.33,
+        "maxRouteDistanceKm": 2.142
+      }
+    },
+    "san-francisco": {
+      "cafe": {
+        "names": [
+          "901 colombus cafe",
+          "Coffee Roaster",
+          "Starbucks"
+        ],
+        "maxSnapDistanceMeters": 11.54,
+        "maxRouteDistanceKm": 3.244
+      },
+      "bar": {
+        "names": [
+          "Savoy Tivoli",
+          "Old Ship Saloon",
+          "La Rocca's Corner"
+        ],
+        "maxSnapDistanceMeters": 11.54,
+        "maxRouteDistanceKm": 3.321
+      },
+      "dessert": {
+        "names": [
+          "Original Ghirardelli Ice Cream & Chocolate Shop",
+          "Liguria Bakery",
+          "Victoria Pastry Company"
+        ],
+        "maxSnapDistanceMeters": 11.54,
+        "maxRouteDistanceKm": 3.288
+      }
+    },
+    "santiago": {
+      "cafe": {
+        "names": [
+          "Starbucks",
+          "Bonafide",
+          "Cafetería Copacabana"
+        ],
+        "maxSnapDistanceMeters": 48.36,
+        "maxRouteDistanceKm": 1.223
+      },
+      "bar": {
+        "names": [
+          "Bar Nacional",
+          "Bar Las Tejas",
+          "Bar Florencia Restaurante"
+        ],
+        "maxSnapDistanceMeters": 48.36,
+        "maxRouteDistanceKm": 1.771
+      },
+      "dessert": {
+        "names": [
+          "Castaño",
+          "Yogen Früz",
+          "Algrano"
+        ],
+        "maxSnapDistanceMeters": 48.36,
+        "maxRouteDistanceKm": 1.472
+      }
+    },
+    "seoul": {
+      "cafe": {
+        "names": [
+          "별다방미스리 인사동점",
+          "Dung Cafe",
+          "뮤직컴플렉스서울"
+        ],
+        "maxSnapDistanceMeters": 11.2,
+        "maxRouteDistanceKm": 1.364
+      },
+      "bar": {
+        "names": [
+          "토방",
+          "Gong-Gan",
+          "생활맥주 종로구청2호점"
+        ],
+        "maxSnapDistanceMeters": 33.3,
+        "maxRouteDistanceKm": 2.052
+      },
+      "dessert": {
+        "names": [
+          "한과미의식",
+          "Artist Bakery",
+          "Bäckerin"
+        ],
+        "maxSnapDistanceMeters": 10.93,
+        "maxRouteDistanceKm": 1.68
+      }
+    },
+    "shanghai": {
+      "cafe": {
+        "names": [
+          "m3 coffee",
+          "Luckin Coffee",
+          "Pacific Coffee"
+        ],
+        "maxSnapDistanceMeters": 42.62,
+        "maxRouteDistanceKm": 4.754
+      },
+      "bar": {
+        "names": [
+          "Choir Wine Bar and Kitchen",
+          "The Wolfpack Bar",
+          "Glamour Bar"
+        ],
+        "maxSnapDistanceMeters": 42.62,
+        "maxRouteDistanceKm": 5.255
+      },
+      "dessert": {
+        "names": [
+          "Coffee Partner",
+          "Crave coffee",
+          "Croissants de France"
+        ],
+        "maxSnapDistanceMeters": 42.62,
+        "maxRouteDistanceKm": 4.732
+      }
+    },
+    "singapore": {
+      "cafe": {
+        "names": [
+          "The Coffee Bean & Tea Leaf",
+          "Angelina",
+          "TWG Tea"
+        ],
+        "maxSnapDistanceMeters": 61.06,
+        "maxRouteDistanceKm": 3.11
+      },
+      "bar": {
+        "names": [
+          "Bazin",
+          "Spago",
+          "CÉ LA VI"
+        ],
+        "maxSnapDistanceMeters": 27.97,
+        "maxRouteDistanceKm": 2.891
+      },
+      "dessert": {
+        "names": [
+          "Levara",
+          "Arktos Gelato",
+          "Hokkaido Ice Cream"
+        ],
+        "maxSnapDistanceMeters": 7.5,
+        "maxRouteDistanceKm": 2.387
+      }
+    },
+    "sydney": {
+      "cafe": {
+        "names": [
+          "MCA Cafe",
+          "The Rocks Cafe",
+          "Shuk"
+        ],
+        "maxSnapDistanceMeters": 12.82,
+        "maxRouteDistanceKm": 1.291
+      },
+      "bar": {
+        "names": [
+          "Opera Bar",
+          "Philips Foot",
+          "Orient Hotel"
+        ],
+        "maxSnapDistanceMeters": 7.81,
+        "maxRouteDistanceKm": 1.331
+      },
+      "dessert": {
+        "names": [
+          "La Renaissance",
+          "Yogurberry",
+          "Royal Copenhagen Ice Cream Cone Co"
+        ],
+        "maxSnapDistanceMeters": 9.87,
+        "maxRouteDistanceKm": 1.526
+      }
+    },
+    "taipei": {
+      "cafe": {
+        "names": [
+          "Scent Cafe",
+          "Meatup",
+          "neo cafe"
+        ],
+        "maxSnapDistanceMeters": 25.69,
+        "maxRouteDistanceKm": 3.08
+      },
+      "bar": {
+        "names": [
+          "獅鬥cdou bar",
+          "BeerBicycle Beer Bar",
+          "DRIFTWOOD"
+        ],
+        "maxSnapDistanceMeters": 25.69,
+        "maxRouteDistanceKm": 3.018
+      },
+      "dessert": {
+        "names": [
+          "三角舖",
+          "阿仁牛軋餅",
+          "Waffle Bus"
+        ],
+        "maxSnapDistanceMeters": 25.69,
+        "maxRouteDistanceKm": 3.022
+      }
+    },
+    "tokyo": {
+      "cafe": {
+        "names": [
+          "hello!",
+          "Margaret Howell Cafe",
+          "Au temps jadis cr perie"
+        ],
+        "maxSnapDistanceMeters": 60.03,
+        "maxRouteDistanceKm": 2.31
+      },
+      "bar": {
+        "names": [
+          "Issui",
+          "Kamadoka",
+          "The SG Club"
+        ],
+        "maxSnapDistanceMeters": 60.03,
+        "maxRouteDistanceKm": 2.31
+      },
+      "dessert": {
+        "names": [
+          "Tianjin roasted chestnuts",
+          "KITH Ice Cream",
+          "World's Second Most Delicious Melon Bread Ice Cream"
+        ],
+        "maxSnapDistanceMeters": 60.03,
+        "maxRouteDistanceKm": 2.293
+      }
+    },
+    "toronto": {
+      "cafe": {
+        "names": [
+          "Ripley's Café",
+          "Boxcar Social",
+          "Bubble Baby"
+        ],
+        "maxSnapDistanceMeters": 30.41,
+        "maxRouteDistanceKm": 1.22
+      },
+      "bar": {
+        "names": [
+          "Char No. 5 Whisky Bar",
+          "Hoops Sports Bar & Grill",
+          "The Goodman Pub and Kitchen"
+        ],
+        "maxSnapDistanceMeters": 30.41,
+        "maxRouteDistanceKm": 1.316
+      },
+      "dessert": {
+        "names": [
+          "IHalo Krunch",
+          "Halo Krunch",
+          "Uncle Tetsu’s Japanese Cheesecake"
+        ],
+        "maxSnapDistanceMeters": 30.41,
+        "maxRouteDistanceKm": 1.384
+      }
+    },
+    "vancouver": {
+      "cafe": {
+        "names": [
+          "Kinton Ramen",
+          "Mink",
+          "Coal Harbour Cafe"
+        ],
+        "maxSnapDistanceMeters": 11.96,
+        "maxRouteDistanceKm": 1.197
+      },
+      "bar": {
+        "names": [
+          "Lions Pub",
+          "Moose's Down Under",
+          "Blackbird"
+        ],
+        "maxSnapDistanceMeters": 10.87,
+        "maxRouteDistanceKm": 1.091
+      },
+      "dessert": {
+        "names": [
+          "Bella Gelateria",
+          "WA-BAGEL",
+          "Motoretta Gelato"
+        ],
+        "maxSnapDistanceMeters": 19.83,
+        "maxRouteDistanceKm": 1.159
+      }
+    },
+    "vienna": {
+      "cafe": {
+        "names": [
+          "Vitavien",
+          "Café Sacher Wien",
+          "Sacher Eck"
+        ],
+        "maxSnapDistanceMeters": 30.36,
+        "maxRouteDistanceKm": 1.031
+      },
+      "bar": {
+        "names": [
+          "Blaue Bar",
+          "Sky Bar",
+          "Kleinod"
+        ],
+        "maxSnapDistanceMeters": 30.36,
+        "maxRouteDistanceKm": 1.031
+      },
+      "dessert": {
+        "names": [
+          "Heindl",
+          "카페 자허",
+          "L. Heiner Hofzuckerbäcker"
+        ],
+        "maxSnapDistanceMeters": 30.36,
+        "maxRouteDistanceKm": 1.01
+      }
+    },
+    "zanzibar": {
+      "cafe": {
+        "names": [
+          "Café Foro",
+          "Swahili Cafe",
+          "Buni Bistro"
+        ],
+        "maxSnapDistanceMeters": 6.26,
+        "maxRouteDistanceKm": 0.668
+      },
+      "bar": {
+        "names": [
+          "Old Fort Restaurant",
+          "Mashani Bar",
+          "6° degree south"
+        ],
+        "maxSnapDistanceMeters": 8.76,
+        "maxRouteDistanceKm": 1.163
+      },
+      "dessert": {
+        "names": [
+          "Mama Mia - Gelato Italiano",
+          "Professor Ice Cream",
+          "Italian Gelateria"
+        ],
+        "maxSnapDistanceMeters": 11.79,
+        "maxRouteDistanceKm": 0.757
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Dakar",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Dakar</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q3718",
+  "titles": {
+    "canonical": "Dakar",
+    "normalized": "Dakar",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Dakar</span></span>"
+  },
+  "pageid": 44251,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Dakar-Ind%C3%A9pendance.jpg/330px-Dakar-Ind%C3%A9pendance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/46/Dakar-Ind%C3%A9pendance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 1024,
+    "height": 682
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1372618295",
+  "tid": "8a94796e-a60c-11f1-baf7-ec744f2a58ec",
+  "timestamp": "2026-09-01T13:53:42Z",
+  "description": "Capital and the largest city of Senegal",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 14.69277778,
+    "lon": -17.44666667
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Dakar",
+      "revisions": "https://en.wikipedia.org/wiki/Dakar?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Dakar?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Dakar"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Dakar",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Dakar",
+      "edit": "https://en.wikipedia.org/wiki/Dakar?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Dakar"
+    }
+  },
+  "extract": "Dakar is the capital and largest city of Senegal. The department of Dakar has a population of 1,278,469, and the population of the Dakar metropolitan area was at 4.0 million in 2023.",
+  "extract_html": "<p><b>Dakar</b> is the capital and largest city of Senegal. The department of Dakar has a population of 1,278,469, and the population of the Dakar metropolitan area was at 4.0 million in 2023.</p>"
+}

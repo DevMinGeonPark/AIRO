@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Barcelona",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Barcelona</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1492",
+  "titles": {
+    "canonical": "Barcelona",
+    "normalized": "Barcelona",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Barcelona</span></span>"
+  },
+  "pageid": 4443,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Evening_light_over_Barcelona.jpg/330px-Evening_light_over_Barcelona.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 154
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Evening_light_over_Barcelona.jpg/3840px-Evening_light_over_Barcelona.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 5995,
+    "height": 2799
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373877401",
+  "tid": "cb4f3e1e-ab8a-11f1-9c12-7605f1be26a2",
+  "timestamp": "2026-09-08T13:40:03Z",
+  "description": "City and municipality in Catalonia, Spain",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.38333333,
+    "lon": 2.18333333
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Barcelona",
+      "revisions": "https://en.wikipedia.org/wiki/Barcelona?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Barcelona?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Barcelona"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Barcelona",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Barcelona",
+      "edit": "https://en.wikipedia.org/wiki/Barcelona?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Barcelona"
+    }
+  },
+  "extract": "Barcelona is a city on the northeastern coast of Spain. It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid. With a population of 1.7 million within city limits, its urban area extends to numerous neighbouring municipalities within the province of Barcelona and is home to around 5.7 million people, making it the fifth most populous urban area of the European Union after Paris, the Ruhr area, Madrid, and Milan. It is one of the largest metropolises on the Mediterranean Sea, located on the coast between the mouths of the rivers Llobregat and Besòs, and bounded to the west by the Serra de Collserola mountain range.",
+  "extract_html": "<p><b>Barcelona</b> is a city on the northeastern coast of Spain. It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid. With a population of 1.7 million within city limits, its urban area extends to numerous neighbouring municipalities within the province of Barcelona and is home to around 5.7 million people, making it the fifth most populous urban area of the European Union after Paris, the Ruhr area, Madrid, and Milan. It is one of the largest metropolises on the Mediterranean Sea, located on the coast between the mouths of the rivers Llobregat and Besòs, and bounded to the west by the Serra de Collserola mountain range.</p>"
+}

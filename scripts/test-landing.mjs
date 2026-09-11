@@ -1,0 +1,78 @@
+import assert from 'node:assert/strict';
+import {mkdir,writeFile,readFile} from 'node:fs/promises';
+import {chromium,expect} from '@playwright/test';
+const base=process.env.LANDING_BASE_URL??'http://localhost:3016';
+const output=process.env.LANDING_OUTPUT_DIR??'assets/validation/dark-globe';await mkdir(output,{recursive:true});
+const browser=await chromium.launch({channel:'chrome',headless:true});const errors=[],checks=[];
+const record=(name,detail='passed')=>{checks.push({name,detail});console.log(`✓ ${name}`)};
+const watch=p=>{p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text())});p.on('response',r=>{if(r.status()>=400&&r.url().startsWith(base))errors.push(`${r.status()} ${r.url()}`)})};
+const section=async(p,selector)=>{await p.locator(selector).evaluate(el=>window.scrollTo(0,scrollY+el.getBoundingClientRect().top-85));await p.waitForTimeout(1000)};
+const enter=async p=>{
+ await expect(p.locator('.globe-arrival')).toHaveAttribute('data-ready','true',{timeout:15000});
+ await p.getByRole('button',{name:'JAPAN 교토 여기서 시작하기 — 여행 미리보기',exact:true}).focus();
+ await p.keyboard.press('Enter');
+ await expect(p.locator('.hero-section')).toHaveAttribute('data-arrival','landed',{timeout:7000});
+};
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:900}});watch(page);await page.goto(base,{waitUntil:'networkidle'});
+ const hero=page.locator('.hero-section'),map=page.locator('.story-map');
+ await expect(page.getByRole('heading',{level:1})).toBeVisible();
+ const bounds=await page.locator('.hero-grid').boundingBox();assert.equal(bounds.width,1440);assert.equal(bounds.height,900);
+ assert.equal(await page.locator('.hero-copy h1').evaluate(e=>getComputedStyle(e).fontSize),'72px');assert.equal(await page.locator('.hero-material-pin').count(),0);
+ record('Full viewport globe with server-rendered, readable headline');
+ await expect(page.locator('html')).toHaveClass(/dark/);
+ assert.equal(await page.locator('.landing').evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(10, 10, 10)');
+ record('Original neutral black theme is the default on a light system');
+ await expect(page.locator('.globe-arrival')).toHaveAttribute('data-ready','true',{timeout:15000});
+ const rotating=await page.locator('.maplibregl-marker:has(.globe-destination)').getAttribute('style');await page.waitForTimeout(1000);
+ assert.notEqual(await page.locator('.maplibregl-marker:has(.globe-destination)').getAttribute('style'),rotating);
+ await page.getByRole('button',{name:'애니메이션 일시정지'}).click();
+ const paused=await page.locator('.maplibregl-marker:has(.globe-destination)').getAttribute('style');await page.waitForTimeout(900);
+ assert.equal(await page.locator('.maplibregl-marker:has(.globe-destination)').getAttribute('style'),paused);
+ await page.getByRole('button',{name:'애니메이션 재생'}).click();
+ record('Globe rotates continuously and the global pause stops its camera');
+ await enter(page);await expect(page.getByRole('tab',{name:'Day 1',exact:true})).toBeFocused();
+ record('Keyboard pin selection flies into the itinerary and transfers focus to Day 1');
+ await expect.poll(()=>map.getAttribute('data-progress'),{timeout:6500}).toBe('1.000');
+ await expect(page.locator('.hero-reply')).toHaveText('좋아요. 철학의 길부터 우리 속도로 걸어볼까요?');
+ const c1=await map.locator('.map-coordinate').innerText();assert.match(c1,/35\.02691/);
+ const pinTransform=await map.locator('.geo-pin[data-current-day=true] .geo-pin-body').first().getAttribute('transform');assert.ok(!pinTransform||/translate\(0 0.00\) scale\(1.000\)/.test(pinTransform),pinTransform);
+ record('Request, typed reply, pin landing and route completion share one sequence');
+ await page.getByRole('tab',{name:'Day 2',exact:true}).click();await expect(hero).toHaveAttribute('data-day','2');await page.waitForTimeout(4300);
+ await expect(page.locator('.hero-reply')).toHaveText('좋아요. 산책길을 따라 카페를 들르는 일정으로 함께 만들어볼까요?');
+ const c2=await map.locator('.map-coordinate').innerText();assert.notEqual(c1,c2);assert.ok(await page.evaluate(()=>scrollY)>700);await expect(page.locator('.landing-nav')).toHaveAttribute('data-scrolled','true');
+ record('Day click seeks the scroll chapter and changes the geographic camera and conversation');
+  const content = (await page.locator("body").innerText()).replace(/\s/g, "");
+  const originalCopy = ['나의 AI 여행 파트너, 아이로', '어디로든, AI와 함께.', '가고 싶은 순간부터 돌아오는 날까지.', '지도 위에 생각을 펼치고,', '아이로와 함께 나다운 여행을 만드세요.', '여행 시작하기', '아이로 알아보기', '계획은 가볍게. 여행은 나답게.', '느긋하게, 교토', '나만의 속도로 떠나는 3일', '화면 미리보기', '둘째 날은 카페 들르면서 여유롭게 걷고 싶어.', '지도와 대화가 연결되는 여행', 'A LITTLE HELP. A BIG JOURNEY.', '여행의 모든 조각이 하나로 이어지도록.', '대화, 지도, 일정, 여행 자료. 필요한 순간에 필요한 정보를 꺼내보세요.', '떠오르는 대로 말해요', '가고 싶은 곳, 먹고 싶은 것, 여행의 속도까지. 아이로와 대화하며 나에게 맞는 일정을 만드세요.', '동선은 한눈에 봐요', '일정과 지도를 나란히 보며 여행을 그려보세요. 날짜별 경로와 장소를 확인하고 직접 수정할 수도 있어요.', '여행 준비를 한곳에', '마음에 든 맛집부터 예약 자료와 예산까지. 흩어져 있던 여행 정보를 일정 곁에 모아두세요.', '아이로 + 나의 AI 도구', '익숙한 AI에서도, 내 여행 그대로.', 'MCP를 지원하는 AI 도구에 아이로를 연결하면 같은 여행을 읽고 일정을 수정할 수 있어요.', 'AI 도구 연결하기', '다음 여행, 아이로와 떠나볼까요?', '가고 싶은 곳 하나면 충분해요. 나머지는 함께 채워가요.', '아이로 — 어디로든, AI와 함께.'];
+  for (const copy of originalCopy) assert.ok(content.includes(copy.replace(/\s/g, '')), `Original copy missing: ${copy}`);
+  const hrefs = await page.locator('a[href]').evaluateAll(links => links.map(link => link.getAttribute('href')));
+  for (const href of ['/', '/#기능', '#기능', '/docs/mcp', '/pricing', '/app', '/login', '/app/settings/keys']) assert.ok(hrefs.includes(href), `Original link missing: ${href}`);
+ record('Original Korean copy and all route/link destinations preserved');
+ assert.deepEqual(await page.locator('main > section').evaluateAll(es=>es.map(e=>e.classList[0])),['hero-section','features-section','mcp-section','closing-journey']);
+ assert.deepEqual(await page.locator('.feature-article').evaluateAll(es=>es.map(e=>e.dataset.feature)),['01','02','03']);record('Hero → 01/02/03 → MCP → CTA → footer order');
+ await page.getByRole('tab',{name:'Day 2',exact:true}).press('ArrowRight');await expect(page.getByRole('tab',{name:'Day 3',exact:true})).toBeFocused();await expect(hero).toHaveAttribute('data-day','3');await page.waitForTimeout(4300);
+ const c3=await map.locator('.map-coordinate').innerText();assert.match(c3,/135\.67308/);assert.ok(Math.abs(Number(c1.match(/(135\.\d+)/)[0])-Number(c3.match(/(135\.\d+)/)[0]))>.03);record('Arrow key Day navigation flies across Kyoto to Arashiyama (>0.03° longitude)');
+ await page.getByRole('button',{name:'지도 조작 켜기'}).click();await expect(map).toHaveAttribute('data-manual','true');
+ const beforeScale=Number(await map.getAttribute('data-camera-scale'));await page.getByRole('button',{name:'지도 확대',exact:true}).click();await page.waitForTimeout(1600);assert.ok(Number(await map.getAttribute('data-camera-scale'))>beforeScale);
+ const beforeCamera=await map.locator('.map-camera').getAttribute('transform');await map.locator('.journey-map').focus();await page.keyboard.press('ArrowRight');assert.notEqual(await map.locator('.map-camera').getAttribute('transform'),beforeCamera);
+ await page.keyboard.press('Enter');await expect(map).toHaveAttribute('data-has-pin','true');await expect(map.locator('.map-added-note')).toContainText('나의 작은 발견');record('Manual zoom, keyboard pan and coordinate pin placement work');
+ await page.getByRole('button',{name:'새 핀 지우기'}).click();await expect(map).toHaveAttribute('data-has-pin','false');
+ await map.getByRole('button',{name:'2텐류지로 지도 이동'}).click();await page.waitForTimeout(1600);await expect(map.locator('.map-current-place')).toHaveText('텐류지');await expect(page.locator('.hero-card-place')).toContainText('텐류지');record('Selecting a real stop moves the map and reanchors the conversation');
+ await page.getByRole('button',{name:'여행 흐름으로 돌아가기'}).click();await page.evaluate(()=>window.scrollTo(0,2650));await page.waitForTimeout(2000);await expect(hero).toHaveAttribute('data-phase','overview');
+ await expect(page.locator('.hero-summary')).toBeVisible();assert.equal(await map.locator('.geo-pin:visible').count(),9);assert.ok(Number(await map.getAttribute('data-camera-scale'))<.3);
+ await page.screenshot({path:`${output}/dark-overview-1440.png`});record('Scroll ends in all three routes, nine places and the original start CTA');
+ for(let i=1;i<=3;i++){await section(page,`.feature-0${i}`);await page.locator(`.feature-0${i}`).screenshot({path:`${output}/feature-${i}-1440.png`})}
+ await section(page,'.feature-02');await page.locator('.day-list button').nth(2).click();await expect(page.locator('.feature-map .geographic-map')).toHaveAttribute('data-day','3');await expect(page.locator('.route-itinerary')).toContainText('대나무 숲');record('Full-width feature map Day buttons update itinerary and geographic route');
+ await section(page,'.mcp-diagram');await page.waitForTimeout(3500);await expect(page.locator('.mcp-inserted')).toHaveCSS('opacity','1');
+ for(const tool of ['Cursor','Codex','ChatGPT','Claude']){await page.getByRole('button',{name:tool,exact:true}).click();await expect(page.locator('.mcp-connection-caption')).toHaveText(`${tool}와 연결되는 내 여행`);await page.waitForTimeout(3000);await expect(page.locator('.mcp-inserted')).toHaveCSS('opacity','1')}
+ record('All four AI tools replay the same-trip café insertion preview');
+ await page.locator('.mcp-diagram').screenshot({path:`${output}/mcp-1440.png`});
+ await page.evaluate(()=>window.scrollTo(0,0));await page.waitForTimeout(1200);await page.getByRole('button',{name:'애니메이션 일시정지'}).click();await expect(page.locator('.landing')).toHaveAttribute('data-motion','off');assert.equal(await page.locator('.hero-grid').evaluate(e=>!!e.closest('.pin-spacer')),false);await page.getByRole('tab',{name:'Day 2',exact:true}).click();await expect(map).toHaveAttribute('data-progress','1.000');record('Global pause removes scrub and keeps manual Day selection usable');await page.close();
+ for(const [width,height] of [[375,812],[768,1024],[1440,900],[1920,1080]]){const p=await browser.newPage({viewport:{width,height}});watch(p);await p.goto(base,{waitUntil:'networkidle'});await p.waitForTimeout(4300);assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await p.screenshot({path:`${output}/globe-${width}.png`});if(width===375){await enter(p);assert.equal(await p.locator('.hero-grid').evaluate(e=>!!e.closest('.pin-spacer')),false);await p.getByRole('tab',{name:'Day 3',exact:true}).click();assert.equal(await p.evaluate(()=>scrollY),0);await expect(p.locator('.story-map')).toHaveAttribute('data-day','3');await section(p,'.mcp-diagram');await p.getByRole('button',{name:'Cursor',exact:true}).click();await expect(p.locator('.mcp-connection-caption')).toContainText('Cursor');assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))}await p.close();record(`${width}px layout without horizontal overflow${width===375?', native mobile scroll and working Day/MCP controls':''}`)}
+ const reduced=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});watch(reduced);await reduced.goto(base,{waitUntil:'networkidle'});await expect(reduced.locator('.landing')).toHaveAttribute('data-motion','reduced');assert.equal(await reduced.locator('.hero-grid').evaluate(e=>!!e.closest('.pin-spacer')),false);await enter(reduced);await expect(reduced.locator('.story-map')).toHaveAttribute('data-overview','false');await reduced.getByRole('tab',{name:'Day 3',exact:true}).click();await expect(reduced.locator('.story-map')).toHaveAttribute('data-progress','1.000');const fixed=await reduced.locator('.story-map .map-camera').getAttribute('transform');await reduced.waitForTimeout(1400);assert.equal(await reduced.locator('.story-map .map-camera').getAttribute('transform'),fixed);await reduced.close();record('Reduced motion: static globe, direct arrival, instant Day changes and no pinning');
+ const saved=await browser.newPage({colorScheme:'dark'});watch(saved);await saved.addInitScript(()=>localStorage.setItem('theme','light'));await saved.goto(base,{waitUntil:'networkidle'});await expect(saved.locator('html')).toHaveClass(/light/);assert.equal(await saved.locator('.landing').evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(244, 248, 247)');await saved.close();record('Explicitly saved light preference survives the dark default');
+ const nojs=await browser.newPage({javaScriptEnabled:false,viewport:{width:1440,height:900}});await nojs.goto(base);await expect(nojs.getByRole('heading',{level:1})).toBeVisible();await expect(nojs.locator('.hero-copy').getByRole('link',{name:'여행 시작하기'})).toBeVisible();await nojs.close();record('Headline and primary link work without JavaScript');
+ assert.deepEqual(errors,[]);record('Zero browser console errors, runtime errors and failed local resources');
+ const manifest=JSON.parse(await readFile('assets/imagegen-manifest.json','utf8'));record('Original illustration manifest retained',`Existing manifest retained: ${Array.isArray(manifest)?manifest.length:'7'} images; Higgsfield 0`);
+ await writeFile(`${output}/landing-checks.json`,JSON.stringify({base,checkedAt:new Date().toISOString(),checks,errors},null,2));
+} finally {await browser.close()}

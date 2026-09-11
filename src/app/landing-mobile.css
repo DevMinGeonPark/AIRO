@@ -1,0 +1,85 @@
+.landing .hero-description-compact { display: none; }
+
+/* A phone gets one composed screen: a short introduction, a destination,
+   an open globe, and one bottom action. Its height follows the browser chrome. */
+@media (max-width: 767px), (max-width: 1023px) and (max-height: 500px) {
+  body .landing .hero-section[data-arrival] .hero-grid.landing-container { height: 100svh; min-height: 0; }
+  body .landing .hero-section[data-arrival] .hero-copy { left: var(--landing-inset-left); right: var(--landing-inset-right); top: calc(var(--landing-nav-height) + 12px + env(safe-area-inset-top)); width: auto; margin: 0; padding: 0; }
+  body .landing .hero-section[data-arrival] .hero-copy h1 { margin: 0; font-size: clamp(30px, 5svh, 42px); line-height: 1.08; letter-spacing: -.04em; }
+  body .landing .hero-section[data-arrival] .hero-description { margin-top: 12px; font-size: 13px; line-height: 1.5; }
+  body .landing .hero-section[data-arrival] .hero-description-full { display: none; }
+  body .landing .hero-section[data-arrival] .hero-description-compact { display: inline; }
+  body .landing .hero-section[data-arrival] :is(.hero-actions, .hero-note) { display: none; }
+  body .landing .hero-section[data-arrival] .destination-picker { top: calc(clamp(205px, 27svh, 240px) + env(safe-area-inset-top)); left: var(--landing-inset-left); right: var(--landing-inset-right); width: auto; }
+  body .landing .hero-section[data-arrival] .destination-picker-caption { font-size: 11px; margin-bottom: 8px; }
+  body .landing .hero-section[data-arrival] .destination-picker-caption > span { font-size: 10px; }
+  body .landing .hero-section[data-arrival] .destination-picker summary { min-height: 48px; padding: 10px 14px; gap: 9px; }
+  body .landing .hero-section[data-arrival] .destination-picker summary > strong { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  body .landing .hero-section[data-arrival] .destination-picker summary > :is(span, svg) { flex-shrink: 0; }
+  body .landing .hero-section[data-arrival] .destination-picker > p { display: none; }
+  body .landing .hero-section[data-arrival] .globe-regions { left: var(--landing-inset-left); right: var(--landing-inset-right); bottom: calc(92px + env(safe-area-inset-bottom)); max-width: none; }
+  body .landing .hero-section[data-arrival] .globe-regions > span { display: none; }
+  body .landing .hero-section[data-arrival] .globe-regions > div { gap: 1px; padding: 3px; }
+  body .landing .hero-section[data-arrival] .globe-regions button { min-height: 44px; padding-inline: 11px; font-size: 11px; }
+  body .landing .hero-section[data-arrival] .globe-bottom { left: var(--landing-inset-left); right: var(--landing-inset-right); bottom: calc(28px + env(safe-area-inset-bottom)); gap: 10px; }
+  body .landing .hero-section[data-arrival] .globe-shortcut { flex: 1; justify-content: space-between; min-width: 0; min-height: 52px; padding: 10px 18px; border: 0; border-radius: 999px; background: var(--brand-blue); color: #0A0A0A; font-size: 13px; font-weight: 600; line-height: 1.4; }
+  body .landing .hero-section[data-arrival] .globe-shortcut > svg { flex-shrink: 0; }
+  body .landing .hero-section[data-arrival] .globe-utilities .motion-toggle { width: 48px; height: 48px; }
+  body .landing .hero-section[data-arrival] :is(.globe-location, .globe-utilities > a) { display: none; }
+  body .landing .hero-section[data-arrival] .globe-attribution { right: var(--landing-inset-right); bottom: max(0px, env(safe-area-inset-bottom)); font-size: 9px; }
+  body .landing .hero-section[data-arrival] .globe-pin-label { width: 148px; padding: 11px 13px; border-radius: 12px; }
+  body .landing .hero-section[data-arrival] .globe-pin-label > strong { margin-top: 0; font-size: 26px; line-height: 1.15; }
+  body .landing .hero-section[data-arrival] .globe-pin-label > :is(em, span) { display: none; }
+  body .landing .hero-section[data-arrival] .globe-city-name { font-size: 12px; padding: 5px 7px; }
+  body .landing .hero-section[data-arrival] .globe-vignette { background: linear-gradient(180deg, #0A0A0A 0%, transparent 32%, transparent 84%, #0A0A0A 100%); }
+  body .landing .hero-section[data-arrival] .globe-flight-status { left: 50%; top: 57%; width: calc(100% - 40px); }
+
+  /* The preview reached from the globe also stays in the phone viewport. */
+  body .landing .hero-section[data-arrival='landed'] .hero-copy { display: none; }
+  body .landing .hero-section[data-arrival] .hero-map-heading { top: calc(132px + env(safe-area-inset-top)); left: var(--landing-inset-left); right: var(--landing-inset-right); }
+  body .landing .hero-section[data-arrival] .hero-day-controls { width: 100%; justify-content: space-between; }
+  body .landing .hero-section[data-arrival] .globe-return { position: absolute; top: -50px; left: 0; min-height: 44px; }
+  body .landing .hero-section[data-arrival] .hero-playback { top: calc(82px + env(safe-area-inset-top)); right: var(--landing-inset-right); bottom: auto; left: auto; }
+  body .landing .hero-section[data-arrival] .story-map .map-tools { top: calc(196px + env(safe-area-inset-top)); right: var(--landing-inset-right); }
+  body .landing .hero-section[data-arrival] :is(.map-added-note, .map-place-hint) { top: calc(245px + env(safe-area-inset-top)); right: var(--landing-inset-right); }
+  body .landing .hero-section[data-arrival] .map-location-readout { display: none; }
+  body .landing .hero-section[data-arrival] .hero-anchor { width: calc(100% - 40px); }
+  body .landing .hero-section[data-arrival] .hero-card { padding: 12px 14px; }
+  body .landing .hero-section[data-arrival] .hero-reply { font-size: 13px; }
+  body .landing .hero-section[data-arrival] :is(.hero-card-heading, .hero-request) { display: none; }
+  body .landing .hero-section[data-arrival] .hero-answer { margin: 0; }
+  body .landing .hero-section[data-arrival] .hero-card-place { margin-top: 8px; padding-top: 8px; }
+}
+
+@media (max-width: 767px) and (max-height: 700px) {
+  body .landing .hero-section[data-arrival] .hero-copy { top: calc(var(--landing-nav-height) + 8px + env(safe-area-inset-top)); }
+  body .landing .hero-section[data-arrival] .hero-copy h1 { font-size: 30px; }
+  body .landing .hero-section[data-arrival] .hero-description { display: none; }
+  body .landing .hero-section[data-arrival] .destination-picker { top: calc(164px + env(safe-area-inset-top)); }
+  body .landing .hero-section[data-arrival] .destination-picker-caption { display: none; }
+  body .landing .hero-section[data-arrival] .globe-pin-label { width: 130px; padding: 9px 11px; }
+  body .landing .hero-section[data-arrival] .globe-pin-label > strong { font-size: 23px; }
+}
+
+@media (max-width: 1023px) and (max-height: 500px) and (orientation: landscape) {
+  body .landing { --landing-nav-height: 64px; }
+  .landing .airo-logo { width: 116px; height: 44px; }
+  body .landing .hero-section[data-arrival] .hero-copy { top: 92px; left: var(--landing-inset-left); right: auto; width: 33%; }
+  body .landing .hero-section[data-arrival] .hero-copy h1 { font-size: 30px; }
+  body .landing .hero-section[data-arrival] .hero-description { display: none; }
+  body .landing .hero-section[data-arrival] .destination-picker { top: 174px; left: var(--landing-inset-left); right: auto; width: 33%; }
+  body .landing .hero-section[data-arrival] .destination-picker-caption { display: none; }
+  body .landing .hero-section[data-arrival] .globe-regions { bottom: 86px; left: var(--landing-inset-left); right: auto; width: 33%; }
+  body .landing .hero-section[data-arrival] .globe-bottom { bottom: 22px; left: var(--landing-inset-left); right: auto; width: 33%; }
+  body .landing .hero-section[data-arrival] .globe-shortcut { font-size: 12px; padding-inline: 14px; }
+  body .landing .hero-section[data-arrival] .globe-vignette { background: linear-gradient(90deg, #0A0A0A 0%, #0A0A0A88 30%, transparent 53%); }
+  body .landing .hero-section[data-arrival] .globe-flight-status { left: 70%; top: 48%; width: 50%; }
+  body .landing .hero-section[data-arrival] .hero-map-heading { top: 138px; left: var(--landing-inset-left); right: auto; width: 33%; }
+  body .landing .hero-section[data-arrival] .hero-days button { width: 44px; }
+  body .landing .hero-section[data-arrival] .hero-manual-toggle { padding-inline: 8px; font-size: 10px; }
+  body .landing .hero-section[data-arrival] .hero-anchor { width: 33%; }
+  body .landing .hero-section[data-arrival] .hero-playback { top: 82px; left: calc(33% - 20px); right: auto; }
+  body .landing .hero-section[data-arrival] .story-map .map-tools { top: 88px; }
+  body .landing .hero-section[data-arrival] .hero-reply { font-size: 12px; line-height: 1.5; min-height: 0; }
+  body .landing .hero-section[data-arrival] .hero-card-place { font-size: 10px; }
+}

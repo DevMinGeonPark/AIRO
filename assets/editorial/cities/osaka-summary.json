@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Osaka",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Osaka</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q35765",
+  "titles": {
+    "canonical": "Osaka",
+    "normalized": "Osaka",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Osaka</span></span>"
+  },
+  "pageid": 52230,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/330px-Osaka_Castle_03bs3200.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Osaka_Castle_03bs3200.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3200,
+    "height": 2133
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373638042",
+  "tid": "85e12075-aa5d-11f1-bc4b-ab911b7b2cf4",
+  "timestamp": "2026-09-07T01:43:28Z",
+  "description": "Designated city in Kansai, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 34.69388889,
+    "lon": 135.50222222
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Osaka",
+      "revisions": "https://en.wikipedia.org/wiki/Osaka?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Osaka?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Osaka"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Osaka",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Osaka",
+      "edit": "https://en.wikipedia.org/wiki/Osaka?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Osaka"
+    }
+  },
+  "extract": "Osaka  is a designated city in the Kansai region of Honshu in Japan. It is the capital of and most populous city in Osaka Prefecture, and the second biggest prefectural city, third-most populous city proper in Japan, following the special wards of Tokyo and Yokohama. With an estimated population of 2.8 million as of October 1, 2025 and a population density of about 12,505 people per square kilometer, it is the largest component of the Keihanshin metropolitan area, the second-largest metropolitan area in Japan and the 10th-largest urban area in the world with more than 19 million inhabitants.",
+  "extract_html": "<p><b>Osaka</b><span style=\"font-weight:normal\"> </span> is a designated city in the Kansai region of Honshu in Japan. It is the capital of and most populous city in Osaka Prefecture, and the second biggest prefectural city, third-most populous city proper in Japan, following the special wards of Tokyo and Yokohama. With an estimated population of 2.8 million as of October 1, 2025 and a population density of about 12,505 people per square kilometer, it is the largest component of the Keihanshin metropolitan area, the second-largest metropolitan area in Japan and the 10th-largest urban area in the world with more than 19 million inhabitants.</p>"
+}

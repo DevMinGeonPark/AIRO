@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Vienna",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Vienna</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1741",
+  "titles": {
+    "canonical": "Vienna",
+    "normalized": "Vienna",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Vienna</span></span>"
+  },
+  "pageid": 55866,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/330px-Schoenbrunn_philharmoniker_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 148
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/3840px-Schoenbrunn_philharmoniker_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 5073,
+    "height": 2282
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373851017",
+  "tid": "9af3a7c0-ab62-11f1-a45a-1736fc4f09f4",
+  "timestamp": "2026-09-08T08:52:22Z",
+  "description": "Capital and largest city of Austria",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 48.2083,
+    "lon": 16.3725
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Vienna",
+      "revisions": "https://en.wikipedia.org/wiki/Vienna?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Vienna?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Vienna"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Vienna",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Vienna",
+      "edit": "https://en.wikipedia.org/wiki/Vienna?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Vienna"
+    }
+  },
+  "extract": "Vienna is the capital, most populous city, and one of the nine states of Austria. It is Austria's primate city, with just over two million inhabitants. Its larger metropolitan area has a population of nearly 2.9 million, representing nearly one-third of the country's population. Vienna is the cultural, economic, and political centre of the country, the fifth-largest city by population in the European Union, and the most populous of the cities on the river Danube.",
+  "extract_html": "<p><b>Vienna</b> is the capital, most populous city, and one of the nine states of Austria. It is Austria's primate city, with just over two million inhabitants. Its larger metropolitan area has a population of nearly 2.9 million, representing nearly one-third of the country's population. Vienna is the cultural, economic, and political centre of the country, the fifth-largest city by population in the European Union, and the most populous of the cities on the river Danube.</p>"
+}

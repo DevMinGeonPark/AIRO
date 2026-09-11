@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Beijing",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Beijing</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q956",
+  "titles": {
+    "canonical": "Beijing",
+    "normalized": "Beijing",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Beijing</span></span>"
+  },
+  "pageid": 18603746,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg/330px-Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg/3840px-Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 6787,
+    "height": 4525
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373220779",
+  "tid": "b884f2a8-a886-11f1-ac52-45dbe511ddae",
+  "timestamp": "2026-09-04T17:33:20Z",
+  "description": "Capital city of China",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 39.90666667,
+    "lon": 116.3975
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Beijing",
+      "revisions": "https://en.wikipedia.org/wiki/Beijing?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Beijing?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Beijing"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Beijing",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Beijing",
+      "edit": "https://en.wikipedia.org/wiki/Beijing?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Beijing"
+    }
+  },
+  "extract": "Beijing, previously romanized as Peking, is the capital city of China. With more than 21.8 million residents, it is the world's most populous national capital city, as well as China's second-largest city by urban area, after Shanghai. It is located in Northern China and is governed as a provincial-level direct-administered municipality with 16 municipal districts. Beijing is mostly surrounded by Hebei Province and neighbors Tianjin Municipality to the southeast; together, the three divisions form the Jing-Jin-Ji cluster.",
+  "extract_html": "<p><b>Beijing</b>, previously romanized as <b>Peking</b>, is the capital city of China. With more than 21.8 million residents, it is the world's most populous national capital city, as well as China's second-largest city by urban area, after Shanghai. It is located in Northern China and is governed as a provincial-level direct-administered municipality with 16 municipal districts. Beijing is mostly surrounded by Hebei Province and neighbors Tianjin Municipality to the southeast; together, the three divisions form the Jing-Jin-Ji cluster.</p>"
+}

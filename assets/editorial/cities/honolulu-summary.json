@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Honolulu",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Honolulu</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q18094",
+  "titles": {
+    "canonical": "Honolulu",
+    "normalized": "Honolulu",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Honolulu</span></span>"
+  },
+  "pageid": 13887,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/2022_Views_from_Diamond_Head_02.jpg/330px-2022_Views_from_Diamond_Head_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/2022_Views_from_Diamond_Head_02.jpg/3840px-2022_Views_from_Diamond_Head_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 6000,
+    "height": 4000
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1372086232",
+  "tid": "39cc27c1-a438-11f1-8a31-5887820147c7",
+  "timestamp": "2026-08-30T06:01:22Z",
+  "description": "Capital and largest city in Hawaii, US",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 21.3,
+    "lon": -157.85
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Honolulu",
+      "revisions": "https://en.wikipedia.org/wiki/Honolulu?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Honolulu?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Honolulu"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Honolulu",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Honolulu",
+      "edit": "https://en.wikipedia.org/wiki/Honolulu?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Honolulu"
+    }
+  },
+  "extract": "Honolulu is the capital and most populous city of the U.S. state of Hawaii, located in the Pacific Ocean. It is the county seat of the consolidated City and County of Honolulu, situated along the southeast coast of the island of Oʻahu. The population of Honolulu was 350,964 at the 2020 census, dropping to an estimated 341,868 by 2025. The Urban Honolulu metropolitan area had an estimated population of just under 1 million residents in 2024 and is the 56th-largest metropolitan area in the nation.",
+  "extract_html": "<p><b>Honolulu</b> is the capital and most populous city of the U.S. state of Hawaii, located in the Pacific Ocean. It is the county seat of the consolidated City and County of Honolulu, situated along the southeast coast of the island of Oʻahu. The population of Honolulu was 350,964 at the 2020 census, dropping to an estimated 341,868 by 2025. The Urban Honolulu metropolitan area had an estimated population of just under 1 million residents in 2024 and is the 56th-largest metropolitan area in the nation.</p>"
+}

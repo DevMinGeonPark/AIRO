@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jDOitk9IfqxUY75rEkZUIs&skey=e666f2218a05acfc&v=v21) format('woff2');
+  unicode-range: U+2e, U+41, U+49, U+4f, U+52;
+}

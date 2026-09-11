@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Kyoto",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Kyoto</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q34600",
+  "titles": {
+    "canonical": "Kyoto",
+    "normalized": "Kyoto",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Kyoto</span></span>"
+  },
+  "pageid": 37652,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Kyoto%2C_Japan_%2849667780482%29.jpg/330px-Kyoto%2C_Japan_%2849667780482%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Kyoto%2C_Japan_%2849667780482%29.jpg/3840px-Kyoto%2C_Japan_%2849667780482%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 3872,
+    "height": 2581
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1373733613",
+  "tid": "80c3b6bb-aadd-11f1-a02c-e0220ab9be25",
+  "timestamp": "2026-09-07T16:59:35Z",
+  "description": "City in the Kansai region of Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.01161,
+    "lon": 135.76811
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Kyoto",
+      "revisions": "https://en.wikipedia.org/wiki/Kyoto?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Kyoto?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Kyoto"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Kyoto",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Kyoto",
+      "edit": "https://en.wikipedia.org/wiki/Kyoto?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Kyoto"
+    }
+  },
+  "extract": "Kyoto, officially Kyoto City , is the capital city of Kyoto Prefecture in the Kansai region of Japan's largest and most populous island of Honshu. As of 2020, the city had a population of 1.46 million, making it the ninth-most populous city in Japan. More than half (56.8%) of Kyoto Prefecture's population resides in the city. The city is the cultural anchor of the substantially larger Greater Kyoto, a metropolitan statistical area home to approximately 3.8 million people. It is also part of the even larger Keihanshin metropolitan area, along with Osaka and Kobe.",
+  "extract_html": "<p><b>Kyoto</b>, officially <b>Kyoto City</b><span style=\"font-weight:normal\"> </span>, is the capital city of Kyoto Prefecture in the Kansai region of Japan's largest and most populous island of Honshu. As of 2020, the city had a population of 1.46 million, making it the ninth-most populous city in Japan. More than half (56.8%) of Kyoto Prefecture's population resides in the city. The city is the cultural anchor of the substantially larger Greater Kyoto, a metropolitan statistical area home to approximately 3.8 million people. It is also part of the even larger Keihanshin metropolitan area, along with Osaka and Kobe.</p>"
+}

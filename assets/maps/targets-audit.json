@@ -1,0 +1,376 @@
+{
+  "cities": 53,
+  "checks": [
+    {
+      "city": "kyoto",
+      "target": "철학의 길",
+      "routes": 13,
+      "realRoadEdges": 774,
+      "targetSnapMeters": 3.07
+    },
+    {
+      "city": "lima",
+      "target": "리마대성당",
+      "routes": 13,
+      "realRoadEdges": 148,
+      "targetSnapMeters": 30.92
+    },
+    {
+      "city": "amsterdam",
+      "target": "반고흐미술관",
+      "routes": 13,
+      "realRoadEdges": 593,
+      "targetSnapMeters": 30.78
+    },
+    {
+      "city": "athens",
+      "target": "아크로폴리스박물관",
+      "routes": 13,
+      "realRoadEdges": 479,
+      "targetSnapMeters": 22.93
+    },
+    {
+      "city": "auckland",
+      "target": "비아덕트하버",
+      "routes": 13,
+      "realRoadEdges": 493,
+      "targetSnapMeters": 22.93
+    },
+    {
+      "city": "bali",
+      "target": "사라스와티사원",
+      "routes": 13,
+      "realRoadEdges": 56,
+      "targetSnapMeters": 30.27
+    },
+    {
+      "city": "bangkok",
+      "target": "왓 포",
+      "routes": 13,
+      "realRoadEdges": 374,
+      "targetSnapMeters": 1.81
+    },
+    {
+      "city": "barcelona",
+      "target": "카사밀라",
+      "routes": 13,
+      "realRoadEdges": 480,
+      "targetSnapMeters": 20.25
+    },
+    {
+      "city": "beijing",
+      "target": "자금성",
+      "routes": 13,
+      "realRoadEdges": 280,
+      "targetSnapMeters": 2.3
+    },
+    {
+      "city": "berlin",
+      "target": "국회의사당",
+      "routes": 13,
+      "realRoadEdges": 758,
+      "targetSnapMeters": 49.45
+    },
+    {
+      "city": "bogota",
+      "target": "보테로미술관",
+      "routes": 13,
+      "realRoadEdges": 89,
+      "targetSnapMeters": 4.83
+    },
+    {
+      "city": "budapest",
+      "target": "마차시성당",
+      "routes": 13,
+      "realRoadEdges": 338,
+      "targetSnapMeters": 14.63
+    },
+    {
+      "city": "buenos-aires",
+      "target": "카사로사다",
+      "routes": 13,
+      "realRoadEdges": 111,
+      "targetSnapMeters": 37.01
+    },
+    {
+      "city": "busan",
+      "target": "자갈치시장",
+      "routes": 13,
+      "realRoadEdges": 224,
+      "targetSnapMeters": 32.38
+    },
+    {
+      "city": "cairo",
+      "target": "타흐리르광장",
+      "routes": 13,
+      "realRoadEdges": 462,
+      "targetSnapMeters": 38.6
+    },
+    {
+      "city": "cape-town",
+      "target": "자이츠현대미술관",
+      "routes": 13,
+      "realRoadEdges": 255,
+      "targetSnapMeters": 0.09
+    },
+    {
+      "city": "dakar",
+      "target": "독립광장",
+      "routes": 13,
+      "realRoadEdges": 262,
+      "targetSnapMeters": 0.43
+    },
+    {
+      "city": "delhi",
+      "target": "자마마스지드",
+      "routes": 13,
+      "realRoadEdges": 489,
+      "targetSnapMeters": 59.62
+    },
+    {
+      "city": "dubai",
+      "target": "두바이몰",
+      "routes": 13,
+      "realRoadEdges": 890,
+      "targetSnapMeters": 7.25
+    },
+    {
+      "city": "hanoi",
+      "target": "응옥썬사당",
+      "routes": 13,
+      "realRoadEdges": 169,
+      "targetSnapMeters": 13.75
+    },
+    {
+      "city": "havana",
+      "target": "아르마스광장",
+      "routes": 13,
+      "realRoadEdges": 101,
+      "targetSnapMeters": 14.86
+    },
+    {
+      "city": "ho-chi-minh",
+      "target": "노트르담대성당",
+      "routes": 13,
+      "realRoadEdges": 253,
+      "targetSnapMeters": 28.18
+    },
+    {
+      "city": "hong-kong",
+      "target": "타이쿤",
+      "routes": 13,
+      "realRoadEdges": 542,
+      "targetSnapMeters": 0.92
+    },
+    {
+      "city": "honolulu",
+      "target": "카피올라니공원",
+      "routes": 13,
+      "realRoadEdges": 126,
+      "targetSnapMeters": 25.18
+    },
+    {
+      "city": "istanbul",
+      "target": "블루모스크",
+      "routes": 13,
+      "realRoadEdges": 208,
+      "targetSnapMeters": 31.56
+    },
+    {
+      "city": "jeju",
+      "target": "용두암",
+      "routes": 13,
+      "realRoadEdges": 974,
+      "targetSnapMeters": 15.85
+    },
+    {
+      "city": "kuala-lumpur",
+      "target": "KLCC공원",
+      "routes": 13,
+      "realRoadEdges": 327,
+      "targetSnapMeters": 34.56
+    },
+    {
+      "city": "lisbon",
+      "target": "포르타스두솔전망대",
+      "routes": 13,
+      "realRoadEdges": 318,
+      "targetSnapMeters": 0.34
+    },
+    {
+      "city": "london",
+      "target": "빅벤",
+      "routes": 13,
+      "realRoadEdges": 386,
+      "targetSnapMeters": 7.11
+    },
+    {
+      "city": "los-angeles",
+      "target": "월트디즈니콘서트홀",
+      "routes": 13,
+      "realRoadEdges": 309,
+      "targetSnapMeters": 36.9
+    },
+    {
+      "city": "marrakesh",
+      "target": "쿠투비아모스크",
+      "routes": 13,
+      "realRoadEdges": 455,
+      "targetSnapMeters": 35.2
+    },
+    {
+      "city": "melbourne",
+      "target": "호시어레인",
+      "routes": 13,
+      "realRoadEdges": 391,
+      "targetSnapMeters": 0.65
+    },
+    {
+      "city": "mexico-city",
+      "target": "템플로마요르",
+      "routes": 13,
+      "realRoadEdges": 144,
+      "targetSnapMeters": 3.17
+    },
+    {
+      "city": "nairobi",
+      "target": "지반지정원",
+      "routes": 13,
+      "realRoadEdges": 547,
+      "targetSnapMeters": 6.1
+    },
+    {
+      "city": "new-york",
+      "target": "센트럴파크",
+      "routes": 13,
+      "realRoadEdges": 1020,
+      "targetSnapMeters": 45.76
+    },
+    {
+      "city": "osaka",
+      "target": "도톤보리",
+      "routes": 13,
+      "realRoadEdges": 117,
+      "targetSnapMeters": 2.92
+    },
+    {
+      "city": "paris",
+      "target": "트로카데로",
+      "routes": 13,
+      "realRoadEdges": 798,
+      "targetSnapMeters": 5.33
+    },
+    {
+      "city": "prague",
+      "target": "천문시계",
+      "routes": 13,
+      "realRoadEdges": 174,
+      "targetSnapMeters": 4.9
+    },
+    {
+      "city": "reykjavik",
+      "target": "선보이저",
+      "routes": 13,
+      "realRoadEdges": 298,
+      "targetSnapMeters": 0.22
+    },
+    {
+      "city": "rio-de-janeiro",
+      "target": "코파카바나포트",
+      "routes": 13,
+      "realRoadEdges": 351,
+      "targetSnapMeters": 3.69
+    },
+    {
+      "city": "rome",
+      "target": "포로로마노",
+      "routes": 13,
+      "realRoadEdges": 534,
+      "targetSnapMeters": 6.46
+    },
+    {
+      "city": "san-francisco",
+      "target": "피어39",
+      "routes": 13,
+      "realRoadEdges": 507,
+      "targetSnapMeters": 17.39
+    },
+    {
+      "city": "santiago",
+      "target": "산티아고대성당",
+      "routes": 13,
+      "realRoadEdges": 274,
+      "targetSnapMeters": 23.75
+    },
+    {
+      "city": "seoul",
+      "target": "북촌 한옥마을",
+      "routes": 13,
+      "realRoadEdges": 405,
+      "targetSnapMeters": 4.45
+    },
+    {
+      "city": "shanghai",
+      "target": "난징동루",
+      "routes": 13,
+      "realRoadEdges": 452,
+      "targetSnapMeters": 8.52
+    },
+    {
+      "city": "singapore",
+      "target": "마리나 베이 샌즈",
+      "routes": 13,
+      "realRoadEdges": 406,
+      "targetSnapMeters": 27.4
+    },
+    {
+      "city": "sydney",
+      "target": "서큘러키",
+      "routes": 13,
+      "realRoadEdges": 310,
+      "targetSnapMeters": 7.26
+    },
+    {
+      "city": "taipei",
+      "target": "시먼딩",
+      "routes": 13,
+      "realRoadEdges": 348,
+      "targetSnapMeters": 14.55
+    },
+    {
+      "city": "tokyo",
+      "target": "오모테산도",
+      "routes": 13,
+      "realRoadEdges": 424,
+      "targetSnapMeters": 0.8
+    },
+    {
+      "city": "toronto",
+      "target": "리플리아쿠아리움",
+      "routes": 13,
+      "realRoadEdges": 512,
+      "targetSnapMeters": 6.24
+    },
+    {
+      "city": "vancouver",
+      "target": "개스타운증기시계",
+      "routes": 13,
+      "realRoadEdges": 359,
+      "targetSnapMeters": 2.28
+    },
+    {
+      "city": "vienna",
+      "target": "호프부르크궁전",
+      "routes": 13,
+      "realRoadEdges": 213,
+      "targetSnapMeters": 17.85
+    },
+    {
+      "city": "zanzibar",
+      "target": "포로다니정원",
+      "routes": 13,
+      "realRoadEdges": 202,
+      "targetSnapMeters": 86.44
+    }
+  ]
+}
