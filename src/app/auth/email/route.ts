@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
-import { siteUrl, supabaseConfigured } from "@/lib/supabase/config";
+import { siteUrl, supabaseConfigured, localAuth } from "@/lib/supabase/config";
 import { authCallbackUrl, authNextCookie, isCanonicalAuthHost, loginErrors, loginUrl } from "@/lib/auth-flow";
 import { safeNext } from "@/lib/auth-redirect";
 
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "허용되지 않은 요청입니다." }, { status: 403 });
   }
   const fail = (code: string, status: number) => NextResponse.json({ error: loginErrors[code], code }, { status });
-  if (!supabaseConfigured) return fail("unavailable", 503);
+  if (!supabaseConfigured || localAuth) return fail("unavailable", 503);
   if (Number(request.headers.get("content-length")) > 4096) return fail("invalid_email", 413);
   let data: { email?: unknown; next?: unknown };
   try {

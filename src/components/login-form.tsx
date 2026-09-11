@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { demoEnabled, siteUrl, supabaseConfigured } from "@/lib/supabase/config";
+import { demoEnabled, siteUrl, supabaseConfigured, localAuth } from "@/lib/supabase/config";
 import { loginErrors, loginUrl } from "@/lib/auth-flow";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,7 +23,7 @@ export function LoginForm({ next, error, googleStatus }: { next: string; error?:
   const [busy, setBusy] = useState(false);
   // Some preview proxies replace Host. The browser still knows the real origin.
   useEffect(() => {
-    if (supabaseConfigured && process.env.NODE_ENV === "production" && window.location.origin !== new URL(siteUrl).origin) {
+    if (supabaseConfigured && !localAuth && process.env.NODE_ENV === "production" && window.location.origin !== new URL(siteUrl).origin) {
       window.location.replace(loginUrl(siteUrl, next, error).href);
     }
   }, [next, error]);
@@ -47,6 +47,14 @@ export function LoginForm({ next, error, googleStatus }: { next: string; error?:
       setFailed(true); setStatus(error instanceof Error ? error.message : loginErrors.unavailable);
     } finally { setBusy(false); }
   }
+
+  if (localAuth) return <form action="/auth/local" method="post" className="space-y-3">
+    <input type="hidden" name="next" value={next} />
+    <label className="text-muted-foreground block text-xs" htmlFor="login-password">소유자 비밀번호</label>
+    <Input id="login-password" name="password" type="password" autoComplete="current-password" required maxLength={256} className="h-11 rounded-full px-4" />
+    <Button type="submit" className="h-11 w-full rounded-full">들어가기</Button>
+    {status && <p role="alert" className="rounded-xl border border-destructive/25 p-3 text-xs leading-relaxed text-destructive">{status}</p>}
+  </form>;
 
   if (!supabaseConfigured) return demoEnabled ? <div className="space-y-4"><Link href="/app" className={buttonVariants({ className: "h-11 w-full rounded-full" })}>로그인 없이 둘러보기</Link><p className="text-muted-foreground text-xs leading-relaxed">계정 로그인을 준비하고 있어요. 여행 화면을 먼저 둘러보세요.</p></div> : <p className="text-sm leading-relaxed">로그인 서비스를 준비하고 있습니다. 잠시 후 다시 방문해 주세요.</p>;
 

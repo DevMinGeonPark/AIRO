@@ -1,9 +1,10 @@
-import { siteUrl, SUPABASE_URL, supabaseConfigured } from "./supabase/config";
+import { siteUrl, SUPABASE_URL, supabaseConfigured, localAuth } from "./supabase/config";
 
 export const mcpResource = `${siteUrl.replace(/\/$/, "")}/api/mcp`;
 export const mcpMetadataUrl = `${siteUrl.replace(/\/$/, "")}/.well-known/oauth-protected-resource/api/mcp`;
-export const mcpOAuthEnabled = supabaseConfigured && process.env.MCP_OAUTH_ENABLED === "true";
-export const mcpApiKeyEnabled = !supabaseConfigured || Boolean(process.env.SUPABASE_JWT_SECRET);
+// OAuth needs Supabase's OAuth Server; community edition uses API keys only.
+export const mcpOAuthEnabled = supabaseConfigured && !localAuth && process.env.MCP_OAUTH_ENABLED === "true";
+export const mcpApiKeyEnabled = !supabaseConfigured || localAuth || Boolean(process.env.SUPABASE_JWT_SECRET);
 export const mcpIssuer = `${SUPABASE_URL.replace(/\/$/, "")}/auth/v1`;
 export function mcpOriginAllowed(origin: string | null) {
   if (origin === null) return true; // Native/server clients do not send Origin.

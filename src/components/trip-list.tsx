@@ -7,7 +7,8 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RouteThumb } from "@/components/route-thumb";
-import { FREE_TRIP_LIMIT, type Plan, type Stop, type Trip } from "@/lib/types";
+import type { Plan, Stop, Trip } from "@/lib/types";
+import { atTripLimit, tripLimit } from "@/ee/plans";
 
 type Summary = { trip: Trip; stops: Stop[] };
 
@@ -33,7 +34,7 @@ export function TripList({ initial, plan }: { initial: Summary[]; plan: Plan }) 
   const [startDate, setStartDate] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const atLimit = plan === "free" && trips.length >= FREE_TRIP_LIMIT;
+  const atLimit = atTripLimit(plan, trips.length);
 
   async function create(e: React.FormEvent) {
     e.preventDefault();
@@ -90,7 +91,7 @@ export function TripList({ initial, plan }: { initial: Summary[]; plan: Plan }) 
 
       {atLimit && (
         <p className="text-muted-foreground mt-3 text-sm">
-          무료 플랜은 여행 {FREE_TRIP_LIMIT}개까지입니다.{" "}
+          무료 플랜은 여행 {tripLimit(plan)}개까지입니다.{" "}
           <Link href="/pricing" className="text-primary hover:underline dark:text-primary">
             요금제 보기 ›
           </Link>

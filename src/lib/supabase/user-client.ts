@@ -1,9 +1,11 @@
 import "server-only";
 import { createHmac } from "node:crypto";
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
-import { SUPABASE_ANON_KEY, SUPABASE_URL } from "./config";
+import { SUPABASE_ANON_KEY, SUPABASE_URL, localAuth } from "./config";
+import { localAnonKey, localClientOptions } from "./local";
 
-const JWT_SECRET = process.env.SUPABASE_JWT_SECRET ?? "";
+// community: the same secret PostgREST verifies; cloud: the project's legacy JWT secret.
+const JWT_SECRET = (localAuth ? process.env.AIRO_JWT_SECRET : process.env.SUPABASE_JWT_SECRET) ?? "";
 export const canActAsUser = Boolean(JWT_SECRET);
 
 const b64 = (v: object | string) =>
@@ -33,8 +35,16 @@ function signUserJwt(userId: string, keyId?: string) {
 /** 해당 사용자 권한으로만 동작하는 Supabase 클라이언트. */
 export function createUserClient(userId: string, keyId?: string) {
   if (!JWT_SECRET) return null;
-  return createSupabaseClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+  return createSupabaseClient(SUPABASE_URL, localAuth ? localAnonKey() : SUPABASE_ANON_KEY, {
     auth: { persistSession: false, autoRefreshToken: false },
-    global: { headers: { Authorization: `Bearer ${signUserJwt(userId, keyId)}` } },
+    global: { headers: { Authorization: `Bearer ${signUserJwt(userId, keyId)}` }, ...localClientOptions().global },
+  });
+}
+
+/** 세션 없는 호출(키 조회, 브리지 워커)용 anon 클라이언트. security definer RPC 만 부른다. */
+export function createAnonClient() {
+  return createSupabaseClient(SUPABASE_URL, localAuth ? localAnonKey() : SUPABASE_ANON_KEY, {
+    auth: { persistSession: false, autoRefreshToken: false },
+    ...localClientOptions(),
   });
 }

@@ -1,16 +1,15 @@
 import { readFileSync, writeFileSync, renameSync } from "node:fs";
 import "server-only";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
-import { createClient as createSupabaseClient } from "@supabase/supabase-js";
-import { SUPABASE_ANON_KEY, SUPABASE_URL } from "./supabase/config";
-import { createClient } from "./supabase/server";
+import { createAnonClient } from "./supabase/user-client";
+import { createClient, getUser } from "./supabase/server";
 import { currentActor } from "./actor";
 import { supabaseConfigured, demoEnabled } from "./supabase/config";
 import { stopInputSchema } from "./archive";
 import { sortStops } from "./geo";
 import { mutateStops, type Placement, type StopPatch, type StopMutation } from "./itinerary-mutations";
+import { atTripLimit, tripLimit } from "@/ee/plans";
 import {
-  FREE_TRIP_LIMIT,
   type ApiKey,
   type ChatRole,
   type Message,
@@ -162,9 +161,7 @@ export async function currentUserId(): Promise<string | null> {
   const actor = currentActor();
   if (actor) return actor.userId;
   if (!supabaseConfigured) return demoEnabled ? DEMO_USER : null;
-  const supabase = await createClient();
-  const { data } = await supabase!.auth.getUser();
-  return data.user?.id ?? null;
+  return (await getUser())?.id ?? null;
 }
 
 export async function currentPlan(): Promise<Plan> {
@@ -237,9 +234,9 @@ export async function createTrip(
   if (retry.previous) return retry.previous as { trip: Trip };
   const trips = await listTrips();
   const plan = await currentPlan();
-  if (plan === "free" && trips.length >= FREE_TRIP_LIMIT)
+  if (atTripLimit(plan, trips.length))
     return {
-      error: `무료 플랜은 여행 ${FREE_TRIP_LIMIT}개까지 만들 수 있어요. 프로로 올리면 무제한입니다.`,
+      error: `무료 플랜은 여행 ${tripLimit(plan)}개까지 만들 수 있어요. 프로로 올리면 무제한입니다.`,
     };
 
   const trip: Trip = { id: uid(), user_id: DEMO_USER, title, start_date: startDate, created_at: new Date().toISOString() };
@@ -504,10 +501,7 @@ export async function resolveApiKey(token: string): Promise<{ userId: string; ke
 
   // 세션이 없는 요청이라 RLS 를 통과할 수 없다. 해시 하나만 받아 소유자를
   // 돌려주는 security definer 함수만 호출한다 — service_role 은 쓰지 않는다.
-  const anon = createSupabaseClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-    auth: { persistSession: false, autoRefreshToken: false },
-  });
-  const { data, error } = await anon.rpc("resolve_mcp_key", { p_hash: hash });
+  const { data, error } = await createAnonClient().rpc("resolve_mcp_key", { p_hash: hash });
   if (error) throw new Error("MCP 인증 저장소를 사용할 수 없습니다.");
   if (!Array.isArray(data) || !data.length) return null;
   const row = data[0] as { user_id: string; token_hash: string; key_id: string; scopes: ApiKey["scopes"] };

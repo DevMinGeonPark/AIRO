@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { siteUrl, supabaseConfigured } from "@/lib/supabase/config";
+import { siteUrl, supabaseConfigured, localAuth } from "@/lib/supabase/config";
 import { safeNext } from "@/lib/auth-redirect";
 import { isCanonicalAuthHost, loginUrl } from "@/lib/auth-flow";
 import { googleAuthStatus } from "@/lib/google-auth";
@@ -12,7 +12,8 @@ import { LoginForm } from "@/components/login-form";
 export default async function LoginPage({ searchParams }: { searchParams: Promise<{ next?: string; error?: string }> }) {
   const params = await searchParams;
   const next = safeNext(typeof params.next === "string" ? params.next : null);
-  if (supabaseConfigured && process.env.NODE_ENV === "production" && !isCanonicalAuthHost(await headers(), siteUrl)) {
+  // Self-hosters reach the app by whatever hostname they like; only the cloud login pins its host.
+  if (supabaseConfigured && !localAuth && process.env.NODE_ENV === "production" && !isCanonicalAuthHost(await headers(), siteUrl)) {
     redirect(loginUrl(siteUrl, next, typeof params.error === "string" ? params.error : undefined).href);
   }
   const googleStatus = await googleAuthStatus();
@@ -35,7 +36,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
         </div>
         <div className="mx-auto w-full max-w-sm">
           <h2 className="text-2xl font-semibold tracking-tight">아이로에 로그인</h2>
-          <p className="mt-3 text-sm leading-6 text-muted-foreground">Google 계정이나 이메일로<br />나만의 여행을 이어가세요.</p>
+          <p className="mt-3 text-sm leading-6 text-muted-foreground">{localAuth ? <>내 서버의 아이로입니다.<br />소유자 비밀번호로 들어가세요.</> : <>Google 계정이나 이메일로<br />나만의 여행을 이어가세요.</>}</p>
           <div className="mt-7 rounded-3xl border bg-card p-6 shadow-sm"><LoginForm next={next} error={typeof params.error === "string" ? params.error : undefined} googleStatus={googleStatus} /></div>
           <p className="mt-5 text-center text-xs text-muted-foreground">여행 정보는 로그인한 계정에 저장됩니다.</p>
         </div>

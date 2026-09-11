@@ -1,6 +1,8 @@
 import { cookies } from "next/headers";
 import { createServerClient } from "@supabase/ssr";
-import { SUPABASE_ANON_KEY, SUPABASE_URL, supabaseConfigured, demoEnabled } from "./config";
+import { createClient as createSupabaseClient } from "@supabase/supabase-js";
+import { SUPABASE_ANON_KEY, SUPABASE_URL, supabaseConfigured, demoEnabled, localAuth } from "./config";
+import { assertLocalConfigured, localAnonKey, localClientOptions, localSession, SESSION_COOKIE } from "./local";
 import { currentActor } from "../actor";
 
 /** 미설정이면 null. 호출부에서 데모 모드로 분기한다. */
@@ -13,6 +15,16 @@ export async function createClient() {
   const actor = currentActor();
   if (actor?.client) return actor.client;
   const store = await cookies();
+  if (localAuth) {
+    assertLocalConfigured();
+    // 세션 JWT 를 그대로 PostgREST 에 넘긴다. 없으면 anon 으로 질의돼 RLS 가 빈 결과를 돌려준다.
+    const token = store.get(SESSION_COOKIE)?.value;
+    const bearer = localSession(token) ? token! : localAnonKey();
+    return createSupabaseClient(SUPABASE_URL, localAnonKey(), {
+      auth: { persistSession: false, autoRefreshToken: false },
+      global: { headers: { Authorization: `Bearer ${bearer}` }, ...localClientOptions().global },
+    });
+  }
   return createServerClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
     cookies: {
       getAll: () => store.getAll(),
@@ -28,6 +40,7 @@ export async function createClient() {
 }
 
 export async function getUser() {
+  if (localAuth) return localSession((await cookies()).get(SESSION_COOKIE)?.value);
   const supabase = await createClient();
   if (!supabase) return null;
   const { data } = await supabase.auth.getUser();

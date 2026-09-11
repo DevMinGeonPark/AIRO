@@ -39,4 +39,5 @@ export const loginErrors: Record<string, string> = {
   unavailable: "로그인 서비스에 연결하지 못했어요. 잠시 후 다시 시도해 주세요.",
   invalid_email: "이메일 주소를 다시 확인해 주세요.",
   rate_limit: "요청이 많아요. 잠시 기다린 뒤 다시 시도해 주세요.",
+  password: "비밀번호가 맞지 않아요. 다시 입력해 주세요.",
 };

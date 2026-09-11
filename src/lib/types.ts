@@ -64,9 +64,6 @@ export type McpConnection = {
   revoked_at: string | null;
 };
 
-/** 무료 티어 제한. 초과하면 새 여행을 만들 수 없다. */
-export const FREE_TRIP_LIMIT = 3;
-
 /** 장소 검색 결과 한 건. 외부 지오코더 응답을 정규화한 모양. */
 export type Place = {
   id: string;

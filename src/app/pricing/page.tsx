@@ -1,9 +1,29 @@
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ClosingCta, Footer, Nav, RouteLine, SectionHeading } from "@/components/marketing";
-import { FREE_TRIP_LIMIT } from "@/lib/types";
+import { FREE_TRIP_LIMIT } from "@/ee/plans";
+import { localAuth } from "@/lib/supabase/config";
 
 export const metadata = { title: "요금제 — 아이로" };
+
+function SelfHosted() {
+  return (
+    <>
+      <Nav />
+      <main>
+        <section className="sky">
+          <div className="mx-auto max-w-3xl px-6 pt-24 pb-24 text-center">
+            <p className="text-sm font-medium text-primary dark:text-primary">Self-hosted ›</p>
+            <h1 className="mt-4 text-4xl leading-[1.15] font-semibold tracking-tight sm:text-5xl">이 아이로는 내 서버에서 돕니다</h1>
+            <p className="text-muted-foreground mt-6 leading-relaxed">요금제도 한도도 없습니다. 여행은 내 PostgreSQL에, AI는 내 키나 내 Codex로. 호스팅 버전과 같은 코드입니다.</p>
+            <Link href="/app" className={buttonVariants({ className: "mt-10 rounded-full" })}>내 여행으로</Link>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
 
 const plans = [
   {
@@ -54,6 +74,7 @@ const faq = [
 ];
 
 export default function Pricing() {
+  if (localAuth) return <SelfHosted />;
   return (
     <>
       <Nav />
