@@ -1,38 +1,38 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "codexVersion": "0.154.0",
   "platforms": {
     "darwin-arm64": {
-      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.0-darwin-arm64.tar.gz",
-      "bridgeSha256": "fcbed895f45fd3805a6197ef007c5b8c67ecaf23f0186181713707bba0086a99",
+      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.1-darwin-arm64.tar.gz",
+      "bridgeSha256": "1af6dd02d268488ad8b7eb17e5c9d2c79dad1cd68e67899d68e7e17a8edc0292",
       "codexUrl": "https://registry.npmjs.org/@openai/codex/-/codex-0.154.0-darwin-arm64.tgz",
       "codexSha256": "2a98662d79316a59993c7233e3e25a1aa1d42da4b45904585d33a5a7da1cade1",
       "codexPath": "package/vendor/aarch64-apple-darwin/bin/codex"
     },
     "darwin-x64": {
-      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.0-darwin-x64.tar.gz",
-      "bridgeSha256": "fe756c9e3ed1568531f6839a95fd5fdb36e1e8be7d4fd5ab61376420ca16aa12",
+      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.1-darwin-x64.tar.gz",
+      "bridgeSha256": "8646fce8213e8668a9744fa9c48541b37a51d308eb2e8cb5d3c34b18745c6d56",
       "codexUrl": "https://registry.npmjs.org/@openai/codex/-/codex-0.154.0-darwin-x64.tgz",
       "codexSha256": "92c493533c53c433c4d94252251daba4f379ccba06a9964d260abb47a535dce1",
       "codexPath": "package/vendor/x86_64-apple-darwin/bin/codex"
     },
     "linux-x64": {
-      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.0-linux-x64.tar.gz",
-      "bridgeSha256": "9e1ecdd2fb1bd1f0fb2b4c0d639b7963ab18d274d37de1619baf7dc7efcfc2f7",
+      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.1-linux-x64.tar.gz",
+      "bridgeSha256": "2bcfc388cbb8414d88a35bcd7f28078eea793d99847514c4b3e07bb4180f0812",
       "codexUrl": "https://registry.npmjs.org/@openai/codex/-/codex-0.154.0-linux-x64.tgz",
       "codexSha256": "e27c83a49e6031685ee7f956c12aad5f16484d3a80181dd3fea930fb96b3832b",
       "codexPath": "package/vendor/x86_64-unknown-linux-musl/bin/codex"
     },
     "linux-arm64": {
-      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.0-linux-arm64.tar.gz",
-      "bridgeSha256": "2dce6270997ff68c128cddab37d5383d39b2ba56d57561025f2658e17f627fc5",
+      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.1-linux-arm64.tar.gz",
+      "bridgeSha256": "014f571c9ceed62a1d2c6403f5c884a28e69b14c288240566e807ae556a77378",
       "codexUrl": "https://registry.npmjs.org/@openai/codex/-/codex-0.154.0-linux-arm64.tgz",
       "codexSha256": "a2315b5f64bfeaff79b71e0d35505ba8c22cc1e96cab9dc950b614c804105b24",
       "codexPath": "package/vendor/aarch64-unknown-linux-musl/bin/codex"
     },
     "win32-x64": {
-      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.0-win32-x64.tar.gz",
-      "bridgeSha256": "4c7f0f9c69a369286898c757e6573521125d3ae406c272f24988a459d3b09021",
+      "bridgeUrl": "https://airo.dev-heptivision.com/downloads/airo-codex-0.2.1-win32-x64.tar.gz",
+      "bridgeSha256": "5f9e6a816f06f1dc050d1b36c8176c47b7d4dedfadcb5a471946added658f7d7",
       "codexUrl": "https://registry.npmjs.org/@openai/codex/-/codex-0.154.0-win32-x64.tgz",
       "codexSha256": "27eedae55e37ed1da4078b36a6ef9e4ffe8546a60fd6df5ee6408fdd16aff8ea",
       "codexPath": "package/vendor/x86_64-pc-windows-msvc/bin/codex.exe"

@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { bridgeFetch, useAiDevices } from "./use-codex-chat";
 import { deviceLabel, deviceReady } from "@/lib/ai-bridge-types";
-export function AiConnectionManager({ installUrl }: { installUrl: string | null }) {
+export function AiConnectionManager({ installUrl, server }: { installUrl: string | null; server: string }) {
   const { devices, refresh, error } = useAiDevices();
   const [pair, setPair] = useState<{ id: string; key: string; name: string } | null>(null);
   const [message, setMessage] = useState(""), [busy, setBusy] = useState(false);
   async function copySetup() {
-    const text = "AIRO 플러그인을 설치하고 내 Codex를 아이로 웹 채팅에 연결해줘. 공식 설치 안내: https://airo.dev-heptivision.com/docs/codex/install — 설치된 플러그인의 연결 스킬로 진행하고, 브라우저에서 내가 연결을 승인할 수 있게 해줘.";
+    const text = `AIRO 플러그인을 설치하고 내 Codex를 아이로 웹 채팅에 연결해줘. 공식 설치 안내: ${server}/docs/codex/install — 설치된 플러그인의 연결 스킬로 진행하고, 브라우저에서 내가 연결을 승인할 수 있게 해줘.`;
     try { await navigator.clipboard.writeText(text); setMessage("연결 요청을 복사했어요. 사용하는 컴퓨터의 Codex에 붙여넣어 보내 주세요."); }
     catch { setMessage(text); }
   }

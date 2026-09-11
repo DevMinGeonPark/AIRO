@@ -10,6 +10,10 @@ The public installation instructions are `/docs/codex/install`; the public Git m
 
 The paired computer must remain awake and online. Reopening the plugin's connect skill restarts a stopped bridge. Native automatic login/startup installation is not included. Claude Code can already edit trips through MCP; its AIRO web-chat bridge is not enabled.
 
+## Self-hosted servers (plugin 0.2.1+)
+
+The plugin and bridge binaries are always distributed from the cloud host. The bridge pairs with `AIRO_ORIGIN` (default `https://airo.dev-heptivision.com`); a Community Edition server prints its own address in `/docs/codex/install`, and the connect skill passes it as `AIRO_ORIGIN=<address>` when running the connect script. The origin is stored with the device record, so switching servers starts a new pairing. Only https origins, or http on private/Tailscale addresses, are accepted.
+
 ## Account boundary
 
 - Migration `0009_codex_bridge.sql` creates device, job, and tool-call queues. Direct client table access is revoked; RPC ownership/role checks protect all operations.

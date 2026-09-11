@@ -6,7 +6,16 @@ import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
 import { isolatedCodexServer, runCodexJob } from './app-server.mjs';
-const ORIGIN = 'https://airo.dev-heptivision.com';
+const DEFAULT_ORIGIN = 'https://airo.dev-heptivision.com';
+// Self-hosted AIRO: run the connect script with AIRO_ORIGIN=https://your.server. Stored per device.
+function resolveOrigin(value) {
+  const origin = (value || DEFAULT_ORIGIN).trim().replace(/\/$/, '');
+  let url; try { url = new URL(origin); } catch { throw new Error('AIRO_ORIGIN 주소가 올바르지 않습니다.'); }
+  if (url.protocol !== 'https:' && !(url.protocol === 'http:' && /^(localhost|127\.0\.0\.1|\[::1\]|[^.]+\.(local|internal|lan)|([a-z0-9-]+\.)+ts\.net|10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+|100\.(6[4-9]|[7-9]\d|1[01]\d|12[0-7])\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+\.\d+)$/.test(url.hostname))) throw new Error('AIRO_ORIGIN은 https 주소이거나 사설망 http 주소여야 합니다.');
+  if (url.pathname !== '/' || url.search || url.hash) throw new Error('AIRO_ORIGIN에는 경로 없이 주소만 적어 주세요.');
+  return url.origin;
+}
+const ORIGIN = resolveOrigin(process.env.AIRO_ORIGIN);
 const root = join(homedir(), '.airo', 'codex');
 const stateFile = join(root, 'device.json'), statusFile = join(root, 'status.json'), lockFile = join(root, 'worker.lock');
 const compiled = typeof AIRO_COMPILED !== 'undefined' && AIRO_COMPILED;
@@ -24,7 +33,7 @@ export async function launch() {
   let state = await json(stateFile);
   const previous = await json(statusFile);
   const lock = await json(lockFile);
-  const replace = !state || process.argv.includes('--reconnect') || previous?.state === 'revoked';
+  const replace = !state || process.argv.includes('--reconnect') || previous?.state === 'revoked' || state.origin !== ORIGIN;
   if (replace && lock && alive(lock.pid)) throw new Error('기존 연결을 해제하고 잠시 후 다시 연결해 주세요.');
   if (replace) { state = { id: randomUUID(), key: randomBytes(32).toString('hex'), name: hostname().slice(0,80), origin: ORIGIN }; await save(stateFile, state); }
   if (!lock || !alive(lock.pid) || lock.deviceId !== state.id) {
@@ -42,6 +51,7 @@ export async function launch() {
 }
 async function workerLoop() {
   const state = await json(stateFile); if (!state) throw new Error('연결 설정이 없습니다.');
+  const ORIGIN = state.origin || DEFAULT_ORIGIN;
   await mkdir(join(root, 'workspace'), { recursive: true, mode: 0o700 });
   let lock;
   try { lock = await openFile(lockFile, 'wx', 0o600); await lock.writeFile(JSON.stringify({ pid: process.pid, deviceId: state.id })); await lock.close(); }
