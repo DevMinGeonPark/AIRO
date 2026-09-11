@@ -7,6 +7,6 @@ import type { Plan } from "@/lib/types";
 
 export const FREE_TRIP_LIMIT = 3;
 
-export const tripLimit = (plan: Plan) => (localAuth || plan === "pro" ? Infinity : FREE_TRIP_LIMIT);
+export const tripLimit = (plan: Plan) => (plan === "pro" ? Infinity : FREE_TRIP_LIMIT);
 export const atTripLimit = (plan: Plan, count: number) => count >= tripLimit(plan);
 export const planLabel = (plan: Plan) => (localAuth ? "Self-hosted" : plan === "pro" ? "프로" : "무료");

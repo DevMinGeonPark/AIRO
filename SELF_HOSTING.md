@@ -19,7 +19,7 @@
 git clone https://github.com/DevMinGeonPark/AIRO.git && cd AIRO
 cp community.env.example .env
 # .env 열어서 세 값 채우기:
-#   POSTGRES_PASSWORD   아무 문자열
+#   POSTGRES_PASSWORD   openssl rand -hex 24 (영숫자만)
 #   AIRO_JWT_SECRET     openssl rand -hex 32
 #   AIRO_OWNER_PASSWORD 로그인 비밀번호
 docker compose up -d
@@ -83,7 +83,7 @@ COMMUNITY_BASE_URL=http://localhost:3002 AIRO_OWNER_PASSWORD=... npm run test:co
 
 ## 알아둘 것
 
-- 비밀번호 시도는 IP당 15분에 5회. 프로세스 재시작 시 초기화.
-- 세션 쿠키는 30일 JWT. 로그아웃은 브라우저 쿠키만 지웁니다. 유출이 의심되면 `AIRO_JWT_SECRET`을 바꾸고 재시작하세요(PostgREST와 앱 둘 다 새 값을 읽습니다).
+- 비밀번호 시도는 서버 전체로 15분에 5회(소유자 1명이라 IP 구분 없음). 프로세스 재시작 시 초기화.
+- 세션 쿠키는 30일 JWT이며 사용 중이면 자동 연장됩니다. 로그아웃은 브라우저 쿠키만 지웁니다. 유출이 의심되면 `AIRO_OWNER_PASSWORD`를 바꾸고 재시작하세요 — 기존 세션이 전부 무효화됩니다.
 - Codex 플러그인과 브리지 실행 파일은 클라우드가 배포합니다. 내 서버는 `/docs/codex/install` 안내문에 자기 주소만 넣어 주면 되므로 이미지에 다운로드 파일이 없습니다. `AIRO_ORIGIN`은 https 주소이거나 사설망(localhost·10.x·192.168.x·100.64~127.x·172.16~31.x·`.local`)의 http 주소만 받습니다.
 - HTTPS는 앞단(Tailscale Serve, Cloudflare Tunnel, Caddy)에 맡깁니다. 앱은 `AIRO_SITE_URL`이 `https:`면 쿠키에 `Secure`를 붙입니다.

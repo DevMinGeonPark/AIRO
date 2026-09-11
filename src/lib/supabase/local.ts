@@ -1,4 +1,4 @@
-import { createHmac, timingSafeEqual } from "node:crypto";
+import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 import { localAuth, SUPABASE_URL } from "./config";
 
 /**
@@ -10,27 +10,36 @@ import { localAuth, SUPABASE_URL } from "./config";
 export const OWNER_ID = "00000000-0000-4000-8000-000000000001";
 export const SESSION_COOKIE = "airo_session";
 const SESSION_TTL = 30 * 24 * 60 * 60;
+/** Sliding window: the proxy re-issues the cookie once it has less than this left. */
+export const SESSION_RENEW_BELOW = 7 * 24 * 60 * 60;
 
 const secret = process.env.AIRO_JWT_SECRET ?? "";
 const password = process.env.AIRO_OWNER_PASSWORD ?? "";
 export const ownerEmail = process.env.AIRO_OWNER_EMAIL ?? "owner@localhost";
+export const localConfigured = !localAuth || Boolean(SUPABASE_URL && secret.length >= 32 && password);
 
 export function assertLocalConfigured() {
-  if (!localAuth) return;
+  if (localConfigured) return;
   const missing = [!SUPABASE_URL && "AIRO_POSTGREST_URL", secret.length < 32 && "AIRO_JWT_SECRET (32+ chars)", !password && "AIRO_OWNER_PASSWORD"].filter(Boolean);
-  if (missing.length) throw new Error(`Community edition needs ${missing.join(", ")}.`);
+  throw new Error(`Community edition needs ${missing.join(", ")}.`);
 }
 
 const b64 = (v: object | string) => Buffer.from(typeof v === "string" ? v : JSON.stringify(v)).toString("base64url");
 
-export function signLocalJwt(claims: Record<string, unknown>, ttl = SESSION_TTL) {
+/** Minimal HS256 signer shared by session cookies (community) and MCP user tokens (both editions). */
+export function signHs256(claims: Record<string, unknown>, key: string, ttl: number) {
   const now = Math.floor(Date.now() / 1000);
   const body = `${b64({ alg: "HS256", typ: "JWT" })}.${b64({ aud: "authenticated", iat: now, exp: now + ttl, ...claims })}`;
-  return `${body}.${createHmac("sha256", secret).update(body).digest("base64url")}`;
+  return `${body}.${createHmac("sha256", key).update(body).digest("base64url")}`;
 }
 
+/** Changing AIRO_OWNER_PASSWORD (or the secret) invalidates every issued session. */
+const passwordTag = () => createHash("sha256").update(`${secret}\n${password}`).digest("base64url").slice(0, 16);
+
+export const signLocalJwt = (claims: Record<string, unknown>, ttl = SESSION_TTL) => signHs256(claims, secret, ttl);
+
 export function verifyLocalJwt(token: string | undefined): Record<string, unknown> | null {
-  if (!token || !secret) return null;
+  if (!token || secret.length < 32) return null;
   const [head, body, sig] = token.split(".");
   if (!head || !body || !sig) return null;
   const expected = createHmac("sha256", secret).update(`${head}.${body}`).digest();
@@ -42,11 +51,14 @@ export function verifyLocalJwt(token: string | undefined): Record<string, unknow
   } catch { return null; }
 }
 
-/** Session cookie value → owner identity, or null. */
-export function localSession(cookie: string | undefined) {
+/** Session cookie value → verified claims, or null. */
+export function localSessionClaims(cookie: string | undefined) {
   const claims = verifyLocalJwt(cookie);
-  return claims?.sub === OWNER_ID && claims.role === "authenticated" ? { id: OWNER_ID, email: ownerEmail } : null;
+  return claims?.sub === OWNER_ID && claims.role === "authenticated" && claims.pw === passwordTag() ? claims : null;
 }
+
+/** Session cookie value → owner identity, or null. */
+export const localSession = (cookie: string | undefined) => (localSessionClaims(cookie) ? { id: OWNER_ID, email: ownerEmail } : null);
 
 /** Origin the browser actually used, honouring a TLS-terminating proxy (Tailscale Serve, Caddy, cloudflared). */
 export function requestOrigin(request: Request) {
@@ -57,28 +69,37 @@ export function requestOrigin(request: Request) {
 }
 
 export const sessionCookie = (secure: boolean) => ({
-  name: SESSION_COOKIE, value: signLocalJwt({ sub: OWNER_ID, role: "authenticated" }),
+  name: SESSION_COOKIE, value: signLocalJwt({ sub: OWNER_ID, role: "authenticated", pw: passwordTag() }),
   httpOnly: true, secure, sameSite: "lax" as const, path: "/", maxAge: SESSION_TTL,
 });
 
 /** Anon token for the few calls that run without a session (key lookup, bridge worker). */
 export const localAnonKey = () => (localAuth ? signLocalJwt({ role: "anon" }, 10 * 365 * 24 * 60 * 60) : "");
 
-/** supabase-js appends /rest/v1; PostgREST serves at its root. */
-const restPrefix = `${SUPABASE_URL.replace(/\/$/, "")}/rest/v1/`;
-export const localFetch: typeof fetch = (input, init) =>
-  fetch(typeof input === "string" && input.startsWith(restPrefix) ? SUPABASE_URL.replace(/\/$/, "") + "/" + input.slice(restPrefix.length) : input, init);
+/** supabase-js appends /rest/v1; PostgREST serves at its root. Compared on parsed URLs so host case or a default port cannot break the rewrite. */
+const restOrigin = localAuth && SUPABASE_URL ? new URL(SUPABASE_URL).origin : "";
+export const localFetch: typeof fetch = (input, init) => {
+  if (typeof input === "string" && restOrigin) {
+    try {
+      const url = new URL(input);
+      if (url.origin === restOrigin && url.pathname.startsWith("/rest/v1/")) { url.pathname = url.pathname.slice("/rest/v1".length); return fetch(url.href, init); }
+    } catch {}
+  }
+  return fetch(input, init);
+};
 
 /** Options every supabase-js client needs in community mode. */
 export const localClientOptions = () => (localAuth ? { global: { fetch: localFetch } } : {});
 
-// ponytail: in-memory login limiter, resets on restart; fine for one owner behind one process.
-const attempts = new Map<string, number[]>();
-export function checkPassword(candidate: string, ip: string): "ok" | "bad" | "limited" {
-  const now = Date.now(), recent = (attempts.get(ip) ?? []).filter(t => now - t < 15 * 60 * 1000);
-  if (recent.length >= 5) { attempts.set(ip, recent); return "limited"; }
+// ponytail: one process-wide window for the single owner. Not keyed on the client-controlled
+// X-Forwarded-For header, which the published standalone server never sanitizes.
+let attempts: number[] = [];
+export function checkPassword(candidate: string): "ok" | "bad" | "limited" {
+  const now = Date.now();
+  attempts = attempts.filter(t => now - t < 15 * 60 * 1000);
+  if (attempts.length >= 5) return "limited";
   const a = Buffer.from(candidate), b = Buffer.from(password);
-  if (password && a.length === b.length && timingSafeEqual(a, b)) { attempts.delete(ip); return "ok"; }
-  attempts.set(ip, [...recent, now]);
+  if (password && a.length === b.length && timingSafeEqual(a, b)) { attempts = []; return "ok"; }
+  attempts.push(now);
   return "bad";
 }

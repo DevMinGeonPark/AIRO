@@ -8,7 +8,8 @@ export const edition: "cloud" | "community" =
 export const localAuth = edition === "community";
 
 /** community: PostgREST base URL (server only). cloud: Supabase project URL. */
-export const SUPABASE_URL = (localAuth ? process.env.AIRO_POSTGREST_URL : process.env.NEXT_PUBLIC_SUPABASE_URL) ?? "";
+const trim = (v: string | undefined) => (v ?? "").trim().replace(/\/+$/, "");
+export const SUPABASE_URL = trim(localAuth ? process.env.AIRO_POSTGREST_URL : process.env.NEXT_PUBLIC_SUPABASE_URL);
 export const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
 
 /** True when a real account store exists. community always has one (validated at client creation). */
@@ -18,5 +19,4 @@ export const supabaseConfigured = localAuth || Boolean(SUPABASE_URL && SUPABASE_
 export const demoEnabled = !supabaseConfigured && process.env.NODE_ENV === "development";
 
 /** Self-hosters set AIRO_SITE_URL at runtime; the build-time public value is the fallback. */
-export const siteUrl =
-  process.env.AIRO_SITE_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3002";
+export const siteUrl = trim(process.env.AIRO_SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3002");
