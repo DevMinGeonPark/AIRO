@@ -7,7 +7,7 @@ import {
   demoEnabled,
   localAuth,
 } from "@/lib/supabase/config";
-import { localSession, SESSION_COOKIE } from "@/lib/supabase/local";
+import { localSessionClaims, requestOrigin, SESSION_COOKIE, SESSION_RENEW_BELOW, sessionCookie } from "@/lib/supabase/local";
 
 /**
  * /app/* 보호 + 세션 쿠키 갱신.
@@ -47,7 +47,10 @@ export async function proxy(request: NextRequest) {
 
   if (localAuth) {
     const response = NextResponse.next({ request });
-    if (!localSession(request.cookies.get(SESSION_COOKIE)?.value)) return toLogin(response);
+    const claims = localSessionClaims(request.cookies.get(SESSION_COOKIE)?.value);
+    if (!claims) return toLogin(response);
+    // Sliding 30-day session: re-issue once under a week remains so an active owner never hits a cliff.
+    if ((claims.exp as number) - Date.now() / 1000 < SESSION_RENEW_BELOW) response.cookies.set(sessionCookie(requestOrigin(request).startsWith("https:")));
     response.headers.set("Cache-Control", "private, no-store");
     return response;
   }

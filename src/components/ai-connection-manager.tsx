@@ -5,7 +5,7 @@ import { bridgeFetch, useAiDevices } from "./use-codex-chat";
 import { deviceLabel, deviceReady } from "@/lib/ai-bridge-types";
 import { siteUrl } from "@/lib/supabase/config";
 // `server` comes from the page (runtime AIRO_SITE_URL); the build-time public URL is the fallback.
-export function AiConnectionManager({ installUrl, server = siteUrl.replace(/\/$/, "") }: { installUrl: string | null; server?: string }) {
+export function AiConnectionManager({ installUrl, server = siteUrl }: { installUrl: string | null; server?: string }) {
   const { devices, refresh, error } = useAiDevices();
   const [pair, setPair] = useState<{ id: string; key: string; name: string } | null>(null);
   const [message, setMessage] = useState(""), [busy, setBusy] = useState(false);

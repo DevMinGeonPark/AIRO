@@ -4,7 +4,7 @@ import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 import { createAnonClient } from "./supabase/user-client";
 import { createClient, getUser } from "./supabase/server";
 import { currentActor } from "./actor";
-import { supabaseConfigured, demoEnabled } from "./supabase/config";
+import { supabaseConfigured, demoEnabled, localAuth } from "./supabase/config";
 import { stopInputSchema } from "./archive";
 import { sortStops } from "./geo";
 import { mutateStops, type Placement, type StopPatch, type StopMutation } from "./itinerary-mutations";
@@ -165,6 +165,7 @@ export async function currentUserId(): Promise<string | null> {
 }
 
 export async function currentPlan(): Promise<Plan> {
+  if (localAuth) return "pro"; // db-init seeds the owner as pro; the SQL trigger is the real gate
   if (!supabaseConfigured) return "free";
   const supabase = await createClient();
   const { data, error } = await supabase!
