@@ -1,0 +1,20 @@
+{
+  "provider": "built-in image_gen (GPT Image)",
+  "date": "2026-09-09",
+  "prompt": "Use case: logo-brand / style-transfer.\nAsset type: final AIRO travel companion logo symbol, monochrome master for web nav at 24-36 px and a favicon.\nInput image: reference for the existing idea ONLY: a capital A with a road route cut through it. Redesign and refine this idea substantially for a much more distinctive professional identity.\nCreate one original, beautifully crafted A monogram. Replace the current squat, overly heavy letter with a taller, optically balanced silhouette, subtle forward energy, rounded apex and confident clean terminals. A single generous negative-space navigation route passes through the A: two purposeful street-like bends with smoothly rounded corners, beginning at a circular departure point near the lower left and ending at a clear round destination near upper right. The route is an actual map path, NOT an arrow, lightning bolt, swoosh or flight arc. Fewer better details: widen the path enough to stay open at favicon scale, balance the solid legs, and make the lower triangular counter spacious. Build the map route into the letter naturally, not like a thin circuit drawn on a slab. Contemporary premium travel identity; human, assured and clean. Optical precision in all curves, joins, stroke weights and spacing. One coherent distinctive silhouette.\nOutput a square BLACK AND WHITE bitmap master: pure WHITE symbol on a perfectly flat pure BLACK background. All negative-space route/counters are pure BLACK. Crisp antialiased edges only, zero texture, zero noise. Center one mark at about 80% of the square canvas height and width, even margins. No wordmark, text, captions, extra symbols, containers, checkerboards, gradients, shadows, 3D, mockups or multiple variants. Do not copy existing corporate logos. Return one standalone finished symbol.",
+  "reference": "public/brand/airo-mark-route-gpt.png",
+  "source": "assets/source/airo-mark-refined-gpt.png",
+  "output": "public/brand/airo-mark-refined-gpt.webp",
+  "references": [
+    {
+      "title": "Pentagram — Impala",
+      "url": "https://www.pentagram.com/work/impala/story",
+      "principle": "A bold ownable travel symbol that also works in the product."
+    },
+    {
+      "title": "Apple — App icons",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/app-icons",
+      "principle": "One simple idea, recognizable silhouette, minimal shapes and small-size legibility."
+    }
+  ]
+}

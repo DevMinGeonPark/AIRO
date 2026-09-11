@@ -1,0 +1,42 @@
+{
+  "provider": "built-in image_gen (GPT Image)",
+  "purpose": "Targeted cleanup of edge halos; preserve six concepts",
+  "edits": [
+    {
+      "id": "01-portal",
+      "name": "포털",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-e8f082da-752e-4764-b28a-da42fb5bd303.png",
+      "prompt": "Edit the attached logo master. Make only one change: remove all glow, halos, gradients, texture, edge fringes and soft lighting so it becomes a perfectly clean flat two-color graphic. Preserve the exact symbol silhouette, all negative spaces, letter shapes if any, placement, scale and proportions. Fill every part of the symbol with one perfectly uniform solid color #D5E6B4. Fill the entire background and every negative space with uniform opaque #0A0A0A black. There should be a crisp transition directly from solid ink to black, with ordinary antialiasing only. No extra contour, no shadow, no faded green or gray edge. This is a flat logo artwork export, not an illuminated object. Keep the square canvas. Add nothing else."
+    },
+    {
+      "id": "02-swerve",
+      "name": "스워브",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-23189c42-8b3f-4384-aa14-e8660ae7482c.png",
+      "prompt": "Edit the attached logo master. Make only one change: remove all glow, halos, gradients, texture, edge fringes and soft lighting so it becomes a perfectly clean flat two-color graphic. Preserve the exact symbol silhouette, all negative spaces, letter shapes if any, placement, scale and proportions. Fill every part of the symbol with one perfectly uniform solid color #D5E6B4. Fill the entire background and every negative space with uniform opaque #0A0A0A black. There should be a crisp transition directly from solid ink to black, with ordinary antialiasing only. No extra contour, no shadow, no faded green or gray edge. This is a flat logo artwork export, not an illuminated object. Keep the square canvas. Add nothing else."
+    },
+    {
+      "id": "03-swift",
+      "name": "스위프트",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-b5843679-16a9-4cba-b774-6dafc7eca161.png",
+      "prompt": "Edit the attached logo master. Make only one change: remove all glow, halos, gradients, texture, edge fringes and soft lighting so it becomes a perfectly clean flat two-color graphic. Preserve the exact symbol silhouette, all negative spaces, letter shapes if any, placement, scale and proportions. Fill every part of the symbol with one perfectly uniform solid color #F3F1EA. Fill the entire background and every negative space with uniform opaque #0A0A0A black. There should be a crisp transition directly from solid ink to black, with ordinary antialiasing only. No extra contour, no shadow, no faded green or gray edge. This is a flat logo artwork export, not an illuminated object. Keep the square canvas. Add nothing else."
+    },
+    {
+      "id": "04-atelier",
+      "name": "아틀리에 ai",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-6e8a3f15-50f2-4dd6-9313-929928c39d24.png",
+      "prompt": "Edit the attached logo master. Make only one change: remove all glow, halos, gradients, texture, edge fringes and soft lighting so it becomes a perfectly clean flat two-color graphic. Preserve the exact symbol silhouette, all negative spaces, letter shapes if any, placement, scale and proportions. Fill every part of the symbol with one perfectly uniform solid color #F3F1EA. Fill the entire background and every negative space with uniform opaque #0A0A0A black. There should be a crisp transition directly from solid ink to black, with ordinary antialiasing only. No extra contour, no shadow, no faded green or gray edge. This is a flat logo artwork export, not an illuminated object. Keep the square canvas. Add nothing else."
+    },
+    {
+      "id": "05-terrain",
+      "name": "테레인",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-e74eccf0-a2bd-48df-a399-118053c82f1b.png",
+      "prompt": "Edit the attached logo master. Make only one change: remove all glow, halos, gradients, texture, edge fringes and soft lighting so it becomes a perfectly clean flat two-color graphic. Preserve the exact symbol silhouette, all negative spaces, letter shapes if any, placement, scale and proportions. Fill every part of the symbol with one perfectly uniform solid color #D5E6B4. Fill the entire background and every negative space with uniform opaque #0A0A0A black. There should be a crisp transition directly from solid ink to black, with ordinary antialiasing only. No extra contour, no shadow, no faded green or gray edge. This is a flat logo artwork export, not an illuminated object. Keep the square canvas. Add nothing else."
+    },
+    {
+      "id": "06-scout",
+      "name": "스카우트",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-cc02f234-68c8-4428-bc27-438bf50f2b72.png",
+      "prompt": "Edit the attached logo master. Make only one change: remove all glow, halos, gradients, texture, edge fringes and soft lighting so it becomes a perfectly clean flat two-color graphic. Preserve the exact symbol silhouette, all negative spaces, letter shapes if any, placement, scale and proportions. Fill every part of the symbol with one perfectly uniform solid color #D5E6B4. Fill the entire background and every negative space with uniform opaque #0A0A0A black. There should be a crisp transition directly from solid ink to black, with ordinary antialiasing only. No extra contour, no shadow, no faded green or gray edge. This is a flat logo artwork export, not an illuminated object. Keep the square canvas. Add nothing else."
+    }
+  ]
+}

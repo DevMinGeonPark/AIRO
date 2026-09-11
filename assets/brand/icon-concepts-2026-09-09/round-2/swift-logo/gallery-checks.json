@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "viewport": 1440,
+      "content": 1440,
+      "loaded": 2
+    },
+    {
+      "viewport": 390,
+      "content": 390,
+      "loaded": 2
+    },
+    {
+      "viewport": 320,
+      "content": 320,
+      "loaded": 2
+    }
+  ],
+  "errors": []
+}

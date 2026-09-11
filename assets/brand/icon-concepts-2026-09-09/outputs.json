@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-09",
+  "generationMode": "built-in image_gen (GPT Image)",
+  "calls": 5,
+  "selected": null,
+  "outputs": [
+    {
+      "id": "01-route-a",
+      "name": "열린 경로 A",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-d823d84a-b579-4dad-8806-8a5a06ae6fd4.png",
+      "file": "01-route-a.png"
+    },
+    {
+      "id": "02-waypoint-o",
+      "name": "웨이포인트 O",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-272cf4a8-e2fe-4f0d-a22f-719e1cb888e4.png",
+      "file": "02-waypoint-o.png"
+    },
+    {
+      "id": "03-folded-map",
+      "name": "접힌 지도",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-53c9f85a-1937-4de4-9368-c6da06edfba7.png",
+      "file": "03-folded-map.png"
+    },
+    {
+      "id": "04-north-route",
+      "name": "노스 루트",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-4308056f-5cc7-4b88-95a4-2d72911515cb.png",
+      "file": "04-north-route.png"
+    },
+    {
+      "id": "05-travel-pair",
+      "name": "트래블 페어",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-e6583162-b5ae-4857-ac32-b66c75408dee.png",
+      "file": "05-travel-pair.png"
+    }
+  ]
+}

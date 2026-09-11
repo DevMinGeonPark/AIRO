@@ -1,0 +1,52 @@
+[
+  {
+    "file": "index.html",
+    "status": 200,
+    "bytes": 13352
+  },
+  {
+    "file": "01-portal.png",
+    "status": 200,
+    "bytes": 874134
+  },
+  {
+    "file": "02-swerve.png",
+    "status": 200,
+    "bytes": 919089
+  },
+  {
+    "file": "03-swift.png",
+    "status": 200,
+    "bytes": 914583
+  },
+  {
+    "file": "04-atelier.png",
+    "status": 200,
+    "bytes": 893019
+  },
+  {
+    "file": "05-terrain.png",
+    "status": 200,
+    "bytes": 987056
+  },
+  {
+    "file": "06-scout.png",
+    "status": 200,
+    "bytes": 936623
+  },
+  {
+    "file": "airo-icon-round-2.zip",
+    "status": 200,
+    "bytes": 5883012
+  },
+  {
+    "file": "prompts.json",
+    "status": 200,
+    "bytes": 13732
+  },
+  {
+    "file": "refinement-prompts.json",
+    "status": 200,
+    "bytes": 5895
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "desktop": {
+    "width": 1480,
+    "contentWidth": 1480,
+    "images": 15,
+    "cards": 5
+  },
+  "mobile": {
+    "width": 390,
+    "contentWidth": 390,
+    "cards": 5
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "file": "airo-mark-gpt-v2",
+  "useCase": "logo-brand",
+  "provider": "built-in image_gen",
+  "requestedByUser": "GPT IMAGE",
+  "prompt": "Use case: logo-brand.\nAsset type: final production-ready symbol for AIRO / 아이로, a premium AI travel companion website. Create ONE standalone logo symbol, not a presentation board.\nPrimary request: Design an original, striking, beautifully proportioned abstract A monogram that feels confident, dynamic and sophisticated. Combine the silhouette of an uppercase A with a single ascending travel trajectory. Construct it from two substantial geometric ribbon-like strokes and one precise negative-space cut. Give the silhouette a subtle forward lean and a memorable asymmetric notch; evoke a route unfolding into a destination through shape alone. It should feel like a serious, crafted identity, not an illustration or a generic AI badge.\nStyle: impeccably clean, flat, vector-like geometry, sharp intentional cuts with just slightly softened outer corners, optical balance, bold enough to work at 24px. The folded-ribbon impression must come from silhouette and negative space, not shading. Restrained, contemporary editorial design.\nColor: symbol entirely solid pale pistachio #D5E6B4. This symbol will appear on the existing near-black #0A0A0A website. All negative space and the full canvas background must be genuinely transparent alpha, including inside the monogram.\nComposition: square canvas, one large centered symbol taking approximately 84% of the canvas width and height, evenly balanced transparent margins. No rounded-square container or background tile.\nText: none. No wordmark, letters outside the single abstract A symbol, captions, sample sizes or explanations.\nAvoid: sparkles, four-point stars, location-pin outlines, hearts, globe illustrations, airplane clipart, thin line art, gradients, metallic surfaces, shadows, lighting effects, 3D renders, mockups, multiple variants, watermarks. Do not imitate another company's logo.\nReturn a clean transparent PNG logo asset.",
+  "original": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-3b637eab-1de6-4169-9889-c5d05ed7c02d.png",
+  "source": "assets/source/airo-mark-gpt-v2.png",
+  "outputs": [
+    "public/brand/airo-mark-gpt-v2.png",
+    "public/brand/airo-mark-gpt-v2.webp",
+    "src/app/icon.svg",
+    "src/app/favicon.ico",
+    "src/app/apple-icon.png",
+    "public/brand/airo-mark.svg"
+  ],
+  "generationCalls": 1,
+  "iterations": 0,
+  "cost": "Not exposed by built-in tool",
+  "integration": "The generated PNG alpha is used as a CSS mask to retain the actual generated silhouette while matching both existing themes; no manually redrawn SVG mark.",
+  "exportNotes": "Original PNG is unchanged. WebP and icon assets are faithful size/format exports. Existing logo files were backed up under assets/brand/previous. The previous public SVG URL now contains a raster-backed compatibility export of the generated mark."
+}

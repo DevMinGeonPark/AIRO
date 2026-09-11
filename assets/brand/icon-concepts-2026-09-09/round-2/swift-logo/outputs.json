@@ -1,0 +1,19 @@
+{
+  "provider": "built-in image_gen (GPT Image)",
+  "calls": 2,
+  "reference": "/Users/mini-mingeon/Travel/AIRO-app/assets/brand/icon-concepts-2026-09-09/round-2/03-swift.png",
+  "outputs": [
+    {
+      "id": "01-horizontal",
+      "name": "가로형",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-eabe81a5-bdf1-4dd5-a954-efb9698db425.png",
+      "file": "01-horizontal.png"
+    },
+    {
+      "id": "02-stacked",
+      "name": "세로형",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-7104d063-8a5b-4769-b4ea-da5d0751439c.png",
+      "file": "02-stacked.png"
+    }
+  ]
+}

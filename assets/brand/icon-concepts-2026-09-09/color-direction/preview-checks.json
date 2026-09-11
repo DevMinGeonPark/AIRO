@@ -1,0 +1,23 @@
+{
+  "base": "http://<tailscale-ip>:3017/color-direction/",
+  "results": [
+    {
+      "width": 1280,
+      "status": 200,
+      "choices": 3,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "choices": 3,
+      "errors": []
+    },
+    {
+      "width": 320,
+      "status": 200,
+      "choices": 3,
+      "errors": []
+    }
+  ]
+}

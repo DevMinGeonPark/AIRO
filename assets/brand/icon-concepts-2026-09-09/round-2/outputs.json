@@ -1,0 +1,45 @@
+{
+  "round": 2,
+  "provider": "built-in image_gen (GPT Image)",
+  "generationCalls": 6,
+  "refinementCalls": 6,
+  "selectedForProduction": null,
+  "outputs": [
+    {
+      "id": "01-portal",
+      "name": "포털",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-6247c554-3fff-4744-afda-bb00185ce668.png",
+      "file": "01-portal.png"
+    },
+    {
+      "id": "02-swerve",
+      "name": "스워브",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-9cc9bbf5-3039-4ab7-8642-7ecc040106a1.png",
+      "file": "02-swerve.png"
+    },
+    {
+      "id": "03-swift",
+      "name": "스위프트",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-f9660b41-e27d-44f3-965d-b0903585f01b.png",
+      "file": "03-swift.png"
+    },
+    {
+      "id": "04-atelier",
+      "name": "아틀리에 ai",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-43b2e606-2411-4574-9ae7-fb4f504254b4.png",
+      "file": "04-atelier.png"
+    },
+    {
+      "id": "05-terrain",
+      "name": "테레인",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-7412f6b2-c4d6-4841-a5f8-47b767428fa3.png",
+      "file": "05-terrain.png"
+    },
+    {
+      "id": "06-scout",
+      "name": "스카우트",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-8517a36c-f988-4eb8-8592-6414363af411.png",
+      "file": "06-scout.png"
+    }
+  ]
+}

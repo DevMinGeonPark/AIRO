@@ -1,0 +1,31 @@
+{
+  "provider": "built-in image_gen (GPT Image)",
+  "outputs": [
+    {
+      "id": "lockup",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-dc2adbc5-e101-4ad1-801c-a553ad25e627.png",
+      "file": "airo-swift-lockup-transparent-gpt.png"
+    },
+    {
+      "id": "mark",
+      "source": "/Users/mini-mingeon/.codex/generated_images/01a08005-b40e-7390-bcc4-d134f3c363d6/exec-55133a52-e93c-4327-bd14-f5bae2f391e7.png",
+      "file": "airo-swift-mark-transparent-gpt.png"
+    }
+  ],
+  "exports": [
+    {
+      "kind": "mark",
+      "source": "assets/source/airo-swift-mark-transparent-gpt.png",
+      "width": 512,
+      "height": 512,
+      "alpha": true
+    },
+    {
+      "kind": "lockup",
+      "source": "assets/source/airo-swift-lockup-transparent-gpt.png",
+      "width": 960,
+      "height": 362,
+      "alpha": true
+    }
+  ]
+}

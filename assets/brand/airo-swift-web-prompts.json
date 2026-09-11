@@ -1,0 +1,16 @@
+{
+  "provider": "built-in image_gen (GPT Image)",
+  "purpose": "Background-only transparent exports of the user-selected swift logo for site integration",
+  "variants": [
+    {
+      "id": "lockup",
+      "reference": "/Users/mini-mingeon/Travel/AIRO-app/assets/brand/icon-concepts-2026-09-09/round-2/swift-logo/01-horizontal.png",
+      "prompt": "Prepare this exact approved AIRO horizontal logo for a website. Change ONLY the background: remove all black pixels around and inside the logo and replace the entire black background with genuine transparent alpha. Preserve the ivory bird silhouette and the exact AIRO lettering, letter spacing, shape, orientation, proportions and relative positions. The A curved crossbar and sweeping R leg must remain exactly as supplied. Do not redraw, recolor or restyle any visible ivory artwork. No shadows, halos, outlines, glow, checkerboard pattern, white matte, black matte or new graphics. Deliver one clean transparent PNG of the same horizontal lockup, with a close-fitting transparent canvas and a small even safety margin."
+    },
+    {
+      "id": "mark",
+      "reference": "/Users/mini-mingeon/Travel/AIRO-app/assets/brand/icon-concepts-2026-09-09/round-2/03-swift.png",
+      "prompt": "Prepare this exact approved swift-bird symbol for a website icon. Change ONLY the background: remove all black pixels around and inside the symbol and replace the entire black background with genuine transparent alpha. Preserve the ivory bird silhouette, crescent wings, head, forked tail, wing angle, all negative spaces and all proportions exactly as supplied. Do not redraw, recolor or restyle the visible ivory artwork. No text, shadows, halos, outlines, glow, checkerboard pattern, white matte, black matte or new graphics. Deliver one clean transparent PNG of the same bird, centered on a square canvas with a small even safety margin."
+    }
+  ]
+}
