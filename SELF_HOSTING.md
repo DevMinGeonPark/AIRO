@@ -27,7 +27,7 @@ docker compose up -d
 
 http://localhost:3002 → 비밀번호로 로그인. 끝.
 
-앱 이미지는 `ghcr.io/devmingeonpark/airo:latest`(amd64·arm64, `main` 푸시마다 GitHub Actions가 빌드)를 받습니다. 소스에서 직접 빌드하려면 3~5분 걸리는 빌드를 한 번 합니다.
+앱 이미지는 `ghcr.io/devmingeonpark/airo:latest`(amd64·arm64, `v*` 태그마다 GitHub Actions가 빌드)를 받습니다. 소스에서 직접 빌드하려면 3~5분 걸리는 빌드를 한 번 합니다.
 
 ```sh
 docker compose -f docker-compose.yml -f docker-compose.build.yml up -d --build

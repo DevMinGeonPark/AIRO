@@ -1,11 +1,15 @@
 name: Community image
 
+# QEMU arm64 builds take ~50 min. Tags and manual runs only, so main pushes
+# do not burn the private-repo Actions quota.
 on:
   push:
-    branches: [main]
     tags: ["v*"]
-    paths-ignore: ["**.md", "assets/**", "docs/**"]
   workflow_dispatch:
+
+concurrency:
+  group: community-image
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -29,7 +33,7 @@ jobs:
         with:
           images: ghcr.io/${{ github.repository_owner }}/airo
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=latest
             type=semver,pattern={{version}}
             type=sha
       - uses: docker/build-push-action@v6
