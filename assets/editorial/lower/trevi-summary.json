@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Trevi Fountain",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Trevi Fountain</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q185382",
+  "titles": {
+    "canonical": "Trevi_Fountain",
+    "normalized": "Trevi Fountain",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Trevi Fountain</span></span>"
+  },
+  "pageid": 335740,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Trevi_Fountain_-_Roma.jpg/330px-Trevi_Fountain_-_Roma.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 179
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Trevi_Fountain_-_Roma.jpg/3840px-Trevi_Fountain_-_Roma.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 8734,
+    "height": 4738
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1368950870",
+  "tid": "24a8692e-95ed-11f1-9eb4-52b0a8371484",
+  "timestamp": "2026-08-12T01:28:38Z",
+  "description": "Fountain in Rome, Italy",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.90083333,
+    "lon": 12.48305556
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Trevi_Fountain",
+      "revisions": "https://en.wikipedia.org/wiki/Trevi_Fountain?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Trevi_Fountain?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Trevi_Fountain"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Trevi_Fountain",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Trevi_Fountain",
+      "edit": "https://en.wikipedia.org/wiki/Trevi_Fountain?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Trevi_Fountain"
+    }
+  },
+  "extract": "The Trevi Fountain is an 18th-century fountain in the Trevi district in Rome, Italy, designed by Italian architect Nicola Salvi and completed by Giuseppe Pannini in 1762. Standing 26.3 metres (86 ft) high and 49.15 metres (161.3 ft) wide, it is the largest Baroque fountain in the world and one of the most famous fountains in the world.",
+  "extract_html": "<p>The <b>Trevi Fountain</b> is an 18th-century fountain in the Trevi district in Rome, Italy, designed by Italian architect Nicola Salvi and completed by Giuseppe Pannini in 1762. Standing 26.3 metres (86 ft) high and 49.15 metres (161.3 ft) wide, it is the largest Baroque fountain in the world and one of the most famous fountains in the world.</p>"
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "St. Peter's Square",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">St. Peter&#039;s Square</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q83425",
+  "titles": {
+    "canonical": "St._Peter's_Square",
+    "normalized": "St. Peter's Square",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">St. Peter&#039;s Square</span></span>"
+  },
+  "pageid": 894041,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg/330px-St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 185
+  },
+  "originalimage": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg/3840px-St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 4200,
+    "height": 2359
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1368541943",
+  "tid": "d09a5acc-941b-11f1-8b80-49c244af3618",
+  "timestamp": "2026-08-09T17:57:41Z",
+  "description": "Piazza in Vatican City",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.9022,
+    "lon": 12.4572
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/St._Peter's_Square",
+      "revisions": "https://en.wikipedia.org/wiki/St._Peter's_Square?action=history",
+      "edit": "https://en.wikipedia.org/wiki/St._Peter's_Square?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:St._Peter's_Square"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/St._Peter's_Square",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/St._Peter's_Square",
+      "edit": "https://en.wikipedia.org/wiki/St._Peter's_Square?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:St._Peter's_Square"
+    }
+  },
+  "extract": "St. Peter's Square is a large plaza located directly in front of St. Peter's Basilica in Vatican City, the papal enclave in Rome, directly west of the neighborhood (rione) of Borgo. Both the square and the basilica are named after Saint Peter, an apostle of Jesus whom Catholics consider the first pope.",
+  "extract_html": "<p><b>St. Peter's Square</b> is a large plaza located directly in front of St. Peter's Basilica in Vatican City, the papal enclave in Rome, directly west of the neighborhood (rione) of Borgo. Both the square and the basilica are named after Saint Peter, an apostle of Jesus whom Catholics consider the first pope.</p>"
+}

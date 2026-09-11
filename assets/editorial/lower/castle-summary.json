@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Castel Sant'Angelo",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Castel Sant&#039;Angelo</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q486382",
+  "titles": {
+    "canonical": "Castel_Sant'Angelo",
+    "normalized": "Castel Sant'Angelo",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Castel Sant&#039;Angelo</span></span>"
+  },
+  "pageid": 298009,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Castel_Sant%27Angelo_at_Night.jpg/330px-Castel_Sant%27Angelo_at_Night.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 296
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Castel_Sant%27Angelo_at_Night.jpg/3840px-Castel_Sant%27Angelo_at_Night.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 4301,
+    "height": 3852
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1368325375",
+  "tid": "1ec833f3-931c-11f1-b752-ff943e19b25a",
+  "timestamp": "2026-08-08T11:27:21Z",
+  "description": "Historic building in Rome, Italy",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.9031,
+    "lon": 12.4663
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Castel_Sant'Angelo",
+      "revisions": "https://en.wikipedia.org/wiki/Castel_Sant'Angelo?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Castel_Sant'Angelo?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Castel_Sant'Angelo"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Castel_Sant'Angelo",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Castel_Sant'Angelo",
+      "edit": "https://en.wikipedia.org/wiki/Castel_Sant'Angelo?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Castel_Sant'Angelo"
+    }
+  },
+  "extract": "Castel Sant'Angelo, also known as Mausoleum of Hadrian, is a towering rotunda in Parco Adriano, Rome, Italy. It was initially commissioned by the Roman Emperor Hadrian as a mausoleum for himself and his family. The popes later used the building as a fortress and castle dedicated to Saint Michael the Archangel, and it is now a museum. The structure was once the tallest building in Rome.",
+  "extract_html": "<p><b>Castel Sant'Angelo</b>, also known as <b>Mausoleum of Hadrian</b>, is a towering rotunda in Parco Adriano, Rome, Italy. It was initially commissioned by the Roman Emperor Hadrian as a mausoleum for himself and his family. The popes later used the building as a fortress and castle dedicated to Saint Michael the Archangel, and it is now a museum. The structure was once the tallest building in Rome.</p>"
+}

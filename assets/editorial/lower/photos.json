@@ -1,0 +1,102 @@
+[
+  {
+    "id": "rome-pantheon",
+    "city": "판테온",
+    "image": "/travel/rome/pantheon.jpg",
+    "author": "NikonZ7II",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pantheon_(Rome)_-_Right_side_and_front.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-trevi",
+    "city": "트레비 분수",
+    "image": "/travel/rome/trevi.jpg",
+    "author": "NikonZ7II",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-colosseum",
+    "city": "콜로세움",
+    "image": "/travel/rome/colosseum.jpg",
+    "author": "FeaturedPics",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-forum",
+    "city": "포로 로마노",
+    "image": "/travel/rome/forum.jpg",
+    "author": "This Photo was taken by Wolfgang Moroder.  \n\nFeel free to use my photos, but please mention me as the author and send me a  message. \n\n\n\nThis image is not in the public domain. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media, if applicable terms of the licenses listed here not appropriate.\n\n\n\nPlease do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Foro_Romano_Musei_Capitolini_Roma.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-spanish-steps",
+    "city": "스페인 광장",
+    "image": "/travel/rome/spanish-steps.jpg",
+    "author": "Arnaud 25",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Piazza_di_Spagna_(Rome)_0004.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-castle",
+    "city": "산탄젤로성",
+    "image": "/travel/rome/castle.jpg",
+    "author": "Livioandronico2013",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Castel_Sant%27Angelo_at_Night.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-st-peters",
+    "city": "성베드로 광장",
+    "image": "/travel/rome/st-peters.jpg",
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Square,_Vatican_City_-_April_2007.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-navona",
+    "city": "나보나 광장",
+    "image": "/travel/rome/navona.jpg",
+    "author": "NikonZ7II",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Piazza_Navona_(Rome)_at_night.jpg",
+    "changes": "Displayed resized and cropped to fit; original photograph retained."
+  },
+  {
+    "id": "rome-cafe",
+    "city": "로마 안티코 카페 그레코",
+    "image": "/travel/rome/cafe.jpg",
+    "author": "Elisabetta Stringhi from Italia",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Antico_caff%C3%A9_greco_(14869700159).jpg",
+    "changes": "Displayed resized and cropped; original retained."
+  },
+  {
+    "id": "rome-capitoline",
+    "city": "로마 캄피돌리오 광장",
+    "image": "/travel/rome/capitoline.jpg",
+    "author": "Jensens",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campidoglio_Roma.jpg",
+    "changes": "Displayed resized and cropped; original retained."
+  }
+]

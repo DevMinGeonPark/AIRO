@@ -1,0 +1,1034 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "gsroffset": 10,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": {
+      "136048132": {
+        "pageid": 136048132,
+        "ns": 6,
+        "title": "File:230 Holloway Road, N7 - ROMA CAFE bistro - geograph.org.uk - 5267948.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/8/84/230_Holloway_Road%2C_N7_-_ROMA_CAFE_bistro_-_geograph.org.uk_-_5267948.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 800,
+            "thumbheight": 600,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/8/84/230_Holloway_Road%2C_N7_-_ROMA_CAFE_bistro_-_geograph.org.uk_-_5267948.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 600
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/230_Holloway_Road%2C_N7_-_ROMA_CAFE_bistro_-_geograph.org.uk_-_5267948.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:230_Holloway_Road,_N7_-_ROMA_CAFE_bistro_-_geograph.org.uk_-_5267948.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=136048132",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-08-16 09:58:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "230 Holloway Road, N7 - ROMA CAFE bistro - geograph.org.uk - 5267948",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Holloway Road|Images from Geograph Britain and Ireland|Cafés in the London Borough of Islington|Orange awnings in London|Café awnings in London",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.552472",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-0.112229",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "ROMA CAFE bistro, Holloway Road, N7 <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:230_Holloway_Road,_N7_-_ROMA_CAFE_bistro_-_geograph.org.uk_-_5267948.jpg#ooui-php-4\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-01-18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/photo/5267948\">Geograph Britain and Ireland</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:230_Holloway_Road,_N7_-_ROMA_CAFE_bistro_-_geograph.org.uk_-_5267948.jpg#P7482\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/profile/12735\">Mike Quinn</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:230_Holloway_Road,_N7_-_ROMA_CAFE_bistro_-_geograph.org.uk_-_5267948.jpg#P170\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<i>ROMA CAFE bistro, Holloway Road, N7</i> by Mike Quinn",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "175037088": {
+        "pageid": 175037088,
+        "ns": 6,
+        "title": "File:Antico Caffè Greco (Rome - Italy) - Buffalo Bill, Sitting Bull, Black Elk and Diego Angeli - 1890.png",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Antico_Caff%C3%A8_Greco_%28Rome_-_Italy%29_-_Buffalo_Bill%2C_Sitting_Bull%2C_Black_Elk_and_Diego_Angeli_-_1890.png/960px-Antico_Caff%C3%A8_Greco_%28Rome_-_Italy%29_-_Buffalo_Bill%2C_Sitting_Bull%2C_Black_Elk_and_Diego_Angeli_-_1890.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 800,
+            "thumbheight": 1121,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Antico_Caff%C3%A8_Greco_%28Rome_-_Italy%29_-_Buffalo_Bill%2C_Sitting_Bull%2C_Black_Elk_and_Diego_Angeli_-_1890.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Antico_Caff%C3%A8_Greco_%28Rome_-_Italy%29_-_Buffalo_Bill%2C_Sitting_Bull%2C_Black_Elk_and_Diego_Angeli_-_1890.png/960px-Antico_Caff%C3%A8_Greco_%28Rome_-_Italy%29_-_Buffalo_Bill%2C_Sitting_Bull%2C_Black_Elk_and_Diego_Angeli_-_1890.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 1121,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Antico_Caff%C3%A8_Greco_%28Rome_-_Italy%29_-_Buffalo_Bill%2C_Sitting_Bull%2C_Black_Elk_and_Diego_Angeli_-_1890.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Antico_Caff%C3%A8_Greco_%28Rome_-_Italy%29_-_Buffalo_Bill%2C_Sitting_Bull%2C_Black_Elk_and_Diego_Angeli_-_1890.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Antico_Caff%C3%A8_Greco_(Rome_-_Italy)_-_Buffalo_Bill,_Sitting_Bull,_Black_Elk_and_Diego_Angeli_-_1890.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=175037088",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-09-14 16:13:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Antico Caffè Greco (Rome - Italy) - Buffalo Bill, Sitting Bull, Black Elk and Diego Angeli - 1890",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Sitting Bull|Black Elk|Diego Angeli|PD Italy (20 years after creation)|Images with annotations|Buffalo Bill's Wild West|PD-1996|Template Unknown (author)|1890 in Rome|Files with coordinates missing SDC location of creation|February 1890 Italy photographs|Antico Caffè Greco - Interior|Historical images of Italy uploaded by LucaLindholm",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "41.905585",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.481575",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Buffalo Bill, Black Elk and the Italian journalist and writer Diego Angeli at the \"Antico Caffè Greco\" in Rome, Italy, 24 February 1890, during the Italian tour of the Buffalo's Wild West Show.\n<p>The cafè is still running today and is still in Via dei Condotti n.86.\n</p>\nInfo and original image source: \"<i>Le cronache del Caffè Greco. Con 19 illustrazioni</i>\", by Diego Angeli, Treves Editior, 1930. <a rel=\"nofollow\" class=\"external autonumber\" href=\"https://www.libreriantiquaria.com/it/catalogo/letteratura/letteratura-italiana/36418-le-cronache-del-caffe-greco-con-19-illustrazioni.html\">[1]</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1890-02-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external autonumber\" href=\"https://www.romaslowtour.com/antico-caffe-greco/\">[3]</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "73217993": {
+        "pageid": 73217993,
+        "ns": 6,
+        "title": "File:Antico caffé greco (14869700159).jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Antico_caff%C3%A9_greco_%2814869700159%29.jpg/960px-Antico_caff%C3%A9_greco_%2814869700159%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 800,
+            "thumbheight": 533,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Antico_caff%C3%A9_greco_%2814869700159%29.jpg/1920px-Antico_caff%C3%A9_greco_%2814869700159%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Antico_caff%C3%A9_greco_%2814869700159%29.jpg/960px-Antico_caff%C3%A9_greco_%2814869700159%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 533,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Antico_caff%C3%A9_greco_%2814869700159%29.jpg/1920px-Antico_caff%C3%A9_greco_%2814869700159%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Antico_caff%C3%A9_greco_%2814869700159%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Antico_caff%C3%A9_greco_(14869700159).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=73217993",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-09-30 04:06:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Antico caffé greco (14869700159)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Antico Caffè Greco|Café signs in Italy|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Via Condotti, Roma, Italia\n</p><p>Ancient greek café\n</p>\nCondotti Street, Rome, Italy",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-07-01 12:01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/morgiana1001/14869700159/\">Antico caffé greco</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88355870@N04\">Elisabetta Stringhi</a> from Italia",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "106381390": {
+        "pageid": 106381390,
+        "ns": 6,
+        "title": "File:Cafe Roma, Westgate Street - geograph.org.uk - 2132982.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Cafe_Roma%2C_Westgate_Street_-_geograph.org.uk_-_2132982.jpg/960px-Cafe_Roma%2C_Westgate_Street_-_geograph.org.uk_-_2132982.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 800,
+            "thumbheight": 532,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/5/57/Cafe_Roma%2C_Westgate_Street_-_geograph.org.uk_-_2132982.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Cafe_Roma%2C_Westgate_Street_-_geograph.org.uk_-_2132982.jpg/960px-Cafe_Roma%2C_Westgate_Street_-_geograph.org.uk_-_2132982.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 532,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/5/57/Cafe_Roma%2C_Westgate_Street_-_geograph.org.uk_-_2132982.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Cafe_Roma%2C_Westgate_Street_-_geograph.org.uk_-_2132982.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cafe_Roma,_Westgate_Street_-_geograph.org.uk_-_2132982.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=106381390",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-06-08 09:44:50",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cafe Roma, Westgate Street - geograph.org.uk - 2132982",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Images from Geograph Britain and Ireland|Buildings in Gloucester",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.866260",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.246987",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Cafe Roma, Westgate Street <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Cafe_Roma,_Westgate_Street_-_geograph.org.uk_-_2132982.jpg#ooui-php-4\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-10-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/photo/2132982\">Geograph Britain and Ireland</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Cafe_Roma,_Westgate_Street_-_geograph.org.uk_-_2132982.jpg#P7482\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/profile/1837\">Philip Halling</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Cafe_Roma,_Westgate_Street_-_geograph.org.uk_-_2132982.jpg#P170\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<i>Cafe Roma, Westgate Street</i> by Philip Halling",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "94904210": {
+        "pageid": 94904210,
+        "ns": 6,
+        "title": "File:Catalogus librorum qui Italice, et Latine in Typographia Remondiniana excusi sunt (IA cataloguslibroru00remo).pdf",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Catalogus_librorum_qui_Italice%2C_et_Latine_in_Typographia_Remondiniana_excusi_sunt_%28IA_cataloguslibroru00remo%29.pdf/page1-330px-Catalogus_librorum_qui_Italice%2C_et_Latine_in_Typographia_Remondiniana_excusi_sunt_%28IA_cataloguslibroru00remo%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 800,
+            "thumbheight": 1401,
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Catalogus_librorum_qui_Italice%2C_et_Latine_in_Typographia_Remondiniana_excusi_sunt_%28IA_cataloguslibroru00remo%29.pdf/page1-330px-Catalogus_librorum_qui_Italice%2C_et_Latine_in_Typographia_Remondiniana_excusi_sunt_%28IA_cataloguslibroru00remo%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 1401
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Catalogus_librorum_qui_Italice%2C_et_Latine_in_Typographia_Remondiniana_excusi_sunt_%28IA_cataloguslibroru00remo%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Catalogus_librorum_qui_Italice,_et_Latine_in_Typographia_Remondiniana_excusi_sunt_(IA_cataloguslibroru00remo).pdf",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94904210",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-09 21:24:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "<div class=\"fn\">\nCatalogus librorum qui Italice, et Latine in Typographia Remondiniana excusi sunt</div>",
+                "source": "commons-desc-page"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Scans from the Internet Archive/unverified|PD US expired|Scans from the Internet Archive|Books uploaded by Fæ|Books without Wikidata item|Images from the Getty Research Institute|Latin-language books",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\nRemondini (Firm)</div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "<div class=\"description\">\n<dl><dd>145, [3], 32 p. ; 16 cm</dd>\n<dd>\"Rosso-neri e libri divoti, che si legano a forma d'Offizio\", p. 121-126; \"Indice delli copiosissimi sortimenti di carte\", p. 141-145; final 32 p. have t.p.: Index librorum qui Italice et Latine in Typographia Remondiana, with the same imprint, and with prices</dd></dl>\n<br>Subjects: Remondini (Firm) -- Catalogs; Publishers' catalogs -- Italy -- Venice; Booksellers' catalogs -- Italy -- Venice</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<dl><dd><a href=\"//archive.org/details/cataloguslibroru00remo\" class=\"extiw\" title=\"iarchive:cataloguslibroru00remo\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: cataloguslibroru00remo</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/cataloguslibroru00remo/cataloguslibroru00remo.pdf\">https://archive.org/download/cataloguslibroru00remo/cataloguslibroru00remo.pdf</a></dd></dl>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "66637830": {
+        "pageid": 66637830,
+        "ns": 6,
+        "title": "File:Gruppo per la preparazione della crema di caffe' su una macchina per caffe' espresso. Brevetto per invenzione industriale n. 627300, 1960 - san dl SAN IMG-00001324.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Gruppo_per_la_preparazione_della_crema_di_caffe%27_su_una_macchina_per_caffe%27_espresso._Brevetto_per_invenzione_industriale_n._627300%2C_1960_-_san_dl_SAN_IMG-00001324.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 800,
+            "thumbheight": 1052,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Gruppo_per_la_preparazione_della_crema_di_caffe%27_su_una_macchina_per_caffe%27_espresso._Brevetto_per_invenzione_industriale_n._627300%2C_1960_-_san_dl_SAN_IMG-00001324.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 1052
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Gruppo_per_la_preparazione_della_crema_di_caffe%27_su_una_macchina_per_caffe%27_espresso._Brevetto_per_invenzione_industriale_n._627300%2C_1960_-_san_dl_SAN_IMG-00001324.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gruppo_per_la_preparazione_della_crema_di_caffe%27_su_una_macchina_per_caffe%27_espresso._Brevetto_per_invenzione_industriale_n._627300,_1960_-_san_dl_SAN_IMG-00001324.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=66637830",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-02-20 20:01:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gruppo per la preparazione della crema di caffe' su una macchina per caffe' espresso. Brevetto per invenzione industriale n. 627300, 1960 (AS Genova, Fondo Ufficio Provinciale Industria Commercio ed Artigianato di Genova)",
+                "source": "commons-desc-page"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Media from ICAR|PD other reasons|Espresso machines|Uploaded with pattypan|PD-1996|Patents from Italy|Archivi d'impresa SAN|Template Unknown (unspecified)|PD other reasons new|Luigi Gaude",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\nUnknown<span style=\"display: none;\">Unknown </span></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Brevetto n. 627300, classe A 47 j, per invenzione industriale di una macchina per caffe' espresso (AS Genova, U.P.I.C.A. di Genova, serie Brevetti, 1960)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "26 March 1960<div style=\"display: none;\">date QS:P571,+1960-03-26T00:00:00Z/11</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.san.beniculturali.it/web/san/dettaglio-oggetto-digitale?pid=san.dl.SAN:IMG-00001324\">http://www.san.beniculturali.it/web/san/dettaglio-oggetto-digitale?pid=san.dl.SAN:IMG-00001324</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "108528026": {
+        "pageid": 108528026,
+        "ns": 6,
+        "title": "File:Il Cittadino Italiano n 118-1890 (IA CittadinoItaliano1892-284).pdf",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Il_Cittadino_Italiano_n_118-1890_%28IA_CittadinoItaliano1892-284%29.pdf/page1-960px-Il_Cittadino_Italiano_n_118-1890_%28IA_CittadinoItaliano1892-284%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 800,
+            "thumbheight": 1175,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Il_Cittadino_Italiano_n_118-1890_%28IA_CittadinoItaliano1892-284%29.pdf/page1-1280px-Il_Cittadino_Italiano_n_118-1890_%28IA_CittadinoItaliano1892-284%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Il_Cittadino_Italiano_n_118-1890_%28IA_CittadinoItaliano1892-284%29.pdf/page1-960px-Il_Cittadino_Italiano_n_118-1890_%28IA_CittadinoItaliano1892-284%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 1175,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Il_Cittadino_Italiano_n_118-1890_%28IA_CittadinoItaliano1892-284%29.pdf/page1-1280px-Il_Cittadino_Italiano_n_118-1890_%28IA_CittadinoItaliano1892-284%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Il_Cittadino_Italiano_n_118-1890_%28IA_CittadinoItaliano1892-284%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Il_Cittadino_Italiano_n_118-1890_(IA_CittadinoItaliano1892-284).pdf",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=108528026",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-14 12:20:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "<div class=\"fn\">\nIl Cittadino Italiano n 118-1890</div>",
+                "source": "commons-desc-page"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Author died more than 70 years ago public domain images|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|Books without Wikidata item|PD-old missing SDC copyright status|Il Cittadino Italiano",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\nIl Cittadino Italiano</div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "<div class=\"description\">\n<p>Il Cittadino Italiano -  giornale -  religioso -  politico -  scientifico -  commerciale\n</p>\n<br>Subjects: Friuli; Periodico;</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<dl><dd><a href=\"//archive.org/details/CittadinoItaliano1892-284\" class=\"extiw\" title=\"iarchive:CittadinoItaliano1892-284\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: CittadinoItaliano1892-284</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/CittadinoItaliano1892-284/Il%20Cittadino%20Italiano%20n%20118-1892.pdf\">https://archive.org/download/CittadinoItaliano1892-284/Il%20Cittadino%20Italiano%20n%20118-1892.pdf</a></dd></dl>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "108546130": {
+        "pageid": 108546130,
+        "ns": 6,
+        "title": "File:Il Friuli giornale politico-amministrativo-letterario-commerciale n. 102 (1896) (IA IlFriuli-102 1896).pdf",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_%281896%29_%28IA_IlFriuli-102_1896%29.pdf/page1-960px-Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_%281896%29_%28IA_IlFriuli-102_1896%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 800,
+            "thumbheight": 1086,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_%281896%29_%28IA_IlFriuli-102_1896%29.pdf/page1-1280px-Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_%281896%29_%28IA_IlFriuli-102_1896%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_%281896%29_%28IA_IlFriuli-102_1896%29.pdf/page1-960px-Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_%281896%29_%28IA_IlFriuli-102_1896%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 1086,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_%281896%29_%28IA_IlFriuli-102_1896%29.pdf/page1-1280px-Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_%281896%29_%28IA_IlFriuli-102_1896%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_%281896%29_%28IA_IlFriuli-102_1896%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._102_(1896)_(IA_IlFriuli-102_1896).pdf",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=108546130",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-14 18:43:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "<div class=\"fn\">\nIl Friuli _ giornale politico-amministrativo-letterario-commerciale n. 102  (1896)</div>",
+                "source": "commons-desc-page"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Author died more than 70 years ago public domain images|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|Books without Wikidata item|PD-old missing SDC copyright status|Il Friuli",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\nIl Friuli</div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "<div class=\"description\">\n<p>Il Friuli  - giornale politico-amministrativo-letterario-commerciale\n</p>\n<br>Subjects: Friuli; Periodico;</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<dl><dd><a href=\"//archive.org/details/IlFriuli-102_1896\" class=\"extiw\" title=\"iarchive:IlFriuli-102 1896\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: IlFriuli-102_1896</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/IlFriuli-102_1896/Il%20Friuli%20_%20giornale%20politico-amministrativo-letterario-commerciale%20n.%20102%20%20%281896%29.pdf\">https://archive.org/download/IlFriuli-102_1896/Il%20Friuli%20_%20giornale%20politico-amministrativo-letterario-commerciale%20n.%20102%20%20%281896%29.pdf</a></dd></dl>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "108547114": {
+        "pageid": 108547114,
+        "ns": 6,
+        "title": "File:Il Friuli giornale politico-amministrativo-letterario-commerciale n. 11 (1896) (IA IlFriuli-11 1896).pdf",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_%281896%29_%28IA_IlFriuli-11_1896%29.pdf/page1-960px-Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_%281896%29_%28IA_IlFriuli-11_1896%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 800,
+            "thumbheight": 1084,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_%281896%29_%28IA_IlFriuli-11_1896%29.pdf/page1-1280px-Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_%281896%29_%28IA_IlFriuli-11_1896%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_%281896%29_%28IA_IlFriuli-11_1896%29.pdf/page1-960px-Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_%281896%29_%28IA_IlFriuli-11_1896%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 1084,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_%281896%29_%28IA_IlFriuli-11_1896%29.pdf/page1-1280px-Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_%281896%29_%28IA_IlFriuli-11_1896%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_%281896%29_%28IA_IlFriuli-11_1896%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._11_(1896)_(IA_IlFriuli-11_1896).pdf",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=108547114",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-14 19:18:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "<div class=\"fn\">\nIl Friuli _ giornale politico-amministrativo-letterario-commerciale n. 11  (1896)</div>",
+                "source": "commons-desc-page"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Author died more than 70 years ago public domain images|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|Books without Wikidata item|PD-old missing SDC copyright status|Il Friuli",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\nIl Friuli</div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "<div class=\"description\">\n<p>Il Friuli  - giornale politico-amministrativo-letterario-commerciale\n</p>\n<br>Subjects: Friuli; Periodico;</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<dl><dd><a href=\"//archive.org/details/IlFriuli-11_1896\" class=\"extiw\" title=\"iarchive:IlFriuli-11 1896\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: IlFriuli-11_1896</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/IlFriuli-11_1896/Il%20Friuli%20_%20giornale%20politico-amministrativo-letterario-commerciale%20n.%2011%20%20%281896%29.pdf\">https://archive.org/download/IlFriuli-11_1896/Il%20Friuli%20_%20giornale%20politico-amministrativo-letterario-commerciale%20n.%2011%20%20%281896%29.pdf</a></dd></dl>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "5004245": {
+        "pageid": 5004245,
+        "ns": 6,
+        "title": "File:PI5190Via Condetti~1.JPG",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/PI5190Via_Condetti~1.JPG/960px-PI5190Via_Condetti~1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 800,
+            "thumbheight": 600,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/PI5190Via_Condetti~1.JPG/1920px-PI5190Via_Condetti~1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/PI5190Via_Condetti~1.JPG/960px-PI5190Via_Condetti~1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 800,
+              "height": 600,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/PI5190Via_Condetti~1.JPG/1920px-PI5190Via_Condetti~1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/PI5190Via_Condetti~1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:PI5190Via_Condetti~1.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5004245",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-10-16 15:26:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "PI5190Via Condetti~1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "GFDL|Taken with Panasonic Lumix DMC-FZ10|Via dei Condotti|Shops in Rome|Antico Caffè Greco|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Roma, via dei Condotti e Antico Caffè Greco",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:G.Lanting\" title=\"User:G.Lanting\">G.Lanting</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

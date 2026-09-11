@@ -1,0 +1,57 @@
+/* Time-led schedules keep the chat preview quieter than the interactive route map. */
+.lower-conversation-panel .lower-generated-stops li{grid-template-columns:54px minmax(0,1fr) 126px;align-items:first baseline;gap:17px;min-height:98px}
+.lower-conversation-panel .lower-generated-stops li:nth-child(2)>div{grid-column:2 / -1}
+.lower-conversation-panel .lower-generated-stops time{align-self:first baseline;padding-top:0;color:#bdc9df}
+.lower-conversation-panel .lower-generated-stops img{align-self:center}
+.lower-conversation-panel .lower-generated-stops h4{overflow-wrap:anywhere}
+.lower-conversation-panel .lower-chat-user{width:92%;min-height:105px;display:flex;align-items:center;margin-top:36px}
+.lower-conversation-panel .lower-chat-reply{margin-top:34px;min-height:128px}
+.lower-conversation-panel .lower-chat-prompt{margin-top:auto}
+.lower-conversation-panel .lower-trip-banner>img{opacity:0;transition:none}
+.lower-conversation-panel .lower-trip-banner>img[data-active=true]{opacity:1}
+.lower-conversation-panel[data-animate=true] .lower-trip-banner>img{transition:opacity .26s ease}
+.lower-conversation-panel[data-animate=true] .lower-story-copy{animation:lower-story-in .24s ease both}
+.lower-conversation-panel[data-animate=true] .lower-generated-stops .lower-story-copy{animation-name:lower-story-fade}
+.lower-conversation-panel .lower-trip-caption{justify-content:space-between;gap:8px;padding:10px 24px 2px}
+.lower-conversation-panel .lower-trip-caption>span{display:inline-flex;align-items:center;gap:7px;min-width:0}
+.lower-conversation-panel .lower-trip-caption>span>svg{flex-shrink:0}
+.lower-conversation-autoplay{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:34px;padding:5px 2px 5px 8px;border:0;background:none;color:#aebbcf;white-space:nowrap;font-size:11px}
+.lower-conversation-autoplay:hover{color:var(--lower-blue)}
+.lower-conversation-autoplay:disabled{cursor:default;color:#858b93}
+@keyframes lower-story-in{from{opacity:.45;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lower-story-fade{from{opacity:.45}to{opacity:1}}
+@media(min-width:768px) and (max-width:1100px){
+  .lower-conversation-panel .lower-generated-stops li{grid-template-columns:43px minmax(0,1fr) 76px;gap:10px;min-height:106px}
+  .lower-conversation-panel .lower-generated-stops img{width:76px;height:61px}
+  .lower-conversation-panel .lower-chat-user{min-height:105px}
+  .lower-conversation-panel .lower-chat-reply{min-height:138px}
+  .lower-conversation-panel .lower-trip-banner h3{font-size:32px}
+  .lower-conversation-panel .lower-trip-caption{padding-inline:15px;font-size:10px}
+  .lower-conversation-autoplay{font-size:10px}
+}
+@media(max-width:767px){
+  .lower-conversation-panel .lower-chat-user{min-height:77px;margin-top:25px}
+  .lower-conversation-panel .lower-chat-reply{min-height:95px;margin-top:23px}
+  .lower-conversation-panel .lower-chat-prompt{margin-top:15px}
+  .lower-conversation-panel .lower-trip-banner{height:155px}
+  .lower-conversation-panel .lower-trip-banner h3{font-size:27px;line-height:1.35}
+  .lower-conversation-panel .lower-generated-stops li{grid-template-columns:40px minmax(0,1fr) 65px;gap:9px;min-height:98px}
+  .lower-conversation-panel .lower-generated-stops img{width:65px;height:64px}
+  .lower-conversation-panel .lower-trip-caption{padding:8px 12px 1px;font-size:10px}
+  .lower-conversation-panel .lower-trip-caption>span{gap:5px}
+  .lower-conversation-autoplay{font-size:10px;gap:4px;padding-left:4px;min-height:40px}
+}
+@media(max-width:359px){
+  .lower-conversation-panel .lower-chat-user{min-height:77px}
+  .lower-conversation-panel .lower-chat-reply{min-height:95px}
+  .lower-conversation-panel .lower-trip-banner h3{font-size:25px}
+  .lower-conversation-panel .lower-generated-stops li{grid-template-columns:36px minmax(0,1fr) 52px;gap:7px;min-height:100px}
+  .lower-conversation-panel .lower-generated-stops img{width:52px;height:60px}
+  .lower-conversation-panel .lower-trip-caption{padding-inline:8px;font-size:9px;gap:3px}
+  .lower-conversation-panel .lower-trip-caption>span>svg{width:12px}
+  .lower-conversation-autoplay{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .lower-conversation-panel .lower-story-copy{animation:none!important}
+  .lower-conversation-panel .lower-trip-banner>img{transition:none!important}
+}

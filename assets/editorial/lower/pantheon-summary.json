@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Pantheon, Rome",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Pantheon, Rome</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q99309",
+  "titles": {
+    "canonical": "Pantheon,_Rome",
+    "normalized": "Pantheon, Rome",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Pantheon, Rome</span></span>"
+  },
+  "pageid": 340002,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Pantheon_%28Rome%29_-_Right_side_and_front.jpg/330px-Pantheon_%28Rome%29_-_Right_side_and_front.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 266
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Pantheon_%28Rome%29_-_Right_side_and_front.jpg/3840px-Pantheon_%28Rome%29_-_Right_side_and_front.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 7512,
+    "height": 6048
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1372728505",
+  "tid": "6a92a166-a668-11f1-b4e0-bb7ad5ab2114",
+  "timestamp": "2026-09-02T00:51:22Z",
+  "description": "Roman temple, later church, in Rome",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.8986,
+    "lon": 12.4768
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Pantheon%2C_Rome",
+      "revisions": "https://en.wikipedia.org/wiki/Pantheon%2C_Rome?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Pantheon%2C_Rome?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Pantheon%2C_Rome"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Pantheon%2C_Rome",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Pantheon%2C_Rome",
+      "edit": "https://en.wikipedia.org/wiki/Pantheon%2C_Rome?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Pantheon%2C_Rome"
+    }
+  },
+  "extract": "The Pantheon is an ancient temple in Rome, Italy, originally built under emperor Augustus and reconstructed under Hadrian (117–138); since AD 609, it is a Catholic church called the Basilica of St. Mary and the Martyrs. It is perhaps the most famous, and architecturally most influential, rotunda.",
+  "extract_html": "<p>The <b>Pantheon</b> is an ancient temple in Rome, Italy, originally built under emperor Augustus and reconstructed under Hadrian (117–138); since AD 609, it is a Catholic church called the <b>Basilica of St. Mary and the Martyrs</b>. It is perhaps the most famous, and architecturally most influential, rotunda.</p>"
+}

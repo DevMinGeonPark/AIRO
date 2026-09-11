@@ -1,0 +1,566 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "gsroffset": 5,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": {
+      "25746004": {
+        "pageid": 25746004,
+        "ns": 6,
+        "title": "File:0 Cordonata - Dioscuri - Palazzo Senatorio (1).JPG",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%281%29.JPG/1280px-0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1200,
+            "thumbheight": 800,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%281%29.JPG/3840px-0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%281%29.JPG/1280px-0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1200,
+              "height": 800,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%281%29.JPG/3840px-0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_(1).JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=25746004",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-04-24 19:41:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "0 Cordonata - Dioscuri - Palazzo Senatorio (1)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "GFDL|Taken with Canon EOS 400D|License migration redundant|Capitoline Dioscuri (Rome)|Self-published work|Uploaded by Jean-Pol GRANDMONT|Cordonata|October 2011 in Rome|Files with coordinates missing SDC location of creation|Italy photographs taken on 2011-10-02|Palazzo Senatorio (Rome) - Building",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "41.910317",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.482239",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The <a href=\"https://en.wikipedia.org/wiki/Cordonata\" class=\"extiw\" title=\"w:Cordonata\">Cordonata</a>, the <a href=\"https://en.wikipedia.org/wiki/Dioscuri\" class=\"extiw\" title=\"w:Dioscuri\">Dioscuri</a> and the Palazzo Senatori in <a href=\"https://en.wikipedia.org/wiki/Rome\" class=\"extiw\" title=\"w:Rome\">Rome</a>.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 2 October 2011",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\">Self-photographed</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Jean-Pol_GRANDMONT\" title=\"User:Jean-Pol GRANDMONT\">Jean-Pol GRANDMONT</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table style=\"margin: 1.5em auto; width:60%; background-color:#CCCCCC; border:2px solid #aaaaaa; padding:1px;\" cellspacing=\"10\">\n<tbody><tr>\n<td align=\"center\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Self_portrait_in_the_darkroom_JPG01.jpg\" class=\"mw-file-description\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Self_portrait_in_the_darkroom_JPG01.jpg/120px-Self_portrait_in_the_darkroom_JPG01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"80\" height=\"101\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Self_portrait_in_the_darkroom_JPG01.jpg/250px-Self_portrait_in_the_darkroom_JPG01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"2090\" data-file-height=\"2627\"></a></span>\n</td>\n<td><b>This illustration</b> <i>was made by</i> <b><a href=\"//commons.wikimedia.org/wiki/User:Jean-Pol_GRANDMONT\" title=\"User:Jean-Pol GRANDMONT\">Jean-Pol GRANDMONT</a></b>\n<p>Please credit this : <i>Jean-Pol GRANDMONT</i>\n</p><p>An email to \n</p><p><a href=\"//commons.wikimedia.org/wiki/Special:EmailUser/Jean-Pol_GRANDMONT\" title=\"Special:EmailUser/Jean-Pol GRANDMONT\">Jean-Pol GRANDMONT</a> would be appreciated.\n</p>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "93804386": {
+        "pageid": 93804386,
+        "ns": 6,
+        "title": "File:Ippocastano in autunno.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Ippocastano_in_autunno.jpg/1280px-Ippocastano_in_autunno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1200,
+            "thumbheight": 762,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Ippocastano_in_autunno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Ippocastano_in_autunno.jpg/1280px-Ippocastano_in_autunno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1200,
+              "height": 762,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Ippocastano_in_autunno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Ippocastano_in_autunno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Ippocastano_in_autunno.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93804386",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-03 15:04:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Ippocastano in autunno",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Piazza del Campidoglio (Rome)|Self-published work|Images from Wiki Loves Monuments 2020 in Italy|Aesculus hippocastanum in Italy|Cultural heritage monuments in Italy with known IDs|Uploaded via Campaign:wlm-it|Aesculus hippocastanum in autumn|Files with coordinates missing SDC location of creation|Italy photographs taken on 2019-10-09|Images from Wiki Loves Monuments 2020|Images from Wiki Loves Monuments missing SDC location of creation|Cultural heritage monuments in Italy missing SDC location of creation|Images from Wiki Loves Monuments 2020 in Italy - Lazio|Images from Wiki Loves Monuments 2020 in Italy - without local award|Images from Wiki Loves Monuments 2020 in Italy - veteran trees",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "41.893403",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.482189",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "ippocastano in autunno, che svetta da via delle tre pile",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-10-09 12:41:09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Albarubescens&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Albarubescens (page does not exist)\">Albarubescens</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "77462441": {
+        "pageid": 77462441,
+        "ns": 6,
+        "title": "File:Piazza del Campidoglio (7848994650).jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Piazza_del_Campidoglio_%287848994650%29.jpg/1280px-Piazza_del_Campidoglio_%287848994650%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1200,
+            "thumbheight": 800,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Piazza_del_Campidoglio_%287848994650%29.jpg/3840px-Piazza_del_Campidoglio_%287848994650%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Piazza_del_Campidoglio_%287848994650%29.jpg/1280px-Piazza_del_Campidoglio_%287848994650%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1200,
+              "height": 800,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Piazza_del_Campidoglio_%287848994650%29.jpg/3840px-Piazza_del_Campidoglio_%287848994650%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Piazza_del_Campidoglio_%287848994650%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campidoglio_(7848994650).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=77462441",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-03-20 10:32:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Piazza del Campidoglio (7848994650)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Piazza del Campidoglio (Rome)|August 2012 in Rome|Files with coordinates missing SDC location of creation|Italy photographs taken on 2012-08-19|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "41.893149",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.483333",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Italy, Rome",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-08-19 07:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/_pek_/7848994650/\">Piazza del Campidoglio</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/69912818@N00\">Bruno</a> from Roma, Italia",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "151896483": {
+        "pageid": 151896483,
+        "ns": 6,
+        "title": "File:Piazza del Campidoglio (Rome) (2).jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Piazza_del_Campidoglio_%28Rome%29_%282%29.jpg/1280px-Piazza_del_Campidoglio_%28Rome%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1200,
+            "thumbheight": 1800,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Piazza_del_Campidoglio_%28Rome%29_%282%29.jpg/1920px-Piazza_del_Campidoglio_%28Rome%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Piazza_del_Campidoglio_%28Rome%29_%282%29.jpg/1280px-Piazza_del_Campidoglio_%28Rome%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1200,
+              "height": 1800,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Piazza_del_Campidoglio_%28Rome%29_%282%29.jpg/1920px-Piazza_del_Campidoglio_%28Rome%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Piazza_del_Campidoglio_%28Rome%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campidoglio_(Rome)_(2).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=151896483",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-08-28 08:34:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Piazza del Campidoglio (Rome) (2)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Piazza del Campidoglio (Rome)|Self-published work|Italy photographs taken on 2024-08-21",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Piazza del Campidoglio (Rome)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-08-21 15:56:18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Joseolgon\" title=\"User:Joseolgon\">Joseolgon</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "4661953": {
+        "pageid": 4661953,
+        "ns": 6,
+        "title": "File:Piazza del Campidoglio Roma.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Piazza_del_Campidoglio_Roma.jpg/1280px-Piazza_del_Campidoglio_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1200,
+            "thumbheight": 747,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Piazza_del_Campidoglio_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Piazza_del_Campidoglio_Roma.jpg/1280px-Piazza_del_Campidoglio_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1200,
+              "height": 747,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Piazza_del_Campidoglio_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Piazza_del_Campidoglio_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campidoglio_Roma.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=4661953",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-08-30 15:22:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Piazza del Campidoglio Roma",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Canon EOS 400D|Piazza del Campidoglio (Rome)|Self-published work|PD-self|Palazzo Nuovo (Rome) - Building",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Piazza del Campidoglio, Rome.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-07-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Jensens\" title=\"User:Jensens\">Jensens</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
