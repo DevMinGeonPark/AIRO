@@ -15,7 +15,7 @@ do \$\$ begin
   if not exists (select 1 from pg_roles where rolname = 'authenticated') then create role authenticated nologin; end if;
   if not exists (select 1 from pg_roles where rolname = 'supabase_auth_admin') then create role supabase_auth_admin nologin; end if;
   if not exists (select 1 from pg_roles where rolname = 'authenticator') then
-    execute format('create role authenticator noinherit login password %L', '${POSTGRES_PASSWORD}');
+    execute format('create role authenticator noinherit login password %L', '${POSTGRES_PASSWORD//\'/\'\'}');
   end if;
 end \$\$;
 grant anon, authenticated to authenticator;

@@ -23,9 +23,11 @@ ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1 \
     PORT=3002 \
     HOSTNAME=0.0.0.0
-COPY --from=build /app/public ./public
-COPY --from=build /app/.next/standalone ./
-COPY --from=build /app/.next/static ./.next/static
+COPY --from=build --chown=node:node /app/public ./public
+COPY --from=build --chown=node:node /app/.next/standalone ./
+COPY --from=build --chown=node:node /app/.next/static ./.next/static
+# next/image writes its cache under .next/cache at runtime.
+RUN mkdir -p .next/cache && chown -R node:node .next
 USER node
 EXPOSE 3002
 CMD ["node", "server.js"]

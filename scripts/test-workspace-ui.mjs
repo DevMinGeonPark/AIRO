@@ -172,7 +172,7 @@ try {
     await page.goto(`${origin}/workspace-offline-check?view=ai&pair=${pairingId}`,{waitUntil:"networkidle"});
     await page.evaluate(()=>Object.defineProperty(navigator,"clipboard",{configurable:true,value:{writeText:async(text)=>{window.__copiedSetup=text;}}}));
     await page.getByRole("button",{name:"Codex 연결 요청 복사",exact:true}).click();
-    assert.ok((await page.evaluate(()=>window.__copiedSetup)).includes("https://airo.dev-heptivision.com/docs/codex/install"));
+    { const copied = await page.evaluate(()=>window.__copiedSetup); assert.ok(copied.includes(`${process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3002"}/docs/codex/install`), `copied setup quotes this server's install guide: ${copied}`); }
     await page.getByRole("button",{name:"이 Codex 연결하기",exact:true}).click();
     await expect(page.getByRole("button",{name:"이 Codex 연결하기",exact:true})).toHaveCount(0);
     await expect(page.getByText("오프라인",{exact:true})).toBeVisible();

@@ -48,6 +48,14 @@ export function localSession(cookie: string | undefined) {
   return claims?.sub === OWNER_ID && claims.role === "authenticated" ? { id: OWNER_ID, email: ownerEmail } : null;
 }
 
+/** Origin the browser actually used, honouring a TLS-terminating proxy (Tailscale Serve, Caddy, cloudflared). */
+export function requestOrigin(request: Request) {
+  const url = new URL(request.url);
+  const proto = request.headers.get("x-forwarded-proto")?.split(",")[0].trim() || url.protocol.replace(":", "");
+  const host = request.headers.get("x-forwarded-host")?.split(",")[0].trim() || request.headers.get("host") || url.host;
+  return `${proto}://${host}`;
+}
+
 export const sessionCookie = (secure: boolean) => ({
   name: SESSION_COOKIE, value: signLocalJwt({ sub: OWNER_ID, role: "authenticated" }),
   httpOnly: true, secure, sameSite: "lax" as const, path: "/", maxAge: SESSION_TTL,
