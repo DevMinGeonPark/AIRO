@@ -1,0 +1,32 @@
+[
+  {
+    "file": "01-horizontal.png",
+    "status": 200,
+    "bytes": 921523
+  },
+  {
+    "file": "02-stacked.png",
+    "status": 200,
+    "bytes": 931517
+  },
+  {
+    "file": "index.html",
+    "status": 200,
+    "bytes": 5130
+  },
+  {
+    "file": "comparison.png",
+    "status": 200,
+    "bytes": 395056
+  },
+  {
+    "file": "prompts.json",
+    "status": 200,
+    "bytes": 4080
+  },
+  {
+    "file": "airo-swift-logo.zip",
+    "status": 200,
+    "bytes": 2221641
+  }
+]

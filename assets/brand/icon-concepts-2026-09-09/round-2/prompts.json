@@ -1,0 +1,84 @@
+{
+  "date": "2026-09-09",
+  "provider": "built-in image_gen (GPT Image)",
+  "round": 2,
+  "purpose": "Six distinct new directions after user rejected the first five",
+  "references": [
+    {
+      "title": "Navan — Pentagram",
+      "url": "https://www.pentagram.com/work/navan",
+      "takeaway": "A single curve can organize an entire travel identity."
+    },
+    {
+      "title": "Globe-Trotter — Ragged Edge",
+      "url": "https://raggededge.com/partnerships/globe-trotter",
+      "takeaway": "Use distinctive character and crafted letterforms to convey a travel companion."
+    },
+    {
+      "title": "Tripadvisor — Koto",
+      "url": "https://koto.com/projects/tripadvisor",
+      "takeaway": "Keep the identity connected to travelers and human experience."
+    },
+    {
+      "title": "Assembly — Ragged Edge",
+      "url": "https://raggededge.com/partnerships/assembly-hotel-branding",
+      "takeaway": "Express the impulse to explore through a distinctive visual voice."
+    }
+  ],
+  "concepts": [
+    {
+      "id": "01-portal",
+      "name": "포털",
+      "english": "PORTAL",
+      "caption": "여행이 시작되는 문",
+      "direction": "An architectural doorway emblem: a bold upright arch with an off-center opening and one decisive diagonal cut that suggests stepping through into a new place. Sculpt the outer silhouette with a tall curved top and a crisp flat foot. Sophisticated solid-to-empty proportion, quiet tension, maximum two connected masses. It should feel like an intriguing threshold, not a letter, map pin, padlock, horseshoe or generic app interface icon.",
+      "ink": "#D5E6B4",
+      "prompt": "Use case: logo-brand.\nCreate one completely new, finished brand-icon concept for AIRO, an AI travel partner.\nDesign direction: An architectural doorway emblem: a bold upright arch with an off-center opening and one decisive diagonal cut that suggests stepping through into a new place. Sculpt the outer silhouette with a tall curved top and a crisp flat foot. Sophisticated solid-to-empty proportion, quiet tension, maximum two connected masses. It should feel like an intriguing threshold, not a letter, map pin, padlock, horseshoe or generic app interface icon.\nRendering: flat graphic artwork, exceptional logo-design craft. Solid uniform #D5E6B4 ink on an opaque uniform charcoal-black #0A0A0A background. Imagine a precise screenprinted symbol: clean edges, constant color, no light source and no emitted light.\nComposition: one centered symbol on a square canvas, generous margins, symbol fills roughly 65 percent of the width and height. Clear silhouette at 32 pixels.\nDeliver just the standalone icon master. No captions, layout, multiple versions, mockup, watermark, border, lighting, glow, gradient, blur, shadow, bevel, dimensional material, metallic finish, or texture. No letters or text."
+    },
+    {
+      "id": "02-swerve",
+      "name": "스워브",
+      "english": "SWERVE",
+      "caption": "방향을 바꾸는 리본",
+      "direction": "An expressive folded ribbon emblem, with two broad flat angular folds sweeping diagonally into a compact dynamic silhouette. A single continuous black S-shaped channel separates the folds. Use confident sharp-cut ends contrasted with one beautiful soft bend; asymmetrical and forward-moving, like a personal travel signature or a flag caught in motion. Entirely flat, no perspective shading. Not a capital A, navigation arrow, paper airplane, infinity loop, or triangular play button.",
+      "ink": "#D5E6B4",
+      "prompt": "Use case: logo-brand.\nCreate one completely new, finished brand-icon concept for AIRO, an AI travel partner.\nDesign direction: An expressive folded ribbon emblem, with two broad flat angular folds sweeping diagonally into a compact dynamic silhouette. A single continuous black S-shaped channel separates the folds. Use confident sharp-cut ends contrasted with one beautiful soft bend; asymmetrical and forward-moving, like a personal travel signature or a flag caught in motion. Entirely flat, no perspective shading. Not a capital A, navigation arrow, paper airplane, infinity loop, or triangular play button.\nRendering: flat graphic artwork, exceptional logo-design craft. Solid uniform #D5E6B4 ink on an opaque uniform charcoal-black #0A0A0A background. Imagine a precise screenprinted symbol: clean edges, constant color, no light source and no emitted light.\nComposition: one centered symbol on a square canvas, generous margins, symbol fills roughly 65 percent of the width and height. Clear silhouette at 32 pixels.\nDeliver just the standalone icon master. No captions, layout, multiple versions, mockup, watermark, border, lighting, glow, gradient, blur, shadow, bevel, dimensional material, metallic finish, or texture. No letters or text."
+    },
+    {
+      "id": "03-swift",
+      "name": "스위프트",
+      "english": "SWIFT",
+      "caption": "가볍게 떠나는 제비",
+      "direction": "A striking abstract swift bird emblem in flight, built from two sculpted tapered wings and one tiny integrated head. Capture the unexpected elegant silhouette of a banking swift: one wide crescent wing and one shorter sharply tapered wing, with a generous wedge of black negative space between them. Bold compact body and a subtly forked tail, effortless and distinctive, organic rather than geometric. No feathers, eye dots, realistic anatomy, circular badge, cloud or airplane. A premium graphic bird symbol that feels personal rather than a conventional airline logo.",
+      "ink": "#F3F1EA",
+      "prompt": "Use case: logo-brand.\nCreate one completely new, finished brand-icon concept for AIRO, an AI travel partner.\nDesign direction: A striking abstract swift bird emblem in flight, built from two sculpted tapered wings and one tiny integrated head. Capture the unexpected elegant silhouette of a banking swift: one wide crescent wing and one shorter sharply tapered wing, with a generous wedge of black negative space between them. Bold compact body and a subtly forked tail, effortless and distinctive, organic rather than geometric. No feathers, eye dots, realistic anatomy, circular badge, cloud or airplane. A premium graphic bird symbol that feels personal rather than a conventional airline logo.\nRendering: flat graphic artwork, exceptional logo-design craft. Solid uniform #F3F1EA ink on an opaque uniform charcoal-black #0A0A0A background. Imagine a precise screenprinted symbol: clean edges, constant color, no light source and no emitted light.\nComposition: one centered symbol on a square canvas, generous margins, symbol fills roughly 65 percent of the width and height. Clear silhouette at 32 pixels.\nDeliver just the standalone icon master. No captions, layout, multiple versions, mockup, watermark, border, lighting, glow, gradient, blur, shadow, bevel, dimensional material, metallic finish, or texture. No letters or text."
+    },
+    {
+      "id": "04-atelier",
+      "name": "아틀리에 ai",
+      "english": "ATELIER",
+      "caption": "취향이 드러나는 글자",
+      "direction": "A bespoke lowercase 'ai' ligature as a compact editorial brand icon. Draw custom bold soft-serif letterforms with moderate thick-thin contrast, a beautifully teardrop-shaped counter in the a, one connected sweeping foot joining a to i, and a substantial lozenge-shaped i dot. The silhouette should feel assured, artful and slightly literary, like a premium travel journal or fashion identity. Carefully integrate both letters into one memorable compact mark while remaining readable as ai. No plain off-the-shelf typeface, uppercase A, road engraved inside, monoline strokes, hairline details, flourishes or surrounding badge. The only lettering is this custom ai monogram.",
+      "ink": "#F3F1EA",
+      "prompt": "Use case: logo-brand.\nCreate one completely new, finished brand-icon concept for AIRO, an AI travel partner.\nDesign direction: A bespoke lowercase 'ai' ligature as a compact editorial brand icon. Draw custom bold soft-serif letterforms with moderate thick-thin contrast, a beautifully teardrop-shaped counter in the a, one connected sweeping foot joining a to i, and a substantial lozenge-shaped i dot. The silhouette should feel assured, artful and slightly literary, like a premium travel journal or fashion identity. Carefully integrate both letters into one memorable compact mark while remaining readable as ai. No plain off-the-shelf typeface, uppercase A, road engraved inside, monoline strokes, hairline details, flourishes or surrounding badge. The only lettering is this custom ai monogram.\nRendering: flat graphic artwork, exceptional logo-design craft. Solid uniform #F3F1EA ink on an opaque uniform charcoal-black #0A0A0A background. Imagine a precise screenprinted symbol: clean edges, constant color, no light source and no emitted light.\nComposition: one centered symbol on a square canvas, generous margins, symbol fills roughly 65 percent of the width and height. Clear silhouette at 32 pixels.\nDeliver just the standalone icon master. No captions, layout, multiple versions, mockup, watermark, border, lighting, glow, gradient, blur, shadow, bevel, dimensional material, metallic finish, or texture. Only the specified custom ai letters."
+    },
+    {
+      "id": "05-terrain",
+      "name": "테레인",
+      "english": "TERRAIN",
+      "caption": "지형에서 찾은 리듬",
+      "direction": "An abstract topographic island emblem: exactly three broad nested organic contour bands form an asymmetric pebble-shaped island, taller on its upper-left shoulder and drawn inward at the lower-right. Use generous black channels and one aligned open break through the contours so it has a rhythmic flowing silhouette rather than concentric circles. Bold enough for a small app icon, intriguing and tactile in shape, calm Japanese editorial sensibility. No grid, continent silhouette, literal map, pin, sun, letter, fingerprint micro-lines, eye or target. Every band is a flat solid shape.",
+      "ink": "#D5E6B4",
+      "prompt": "Use case: logo-brand.\nCreate one completely new, finished brand-icon concept for AIRO, an AI travel partner.\nDesign direction: An abstract topographic island emblem: exactly three broad nested organic contour bands form an asymmetric pebble-shaped island, taller on its upper-left shoulder and drawn inward at the lower-right. Use generous black channels and one aligned open break through the contours so it has a rhythmic flowing silhouette rather than concentric circles. Bold enough for a small app icon, intriguing and tactile in shape, calm Japanese editorial sensibility. No grid, continent silhouette, literal map, pin, sun, letter, fingerprint micro-lines, eye or target. Every band is a flat solid shape.\nRendering: flat graphic artwork, exceptional logo-design craft. Solid uniform #D5E6B4 ink on an opaque uniform charcoal-black #0A0A0A background. Imagine a precise screenprinted symbol: clean edges, constant color, no light source and no emitted light.\nComposition: one centered symbol on a square canvas, generous margins, symbol fills roughly 65 percent of the width and height. Clear silhouette at 32 pixels.\nDeliver just the standalone icon master. No captions, layout, multiple versions, mockup, watermark, border, lighting, glow, gradient, blur, shadow, bevel, dimensional material, metallic finish, or texture. No letters or text."
+    },
+    {
+      "id": "06-scout",
+      "name": "스카우트",
+      "english": "SCOUT",
+      "caption": "함께 탐색하는 여우",
+      "direction": "An ownable abstract fox guide emblem shown in a sharp three-quarter side profile, a compact silhouette combining one proud long ear, a shorter far ear, a short pointed muzzle, and one sweeping cheek shape. Use a single small black eye slash for a calm curious expression and one large black cheek cut to simplify the silhouette. Elegant, witty and slightly mischievous, like a discerning travel companion; mature graphic character design. Strongly asymmetric, only two or three major shapes. No shield, circular badge, detailed fur, realistic rendering, polygon mesh, gaming mascot aggression, cute baby proportions, robot, or resemblance to an existing fox brand.",
+      "ink": "#D5E6B4",
+      "prompt": "Use case: logo-brand.\nCreate one completely new, finished brand-icon concept for AIRO, an AI travel partner.\nDesign direction: An ownable abstract fox guide emblem shown in a sharp three-quarter side profile, a compact silhouette combining one proud long ear, a shorter far ear, a short pointed muzzle, and one sweeping cheek shape. Use a single small black eye slash for a calm curious expression and one large black cheek cut to simplify the silhouette. Elegant, witty and slightly mischievous, like a discerning travel companion; mature graphic character design. Strongly asymmetric, only two or three major shapes. No shield, circular badge, detailed fur, realistic rendering, polygon mesh, gaming mascot aggression, cute baby proportions, robot, or resemblance to an existing fox brand.\nRendering: flat graphic artwork, exceptional logo-design craft. Solid uniform #D5E6B4 ink on an opaque uniform charcoal-black #0A0A0A background. Imagine a precise screenprinted symbol: clean edges, constant color, no light source and no emitted light.\nComposition: one centered symbol on a square canvas, generous margins, symbol fills roughly 65 percent of the width and height. Clear silhouette at 32 pixels.\nDeliver just the standalone icon master. No captions, layout, multiple versions, mockup, watermark, border, lighting, glow, gradient, blur, shadow, bevel, dimensional material, metallic finish, or texture. No letters or text."
+    }
+  ]
+}

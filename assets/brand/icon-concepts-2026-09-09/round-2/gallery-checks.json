@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "viewport": 1440,
+      "content": 1440,
+      "cards": 6,
+      "loaded": 24
+    },
+    {
+      "viewport": 390,
+      "content": 390,
+      "cards": 6,
+      "loaded": 24
+    },
+    {
+      "viewport": 320,
+      "content": 320,
+      "cards": 6,
+      "loaded": 24
+    }
+  ],
+  "zoomChecks": 6,
+  "errors": []
+}
