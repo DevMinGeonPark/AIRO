@@ -1,0 +1,23 @@
+{
+  "name": "airo",
+  "version": "0.2.0",
+  "description": "내 Codex를 AIRO 웹 채팅에 연결하고 여행 일정을 함께 수정합니다.",
+  "author": {
+    "name": "AIRO",
+    "url": "https://airo.dev-heptivision.com"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AIRO",
+    "shortDescription": "내 Codex로, 아이로에서 여행 만들기",
+    "longDescription": "한 번 연결하면 AIRO 웹과 모바일에서 보낸 여행 요청을 내 Codex가 처리합니다. Codex 로그인은 내 컴퓨터에서 유지되며, 연결은 AIRO에서 해제할 수 있습니다. API로 자동 전환하지 않습니다.",
+    "developerName": "AIRO",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "brandColor": "#86A5FF",
+    "websiteURL": "https://airo.dev-heptivision.com",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
+    "defaultPrompt": ["아이로 웹 채팅 연결", "아이로 연결 상태 확인"]
+  }
+}
