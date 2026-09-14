@@ -7,14 +7,16 @@
 | 항목 | 현재 값 |
 | --- | --- |
 | 앱 리스너 | `127.0.0.1:3410` |
-| 배포 경로 | `.private/releases/codex-bridge-20260910` |
-| 배포 빌드 | `.next-codex-release` |
+| 배포 경로 | `.private/releases/community-split-20260914` |
+| 배포 빌드 | `.next-live` |
 | 앱 서비스 | `com.heptivision.airo-app` |
 | 터널 서비스 | `com.heptivision.airo-tunnel` |
 | Cloudflare 터널 | `airo` |
 | 터널 설정 | `~/.cloudflared/airo.yml` |
 | 서비스 설정 | `~/Library/LaunchAgents/com.heptivision.airo-*.plist` |
 | 로그 | `.private/logs/` |
+
+2026-09-14 현재: 에디션 분리(`NEXT_PUBLIC_AIRO_EDITION`, 운영은 cloud) 이후 첫 배포. 포함 내용 — 헤더 로그아웃·여행 설정 저장 버튼이 form을 submit하지 않던 버그 수정(base-ui Button 기본 `type="button"`), Codex 플러그인 0.2.1(브리지가 `AIRO_ORIGIN`으로 self-host 서버와 페어링, 다운로드 0.2.0·0.2.1 병존), `/docs/codex/install`이 현재 서버 주소를 명시, 코드 리뷰 반영(세션 서명기 통합·URL 정규화·proxy Origin 파싱 가드). 릴리스 스냅샷은 `git archive` + `node_modules`/`.env.production*` 심볼릭 링크 + `public/downloads`·`public/plugins/airo.git` 복사, `NEXT_DIST_DIR=.next-live` 빌드. 3103에서 `verify-commercial-release`(Chrome 1440/390·WebKit 320)·`verify-codex-release`(브라우저 3종·비공개 엔드포인트·페어링·패키지 체크섬) 통과 후 LaunchAgent 전환. 공개 주소에서 `/`, `/login`, `/docs/codex`, 0.2.1 다운로드, 마켓플레이스 HEAD(054a84c), 로그아웃 303 확인. 이전 서비스 설정은 `.private/deployment/community-split-20260914/previous-app.plist`, 이전 릴리스 `codex-bridge-20260910`은 롤백용으로 보존. 3402·3016 보조 리스너는 이 시점에 실행 중이지 않았고 전환하지 않았다. Community Edition 이미지는 `ghcr.io/devmingeonpark/airo` (`v0.3.0` 태그).
 
 2026-09-10 현재: Codex 플러그인으로 내 컴퓨터를 연결해 웹·모바일 여행 채팅을 처리하는 버전을 운영 3410·테일스케일 3016·보조 3402에 배포했다. 채팅에는 Codex/기기명/실제 연결 상태가 표시되며, 응답 중에는 배정된 기기 이름을 유지한다. API는 사용자가 직접 선택해야 호출한다. Google 로그인·계정 여행·기존 MCP·지도 및 예산 기능을 유지했다. 연결 구조와 설치 경로는 [CODEX_CONNECTION.md](../../CODEX_CONNECTION.md)에 있다.
 
