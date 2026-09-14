@@ -33,7 +33,7 @@ for(const path of ['/api/bridge/devices','/api/bridge/jobs']){
 const worker=await fetch(base+'/api/bridge/worker',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${'c'.repeat(64)}`},body:JSON.stringify({op:'next',id:'00000000-0000-4000-8000-000000000999',data:{}})});assert.equal(worker.status,401);
 const installer=await fetch(base+'/docs/codex/install');assert.equal(installer.status,200);assert.ok((await installer.text()).includes('codex plugin add airo@airo'));
 const runtime=JSON.parse(await readFile(new URL('../plugins/airo/assets/runtime.json',import.meta.url),'utf8'));
-const archive=await fetch(base+'/downloads/airo-codex-0.2.0-darwin-arm64.tar.gz');assert.equal(archive.status,200);
+const archive=await fetch(base+new URL(runtime.platforms['darwin-arm64'].bridgeUrl).pathname);assert.equal(archive.status,200);
 const actual=createHash('sha256').update(Buffer.from(await archive.arrayBuffer())).digest('hex');
 const pinned=runtime.platforms['darwin-arm64'].bridgeSha256;assert.equal(actual,pinned);
 await writeFile(new URL('codex-release-checks.json',output),JSON.stringify({base,checks,unauthenticatedApis:401,invalidDevice:401,installer:true,packageChecksum:true,checkedAt:new Date().toISOString()},null,2));
