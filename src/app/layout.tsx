@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "아이로 AIRO — 어디로든, AI와 함께.",
   applicationName: "아이로 AIRO",
   metadataBase: new URL("https://airo.dev-heptivision.com"),
+  // 홈 화면 설치(PWA). 매니페스트는 src/app/manifest.ts, 아이콘은 public/icons.
+  manifest: "/manifest.webmanifest",
+  appleWebApp: { capable: true, title: "아이로", statusBarStyle: "black-translucent" },
   openGraph: { type: "website", locale: "ko_KR", siteName: "아이로 AIRO", images: [{ url: "/gen/og-image.jpg", width: 1200, height: 630, alt: "교토의 아침, 나만의 여행을 준비하는 책상" }] },
   twitter: { card: "summary_large_image", images: ["/gen/og-image.jpg"] },
   description: "AI와 함께 만드는 나만의 여행. 지도, 일정, 맛집과 예산을 아이로에서 한 번에 준비하세요.",
