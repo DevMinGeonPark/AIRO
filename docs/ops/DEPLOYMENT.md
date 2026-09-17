@@ -7,7 +7,7 @@
 | 항목 | 현재 값 |
 | --- | --- |
 | 앱 리스너 | `127.0.0.1:3410` |
-| 배포 경로 | `.private/releases/community-split-20260914` |
+| 배포 경로 | `.private/releases/mobile-ux-20260917` |
 | 배포 빌드 | `.next-live` |
 | 앱 서비스 | `com.heptivision.airo-app` |
 | 터널 서비스 | `com.heptivision.airo-tunnel` |
@@ -15,6 +15,8 @@
 | 터널 설정 | `~/.cloudflared/airo.yml` |
 | 서비스 설정 | `~/Library/LaunchAgents/com.heptivision.airo-*.plist` |
 | 로그 | `.private/logs/` |
+
+2026-09-17 현재: 로그인 이후 화면의 휴대폰 UI 재구성(커밋 `e72aa99`)을 운영 3410에 배포했다. 워크스페이스는 뒤로가기+제목 한 줄 헤더, 아이콘 하단 탭(일정/지도/채팅/더보기 — 예산·자료·설정·MCP·내보내기·로그아웃은 더보기 `<details>` 메뉴), 시트 단일 스크롤과 편집 중 full 고정, peek 안내, 채팅 상단 축약과 `지도로` 닫기, 일정 편집 기본값(보고 있던 일차 맨 뒤)·좌표 접기, 하위 화면 공용 `TripSubheader`, 목록·설정 여백 축소를 포함한다. `next.config.ts`의 `devIndicators: false`는 개발 배지가 하단 탭을 가리던 문제다. 설계는 GPT-6 Astra(xhigh)와 두 차례 검토했다. 릴리스 스냅샷은 2026-09-14와 같은 방식(`git archive` + `node_modules`/`.env.production*` 링크 + `public/downloads`·`public/plugins/airo.git` 복사, `NEXT_DIST_DIR=.next-live`). 검증: lint·tsc·production build, `test:mobile` Chrome·WebKit 14조합(더보기 메뉴·편집 중 지도 탭·키보드 중 채팅 닫기 검사 추가; 변경 전 기준선은 390px 키보드 검사에서 실패 중이었음), `test:workspace`, 3103에서 `verify-commercial-release`·`verify-codex-release` 통과 후 LaunchAgent 전환. 공개 주소에서 `/`, `/login`, `/docs/codex`, `/pricing`, 0.2.1 다운로드, 로그아웃 303 확인. 이전 서비스 설정은 `.private/deployment/mobile-ux-20260917/previous-app.plist`, 이전 릴리스 `community-split-20260914`는 롤백용으로 보존. 3402·3016 보조 리스너는 실행 중이지 않아 전환하지 않았다. 실제 iPhone 키보드 확인은 미실행.
 
 2026-09-14 현재: 에디션 분리(`NEXT_PUBLIC_AIRO_EDITION`, 운영은 cloud) 이후 첫 배포. 포함 내용 — 헤더 로그아웃·여행 설정 저장 버튼이 form을 submit하지 않던 버그 수정(base-ui Button 기본 `type="button"`), Codex 플러그인 0.2.1(브리지가 `AIRO_ORIGIN`으로 self-host 서버와 페어링, 다운로드 0.2.0·0.2.1 병존), `/docs/codex/install`이 현재 서버 주소를 명시, 코드 리뷰 반영(세션 서명기 통합·URL 정규화·proxy Origin 파싱 가드). 릴리스 스냅샷은 `git archive` + `node_modules`/`.env.production*` 심볼릭 링크 + `public/downloads`·`public/plugins/airo.git` 복사, `NEXT_DIST_DIR=.next-live` 빌드. 3103에서 `verify-commercial-release`(Chrome 1440/390·WebKit 320)·`verify-codex-release`(브라우저 3종·비공개 엔드포인트·페어링·패키지 체크섬) 통과 후 LaunchAgent 전환. 공개 주소에서 `/`, `/login`, `/docs/codex`, 0.2.1 다운로드, 마켓플레이스 HEAD(054a84c), 로그아웃 303 확인. 이전 서비스 설정은 `.private/deployment/community-split-20260914/previous-app.plist`, 이전 릴리스 `codex-bridge-20260910`은 롤백용으로 보존. 3402·3016 보조 리스너는 이 시점에 실행 중이지 않았고 전환하지 않았다. Community Edition 이미지는 `ghcr.io/devmingeonpark/airo` (`v0.3.0` 태그).
 
