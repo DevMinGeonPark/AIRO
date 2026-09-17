@@ -22,7 +22,7 @@ export default async function Page({searchParams}:{searchParams:Promise<{view?:s
   if (process.env.NODE_ENV !== "development" || process.env.WORKSPACE_OFFLINE_PREVIEW !== "1") notFound();
   const {view}=await searchParams;
   if(view === "ai") return <main className="mx-auto max-w-3xl px-5 py-10"><AiConnectionManager installUrl={null}/></main>;
-  if(view === "budget") return <ExpenseBudget trip={${JSON.stringify(trip)}} stops={${JSON.stringify(stops)}} initial={${JSON.stringify(empty)}} hasOriginal={false} showSignOut={false}/>;
+  if(view === "budget") return <ExpenseBudget trip={${JSON.stringify(trip)}} stops={${JSON.stringify(stops)}} initial={${JSON.stringify(empty)}} hasOriginal={false}/>;
   return <TripWorkspace trip={${JSON.stringify(trip)}} initialStops={${JSON.stringify(stops)}} initialMessages={[]} showSignOut/>;
 }`);
 const child = spawn(process.execPath, ["node_modules/next/dist/bin/next", "dev", "--hostname", "127.0.0.1", "-p", String(port)], {

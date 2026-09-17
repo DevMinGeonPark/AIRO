@@ -3,8 +3,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { CalendarDays, FolderOpen, Plus, Settings2, Download, Sparkles, X, Play, Square, Plane, ArrowUp, Wallet, Monitor, Cloud } from "lucide-react";
+import { CalendarDays, FolderOpen, Plus, Settings2, Download, Sparkles, X, Play, Square, Plane, ArrowUp, Wallet, Monitor, Cloud, ListOrdered, Map as MapIcon, MessageCircle, MoreHorizontal, Pencil, LogOut } from "lucide-react";
 import { LogoMark } from "@/components/logo";
+import { MobileNav } from "@/components/mobile-nav";
 import { useRoadRoutes } from "./use-road-routes";
 import { StopEditor } from "./stop-editor";
 import { useTripPlayback } from "./use-trip-playback";
@@ -54,10 +55,10 @@ function InitialTripFrame({ stops }: { stops: Stop[] }) {
 
 type Tab = "map" | "plan" | "chat";
 
-const TABS: [Tab, string][] = [
-  ["plan", "일정"],
-  ["map", "지도"],
-  ["chat", "채팅"],
+const TABS: [Tab, string, typeof ListOrdered][] = [
+  ["plan", "일정", ListOrdered],
+  ["map", "지도", MapIcon],
+  ["chat", "채팅", MessageCircle],
 ];
 
 export function TripWorkspace({
@@ -99,7 +100,9 @@ export function TripWorkspace({
   const etag = useRef<string | null>(null);
   useEffect(() => { syncBlocked.current = Boolean(editing) || busy || streaming !== null; }, [editing, busy, streaming]);
   const dark = useDarkMode();
-  const sheet = useTripSheet();
+  const sheet = useTripSheet(`장소 검색 · ${stops.length}곳`, Boolean(editing));
+  /** 채팅 자동 스크롤은 사용자가 맨 아래 근처에 있을 때만. 이전 대화를 읽는 중이면 끌어내리지 않는다. */
+  const stickToBottom = useRef(true);
 
   const days = useMemo(() => byDay(stops), [stops]);
   const visible = useMemo(
@@ -127,11 +130,18 @@ export function TripWorkspace({
 
   useEffect(() => {
     const panel = chatScrollRef.current;
+    if (panel && stickToBottom.current) panel.scrollTop = panel.scrollHeight;
+  }, [messages, streaming]);
+  useEffect(() => {
+    if (tab !== "chat") return;
+    stickToBottom.current = true;
+    const panel = chatScrollRef.current;
     if (panel) panel.scrollTop = panel.scrollHeight;
-  }, [messages, streaming, tab]);
+  }, [tab]);
 
   useEffect(() => {
-    if (editing) planScrollRef.current?.scrollTo({ top: 0 });
+    // 휴대폰에서는 시트 전체가 스크롤 영역이라 둘 다 올린다.
+    if (editing) { planScrollRef.current?.scrollTo({ top: 0 }); document.getElementById("trip-itinerary")?.scrollTo({ top: 0 }); }
   }, [editing]);
 
   /** 채팅 도구가 DB 를 바꾼 뒤 지도·일정을 다시 읽어온다. */
@@ -226,6 +236,7 @@ export function TripWorkspace({
     setDraft("");
     setBusy(true);
     setChatError("");
+    stickToBottom.current = true;
     setMessages((m) => [
       ...m,
       {
@@ -284,6 +295,16 @@ export function TripWorkspace({
   }
 
   const pane = (t: Tab) => `${tab === t || (tab !== "chat" && t !== "chat") ? "flex" : "hidden"} lg:flex flex-col min-h-0`;
+  /** 하단 탭의 선택 표시. 일정·지도는 같은 화면이라 시트 높이에서 정한다 (손으로 끌어올려도 맞게). */
+  const activeTab: Tab = tab === "chat" ? "chat" : sheet.size === "full" ? "plan" : "map";
+  function pickTab(id: Tab) {
+    playback.stop();
+    if (id === "chat") { setTab("chat"); return; }
+    setTab(id);
+    sheet.setSize(id === "plan" ? "full" : "peek"); // 편집 중에는 훅이 full 로 고정한다
+
+  }
+  const startEditing = (stop: Stop | "new") => { playback.stop(); setEditing(stop); setTab("plan"); sheet.setSize("full"); };
 
   /** 이 여행의 실제 지점 이름으로 만든 예시 문장. */
   const examples = useMemo(() => {
@@ -303,6 +324,7 @@ export function TripWorkspace({
       <AppHeader
         wide
         showSignOut={showSignOut}
+        back={{ href: "/app", label: "내 여행으로" }}
         center={
           <div className="flex min-w-0 flex-1 items-center gap-2.5">
             <Link href="/app" className="hidden shrink-0 text-xs text-muted-foreground hover:text-primary sm:inline">내 여행</Link>
@@ -317,8 +339,9 @@ export function TripWorkspace({
           </div>
         }
       />
-      <nav aria-label="여행 도구" className="workspace-toolbar flex shrink-0 items-center gap-1 overflow-x-auto border-b bg-card px-2 py-1.5 text-xs sm:px-4">
-        <button onClick={() => { playback.stop(); setEditing("new"); setTab("plan"); sheet.setSize("full"); }} className="workspace-action bg-secondary text-primary"><Plus className="size-3.5" /> 일정 직접 추가</button>
+      {/* 데스크톱 도구 줄. 휴대폰에서는 하단 탭의 더보기 메뉴가 같은 링크를 맡는다. */}
+      <nav aria-label="여행 도구" className="workspace-toolbar hidden shrink-0 items-center gap-1 overflow-x-auto border-b bg-card px-2 py-1.5 text-xs sm:px-4 lg:flex">
+        <button onClick={() => startEditing("new")} className="workspace-action bg-secondary text-primary"><Plus className="size-3.5" /> 일정 직접 추가</button>
         <Link href={`/app/${trip.id}/cost`} className="workspace-action"><Wallet className="size-3.5" /> 예산</Link>
         <Link href={`/app/${trip.id}/resources`} className="workspace-action"><FolderOpen className="size-3.5" /> 자료·맛집</Link>
         <Link href={`/app/${trip.id}/settings`} className="workspace-action"><Settings2 className="size-3.5" /> 여행 설정</Link>
@@ -331,20 +354,25 @@ export function TripWorkspace({
 
       {/* 모바일 탭 */}
       <nav aria-label="여행 화면" className="workspace-tabs flex shrink-0 border-b text-sm lg:hidden">
-        {TABS.map(([id, label]) => (
+        {TABS.map(([id, label, Icon]) => (
           <button
             key={id}
-            onClick={() => { playback.stop(); setTab(id); if (id !== "chat") sheet.setSize(id === "plan" ? "full" : "peek"); }}
-            aria-current={tab === id ? "page" : undefined}
-            className={`min-h-12 flex-1 py-2.5 ${
-              tab === id
-                ? "border-primary bg-secondary text-primary border-b-2 font-semibold"
-                : "text-muted-foreground"
-            }`}
+            onClick={() => pickTab(id)}
+            aria-current={activeTab === id ? "page" : undefined}
+            className={`workspace-tab ${activeTab === id ? "text-primary font-semibold" : "text-muted-foreground"}`}
           >
+            <Icon className="size-5" aria-hidden="true" />
             {label}
           </button>
         ))}
+        <MobileNav className="workspace-more" label={<><MoreHorizontal className="size-5" aria-hidden="true" />더보기</>} summaryLabel="더보기" navLabel="여행 도구 메뉴">
+          <Link href={`/app/${trip.id}/cost`} prefetch={false}><Wallet className="size-4" /> 예산</Link>
+          <Link href={`/app/${trip.id}/resources`} prefetch={false}><FolderOpen className="size-4" /> 자료·맛집</Link>
+          <Link href={`/app/${trip.id}/settings`} prefetch={false}><Settings2 className="size-4" /> 여행 설정</Link>
+          <Link href="/app/settings/keys" prefetch={false}>MCP 연결 ↗</Link>
+          {showSignOut && <a href={`/api/trips/${trip.id}/export`}><Download className="size-4" /> 내보내기</a>}
+          {showSignOut && <form action="/auth/signout" method="post"><button type="submit"><LogOut className="size-4" /> 로그아웃</button></form>}
+        </MobileNav>
       </nav>
 
       <div className="workspace-panes flex min-h-0 min-w-0 flex-1 flex-col lg:flex-row">
@@ -355,7 +383,9 @@ export function TripWorkspace({
         >
           {sheet.handle}
           <div className="plan-tools shrink-0 space-y-3 border-b bg-secondary/30 p-4">
-            <div className="flex items-center gap-2 text-xs font-semibold"><CalendarDays className="size-4 text-primary" /> 나의 일정 <span className="ml-auto text-[10px] font-normal text-muted-foreground">{stops.length}개의 장소</span></div>
+            <div className="flex items-center gap-2 text-xs font-semibold"><CalendarDays className="size-4 text-primary" /> 나의 일정 <span className="text-[10px] font-normal text-muted-foreground">{stops.length}개의 장소</span>
+              <button type="button" onClick={() => startEditing("new")} className="ml-auto inline-flex min-h-9 items-center gap-1 rounded-full border px-3 text-[11px] font-medium text-primary lg:hidden"><Plus className="size-3.5" /> 직접 추가</button>
+            </div>
             <PlaceSearch
               tripId={trip.id}
               canSave={showSignOut}
@@ -398,7 +428,9 @@ export function TripWorkspace({
           </div>
 
           <div ref={planScrollRef} className="plan-scroll min-h-0 flex-1 overflow-y-auto p-4">
-            {editing && <div className="mb-5"><StopEditor key={editing === "new" ? "new" : editing.id} tripId={trip.id} stop={editing === "new" ? undefined : editing} onSaved={refetch} onClose={() => setEditing(null)} /></div>}
+            {editing && <div className="mb-5"><StopEditor key={editing === "new" ? "new" : editing.id} tripId={trip.id} stop={editing === "new" ? undefined : editing}
+              defaults={{ day: activeDay ?? days[0]?.day ?? 1, position: days.find(d => d.day === (activeDay ?? days[0]?.day ?? 1))?.stops.length ?? 0 }}
+              onSaved={refetch} onClose={() => setEditing(null)} /></div>}
             {stops.length ? (
               <div className="space-y-6">
                 {days
@@ -424,7 +456,7 @@ export function TripWorkspace({
                               ordinal={ordinals[stop.id] ?? 0}
                               selected={activeId === stop.id}
                               onSelect={() => focus(stop)}
-                              onEdit={() => { playback.stop(); setEditing(stop); sheet.setSize("full"); }}
+                              onEdit={() => startEditing(stop)}
                             />
                           ))}
                         </ol>
@@ -552,7 +584,7 @@ export function TripWorkspace({
                   rel="noreferrer"
                   className={buttonVariants({
                     size: "sm",
-                    className: "h-8 flex-1 rounded-full",
+                    className: "h-8 flex-1 rounded-full max-lg:min-h-11",
                   })}
                 >
                   구글지도
@@ -564,7 +596,7 @@ export function TripWorkspace({
                   className={buttonVariants({
                     size: "sm",
                     variant: "outline",
-                    className: "h-8 flex-1 rounded-full",
+                    className: "h-8 flex-1 rounded-full max-lg:min-h-11",
                   })}
                 >
                   길찾기
@@ -578,33 +610,31 @@ export function TripWorkspace({
         <section
           className={`${pane("chat")} workspace-chat min-w-0 bg-secondary/40 w-full grow shrink-0 lg:w-72 lg:grow-0 lg:border-l xl:w-88`}
         >
-          <div className="flex shrink-0 items-center gap-2.5 border-b bg-card px-4 py-3">
+          <div className="flex shrink-0 items-center gap-2.5 border-b bg-card py-2 pr-2 pl-4 lg:py-3 lg:pr-4">
             <LogoMark className="size-8" /><div><h2 className="text-xs font-semibold">아이로</h2><p className="mt-0.5 text-[10px] text-muted-foreground">나의 AI 여행 파트너</p></div><Sparkles className="ml-auto size-4 text-primary" />
+            {/* 키보드가 열리면 하단 탭이 사라지므로 채팅 안에서 나가는 길이 필요하다 */}
+            <button type="button" aria-label="지도로" onClick={() => pickTab("map")} className="grid size-11 shrink-0 place-items-center rounded-full text-muted-foreground hover:text-foreground lg:hidden"><X size={18} /></button>
           </div>
-          <div className="shrink-0 border-b bg-card px-4 py-3">
-            <div className="flex gap-2" role="group" aria-label="대화에 사용할 AI">
-              <button disabled={busy || Boolean(codex.jobId)} aria-pressed={chatProvider === "codex"} onClick={() => { setChatProvider("codex"); setChatError(""); }} className={`rounded-full border px-3 py-2 text-xs ${chatProvider === "codex" ? "border-primary/40 bg-primary/10 text-primary" : "text-muted-foreground"}`}>내 Codex</button>
-              <button disabled={busy || Boolean(codex.jobId)} aria-pressed={chatProvider === "api"} onClick={() => { setChatProvider("api"); setChatError(""); }} className={`rounded-full border px-3 py-2 text-xs ${chatProvider === "api" ? "border-primary/40 bg-primary/10 text-primary" : "text-muted-foreground"}`}>API로 사용</button>
-            </div>
-            <div role="status" aria-label="현재 AI 연결" className="mt-3 flex min-w-0 items-start gap-2.5 rounded-xl border bg-background/60 px-3 py-2.5">
-              {chatProvider === "api" ? <Cloud aria-hidden="true" className="mt-0.5 size-3.5 shrink-0 text-primary" /> : <Monitor aria-hidden="true" className={`mt-0.5 size-3.5 shrink-0 ${chatConnected ? "text-primary" : "text-muted-foreground"}`} />}
-              <div className="min-w-0 flex-1">
-                <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] font-medium">
-                  <span>{chatProvider === "api" ? "OpenAI API" : "Codex"}</span>
-                  <span className={`inline-flex items-center gap-1.5 font-normal ${chatProvider === "api" || chatConnected ? "text-primary" : "text-muted-foreground"}`}>
-                    <span aria-hidden="true" className="size-1.5 rounded-full bg-current" />
-                    {chatProvider === "api" ? busy ? "응답 중" : "선택됨" : ai.error ? "상태 확인 실패" : chatDevice ? deviceLabel(chatDevice) : codex.jobId ? "기기 확인 중" : "연결 안 됨"}
-                  </span>
-                </p>
-                <p className="mt-1 break-words text-[11px] leading-relaxed text-muted-foreground">{chatProvider === "api" ? "AIRO 서버 · API 비용 발생" : chatDevice?.name ?? "내 컴퓨터의 Codex를 연결해 주세요."}</p>
-                {chatProvider === "codex" && chatConnected && <p className="mt-0.5 text-[10px] text-muted-foreground">{busy ? "이 기기에서 응답 중" : "내 Codex 구독으로 사용"}</p>}
+          {/* AI 선택 + 상태를 한 줄로. 연결 안내·중지/재개 등 부가 줄은 필요할 때만 붙는다. */}
+          <div className="shrink-0 border-b bg-card px-3 py-2 text-xs lg:px-4">
+            <div className="flex items-center gap-2">
+              <div className="flex shrink-0 gap-1 rounded-full border p-0.5" role="group" aria-label="대화에 사용할 AI">
+                <button disabled={busy || Boolean(codex.jobId)} aria-pressed={chatProvider === "codex"} onClick={() => { setChatProvider("codex"); setChatError(""); }} className={`min-h-9 rounded-full px-3 text-xs ${chatProvider === "codex" ? "bg-primary/10 text-primary font-medium" : "text-muted-foreground"}`}>내 Codex</button>
+                <button disabled={busy || Boolean(codex.jobId)} aria-pressed={chatProvider === "api"} onClick={() => { setChatProvider("api"); setChatError(""); }} className={`min-h-9 rounded-full px-3 text-xs ${chatProvider === "api" ? "bg-primary/10 text-primary font-medium" : "text-muted-foreground"}`}>API로 사용</button>
               </div>
-              <Link href="/app/settings/ai" aria-label="AI 연결 관리" className="shrink-0 py-0.5 text-[10px] text-muted-foreground hover:text-primary">관리 ↗</Link>
+              <Link href="/app/settings/ai" aria-label="AI 연결 관리" className="ml-auto grid size-9 shrink-0 place-items-center rounded-full text-muted-foreground hover:text-primary"><Settings2 className="size-4" /></Link>
             </div>
-            {chatProvider === "codex" && !ai.ready && <Link href="/app/settings/ai" className="mt-2 inline-block py-1 text-xs text-primary">내 AI 연결하기 →</Link>}
-            {codex.jobId && <div className="mt-2 flex gap-4">{!busy && <button onClick={() => void codex.resume()} className="py-1 text-xs text-primary">응답 다시 확인</button>}<button onClick={() => void codex.cancel().catch(e => setChatError(e.message))} className="py-1 text-xs text-muted-foreground">대화 중지</button></div>}
+            {/* 상태는 제 줄에 — 좁은 채팅 열에서 기기 이름만 말줄임된다 */}
+            <div role="status" aria-label="현재 AI 연결" className={`mt-1.5 flex min-w-0 items-center gap-1.5 text-[11px] ${chatProvider === "api" || chatConnected ? "text-primary" : "text-muted-foreground"}`}>
+              {chatProvider === "api" ? <Cloud aria-hidden="true" className="size-3.5 shrink-0" /> : <Monitor aria-hidden="true" className="size-3.5 shrink-0" />}
+              {chatProvider === "api"
+                ? <span className="min-w-0">OpenAI API · AIRO 서버 · API 비용 발생{busy && " · 응답 중"}</span>
+                : <><span className="truncate">{chatDevice?.name ?? "Codex"}</span><span className="shrink-0">·&nbsp;{ai.error ? "상태 확인 실패" : chatDevice ? chatConnected && busy ? "이 기기에서 응답 중" : deviceLabel(chatDevice) : codex.jobId ? "기기 확인 중" : "연결 안 됨"}</span></>}
+            </div>
+            {chatProvider === "codex" && !ai.ready && <Link href="/app/settings/ai" className="mt-1 inline-flex min-h-9 items-center text-xs text-primary">내 컴퓨터의 Codex 연결하기 →</Link>}
+            {codex.jobId && <div className="mt-1 flex gap-4">{!busy && <button onClick={() => void codex.resume()} className="min-h-9 text-xs text-primary">응답 다시 확인</button>}<button onClick={() => void codex.cancel().catch(e => setChatError(e.message))} className="min-h-9 text-xs text-muted-foreground">대화 중지</button></div>}
           </div>
-          <div ref={chatScrollRef} className="chat-scroll min-h-0 flex-1 space-y-3 overflow-y-auto p-4">
+          <div ref={chatScrollRef} onScroll={e => { const p = e.currentTarget; stickToBottom.current = p.scrollHeight - p.scrollTop - p.clientHeight < 80; }} className="chat-scroll min-h-0 flex-1 space-y-3 overflow-y-auto p-4">
             {!messages.length && !streaming ? (
               <div className="pt-2">
                 <h2 className="text-sm font-semibold">어떤 여행을 만들까요?</h2>
@@ -703,7 +733,7 @@ function StopRow({
 }) {
   return (
     <li className="group relative">
-      <button onClick={onEdit} className="stop-edit absolute top-2 right-2 z-10 rounded-md bg-background/90 px-2 py-1 text-[11px] underline" aria-label={`${stop.name} 수정`}>수정</button>
+      <button onClick={onEdit} className="stop-edit absolute top-2 right-2 z-10 grid size-8 place-items-center rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground" aria-label={`${stop.name} 수정`}><Pencil size={15} /></button>
       <button
         onClick={onSelect}
         className={`flex w-full gap-2.5 rounded-xl border p-2.5 pr-14 text-left transition-colors ${
@@ -746,7 +776,7 @@ function StopRow({
         target="_blank"
         rel="noreferrer"
         title="구글지도에서 열기"
-        className="bg-background text-muted-foreground hover:text-foreground absolute right-3 bottom-1 rounded-full border px-1.5 py-0.5 text-[11px] opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
+        className="stop-maps-link bg-background text-muted-foreground hover:text-foreground absolute right-3 bottom-1 rounded-full border px-1.5 py-0.5 text-[11px] opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
       >
         ↗
       </a>

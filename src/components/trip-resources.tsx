@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Map, MapControls, MapMarker, MarkerContent, type MapRef } from "./ui/map";
 import { useDarkMode } from "./app-shell";
+import { TripSubheader } from "./trip-subheader";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { webUrl, type ArchivedPlace, type ArchiveData } from "@/lib/archive";
@@ -54,9 +55,9 @@ export function TripResources({ trip, stops, food, photos, documents, initialSav
     setSelected(place.id);
     map.current?.flyTo({ center: [place.lng, place.lat], zoom: 15 });
   }
-  return <main className="trip-resources mx-auto max-w-6xl space-y-8 px-5 py-8">
+  return <><TripSubheader trip={trip} title="자료·맛집" /><main className="trip-resources mx-auto max-w-6xl space-y-8 px-5 py-6 sm:py-8">
     <div className="flex flex-wrap items-center justify-between gap-4">
-      <div><Link href={`/app/${trip.id}`} className="text-sm underline">← 지도와 일정</Link><h1 className="mt-3 text-2xl font-semibold">{trip.title}</h1><p className="text-muted-foreground mt-1 text-sm">여행 자료</p></div>
+      <div><h1 className="text-2xl font-semibold">{trip.title}</h1><p className="text-muted-foreground mt-1 text-sm">여행 자료</p></div>
       <div className="flex gap-3 text-sm"><Link className="rounded-full border px-4 py-2" href={`/app/${trip.id}/cost`}>{hasBudget ? "예산 보기" : "예산 작성"}</Link><a className="rounded-full border px-4 py-2" href={`/api/trips/${trip.id}/export`}>전체 내보내기</a></div>
     </div>
     {!!documents.length && <section className="rounded-2xl border p-5"><h2 className="font-semibold">원본 문서</h2><ul className="mt-3 flex flex-wrap gap-3">{documents.map((doc, i) => <li key={i}><a className="text-sm underline" href={`/api/trips/${trip.id}/documents/${i}`}>{doc.name}</a></li>)}</ul></section>}
@@ -92,5 +93,5 @@ export function TripResources({ trip, stops, food, photos, documents, initialSav
       })}</div>
       {!visible.length && <div className="rounded-2xl border border-dashed px-5 py-10 text-center text-muted-foreground"><p>{food.length ? "조건에 맞는 장소가 없습니다." : "지도에서 마음에 드는 맛집·카페·숙소를 저장해 보세요."}</p>{!food.length && <Link className="mt-4 inline-flex min-h-11 items-center rounded-full border px-4 text-sm text-primary" href={`/app/${trip.id}`}>지도에서 장소 찾기</Link>}</div>}
     </section>
-  </main>;
+  </main></>;
 }

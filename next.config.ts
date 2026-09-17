@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
     "/*": ["./.private/**", "./.backups/**", "./.demo-db.json*", "./.env*"],
   },
+  // Dev-only: the floating "N" badge sits on the phone bottom tab bar and swallows taps
+  // (Playwright's mobile checks hit it too). Error overlays still show without it.
+  devIndicators: false,
   // Dev-only: Next blocks /_next resources from non-localhost origins, which
   // kills the map when you open the app over Tailscale/LAN.
   allowedDevOrigins: [

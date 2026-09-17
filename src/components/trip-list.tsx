@@ -67,18 +67,19 @@ export function TripList({ initial, plan }: { initial: Summary[]; plan: Plan }) 
 
   return (
     <>
-      <div className="mt-8 rounded-3xl border bg-card p-5 sm:p-6">
-        <div className="mb-5 flex items-center gap-3"><span className="flex size-10 items-center justify-center rounded-2xl bg-accent text-primary"><Sparkles className="size-5" /></span><div><h2 className="text-sm font-semibold">이번에는 어디로 떠날까요?</h2><p className="mt-1 text-xs text-muted-foreground">이름을 정하고, 아이로와 함께 채워보세요.</p></div></div>
-      <form onSubmit={create} className="flex flex-wrap gap-2">
+      <div className="mt-6 rounded-3xl border bg-card p-4 sm:mt-8 sm:p-6">
+        <div className="mb-4 flex items-center gap-3 sm:mb-5"><span className="flex size-10 items-center justify-center rounded-2xl bg-accent text-primary"><Sparkles className="size-5" /></span><div><h2 className="text-sm font-semibold">이번에는 어디로 떠날까요?</h2><p className="mt-1 text-xs text-muted-foreground">이름을 정하고, 아이로와 함께 채워보세요.</p></div></div>
+      {/* 휴대폰: 이름 한 줄, 그 아래 [날짜 | 만들기]. 넓은 화면: 한 줄. */}
+      <form onSubmit={create} className="grid grid-cols-[minmax(0,1fr)_auto] gap-2 sm:grid-cols-[minmax(0,1fr)_10rem_auto]">
         <Input
           aria-label="새 여행 이름"
           placeholder="새 여행 이름 (예: 간사이 4일)"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           disabled={atLimit}
-          className="h-11 min-w-48 flex-1 rounded-full px-4"
+          className="col-span-2 h-11 rounded-full px-4 sm:col-span-1"
         />
-        <Input type="date" aria-label="1일차 시작일" className="h-11 w-40 rounded-full" value={startDate} onChange={(e) => setStartDate(e.target.value)} disabled={atLimit} />
+        <Input type="date" aria-label="1일차 시작일" className="h-11 min-w-0 rounded-full" value={startDate} onChange={(e) => setStartDate(e.target.value)} disabled={atLimit} />
         <Button
           type="submit"
           disabled={busy || atLimit || !title.trim()}
@@ -100,7 +101,7 @@ export function TripList({ initial, plan }: { initial: Summary[]; plan: Plan }) 
       {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
 
       {trips.length ? (
-        <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {trips.map(({ trip, stops }) => {
             const days = new Set(stops.map((s) => s.day)).size;
             const span = period(trip.start_date, days, stops.length ? Math.min(...stops.map((s) => s.day)) : 1, stops.length ? Math.max(...stops.map((s) => s.day)) : 1);
@@ -132,7 +133,7 @@ export function TripList({ initial, plan }: { initial: Summary[]; plan: Plan }) 
                   onClick={() => remove(trip)}
                   aria-label={`${trip.title} 삭제`}
                   title="삭제"
-                  className="bg-background/90 text-muted-foreground hover:text-foreground absolute top-2 right-2 rounded-full border p-1.5 opacity-100 backdrop-blur transition-opacity md:opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
+                  className="bg-background/90 text-muted-foreground hover:text-foreground absolute top-2 right-2 grid size-11 place-items-center rounded-full border opacity-100 backdrop-blur transition-opacity md:size-8 md:opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
                 >
                   <svg viewBox="0 0 16 16" className="size-3.5" aria-hidden>
                     <path

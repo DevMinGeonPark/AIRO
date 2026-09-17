@@ -17,8 +17,8 @@ export default async function KeysPage() {
       <AppHeader plan={plan} showSignOut={supabaseConfigured} />
       <SetupNotice configured={supabaseConfigured} />
 
-      <main className="mx-auto max-w-4xl px-6 py-14">
-        <h1 className="text-3xl font-semibold tracking-tight">MCP 연결</h1>
+      <main className="mx-auto max-w-4xl px-5 py-8 sm:px-6 sm:py-14">
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">MCP 연결</h1>
         <Link href="/app/settings/ai" className="mt-4 inline-block rounded-full border border-primary/40 px-5 py-3 text-sm text-primary">AIRO 웹에서 내 Codex로 대화하기 →</Link>
         <p className="text-muted-foreground mt-2 max-w-xl text-sm leading-relaxed">
           어디서 대화하든 같은 여행을 이어갑니다. AI가 바꾼 장소와 방문 순서는 아이로의 일정과 지도에 반영됩니다.{" "}

@@ -4,7 +4,12 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import type { Stop } from "@/lib/types";
-export function StopEditor({ tripId, stop, onSaved, onClose }: { tripId: string; stop?: Stop; onSaved: () => Promise<void>; onClose: () => void }) {
+export function StopEditor({ tripId, stop, defaults, onSaved, onClose }: {
+  tripId: string; stop?: Stop;
+  /** 새 일정의 기본 일차·순서. 보고 있던 날의 맨 뒤에 붙는다. */
+  defaults?: { day: number; position: number };
+  onSaved: () => Promise<void>; onClose: () => void;
+}) {
   const [error, setError] = useState(""); const [busy, setBusy] = useState(false);
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault(); if (busy) return;
@@ -31,14 +36,18 @@ export function StopEditor({ tripId, stop, onSaved, onClose }: { tripId: string;
     } catch (error) { setError(error instanceof Error ? error.message : "삭제하지 못했습니다."); }
     finally { setBusy(false); }
   }
-  return <form onSubmit={submit} className="space-y-3 rounded-xl border bg-background p-4">
+  const coordinates = <>
+    <div className="grid grid-cols-2 gap-2"><label className="text-xs">위도<Input name="lat" type="number" inputMode="decimal" step="any" min={-90} max={90} required defaultValue={stop?.lat} /></label><label className="text-xs">경도<Input name="lng" type="number" inputMode="decimal" step="any" min={-180} max={180} required defaultValue={stop?.lng} /></label></div>
+    <label className="block text-xs">현지 이름·지도 검색어<Input name="map_query" defaultValue={stop?.map_query ?? ""} /></label>
+  </>;
+  return <form onSubmit={submit} className="stop-editor space-y-3 rounded-xl border bg-background p-4">
     <h2 className="font-semibold">{stop ? "일정 수정" : "일정 직접 추가"}</h2>
     <label className="block text-xs">장소 이름<Input name="name" defaultValue={stop?.name} required maxLength={300} /></label>
-    <div className="grid grid-cols-2 gap-2"><label className="text-xs">일차 (전날은 0)<Input name="day" type="number" min={0} max={3650} defaultValue={stop?.day ?? 1} required /></label><label className="text-xs">시간<Input name="time" defaultValue={stop?.time ?? ""} placeholder="오전 / 09:00" /></label></div>
-    <div className="grid grid-cols-2 gap-2"><label className="text-xs">위도<Input name="lat" type="number" step="any" min={-90} max={90} required defaultValue={stop?.lat} /></label><label className="text-xs">경도<Input name="lng" type="number" step="any" min={-180} max={180} required defaultValue={stop?.lng} /></label></div>
-    <label className="block text-xs">현지 이름·지도 검색어<Input name="map_query" defaultValue={stop?.map_query ?? ""} /></label>
+    <div className="grid grid-cols-2 gap-2"><label className="text-xs">일차 (전날은 0)<Input name="day" type="number" inputMode="numeric" min={0} max={3650} defaultValue={stop?.day ?? defaults?.day ?? 1} required /></label><label className="text-xs">시간<Input name="time" defaultValue={stop?.time ?? ""} placeholder="오전 / 09:00" /></label></div>
     <label className="block text-xs">메모<Textarea name="note" defaultValue={stop?.note ?? ""} rows={3} /></label>
-    <div className="grid grid-cols-2 gap-2"><label className="text-xs">도착 수단<select name="mode" defaultValue={stop?.mode ?? "ground"} className="mt-1 block w-full rounded-md border bg-background p-2"><option value="ground">지상·해상</option><option value="flight">항공</option></select></label><label className="text-xs">하루 안 순서 (0부터)<Input name="position" type="number" min={0} defaultValue={stop?.position ?? 0} required /></label></div>
+    {/* 기존 장소는 좌표가 이미 있으니 접어 둔다. 새 장소는 좌표가 필수라 펼친다. */}
+    {stop ? <details className="stop-editor-coords space-y-3 rounded-lg border px-3 py-2 text-xs"><summary className="cursor-pointer py-1 font-medium">좌표·지도 검색어</summary>{coordinates}</details> : coordinates}
+    <div className="grid grid-cols-2 gap-2"><label className="text-xs">도착 수단<select name="mode" defaultValue={stop?.mode ?? "ground"} className="mt-1 block min-h-11 w-full rounded-md border bg-background p-2"><option value="ground">지상·해상</option><option value="flight">항공</option></select></label><label className="text-xs">하루 안 순서 (0부터)<Input name="position" type="number" inputMode="numeric" min={0} defaultValue={stop?.position ?? defaults?.position ?? 0} required /></label></div>
     {error && <p role="alert" className="text-xs text-red-600">{error}</p>}
     <div className="flex flex-wrap gap-2"><Button type="submit" disabled={busy}>저장</Button><Button type="button" variant="outline" disabled={busy} onClick={onClose}>닫기</Button>{stop && <Button type="button" variant="ghost" disabled={busy} onClick={remove}>삭제</Button>}</div>
   </form>;

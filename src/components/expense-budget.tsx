@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Check, Pencil, Plus, Trash2, Wallet } from "lucide-react";
-import { AppHeader } from "./app-shell";
+import { TripSubheader } from "./trip-subheader";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { EXPENSE_CATEGORIES, EXPENSE_CURRENCIES, expenseBudgetSchema, expenseSchema, expenseTotals, type Expense, type ExpenseBudgetState } from "@/lib/expense-budget";
@@ -13,8 +13,8 @@ import type { Stop, Trip } from "@/lib/types";
 const won = (value: number) => `${Math.round(value).toLocaleString("ko-KR")}원`;
 const blank = () => ({ name: "", amount: "", currency: "KRW" as Expense["currency"], rate: "1", category: "food" as Expense["category"], day: "", paid: false });
 
-export function ExpenseBudget({ trip, stops, initial, hasOriginal, showSignOut }: {
-  trip: Trip; stops: Stop[]; initial: ExpenseBudgetState; hasOriginal: boolean; showSignOut: boolean;
+export function ExpenseBudget({ trip, stops, initial, hasOriginal }: {
+  trip: Trip; stops: Stop[]; initial: ExpenseBudgetState; hasOriginal: boolean;
 }) {
   const [budget, setBudget] = useState(initial);
   const [draft, setDraft] = useState(blank);
@@ -78,11 +78,10 @@ export function ExpenseBudget({ trip, stops, initial, hasOriginal, showSignOut }
   }
   const selectStyle = "h-11 w-full rounded-xl border bg-background px-3 text-sm";
   return <>
-    <AppHeader showSignOut={showSignOut} />
-    <main className="expense-budget mx-auto max-w-4xl space-y-8 px-5 py-8 pb-16">
+    <TripSubheader trip={trip} title="예산" />
+    <main className="expense-budget mx-auto max-w-4xl space-y-8 px-5 py-6 pb-16 sm:py-8">
       <div className="flex flex-wrap items-start justify-between gap-4">
-        <div><Link href={`/app/${trip.id}`} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-primary">← 지도와 일정</Link>
-          <h1 className="mt-1 text-2xl font-semibold">여행 예산</h1><p className="mt-2 text-sm text-muted-foreground">{trip.title}</p></div>
+        <div><h1 className="text-2xl font-semibold">여행 예산</h1><p className="mt-2 text-sm text-muted-foreground">{trip.title}</p></div>
         {hasOriginal && <Link className="inline-flex min-h-11 items-center rounded-full border px-4 text-sm" href={`/app/${trip.id}/cost?view=original`}>가져온 예산 기록</Link>}
       </div>
       <section aria-label="예산 합계" className="grid gap-3 sm:grid-cols-3">
