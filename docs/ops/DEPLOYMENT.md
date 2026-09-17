@@ -7,7 +7,7 @@
 | 항목 | 현재 값 |
 | --- | --- |
 | 앱 리스너 | `127.0.0.1:3410` |
-| 배포 경로 | `.private/releases/immersive-map-20260917` |
+| 배포 경로 | `.private/releases/pwa-20260917` |
 | 배포 빌드 | `.next-live` |
 | 앱 서비스 | `com.heptivision.airo-app` |
 | 터널 서비스 | `com.heptivision.airo-tunnel` |
@@ -15,6 +15,8 @@
 | 터널 설정 | `~/.cloudflared/airo.yml` |
 | 서비스 설정 | `~/Library/LaunchAgents/com.heptivision.airo-*.plist` |
 | 로그 | `.private/logs/` |
+
+2026-09-17 (3차) 현재: 홈 화면 설치(PWA) 지원을 운영 3410에 배포했다(커밋 `892addd`). `src/app/manifest.ts`(`/manifest.webmanifest`: standalone, `start_url` `/app`, 검정 배경·테마, 192/512/maskable 아이콘은 `public/icons/`에 `src/app/icon.svg`로 sharp 렌더), `layout.tsx`의 `manifest`·`appleWebApp`(제목 "아이로", 상태 표시줄 black-translucent — 헤더들이 이미 safe-area를 채운다), proxy matcher에서 매니페스트·아이콘 제외. 서비스 워커는 넣지 않았다(오프라인 범위 없음, 네이티브 앱은 별도 개발 예정). 검증: tsc·lint, 릴리스 빌드, 3103에서 매니페스트 JSON·아이콘·메타 태그 확인, `verify-commercial-release`·`verify-codex-release` 통과 후 LaunchAgent 전환. 공개 주소에서 `/manifest.webmanifest`(application/manifest+json)·아이콘 200 확인. 이전 설정 `.private/deployment/pwa-20260917/previous-app.plist`, 이전 릴리스 `immersive-map-20260917` 보존. 실제 iOS "홈 화면에 추가"·Android 설치 프롬프트는 미확인 — Android Chrome이 프롬프트를 안 띄우면 최소 서비스 워커 추가 검토.
 
 2026-09-17 (2차) 현재: 사용자가 휴대폰에서 1차를 보고 "누르면 전체 지도만, 가까운 하루 일정은 옆 오버레이, 위·아래 기능은 누르면 나오게"를 요청해 몰입형 지도로 재구성했다(커밋 `ca2d260`). 휴대폰에서 여행을 열면 지도만 보이고, 오늘과 가장 가까운 일차가 자동 선택되어 왼쪽 위 카드에 그날 일정(‹ › 로 날짜 이동, 제목 탭으로 접기, 행 탭으로 지도 이동)이 뜬다. 헤더·하단 탭은 지도 빈 곳(캔버스)을 누르면 나타나고 다시 누르면 사라지며, 지도 위에 겹쳐 그려져 지도 크기가 바뀌지 않는다. 일정 시트는 열림/닫힘 두 상태(끌어내리면 지도로 복귀), 편집 중에는 일정 탭에 고정. 장소 카드·줌·출처 표기·경로 상태 위치는 조작부 표시 여부에 따라 이동. 키보드 사용자용 숨김 토글 버튼 포함. 설계·diff를 GPT-6 Astra(xhigh)와 3·4라운드로 검토해 반영(캔버스만 토글, 이진 시트, 파생 activeDay, 편집 잠금, 겹침 보정). 검증: lint·tsc, 릴리스 빌드, `test:mobile` Chrome·WebKit 14조합(지도 탭→조작부 표시, 오버레이 표시, 시트 닫힘 검사로 갱신), `test:workspace` 3구성, 3103에서 `verify-commercial-release`·`verify-codex-release` 통과 후 LaunchAgent 전환. 공개 주소 `/`·`/login`·`/docs/codex`·`/pricing`·다운로드·로그아웃 확인. 이전 설정은 `.private/deployment/immersive-map-20260917/previous-app.plist`, 이전 릴리스 `mobile-ux-20260917` 보존. 참고: `test:database`는 빈 컨테이너에서 `0007_mcp_authorization.sql`의 `auth.jwt()` 때문에 실패하지만(테스트 auth shim에 없음) 그 앞 마이그레이션은 적용되어 mobile-fixture·PostgREST 검증에는 충분했다. 실제 iPhone 확인은 미실행.
 
