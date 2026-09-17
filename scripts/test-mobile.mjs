@@ -78,8 +78,17 @@ for (const [engine, browserType] of [['chromium', chromium], ['webkit', webkit]]
     for(const path of ['/app',`/app/${trip}/resources`,`/app/${trip}/cost`,`/app/${trip}/settings`,'/app/settings/keys','/app/settings/import']) {await page.goto(base+path,{waitUntil:'networkidle'});await fit(page);}
     await page.goto(`${base}/app/${trip}`,{waitUntil:'networkidle'});await fit(page);
     if(width<1024) {
-     await expect(page.getByRole('navigation',{name:'여행 화면'})).toBeVisible();
+     // 지도만 보이는 화면. 오늘의 일정 오버레이만 떠 있고, 조작부는 빈 지도를 눌러야 나온다.
+     const tabsNav=page.getByRole('navigation',{name:'여행 화면'});
+     await expect(tabsNav).toBeHidden();
+     await expect(page.getByRole('region',{name:'오늘의 일정'})).toBeVisible();
+     // 마커·오버레이·버튼이 없는 지도 빈 곳을 찾아 누른다 (화면 크기마다 배치가 다르다).
+     const tapMap=async()=>{ const spot=await page.evaluate(()=>{ const canvas=document.querySelector('.workspace-map canvas'); for(let y=.3;y<=.8;y+=.1) for(let x=.3;x<=.9;x+=.1){ const px=Math.round(innerWidth*x),py=Math.round(innerHeight*y); if(document.elementFromPoint(px,py)===canvas) return {x:px,y:py}; } return null; }); assert.ok(spot,'no free map spot'); await page.mouse.click(spot.x,spot.y); };
+     const revealTabs=async()=>{ if(!await tabsNav.isVisible()) await tapMap(); await expect(tabsNav).toBeVisible(); };
+     await revealTabs();
      const tabs=await page.locator('.workspace-tabs').boundingBox();assert.ok(tabs.y+tabs.height<=height+1);
+     await tapMap();await expect(tabsNav).toBeHidden();
+     await revealTabs();
      await expect(page.locator('.workspace-toolbar')).toBeHidden();
      await page.getByLabel('더보기',{exact:true}).click();
      const more=page.getByRole('navigation',{name:'여행 도구 메뉴'});
@@ -88,6 +97,7 @@ for (const [engine, browserType] of [['chromium', chromium], ['webkit', webkit]]
      const menu=await more.boundingBox();assert.ok(menu.y>=0&&menu.y+menu.height<=height+1,`${width}×${height}: more menu inside viewport`);
      await page.keyboard.press('Escape');await expect(more).toBeHidden();
      await page.getByRole('button',{name:'일정',exact:true}).click();
+     await page.getByRole('button',{name:'전체',exact:true}).click();
      await page.getByRole('button',{name:'울산역 (KTX) 수정',exact:true}).click();
      await expect(page.getByRole('heading',{name:'일정 수정',exact:true})).toBeInViewport();
      await page.getByRole('button',{name:'지도',exact:true}).click();
@@ -95,6 +105,7 @@ for (const [engine, browserType] of [['chromium', chromium], ['webkit', webkit]]
      await page.getByRole('button',{name:'닫기',exact:true}).click();
      await page.getByRole('button',{name:'지도',exact:true}).click();
      await expect.poll(async()=>Math.round((await page.locator('.workspace-map canvas').boundingBox()).height)).toBeGreaterThan(80);
+     await expect(tabsNav).toBeHidden();await revealTabs();
      await page.getByRole('button',{name:'채팅',exact:true}).click();
      const input=page.getByRole('textbox',{name:'아이로에게 보낼 메시지'});
      await input.fill('가족과 함께 가는 여행 일정을 조금 여유롭게 정리해줘');
@@ -107,7 +118,7 @@ for (const [engine, browserType] of [['chromium', chromium], ['webkit', webkit]]
       await page.getByRole('button',{name:'지도로',exact:true}).click();
       await expect(page.locator('.workspace-map canvas')).toBeVisible();
       await keyboard(page,height);
-      await page.getByRole('button',{name:'채팅',exact:true}).click();
+      await revealTabs();await page.getByRole('button',{name:'채팅',exact:true}).click();
       assert.equal(await input.inputValue(),'가족과 함께 가는 여행 일정을 조금 여유롭게 정리해줘','draft survives leaving the chat');
      }
      if(width===320||width===844)await page.screenshot({path:`${output}/${engine}-chat-${width}.png`});

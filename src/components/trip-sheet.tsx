@@ -11,10 +11,18 @@ const LABELS = { peek: "지도 중심", half: "지도와 일정", full: "일정 
 /**
  * `hint` 는 peek 상태의 핸들 아래에 보여줄 한 줄 (예: "장소 검색 · 59곳"). 접힌 시트가 막다른 곳이 아니라는 안내.
  * `lock` 이 참이면 (일정 편집 중) 탭·드래그·키보드 어느 쪽으로도 full 아래로 내려가지 않는다 — 접으면 폼이 사라진다.
+ * `binary` 면 (휴대폰) 시트는 열림(full)/닫힘 두 상태뿐이다. peek 으로 가려는 모든 조작은 `onClose` 가 되고 시트는 full 로 남는다.
  */
-export function useTripSheet(hint?: string, lock = false) {
+export function useTripSheet(hint?: string, { lock = false, binary = false, onClose }: { lock?: boolean; binary?: boolean; onClose?: () => void } = {}) {
   const [size, setRawSize] = useState<TripSheetSize>("half");
-  const setSize = (next: TripSheetSize) => setRawSize(lock ? "full" : next);
+  const steps = binary ? (["peek", "full"] as TripSheetSize[]) : SIZES;
+  const setSize = (next: TripSheetSize) => {
+    if (lock) return setRawSize("full");
+    if (binary && next !== "full") { onClose?.(); return setRawSize("full"); }
+    setRawSize(next);
+  };
+  const step = (direction: 1 | -1) => steps[Math.max(0, Math.min(steps.length - 1, steps.indexOf(size) + direction))] ?? (direction > 0 ? "full" : "peek");
+  const toggle = () => setSize(size === "full" ? (binary ? "peek" : "half") : "full");
   const [drag, setDrag] = useState(0);
   const origin = useRef<{ y: number; at: number; height: number; delta: number } | null>(null);
   function down(event: PointerEvent<HTMLDivElement>) {
@@ -32,13 +40,10 @@ export function useTripSheet(hint?: string, lock = false) {
     setDrag(0);
     if (!initial) return;
     const delta = initial.delta;
-    if (Math.abs(delta) < 4) { setSize(size === "full" ? "half" : "full"); return; }
-    if (Math.abs(delta) > 40 && performance.now() - initial.at < 300) {
-      setSize(SIZES[Math.max(0, Math.min(2, SIZES.indexOf(size) + (delta > 0 ? -1 : 1)))]);
-      return;
-    }
+    if (Math.abs(delta) < 4) { toggle(); return; }
+    if (Math.abs(delta) > 40 && performance.now() - initial.at < 300) { setSize(step(delta > 0 ? -1 : 1)); return; }
     const target = HEIGHTS[size] - delta / initial.height * 100;
-    setSize(SIZES.reduce((best, next) => Math.abs(HEIGHTS[next] - target) < Math.abs(HEIGHTS[best] - target) ? next : best));
+    setSize(steps.reduce((best, next) => Math.abs(HEIGHTS[next] - target) < Math.abs(HEIGHTS[best] - target) ? next : best));
   }
   const style = { "--trip-sheet-height": `clamp(112px, calc(${HEIGHTS[size]}% - ${drag}px), 96%)` } as CSSProperties;
   const handle = <div className="trip-sheet-handle" role="separator" tabIndex={0}
@@ -51,8 +56,8 @@ export function useTripSheet(hint?: string, lock = false) {
       event.preventDefault();
       if (event.key === "Home") setSize("peek");
       else if (event.key === "End") setSize("full");
-      else if (event.key === "ArrowUp" || event.key === "ArrowDown") setSize(SIZES[Math.max(0, Math.min(2, SIZES.indexOf(size) + (event.key === "ArrowUp" ? 1 : -1)))]);
-      else setSize(size === "full" ? "half" : "full");
+      else if (event.key === "ArrowUp" || event.key === "ArrowDown") setSize(step(event.key === "ArrowUp" ? 1 : -1));
+      else toggle();
     }}><span /><span className="sr-only">{LABELS[size]}</span>{size === "peek" && hint && <span aria-hidden="true" className="trip-sheet-hint">{hint} ↑</span>}</div>;
   function padding(requested = size, detail = false) {
     if (window.matchMedia("(min-width: 1024px)").matches) return { top: 70, left: 70, right: 70, bottom: detail ? 230 : 70 };

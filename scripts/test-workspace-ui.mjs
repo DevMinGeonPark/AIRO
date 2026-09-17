@@ -87,17 +87,25 @@ try {
     });
     const label = `${engine.name()}-${width}`;
     await page.goto(`${origin}/workspace-offline-check`, { waitUntil: "networkidle", timeout: 60000 });
-    await page.getByRole("heading", { name: trip.title }).waitFor();
     const sheet = page.locator("#trip-itinerary"), handle = page.getByRole("separator", { name: "일정 시트 크기 조절" });
+    const tabsNav = page.getByRole("navigation", { name: "여행 화면" });
+    // 휴대폰: 지도만 보인다. 조작부는 빈 지도를 눌러야 나온다.
+    const tapMap = async () => { const spot = await page.evaluate(() => { const canvas = document.querySelector(".workspace-map canvas"); for (let y = .3; y <= .8; y += .1) for (let x = .3; x <= .9; x += .1) { const px = Math.round(innerWidth * x), py = Math.round(innerHeight * y); if (document.elementFromPoint(px, py) === canvas) return { x: px, y: py }; } return null; }); assert.ok(spot, "no free map spot"); await page.mouse.click(spot.x, spot.y); };
+    const revealTabs = async () => { if (width >= 1024) return; if (!await tabsNav.isVisible()) await tapMap(); await expect(tabsNav).toBeVisible(); };
+    const openPlan = async () => { if (width >= 1024) return; await revealTabs(); await page.getByRole("button", { name: "일정", exact: true }).click(); await expect(sheet).toHaveAttribute("data-snap", "full"); };
+    if (width < 1024) { await expect(tabsNav).toBeHidden(); await expect(sheet).toBeHidden(); await expect(page.getByRole("region", { name: "오늘의 일정" })).toContainText("Day 1"); }
+    await revealTabs();
+    await page.getByRole("heading", { name: trip.title }).waitFor();
     if (width < 1024) {
-      await expect(sheet).toHaveAttribute("data-snap", "half");
-      await handle.focus(); await page.keyboard.press("ArrowDown"); await expect(sheet).toHaveAttribute("data-snap", "peek");
-      await handle.click({ trial: true });
+      await openPlan();
+      await handle.focus(); await page.keyboard.press("ArrowDown"); await expect(sheet).toBeHidden(); await expect(tabsNav).toBeHidden();
+      await openPlan();
       const box = await handle.boundingBox();
       await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2); await page.mouse.down();
-      await page.mouse.move(box.x + box.width / 2, box.y - 170, { steps: 10 }); await page.mouse.up();
-      await expect(sheet).not.toHaveAttribute("data-snap", "peek");
-      await handle.focus(); await page.keyboard.press("End"); await expect(sheet).toHaveAttribute("data-snap", "full");
+      await page.mouse.move(box.x + box.width / 2, box.y + 170, { steps: 10 }); await page.mouse.up();
+      await expect(sheet).toBeHidden();
+      await openPlan();
+      await page.getByRole("button", { name: "전체", exact: true }).click();
     }
     await page.getByRole("button", { name: "전체 경로 따라가기", exact: true }).click();
     await expect(page.locator(".trip-workspace")).toHaveAttribute("data-playing", "true");
@@ -105,7 +113,7 @@ try {
     await page.getByRole("button", { name: "경로 재생 멈추기", exact: true }).click();
     await expect(page.locator(".trip-workspace")).toHaveAttribute("data-playing", "false");
     await expect(page.locator(".trip-moving-marker")).toHaveCount(0);
-    if (width < 1024) await page.getByRole("button", { name: "일정", exact: true }).click();
+    await openPlan();
     await page.getByRole("button", { name: "주변 카페", exact: true }).click();
     await page.getByRole("button", { name: "광장 카페 즐겨찾기에 저장" }).waitFor();
     await page.getByRole("combobox", { name: "담을 일차" }).selectOption("2");
@@ -121,16 +129,16 @@ try {
     assert.equal(snapshot.stops.at(-1).day, 2);
     await page.getByRole("button", { name: "광장 카페", exact: true }).click();
     if (width < 1024) {
-      await expect(sheet).toHaveAttribute("data-snap", "peek");
-      await expect.poll(async () => (await sheet.boundingBox()).height / (await page.locator(".workspace-panes").boundingBox()).height).toBeLessThan(.26);
+      await expect(page.locator(".trip-workspace")).toHaveAttribute("data-tab", "map");
+      await expect(sheet).toBeHidden();
     }
     await page.screenshot({ path: new URL(`map-${label}.png`, output).pathname });
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "map no overflow");
     if (width < 1024) {
-      await page.getByRole("button", { name: "채팅", exact: true }).click();
+      await revealTabs(); await page.getByRole("button", { name: "채팅", exact: true }).click();
       await page.getByPlaceholder("여행에 대해 말해보세요").fill("가는 길에 카페를 추가해 줘");
       await page.getByRole("button", { name: "지도", exact: true }).click();
-      await page.getByRole("button", { name: "채팅", exact: true }).click();
+      await revealTabs(); await page.getByRole("button", { name: "채팅", exact: true }).click();
       assert.equal(await page.getByPlaceholder("여행에 대해 말해보세요").inputValue(), "가는 길에 카페를 추가해 줘");
     }
 

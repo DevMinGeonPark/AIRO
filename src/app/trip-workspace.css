@@ -26,15 +26,51 @@
   .trip-workspace:not([data-editing="true"]) .workspace-itinerary[data-snap="peek"] .plan-scroll,
   .trip-workspace:not([data-editing="true"]) .workspace-itinerary[data-snap="peek"] .plan-footer { display: none; }
   .workspace-itinerary[data-snap="peek"] .plan-tools { border-bottom: 0; }
-  .trip-workspace .workspace-place-card { z-index: 10; bottom: calc(var(--trip-sheet-height) + 12px); left: 12px; width: min(320px, calc(100% - 24px)); max-width: calc(100% - 24px); max-height: calc(100% - var(--trip-sheet-height) - 24px); }
+  /* 지도 탭 = 지도만. 시트는 사라지고, 조작부는 지도를 눌러야 나온다. */
+  .trip-workspace[data-tab="map"] { --sheet-offset: max(12px, env(safe-area-inset-bottom)); }
+  .trip-workspace[data-tab="map"] .workspace-itinerary { display: none; }
+  /* 헤더·탭은 지도 위에 겹친다 — 토글해도 지도 크기가 변하지 않는다 */
+  .trip-workspace[data-tab="map"] .app-header { position: absolute; inset: 0 0 auto; z-index: 40; }
+  .trip-workspace[data-tab="map"] .workspace-tabs { position: absolute; inset: auto 0 0; z-index: 40; }
+  .trip-workspace[data-tab="map"][data-chrome="hidden"] :is(.app-header, .workspace-tabs) { display: none; }
+  .trip-workspace[data-tab="map"][data-chrome="shown"] .day-overlay { top: calc(56px + max(12px, env(safe-area-inset-top))); }
+  .trip-workspace[data-tab="map"][data-chrome="shown"] .workspace-map-controls,
+  .trip-workspace[data-tab="map"][data-chrome="shown"] .workspace-map .maplibregl-ctrl-bottom-right,
+  .trip-workspace[data-tab="map"][data-chrome="shown"] .workspace-map .maplibregl-ctrl-bottom-left { bottom: calc(68px + env(safe-area-inset-bottom)) !important; }
+  .trip-workspace[data-tab="map"][data-chrome="shown"] .workspace-place-card { bottom: calc(68px + env(safe-area-inset-bottom)); max-height: calc(100% - 68px - 68px - env(safe-area-inset-bottom) - env(safe-area-inset-top)); }
+  .trip-workspace[data-tab="map"][data-chrome="shown"] .workspace-playback-stop { top: calc(68px + env(safe-area-inset-top)); }
+  /* 줌 버튼은 출처 표기 위에 */
+  .trip-workspace[data-tab="map"] .workspace-map-controls { bottom: calc(var(--sheet-offset) + 44px); }
+  .trip-workspace[data-tab="map"][data-chrome="shown"] .workspace-map-controls { bottom: calc(112px + env(safe-area-inset-bottom)) !important; }
+  /* 장소 카드가 열리거나 낮은 가로 화면이면 하루 카드는 제목만 남긴다 */
+  .trip-workspace .workspace-map:has(.workspace-place-card) .day-overlay > ol { display: none; }
+  .trip-workspace .workspace-place-card { z-index: 10; bottom: calc(var(--sheet-offset, var(--trip-sheet-height)) + 12px); left: 12px; width: min(320px, calc(100% - 24px)); max-width: calc(100% - 24px); max-height: calc(100% - var(--sheet-offset, var(--trip-sheet-height)) - 24px); }
   .trip-workspace .workspace-chat { position: absolute; inset: 0; z-index: 25; height: 100%; }
   .trip-workspace[data-editing="true"] .workspace-itinerary { height: 96%; }
-  .trip-workspace .workspace-map .maplibregl-ctrl-bottom-right { bottom: calc(var(--trip-sheet-height) + 12px); }
-  .trip-workspace .workspace-map .maplibregl-ctrl-bottom-left { bottom: calc(var(--trip-sheet-height) + 8px); }
+  .trip-workspace .workspace-map .maplibregl-ctrl-bottom-right { bottom: calc(var(--sheet-offset, var(--trip-sheet-height)) + 12px); }
+  .trip-workspace .workspace-map .maplibregl-ctrl-bottom-left { bottom: calc(var(--sheet-offset, var(--trip-sheet-height)) + 8px); }
+  .trip-workspace .workspace-route-status { top: auto; bottom: calc(var(--sheet-offset, var(--trip-sheet-height)) + 12px); }
+  .trip-workspace .workspace-map:has(.workspace-place-card) .workspace-route-status { display: none; }
+  /* 오늘의 일정 오버레이 — 지도 왼쪽 위, 접으면 한 줄 */
+  .day-overlay { position: absolute; top: max(12px, env(safe-area-inset-top)); left: max(12px, env(safe-area-inset-left)); z-index: 10; display: flex; flex-direction: column; width: min(60%, 250px); max-height: 52%; overflow: hidden; background: color-mix(in srgb, var(--card) 92%, transparent); backdrop-filter: blur(8px); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 8px 24px #0003; }
+  .day-overlay > header { display: flex; align-items: center; flex-shrink: 0; }
+  .day-overlay > header > button { display: grid; place-items: center; min-width: 40px; min-height: 44px; color: var(--muted-foreground); }
+  .day-overlay-title { flex: 1; min-width: 0; flex-direction: column; padding-block: 6px; line-height: 1.25; color: var(--foreground) !important; }
+  .day-overlay-title strong { font-size: 13px; }
+  .day-overlay-title span { font-size: 11px; color: var(--muted-foreground); }
+  .day-overlay > ol { overflow-y: auto; overscroll-behavior: contain; border-top: 1px solid var(--border); padding: 4px; }
+  .day-overlay > ol > li > button { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 40px; padding: 4px 8px; border-radius: 8px; text-align: left; font-size: 13px; }
+  .day-overlay > ol > li > button[aria-current="true"] { background: var(--secondary); }
+  .day-overlay-ordinal { display: grid; place-items: center; flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; font-size: 10px; font-weight: 600; }
+  .day-overlay-time { flex-shrink: 0; font-size: 11px; color: var(--muted-foreground); font-variant-numeric: tabular-nums; }
+  .day-overlay-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .day-overlay-empty { padding: 12px; font-size: 12px; color: var(--muted-foreground); }
+  .trip-workspace[data-playing="true"] .day-overlay, .trip-workspace:not([data-tab="map"]) .day-overlay { display: none; }
   .trip-workspace .workspace-map .maplibregl-ctrl-attrib { font-size: 9px; }
   html[data-keyboard-open="true"] .trip-workspace .workspace-itinerary { height: 96%; }
   .trip-workspace .workspace-tabs { z-index: 30; }
 }
+@media (max-width: 1023px) and (max-height: 500px) { .day-overlay > ol { display: none; } }
 @media (max-width: 1023px) and (max-height: 600px) {
   .trip-workspace .app-header-center { display: none; }
   .trip-workspace .workspace-toolbar { padding-block: 0; }
