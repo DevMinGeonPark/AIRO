@@ -3,9 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { CalendarDays, FolderOpen, Plus, Settings2, Download, Sparkles, X, Play, Square, Plane, ArrowUp, Wallet, Monitor, Cloud, ListOrdered, Map as MapIcon, MessageCircle, MoreHorizontal, Pencil, LogOut } from "lucide-react";
+import { CalendarDays, FolderOpen, Plus, Settings2, Download, Sparkles, X, Play, Square, Plane, ArrowUp, Wallet, Monitor, Cloud, ListOrdered, Map as MapIcon, MessageCircle, MoreHorizontal, Pencil, LogOut, ChevronLeft, ChevronRight } from "lucide-react";
+import type * as MapLibreGL from "maplibre-gl";
 import { LogoMark } from "@/components/logo";
 import { MobileNav } from "@/components/mobile-nav";
+import { useCompactViewport } from "@/components/mobile-viewport";
 import { useRoadRoutes } from "./use-road-routes";
 import { StopEditor } from "./stop-editor";
 import { useTripPlayback } from "./use-trip-playback";
@@ -40,17 +42,41 @@ const STYLES = {
   dark: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
 };
 
-function InitialTripFrame({ stops }: { stops: Stop[] }) {
+type Padding = { top: number; right: number; bottom: number; left: number };
+function InitialTripFrame({ stops, padding }: { stops: Stop[]; padding: () => Padding }) {
   const { map, isLoaded } = useMap();
   const fitted = useRef(false);
   useEffect(() => {
-    if (!map || !isLoaded || fitted.current) return;
+    if (!map || !isLoaded || fitted.current || !stops.length) return;
     fitted.current = true;
-    const mobile = window.matchMedia("(max-width: 1023px)").matches;
-    const height = map.getContainer().clientHeight;
-    map.fitBounds(bounds(stops), { padding: { top: 50, left: 40, right: 50, bottom: mobile ? Math.max(112, height * .55) + 20 : 60 }, maxZoom: 12, animate: false });
-  }, [map, isLoaded, stops]);
+    map.fitBounds(bounds(stops), { padding: padding(), maxZoom: 12, animate: false });
+  }, [map, isLoaded, stops, padding]);
   return null;
+}
+
+/** 휴대폰: 지도 빈 곳을 한 번 누르면 위·아래 조작부가 나타나고 다시 누르면 사라진다. 마커·드래그는 제외. */
+function MapTapToggle({ onTap }: { onTap: () => void }) {
+  const { map } = useMap();
+  const handler = useRef(onTap);
+  useEffect(() => { handler.current = onTap; });
+  useEffect(() => {
+    if (!map) return;
+    // 캔버스 자체를 눌렀을 때만. 마커·컨트롤은 자기 일을 한다. 드래그는 MapLibre 가 click 으로 치지 않는다.
+    const onClick = (event: MapLibreGL.MapMouseEvent) => { if (event.originalEvent.target === map.getCanvas()) handler.current(); };
+    map.on("click", onClick);
+    return () => { map.off("click", onClick); };
+  }, [map]);
+  return null;
+}
+
+/** 오늘과 가장 가까운 일차. 시작일이 없으면 첫날. day 0 은 출국 전날. */
+function nearestDay(startDate: string | null, days: number[]) {
+  if (!days.length) return null;
+  const start = startDate ? new Date(`${startDate}T00:00:00`) : null;
+  if (!start || Number.isNaN(start.getTime())) return days[0];
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const current = Math.round((today.getTime() - start.getTime()) / 86400000) + 1;
+  return days.reduce((best, day) => Math.abs(day - current) < Math.abs(best - current) ? day : best);
 }
 
 type Tab = "map" | "plan" | "chat";
@@ -86,7 +112,7 @@ export function TripWorkspace({
   const [streaming, setStreaming] = useState<string | null>(null);
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
-  const [activeDay, setActiveDay] = useState<number | null>(null);
+  const [dayChoice, setActiveDay] = useState<number | null | undefined>(undefined);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>("map");
   const [preview, setPreview] = useState<Place | null>(null);
@@ -100,11 +126,20 @@ export function TripWorkspace({
   const etag = useRef<string | null>(null);
   useEffect(() => { syncBlocked.current = Boolean(editing) || busy || streaming !== null; }, [editing, busy, streaming]);
   const dark = useDarkMode();
-  const sheet = useTripSheet(`장소 검색 · ${stops.length}곳`, Boolean(editing));
+  const compact = useCompactViewport();
+  /** 휴대폰 지도 화면: 위·아래 조작부 표시 여부. 처음엔 지도만. */
+  const [chrome, setChrome] = useState(false);
+  const [overlayOpen, setOverlayOpen] = useState(true);
+  const overlayRef = useRef<HTMLElement>(null);
+  // 휴대폰에서 시트는 열림/닫힘뿐. 끝까지 내리면 지도만 남는다.
+  const sheet = useTripSheet(`장소 검색 · ${stops.length}곳`, { lock: Boolean(editing), binary: compact, onClose: () => { setTab("map"); setChrome(false); } });
   /** 채팅 자동 스크롤은 사용자가 맨 아래 근처에 있을 때만. 이전 대화를 읽는 중이면 끌어내리지 않는다. */
   const stickToBottom = useRef(true);
 
   const days = useMemo(() => byDay(stops), [stops]);
+  // 휴대폰에서 처음 열면 오늘과 가장 가까운 하루만. 사용자가 고르기 전(undefined)까지만 적용된다.
+  const nearest = useMemo(() => days.length > 1 ? nearestDay(trip.start_date, days.map(d => d.day)) : null, [days, trip.start_date]);
+  const activeDay = dayChoice !== undefined ? dayChoice : compact ? nearest : null;
   const visible = useMemo(
     () => (activeDay === null ? stops : stops.filter((s) => s.day === activeDay)),
     [stops, activeDay],
@@ -112,10 +147,21 @@ export function TripWorkspace({
   const legs = useMemo(() => tripLegs(visible), [visible]);
   const { routes: roadLegs, status: routeStatus, retry: retryRoutes } = useRoadRoutes(trip.id, visible, roads);
   const active = stops.find((s) => s.id === activeId) ?? null;
+
+  /** 휴대폰에서는 시트 대신 왼쪽 일정 오버레이가 지도를 가리므로, 그 높이만큼 위를 비운다. */
+  const framePadding = useCallback((requested: "peek" | "half" | "full", detail = false): Padding => {
+    if (!window.matchMedia("(max-width: 1023px)").matches) return sheet.padding(requested, detail);
+    const stage = document.querySelector(".trip-workspace .workspace-panes")?.clientHeight ?? window.innerHeight;
+    // 다른 탭에서 지도로 넘어오는 중이면 오버레이가 아직 display:none 이라 높이가 0 — 행 수로 어림한다.
+    const overlay = overlayRef.current?.offsetHeight || Math.min(stage * .52, 58 + 40 * visible.length + 8);
+    return { top: overlay + 32, left: 28, right: 28, bottom: detail ? 220 : 76 };
+  }, [sheet, visible.length]);
+
   const playback = useTripPlayback({ stops: visible, roads: roadLegs, mapRef,
     onSelect: setActiveId, onStart: () => { setTab("map"); setActiveId(null); sheet.setSize("peek"); },
-    padding: () => sheet.padding("peek"),
+    padding: () => framePadding("peek"),
   });
+
   const activePhoto = active ? webUrl(photos[active.source_id ?? active.id]?.image) : undefined;
 
   /**
@@ -160,7 +206,7 @@ export function TripWorkspace({
     setStops(data.stops);
     setMessages(data.messages);
     setActiveId(id => id && data.stops.some(s => s.id === id) ? id : null);
-    setActiveDay(day => day !== null && data.stops.some(s => s.day === day) ? day : null);
+    setActiveDay(day => day != null && !data.stops.some(s => s.day === day) ? null : day);
     setSyncStatus("idle");
   }, [trip.id]);
 
@@ -207,13 +253,13 @@ export function TripWorkspace({
   function focus(stop: Stop) {
     playback.stop();
     setActiveId(stop.id);
-    setTab("map");
-    sheet.setSize("peek");
+    // 편집 중에는 폼이 있는 일정 탭에 머문다 — 지도로 넘어가면 폼이 사라진다.
+    if (editing) setTab("plan"); else { setTab("map"); sheet.setSize("peek"); }
     mapRef.current?.flyTo({
       center: [stop.lng, stop.lat],
       zoom: FOCUS_ZOOM,
       speed: 1.1,
-      padding: sheet.padding("peek", true),
+      padding: framePadding("peek", true),
       animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     });
   }
@@ -222,9 +268,15 @@ export function TripWorkspace({
     playback.stop();
     setActiveDay(day);
     setActiveId(null);
-    sheet.setSize("half");
     const list = day === null ? stops : stops.filter((s) => s.day === day);
-    if (list.length) mapRef.current?.fitBounds(bounds(list), { padding: sheet.padding("half"), maxZoom: 14, animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches });
+    if (list.length) mapRef.current?.fitBounds(bounds(list), { padding: framePadding("half"), maxZoom: 14, animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches });
+  }
+
+  /** 오버레이의 ‹ › : 전체 → 각 일차 → 전체 순환. */
+  function stepDay(direction: 1 | -1) {
+    const order: (number | null)[] = [null, ...days.map(d => d.day)];
+    const index = order.indexOf(activeDay);
+    showDay(order[(index + direction + order.length) % order.length]);
   }
 
   async function send(e: React.FormEvent) {
@@ -295,16 +347,17 @@ export function TripWorkspace({
   }
 
   const pane = (t: Tab) => `${tab === t || (tab !== "chat" && t !== "chat") ? "flex" : "hidden"} lg:flex flex-col min-h-0`;
-  /** 하단 탭의 선택 표시. 일정·지도는 같은 화면이라 시트 높이에서 정한다 (손으로 끌어올려도 맞게). */
-  const activeTab: Tab = tab === "chat" ? "chat" : sheet.size === "full" ? "plan" : "map";
   function pickTab(id: Tab) {
+    // 편집 중에 지도로 가면 폼이 사라진다 — 저장/닫기 전까지 일정 탭에 머문다.
+    if (editing && id === "map") { setTab("plan"); setChrome(true); (document.activeElement as HTMLElement | null)?.blur(); document.querySelector(".stop-editor")?.scrollIntoView({ block: "start" }); return; }
     playback.stop();
-    if (id === "chat") { setTab("chat"); return; }
     setTab(id);
-    sheet.setSize(id === "plan" ? "full" : "peek"); // 편집 중에는 훅이 full 로 고정한다
-
+    // 지도 탭 = 지도만. 일정·채팅은 조작부를 유지한다. 지도로 갈 때 열린 키보드는 닫는다.
+    setChrome(id !== "map");
+    if (id === "map") (document.activeElement as HTMLElement | null)?.blur();
+    if (id !== "chat") sheet.setSize("full"); // 휴대폰에서 시트는 열림(full)/닫힘(지도 탭)뿐. 편집 중에는 훅이 full 로 고정한다
   }
-  const startEditing = (stop: Stop | "new") => { playback.stop(); setEditing(stop); setTab("plan"); sheet.setSize("full"); };
+  const startEditing = (stop: Stop | "new") => { playback.stop(); setEditing(stop); setTab("plan"); setChrome(true); sheet.setSize("full"); };
 
   /** 이 여행의 실제 지점 이름으로 만든 예시 문장. */
   const examples = useMemo(() => {
@@ -320,7 +373,7 @@ export function TripWorkspace({
   }, [stops, days]);
 
   return (
-    <div className="trip-workspace flex h-dvh flex-col" data-tab={tab} data-editing={Boolean(editing)} data-playing={playback.playing} style={sheet.style}>
+    <div className="trip-workspace flex h-dvh flex-col" data-tab={tab} data-chrome={chrome || tab !== "map" ? "shown" : "hidden"} data-editing={Boolean(editing)} data-playing={playback.playing} style={sheet.style}>
       <AppHeader
         wide
         showSignOut={showSignOut}
@@ -358,8 +411,8 @@ export function TripWorkspace({
           <button
             key={id}
             onClick={() => pickTab(id)}
-            aria-current={activeTab === id ? "page" : undefined}
-            className={`workspace-tab ${activeTab === id ? "text-primary font-semibold" : "text-muted-foreground"}`}
+            aria-current={tab === id ? "page" : undefined}
+            className={`workspace-tab ${tab === id ? "text-primary font-semibold" : "text-muted-foreground"}`}
           >
             <Icon className="size-5" aria-hidden="true" />
             {label}
@@ -400,7 +453,7 @@ export function TripWorkspace({
                 setPreview(place);
                 setActiveId(null);
                 sheet.setSize("peek");
-                mapRef.current?.flyTo({ center: [place.lng, place.lat], zoom: 15, padding: sheet.padding("peek"), animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches });
+                mapRef.current?.flyTo({ center: [place.lng, place.lat], zoom: 15, padding: framePadding("peek"), animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches });
               }}
               onAdded={refetch}
             />
@@ -498,8 +551,9 @@ export function TripWorkspace({
             fitBoundsOptions={{ padding: 60, maxZoom: 12 }}
             className="flex-1"
           >
-            <InitialTripFrame stops={stops} />
-            <MapControls />
+            <InitialTripFrame stops={visible} padding={() => framePadding("half")} />
+            <MapTapToggle onTap={() => setChrome(c => !c)} />
+            <MapControls className="workspace-map-controls" />
             {playback.point && <MapMarker longitude={playback.point.position[0]} latitude={playback.point.position[1]}>
               <MarkerContent><span className="trip-moving-marker" aria-label="여행 경로 재생 중" style={{ transform: `rotate(${playback.point.heading}deg)` }}>
                 {playback.point.flight ? <Plane style={{ transform: "rotate(-45deg)" }} /> : <ArrowUp />}
@@ -559,7 +613,30 @@ export function TripWorkspace({
             })}
           </Map>
 
-          {routeStatus !== "idle" && <div className="absolute top-3 left-3 flex max-w-[calc(100%-5rem)] items-center gap-2 rounded-xl border bg-card/95 px-3 py-2 text-xs shadow-sm" role="status">
+          {/* 키보드·스크린리더용 조작부 토글. 터치는 지도 빈 곳을 누르면 된다. */}
+          <button type="button" onClick={() => setChrome(c => !c)} aria-expanded={chrome} className="chrome-toggle sr-only focus:not-sr-only focus:absolute focus:top-3 focus:right-3 focus:z-20 focus:rounded-full focus:border focus:bg-card focus:px-3 focus:py-2 focus:text-xs lg:hidden">{chrome ? "조작부 숨기기" : "조작부 보기"}</button>
+          {/* 휴대폰 지도 화면: 가장 가까운 하루의 일정만 왼쪽에 띄운다. 검색·편집은 일정 탭. */}
+          <section ref={overlayRef} aria-label="오늘의 일정" className="day-overlay lg:hidden" data-open={overlayOpen}>
+            <header>
+              <button type="button" aria-label="이전 날" onClick={() => stepDay(-1)}><ChevronLeft className="size-4" /></button>
+              <button type="button" className="day-overlay-title" aria-expanded={overlayOpen} onClick={() => setOverlayOpen(o => !o)}>
+                <strong>{activeDay === null ? "전체 일정" : activeDay === 0 ? "출국 전날" : `Day ${activeDay}`}</strong>
+                <span>{activeDay !== null && dateForDay(trip.start_date, activeDay, visible[0]?.date)} {activeDay !== null && "·"} {visible.length}곳</span>
+              </button>
+              <button type="button" aria-label="다음 날" onClick={() => stepDay(1)}><ChevronRight className="size-4" /></button>
+            </header>
+            {overlayOpen && <ol>
+              {visible.map(stop => <li key={stop.id}>
+                <button type="button" onClick={() => focus(stop)} aria-current={activeId === stop.id ? "true" : undefined}>
+                  <span className={`day-overlay-ordinal ${stop.mode === "flight" ? "bg-route-flight text-white dark:text-background" : "bg-route-ground text-primary-foreground"}`}>{stop.mode === "flight" ? "✈" : ordinals[stop.id]}</span>
+                  {stop.time && <span className="day-overlay-time">{stop.time}</span>}
+                  <span className="day-overlay-name">{stop.name}</span>
+                </button>
+              </li>)}
+              {!visible.length && <li className="day-overlay-empty">이 날은 아직 비어 있어요</li>}
+            </ol>}
+          </section>
+          {routeStatus !== "idle" && <div className="workspace-route-status absolute top-3 left-3 flex max-w-[calc(100%-5rem)] items-center gap-2 rounded-xl border bg-card/95 px-3 py-2 text-xs shadow-sm" role="status">
             <span>{routeStatus === "loading" ? "길을 따라 경로를 찾는 중…" : "일부 도로 경로를 불러오지 못했어요."}</span>
             {routeStatus === "unavailable" && <button type="button" className="min-h-11 shrink-0 text-primary" onClick={retryRoutes}>다시 시도</button>}
           </div>}
