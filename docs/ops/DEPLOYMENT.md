@@ -7,7 +7,7 @@
 | 항목 | 현재 값 |
 | --- | --- |
 | 앱 리스너 | `127.0.0.1:3410` |
-| 배포 경로 | `.private/releases/mobile-ux-20260917` |
+| 배포 경로 | `.private/releases/immersive-map-20260917` |
 | 배포 빌드 | `.next-live` |
 | 앱 서비스 | `com.heptivision.airo-app` |
 | 터널 서비스 | `com.heptivision.airo-tunnel` |
@@ -15,6 +15,8 @@
 | 터널 설정 | `~/.cloudflared/airo.yml` |
 | 서비스 설정 | `~/Library/LaunchAgents/com.heptivision.airo-*.plist` |
 | 로그 | `.private/logs/` |
+
+2026-09-17 (2차) 현재: 사용자가 휴대폰에서 1차를 보고 "누르면 전체 지도만, 가까운 하루 일정은 옆 오버레이, 위·아래 기능은 누르면 나오게"를 요청해 몰입형 지도로 재구성했다(커밋 `ca2d260`). 휴대폰에서 여행을 열면 지도만 보이고, 오늘과 가장 가까운 일차가 자동 선택되어 왼쪽 위 카드에 그날 일정(‹ › 로 날짜 이동, 제목 탭으로 접기, 행 탭으로 지도 이동)이 뜬다. 헤더·하단 탭은 지도 빈 곳(캔버스)을 누르면 나타나고 다시 누르면 사라지며, 지도 위에 겹쳐 그려져 지도 크기가 바뀌지 않는다. 일정 시트는 열림/닫힘 두 상태(끌어내리면 지도로 복귀), 편집 중에는 일정 탭에 고정. 장소 카드·줌·출처 표기·경로 상태 위치는 조작부 표시 여부에 따라 이동. 키보드 사용자용 숨김 토글 버튼 포함. 설계·diff를 GPT-6 Astra(xhigh)와 3·4라운드로 검토해 반영(캔버스만 토글, 이진 시트, 파생 activeDay, 편집 잠금, 겹침 보정). 검증: lint·tsc, 릴리스 빌드, `test:mobile` Chrome·WebKit 14조합(지도 탭→조작부 표시, 오버레이 표시, 시트 닫힘 검사로 갱신), `test:workspace` 3구성, 3103에서 `verify-commercial-release`·`verify-codex-release` 통과 후 LaunchAgent 전환. 공개 주소 `/`·`/login`·`/docs/codex`·`/pricing`·다운로드·로그아웃 확인. 이전 설정은 `.private/deployment/immersive-map-20260917/previous-app.plist`, 이전 릴리스 `mobile-ux-20260917` 보존. 참고: `test:database`는 빈 컨테이너에서 `0007_mcp_authorization.sql`의 `auth.jwt()` 때문에 실패하지만(테스트 auth shim에 없음) 그 앞 마이그레이션은 적용되어 mobile-fixture·PostgREST 검증에는 충분했다. 실제 iPhone 확인은 미실행.
 
 2026-09-17 현재: 로그인 이후 화면의 휴대폰 UI 재구성(커밋 `e72aa99`)을 운영 3410에 배포했다. 워크스페이스는 뒤로가기+제목 한 줄 헤더, 아이콘 하단 탭(일정/지도/채팅/더보기 — 예산·자료·설정·MCP·내보내기·로그아웃은 더보기 `<details>` 메뉴), 시트 단일 스크롤과 편집 중 full 고정, peek 안내, 채팅 상단 축약과 `지도로` 닫기, 일정 편집 기본값(보고 있던 일차 맨 뒤)·좌표 접기, 하위 화면 공용 `TripSubheader`, 목록·설정 여백 축소를 포함한다. `next.config.ts`의 `devIndicators: false`는 개발 배지가 하단 탭을 가리던 문제다. 설계는 GPT-6 Astra(xhigh)와 두 차례 검토했다. 릴리스 스냅샷은 2026-09-14와 같은 방식(`git archive` + `node_modules`/`.env.production*` 링크 + `public/downloads`·`public/plugins/airo.git` 복사, `NEXT_DIST_DIR=.next-live`). 검증: lint·tsc·production build, `test:mobile` Chrome·WebKit 14조합(더보기 메뉴·편집 중 지도 탭·키보드 중 채팅 닫기 검사 추가; 변경 전 기준선은 390px 키보드 검사에서 실패 중이었음), `test:workspace`, 3103에서 `verify-commercial-release`·`verify-codex-release` 통과 후 LaunchAgent 전환. 공개 주소에서 `/`, `/login`, `/docs/codex`, `/pricing`, 0.2.1 다운로드, 로그아웃 303 확인. 이전 서비스 설정은 `.private/deployment/mobile-ux-20260917/previous-app.plist`, 이전 릴리스 `community-split-20260914`는 롤백용으로 보존. 3402·3016 보조 리스너는 실행 중이지 않아 전환하지 않았다. 실제 iPhone 키보드 확인은 미실행.
 
