@@ -1,7 +1,6 @@
 "use client";
 
-import { LogoMark } from "@/components/logo";
-
+import { TripSubheader } from "@/components/trip-subheader";
 import Link from "next/link";
 import { useState } from "react";
 import type { BudgetSnapshot, Tier } from "@/lib/archive";
@@ -28,22 +27,7 @@ export function TripBudget({ trip, budget }: { trip: Trip; budget: BudgetSnapsho
 
   return (
     <main className="trip-budget bg-background text-foreground min-h-dvh">
-      <header className="bg-background/90 sticky top-0 z-20 border-b backdrop-blur">
-        <div className="mx-auto flex h-14 max-w-3xl items-center gap-3 px-4">
-          <Link href={`/app/${trip.id}`} className="flex items-center gap-2">
-            <LogoMark className="size-8 shrink-0" />
-            <span className="text-sm font-semibold">아이로</span>
-          </Link>
-          <span className="text-muted-foreground text-sm">/ 비용</span>
-          <Link className="ml-auto inline-flex min-h-11 items-center rounded-full border px-3 text-xs" href={`/app/${trip.id}/cost?view=edit`}>예산 새로 작성</Link>
-          <Link
-            href={`/app/${trip.id}`}
-            className="hover:bg-muted rounded-full border px-3 py-1.5 text-sm"
-          >
-            지도
-          </Link>
-        </div>
-      </header>
+      <TripSubheader trip={trip} title="가져온 예산" />
 
       <div className="mx-auto max-w-3xl space-y-10 px-4 py-6 pb-[max(2rem,env(safe-area-inset-bottom))]">
         <section className="space-y-4">
@@ -57,6 +41,7 @@ export function TripBudget({ trip, budget }: { trip: Trip; budget: BudgetSnapsho
             <p className="text-muted-foreground mt-1 text-sm">
               가져온 예산의 금액·날짜·계산 가정을 보존한 기록입니다.
             </p>
+            <Link className="mt-3 inline-flex min-h-11 items-center rounded-full border px-4 text-sm" href={`/app/${trip.id}/cost?view=edit`}>예산 새로 작성</Link>
           </div>
 
           {/* 소비 방식을 바꾸면 아래 숫자가 전부 따라 움직인다. */}

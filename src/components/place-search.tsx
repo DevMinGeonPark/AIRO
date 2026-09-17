@@ -180,14 +180,14 @@ export function PlaceSearch({
                 setPlaces(null);
                 onPreview(null);
               }}
-              className="text-muted-foreground hover:text-foreground px-0.5"
+              className="text-muted-foreground hover:text-foreground -my-2 -mr-2 grid size-11 place-items-center"
               aria-label="검색 결과 닫기"
             >
               ✕
             </button>
           </div>
 
-          <ul className="max-h-72 overflow-y-auto">
+          <ul className="place-results max-h-72 overflow-y-auto">
             {places.map((p) => (
               <li
                 key={p.id}
@@ -211,7 +211,7 @@ export function PlaceSearch({
                   variant="outline"
                   disabled={adding !== null || saving !== null}
                   onClick={() => add(p)}
-                  className="h-7 shrink-0 rounded-full px-3 text-xs"
+                  className="h-7 shrink-0 rounded-full px-3 text-xs max-lg:min-h-11"
                 >
                   {adding === p.id ? "…" : "추가"}
                 </Button>

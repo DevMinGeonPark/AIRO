@@ -12,12 +12,19 @@
   .trip-workspace .workspace-map { position: absolute; inset: 0; width: 100%; height: 100%; }
   .trip-workspace .workspace-itinerary { position: absolute; inset: auto 0 0; z-index: 20; height: var(--trip-sheet-height); max-height: 96%; width: 100%; border: 1px solid var(--border); border-bottom: none; border-radius: 22px 22px 0 0; box-shadow: 0 -8px 32px #0002; transition: height 240ms ease; }
   .trip-workspace .workspace-itinerary[data-dragging="true"] { transition: none; }
-  .trip-workspace .trip-sheet-handle { display: flex; align-items: center; justify-content: center; flex-shrink: 0; min-height: 40px; touch-action: none; cursor: ns-resize; }
+  /* 시트 전체가 하나의 스크롤 영역: 검색 결과가 길어도 일정 목록이 눌리지 않는다. 핸들은 위에, 요약은 아래에 붙인다. */
+  .trip-workspace .workspace-panes > .workspace-itinerary { overflow-y: auto; overscroll-behavior: contain; }
+  .trip-workspace .plan-scroll { flex: none; overflow: visible; }
+  .trip-workspace .plan-scroll section > header { top: 40px; }
+  .trip-workspace .place-results { max-height: none; overflow: visible; }
+  .trip-workspace .plan-footer { position: sticky; bottom: 0; z-index: 12; background: var(--card); }
+  .trip-workspace .trip-sheet-handle { position: sticky; top: 0; z-index: 15; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex-shrink: 0; min-height: 40px; padding-block: 8px 4px; background: var(--card); border-radius: 22px 22px 0 0; touch-action: none; cursor: ns-resize; }
   .trip-sheet-handle > span:first-child { width: 38px; height: 4px; border-radius: 99px; background: var(--muted-foreground); opacity: .5; }
+  .trip-sheet-hint { font-size: 11px; line-height: 1; color: var(--muted-foreground); }
   .trip-workspace .plan-tools { padding: 0 16px 12px; }
-  .workspace-itinerary[data-snap="peek"] .plan-tools > :not(.workspace-days),
-  .workspace-itinerary[data-snap="peek"] .plan-scroll,
-  .workspace-itinerary[data-snap="peek"] .plan-footer { display: none; }
+  .trip-workspace:not([data-editing="true"]) .workspace-itinerary[data-snap="peek"] .plan-tools > :not(.workspace-days),
+  .trip-workspace:not([data-editing="true"]) .workspace-itinerary[data-snap="peek"] .plan-scroll,
+  .trip-workspace:not([data-editing="true"]) .workspace-itinerary[data-snap="peek"] .plan-footer { display: none; }
   .workspace-itinerary[data-snap="peek"] .plan-tools { border-bottom: 0; }
   .trip-workspace .workspace-place-card { z-index: 10; bottom: calc(var(--trip-sheet-height) + 12px); left: 12px; width: min(320px, calc(100% - 24px)); max-width: calc(100% - 24px); max-height: calc(100% - var(--trip-sheet-height) - 24px); }
   .trip-workspace .workspace-chat { position: absolute; inset: 0; z-index: 25; height: 100%; }

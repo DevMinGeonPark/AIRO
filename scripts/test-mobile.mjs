@@ -80,8 +80,17 @@ for (const [engine, browserType] of [['chromium', chromium], ['webkit', webkit]]
     if(width<1024) {
      await expect(page.getByRole('navigation',{name:'여행 화면'})).toBeVisible();
      const tabs=await page.locator('.workspace-tabs').boundingBox();assert.ok(tabs.y+tabs.height<=height+1);
+     await expect(page.locator('.workspace-toolbar')).toBeHidden();
+     await page.getByLabel('더보기',{exact:true}).click();
+     const more=page.getByRole('navigation',{name:'여행 도구 메뉴'});
+     await expect(more).toBeVisible();
+     for(const name of ['예산','자료·맛집','여행 설정']) await expect(more.getByRole('link',{name})).toBeVisible();
+     const menu=await more.boundingBox();assert.ok(menu.y>=0&&menu.y+menu.height<=height+1,`${width}×${height}: more menu inside viewport`);
+     await page.keyboard.press('Escape');await expect(more).toBeHidden();
      await page.getByRole('button',{name:'일정',exact:true}).click();
      await page.getByRole('button',{name:'울산역 (KTX) 수정',exact:true}).click();
+     await expect(page.getByRole('heading',{name:'일정 수정',exact:true})).toBeInViewport();
+     await page.getByRole('button',{name:'지도',exact:true}).click();
      await expect(page.getByRole('heading',{name:'일정 수정',exact:true})).toBeInViewport();
      await page.getByRole('button',{name:'닫기',exact:true}).click();
      await page.getByRole('button',{name:'지도',exact:true}).click();
@@ -95,7 +104,11 @@ for (const [engine, browserType] of [['chromium', chromium], ['webkit', webkit]]
       await expect(page.locator('html')).toHaveAttribute('data-keyboard-open','true');
       const composer=await page.locator('.chat-composer').boundingBox();assert.ok(composer.y>=0&&composer.y+composer.height<=361);
       await page.screenshot({path:`${output}/${engine}-keyboard.png`});
+      await page.getByRole('button',{name:'지도로',exact:true}).click();
+      await expect(page.locator('.workspace-map canvas')).toBeVisible();
       await keyboard(page,height);
+      await page.getByRole('button',{name:'채팅',exact:true}).click();
+      assert.equal(await input.inputValue(),'가족과 함께 가는 여행 일정을 조금 여유롭게 정리해줘','draft survives leaving the chat');
      }
      if(width===320||width===844)await page.screenshot({path:`${output}/${engine}-chat-${width}.png`});
      await fit(page);

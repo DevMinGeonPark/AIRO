@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import type { Plan } from "@/lib/types";
@@ -72,20 +73,28 @@ export function AppHeader({
   showSignOut,
   wide,
   center,
+  back,
 }: {
   plan?: Plan;
   showSignOut?: boolean;
   wide?: boolean;
   /** 헤더 가운데에 끼워 넣을 것 (워크스페이스의 여행 제목 등) */
   center?: React.ReactNode;
+  /** 휴대폰에서는 로고 대신 이 뒤로가기 링크를 보여주고, 제목을 한 줄에 둔다. 로그아웃은 화면 쪽 더보기 메뉴가 맡는다. */
+  back?: { href: string; label: string };
 }) {
   const pathname = usePathname();
   return (
     <header className="app-header bg-card/90 sticky top-0 z-50 shrink-0 border-b backdrop-blur">
       <div
-        className={`app-header-row flex min-h-16 items-center gap-3 px-4 sm:gap-5 sm:px-6 ${wide ? "" : "mx-auto max-w-6xl"}`}
+        className={`app-header-row flex min-h-16 items-center gap-3 px-4 sm:gap-5 sm:px-6 ${wide ? "" : "mx-auto max-w-6xl"} ${back ? "max-lg:min-h-14 max-lg:gap-1 max-lg:px-2" : ""}`}
       >
-        <Link href="/app" className="shrink-0">
+        {back && (
+          <Link href={back.href} aria-label={back.label} className="grid size-11 shrink-0 place-items-center rounded-full text-muted-foreground hover:text-foreground lg:hidden">
+            <ArrowLeft className="size-5" />
+          </Link>
+        )}
+        <Link href="/app" className={`shrink-0 ${back ? "hidden lg:block" : ""}`}>
           <Logo />
         </Link>
 
@@ -119,7 +128,7 @@ export function AppHeader({
           )}
           <DarkToggle />
           {showSignOut && (
-            <form action="/auth/signout" method="post">
+            <form action="/auth/signout" method="post" className={back ? "hidden lg:block" : ""}>
               {/* base-ui Button renders type="button"; a plain form needs an explicit submit. */}
               <Button type="submit" variant="ghost" size="sm" className="rounded-full">
                 로그아웃
