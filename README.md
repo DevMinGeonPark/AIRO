@@ -35,9 +35,11 @@
 
 - **대화가 일정이 된다.** "로마에서 느긋하게 걷고, 카페에도 들르고 싶어" 같은 요청이 시간별 일정으로 만들어지고 같은 대화에서 순서·시간·장소를 다시 고칠 수 있다.
 - **지도와 동선.** 날짜별 경로와 번호 핀, 장소 사진 카드, 실제 도로를 따르는 이동 재생. 지도 주변의 맛집·카페·숙소를 검색해 바로 일정에 넣거나 즐겨찾기로 저장한다.
-- **여행 자료 보관.** 저장한 장소, 예약 PDF, 예산(숙소·식비·교통)을 여행 단위로 정리한다. 가져온 원본은 SHA-256으로 보존한다.
+- **여행 자료 보관.** 저장한 장소, 예약 PDF, 예산(숙소·식비·교통), 예약·결제 상태를 여행 단위로 정리하고 장소 상세에 연결한다. 가져온 원본은 SHA-256으로 보존한다.
+- **선택형 일정.** 점심·저녁처럼 한 칸에 후보 2~8곳을 묶어 두고 경로를 비교한 뒤 사용자가 고르면 확정한다. AI가 임의로 확정하지 않는다.
+- **변경 이력과 되돌리기.** 일정·여행 정보·PDF·예산·예약·알림 변경이 이력으로 남고, 이후 같은 자료가 바뀌지 않았다면 되돌릴 수 있다.
 - **AI 도구 연동.** MCP(Model Context Protocol) 서버로 Claude·Cursor·ChatGPT 같은 외부 클라이언트가 계정 여행을 읽고 편집한다. Codex 사용자는 자기 컴퓨터를 브리지로 연결해 웹·모바일 채팅을 자기 Codex 구독으로 처리한다.
-- **모바일 우선.** 접기·반 펼치기·펼치기가 되는 일정 시트. 320px부터 검증한 레이아웃.
+- **모바일 우선.** 접기·반 펼치기·펼치기가 되는 일정 시트. 320px부터 검증한 레이아웃. 설치형 PWA와 별도로 Kotlin·Jetpack Compose 네이티브 Android 앱([android/](android/README.md))이 같은 서버의 여행·예산·자료를 공유한다.
 
 ## 구조
 
@@ -73,7 +75,19 @@ flowchart TB
   store -. "NODE_ENV=development" .-> demo
 ```
 
-**도구 12개**가 모든 접점에 같은 이름으로 노출됩니다. `listTrips` `getTrip` `createTrip` `updateTrip` `deleteTrip` `searchPlaces` `addStop` `moveStop` `removeStop` `reorderDay` `getDayRoute` `searchAlongRoute`. 트립 채팅에서는 서버가 `tripId`를 고정하고 MCP에서는 `trips:read` / `trips:write` 권한으로 노출 범위를 나눕니다.
+**도구 29개**(조회 13 · 편집 16)가 모든 접점에 같은 이름으로 노출됩니다. 정의는 `src/lib/tool-contracts.ts` 한 곳에 있습니다.
+
+| 영역 | 도구 |
+| --- | --- |
+| 여행 | `listTrips` `getTrip` `createTrip` `updateTrip` `deleteTrip` |
+| 장소·동선 | `searchPlaces` `addStop` `moveStop` `removeStop` `reorderDay` `getDayRoute` `searchAlongRoute` |
+| 선택형 일정 | `addChoiceStop` `setStopChoices` `selectStopChoice` |
+| 자료 | `listSavedPlaces` `listDocuments` `getDocument` `attachDocument` |
+| 예약·예산 | `getReservations` `setReservation` `getBudget` `addBudgetEntry` `updateBudgetEntry` |
+| 알림 설정 | `getNotificationSettings` `updateNotificationSettings` (설정 보관만, 발송 없음) |
+| 변경 이력 | `listChanges` `getChange` `revertChange` |
+
+트립 채팅에서는 서버가 `tripId`를 고정하고 MCP에서는 `trips:read` / `trips:write` 권한으로 노출 범위를 나눕니다. 실제 예약·결제나 URL 다운로드·OCR은 어떤 도구도 실행하지 않습니다.
 
 ### 흐름 1 — 웹 채팅에서 일정이 바뀌기까지
 
@@ -191,7 +205,7 @@ AIRO 서버는 OpenAI 토큰을 받지 않습니다. 기기 비밀은 사용자 
 
 ## 기술 스택
 
-Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Supabase (Auth, Postgres, RLS) · MapLibre GL · OpenAI API · `@modelcontextprotocol/sdk` · GSAP/Motion/Lenis · Playwright
+Next.js 16 · React 19 · TypeScript · Kotlin·Jetpack Compose (Android) · Tailwind CSS 4 · Supabase (Auth, Postgres, RLS) · MapLibre GL · OpenAI API · `@modelcontextprotocol/sdk` · GSAP/Motion/Lenis · Playwright
 
 ## 시작하기
 
@@ -200,7 +214,7 @@ npm ci
 npm run dev        # http://localhost:3002
 ```
 
-Supabase 설정이 없으면 개발 서버는 `.demo-db.json` 파일 저장소로 동작합니다. 운영 빌드에서는 이 경로가 닫힙니다. 실제 계정 기능을 쓰려면 `.env.local.example`을 참고해 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL`을 넣고 `supabase/migrations/0001~0009`를 순서대로 적용합니다.
+Supabase 설정이 없으면 개발 서버는 `.demo-db.json` 파일 저장소로 동작합니다. 운영 빌드에서는 이 경로가 닫힙니다. 실제 계정 기능을 쓰려면 `.env.local.example`을 참고해 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL`을 넣고 `supabase/migrations/0001~0016`를 순서대로 적용합니다.
 
 | 목적 | 명령 |
 | --- | --- |
@@ -233,49 +247,3 @@ Supabase 설정이 없으면 개발 서버는 `.demo-db.json` 파일 저장소�
 ## 라이선스
 
 코어는 [AGPL-3.0](LICENSE)입니다. 내 서버에 올려 쓰는 데 아무 제한이 없고, 이 코드를 고쳐 남에게 서비스로 제공하면 그 소스도 공개해야 합니다. `src/ee/`(호스팅 플랜·결제)는 [별도 상용 라이선스](src/ee/LICENSE)이며 Community Edition에서는 비활성입니다.
-
-<!-- HUMANIZE-SUMMARY v1.6.1
-run_id: 2026-09-11-001
-mode: monolith fast-path / 강도 보수
-metrics:
-  char_in: 7485
-  char_out: 7477
-  change_rate: 0.4%
-  self_check: 6/6
-  grade: A
-categories:  # before → after
-  C-11 연결어미 뒤 쉼표: 7 → 1
-  D-3 열거 도입구 '다음과 같습니다': 1 → 0
-  C-8 'A가 아니라 B' 대구: 3 → 3 (보존 — 수사가 아니라 기술 대비, 보수 강도에서 미개입)
-  A-8 이중 피동 / A-9 ~에 의해 / A-16 대명사 / A-7 have-make: 0 → 0
-  D-1 결산 lexicon / D-2 의의 과장 / D-4 hype: 0 → 0
-self_check:
-  - 고유명사·수치·인용·코드·명령어 100% 보존: OK
-  - 마크다운 구조(헤딩·표·불릿·링크·이미지·mermaid·인라인 코드) 무변경: OK
-  - 변경률 30% 이하: OK (0.4%)
-  - 장르 이탈 없음 (README·기술 문서 유지): OK
-  - register 보존 (합니다체 산문 / 표·불릿 평서체 혼용 원형 유지): OK
-  - 인공 표현 추가 없음: OK
-highlights:
-  - id: C-11
-    before: "트립 채팅에서는 서버가 tripId를 고정하고, MCP에서는 …"
-    after: "트립 채팅에서는 서버가 tripId를 고정하고 MCP에서는 …"
-  - id: C-11
-    before: "기본값은 사용자의 Codex 브리지이며, 서버가 임의로 유료 호출을 …"
-    after: "기본값은 사용자의 Codex 브리지이며 서버가 임의로 유료 호출을 …"
-  - id: C-11
-    before: "세 접점이 도구 계층 하나를 공유하고, 도구 계층은 저장소 하나를 본다."
-    after: "세 접점이 도구 계층 하나를 공유하고 도구 계층은 저장소 하나를 본다."
-  - id: C-11
-    before: "…시간별 일정으로 만들어지고, 같은 대화에서 순서·시간·장소를 …"
-    after: "…시간별 일정으로 만들어지고 같은 대화에서 순서·시간·장소를 …"
-  - id: D-3
-    before: "순서는 다음과 같습니다."
-    after: "순서는 이렇습니다."
-residual_findings:
-  - id: C-11
-    severity: S1
-    where: "그 일정은 지도 위 실제 도로를 따라 그려지고, 저장한 장소와 …"
-    reason: "쉼표를 빼면 '그려지고 저장한 장소'로 오독됨. 보수 강도 원칙(확신 없는 구간은 그대로)에 따라 의도적 보존."
-grade_reason: "A — 원문이 이미 사람이 쓴 README라 손댈 구간이 적었다. 유일한 정량 이상치인 ending_comma_rate(z=+7.43)를 C-11로 해소했고 S1 잔존은 오독 방지용 1건뿐. 변경률 0.4%로 의미·구조 무손상."
--->

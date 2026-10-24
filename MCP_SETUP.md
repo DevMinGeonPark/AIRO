@@ -9,7 +9,7 @@ API 키용 서버 서명은 미설정이므로 새 API 키를 발급하지 않�
 외부 AI → `/api/mcp` → 검증된 사용자·연결 권한 → 공통 여행 도구 → Supabase 소유자 RLS → 아이로 일정·지도 갱신.
 
 - 공식 TypeScript SDK의 상태 없는 Streamable HTTP. 요청마다 독립 서버를 만들고 응답 뒤 종료한다.
-- 12개 도구: `listTrips`, `getTrip`, `createTrip`, `updateTrip`, `deleteTrip`, `searchPlaces`, `addStop`, `moveStop`, `removeStop`, `reorderDay`, `getDayRoute`, `searchAlongRoute`.
+- 29개 도구(조회 13 · 편집 16). 목록과 영역 구분은 [README](README.md#구조), 정의는 `src/lib/tool-contracts.ts`.
 - 여행 리소스 `airo://trips`, `airo://trips/{tripId}`, 프롬프트 `plan-trip`.
 - `afterStopId` / `beforeStopId` / `position` 중 하나로 삽입. 생략하면 추가는 해당 일차의 끝, 수정은 기존 순서를 유지한다. 다른 일차의 기준 장소로 이동할 때 `day`를 생략하면 기준 장소의 일차를 사용한다.
 - `createTrip`, `addStop`, `moveStop`, `removeStop`, `reorderDay`는 선택적 `requestId`를 받는다. 같은 계정에서 같은 ID·내용의 재시도는 저장된 결과를 반환하며, 내용이 달라지면 거절한다. 클라이언트는 작업마다 UUID를 만들고 재시도 때만 재사용해야 한다. `requestId` 없이 새로 보내면 추가·생성이 중복될 수 있다.
@@ -102,7 +102,7 @@ NEXT_DIST_DIR=.next-airo-mcp npm run build
 처음에는 테스트 계정과 테스트 여행을 사용한다.
 
 1. **로그인·키 발급:** 이메일 로그인 후 조회 전용 키와 편집 키를 각각 만든다. 발급·복사·목록·만료 표시를 확인한다.
-2. **연결:** 사용하는 MCP 클라이언트에서 initialize → tools/list를 확인한다. 조회 전용에는 5개, 편집에는 12개 도구가 표시되어야 한다.
+2. **연결:** 사용하는 MCP 클라이언트에서 initialize → tools/list를 확인한다. 조회 전용에는 13개, 편집에는 29개 도구가 표시되어야 한다.
 3. **계정 격리:** A 계정 키에서 B 계정의 여행 ID를 조회/수정하면 거절되어야 한다.
 4. **여행 생성:** 같은 `requestId`로 `createTrip`을 두 번 보내도 여행이 하나만 만들어져야 한다. 무료 여행 개수 제한과 재시도 결과도 확인한다.
 5. **핵심 여행 흐름:** 실제 장소 두 곳 A/B를 검색해 저장 → `searchAlongRoute`로 식당 선택 → `afterStopId=A`로 식당 추가 → 식당의 ID 뒤에 카페 추가. 일정은 **A → 식당 → 카페 → B**가 되어야 한다.
@@ -126,3 +126,24 @@ curl -sS "$AIRO_URL/api/mcp" \
 ```
 
 사용자용 실제 설정 예시는 앱 `/docs/mcp`에 있다. 클라이언트별 기준 자료: [Claude Code](https://code.claude.com/docs/en/mcp), [Cursor](https://cursor.com/docs/mcp), [Codex](https://learn.chatgpt.com/docs/extend/mcp), [OpenAI OAuth 연결](https://developers.openai.com/plugins/build/auth).
+
+
+## 자료·맛집의 저장한 장소 조회
+
+`listSavedPlaces({ tripId, query?, region?, day?, savedOnly?, offset?, limit? })`
+
+- `getTrip`의 일정 방문지나 `searchPlaces`의 새 검색 결과가 아닌, 자료·맛집 화면과 같은 `archive.data.food`를 조회합니다.
+- 기본 `savedOnly=false`: 저장한 장소 전체. `true`: 현재 `saved_places`의 별표 즐겨찾기만. 가져오기 당시의 오래된 즐겨찾기 스냅샷은 사용하지 않습니다.
+- `query`: 이름·음식·주소의 부분 일치, `region`: 주소·연결된 일정 장소명 부분 일치(번역/지오코딩 아님). NFKC 정규화 및 대소문자 무시.
+- `day`는 자료에 저장된 일차이며 현재 일정의 재배치와 자동 동기화되지 않습니다.
+- 기본 10개, 최대 20개. 필터 후 `total`, `hasMore`, `nextOffset` 반환. 다음 페이지는 같은 필터와 `offset=nextOffset` 사용. 조회 중 원본이 변경되면 페이지가 달라질 수 있습니다.
+- 장소 ID, 이름, 좌표, 일차, 음식, 주소, 보관된 영업시간, 연락처, 웹사이트, 즐겨찾기 여부, 연결 장소를 반환합니다. 연결된 원본 ID는 현재 stopId로 해석하며 연결이 없으면 null입니다.
+- 일반 표시 문자열은 300자로 제한하고 잘린 필드를 `truncatedFields`에 표시합니다. PDF/base64, 이미지, 예산, 임의 추가 필드는 반환하지 않습니다.
+- `trips:read` 전용. 여행 소유권 확인 후 기존 사용자 세션/RLS로 읽습니다. 외부 유료 API·DB 변경 없음. 저장 영업시간은 실시간 검증 정보가 아닙니다.
+- 예: `listSavedPlaces({tripId, query:"라멘", day:1})`. 결과가 없으면 검색어 또는 일차 조건을 빼고 확인하세요.
+- 검증: `npm run test:mcp:saved`, `npm run test:mcp:local`.
+- 운영 반영에는 별도 빌드/배포와 MCP 클라이언트의 도구 목록 재연결이 필요합니다.
+
+## 선택형 일정
+
+점심·저녁 등 같은 번호/시간의 장소 후보는 `addChoiceStop`으로 미정 생성하고 `setStopChoices`로 구성, `selectStopChoice`로 확정·해제한다. [후보 입력·권한·충돌·Hermes 연결 설명](docs/ops/STOP_CHOICES.md)을 참고한다.
