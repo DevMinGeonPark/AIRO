@@ -1,3 +1,4 @@
+import { routablePair } from "./stop-choices";
 import type { Stop } from "./types";
 
 export type Leg = { id: string; from: [number, number]; to: [number, number] };
@@ -11,6 +12,7 @@ export function tripLegs(stops: Stop[]): { flight: Leg[]; ground: Leg[] } {
   for (let i = 1; i < stops.length; i++) {
     const a = stops[i - 1];
     const b = stops[i];
+    if (!routablePair(a, b)) continue;
     if (a.lng === b.lng && a.lat === b.lat) continue;
     const leg: Leg = {
       id: `${a.id}->${b.id}`,
@@ -46,13 +48,7 @@ export function bounds(stops: Pick<Stop, "lng" | "lat">[]): [[number, number], [
   ];
 }
 
-const query = (s: Stop) => encodeURIComponent(s.map_query ?? `${s.lat},${s.lng}`);
-
-export const mapsUrl = (s: Stop) =>
-  `https://www.google.com/maps/search/?api=1&query=${query(s)}`;
-
-export const directionsUrl = (s: Stop) =>
-  `https://www.google.com/maps/dir/?api=1&destination=${query(s)}`;
+export { mapsUrl, directionsUrl } from "./place-maps";
 
 /** 정렬 기준: day → position. DB 조회와 낙관적 갱신 양쪽에서 쓴다. */
 export const sortStops = (stops: Stop[]) =>

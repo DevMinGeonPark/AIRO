@@ -1,0 +1,71 @@
+import assert from "node:assert/strict";
+import { automaticCandidates, emptyItineraryProgress, itineraryProgressSchema, locationDistance, zonedClock } from "../src/lib/itinerary-progress.ts";
+
+const now = Date.parse("2026-10-01T03:00:00Z");
+const stop = { id:"fixture-stop", source_id:"original-stop", day:1, time:"10:00", lat:33.59, lng:130.4 };
+const progress = { ...emptyItineraryProgress(), rules:[{stopId:"original-stop",mode:"either",radiusMeters:150}] };
+const position = { lat:stop.lat, lng:stop.lng, accuracy:10, timestamp:now };
+const candidates = (patch={},places=[stop],sample=position,stamp=now) => automaticCandidates({...progress,...patch},places,"2026-10-01",stamp,sample);
+assert.deepEqual(candidates(),[{stopId:"original-stop",source:"location"}]);
+assert.deepEqual(candidates({},[stop],{...position,accuracy:101}),[{stopId:"original-stop",source:"time"}]);
+assert.deepEqual(candidates({},[{...stop,day:2}]),[]);
+assert.deepEqual(candidates({},[{...stop,day:0}]),[]);
+assert.deepEqual(candidates({},[{...stop,time:"25:00"}],{...position,lat:0,lng:0}),[]);
+assert.deepEqual(automaticCandidates(progress,[stop],null,now,position),[]);
+const locationOnly={rules:[{...progress.rules[0],mode:"location"}]};
+assert.deepEqual(candidates(locationOnly,[stop],{...position,accuracy:101}),[]);
+assert.deepEqual(candidates(locationOnly,[stop],{...position,timestamp:now-60001}),[]);
+assert.deepEqual(candidates(locationOnly,[stop],{...position,timestamp:now+10001}),[]);
+assert.deepEqual(candidates(locationOnly,[stop],{...position,lat:stop.lat+.001,accuracy:60}),[],"uncertainty must fit inside radius");
+assert.deepEqual(candidates({entries:[{stopId:stop.id,done:false,source:"manual",completedAt:null,updatedAt:new Date(now).toISOString()}]}),[],"manual reset pauses automatic checks including imported IDs");
+assert.deepEqual(zonedClock(Date.parse("2026-10-01T15:00:00Z"),"Asia/Tokyo"),{date:"2026-10-02",time:"00:00"});
+assert.deepEqual(zonedClock(Date.parse("2026-11-01T06:30:00Z"),"America/New_York"),{date:"2026-11-01",time:"01:30"});
+assert.ok(locationDistance({lat:0,lng:179.999},{lat:0,lng:-179.999})<225);
+assert.equal(itineraryProgressSchema.safeParse({...progress,entries:[{stopId:stop.id,done:true,source:"time",completedAt:null,updatedAt:new Date(now).toISOString()}]}).success,false);
+
+export async function checkProgressSql({db,call,asUser,owner,other}) {
+  const made=await call("select public.create_trip_once('Progress fixture',null,'progress-fixture') result");
+  const id=made.trip.id;
+  const A=(await call("select public.mutate_itinerary($1,'add',$2,null) result",[id,JSON.stringify({name:"Check A",day:1,time:"00:00",lat:33.59,lng:130.4})])).stop;
+  const B=(await call("select public.mutate_itinerary($1,'add',$2,null) result",[id,JSON.stringify({name:"Check B",day:2,time:"00:00",lat:33.59,lng:130.4})])).stop;
+  const get=()=>call("select data->'itineraryProgress' result from public.trip_archives where trip_id=$1",[id]);
+  const mutate=(action,revision)=>call("select public.mutate_trip_progress($1,$2,$3) result",[id,JSON.stringify(action),revision]);
+  const latest=()=>call("select max(id)::text result from public.trip_changes where trip_id=$1",[id]);
+  const rule=(mode,stopId=A.id)=>({action:"rule",rule:{stopId,mode,radiusMeters:150}});
+  await assert.rejects(mutate(rule("time"),0),e=>e.code==="22023","no automatic checking without a start date");
+  const manual=await mutate({action:"manual",stopId:A.id,done:true},0);
+  assert.equal(manual.entries[0].source,"manual");assert.ok(manual.entries[0].completedAt);
+  const change=await latest();
+  await call("select public.revert_trip_change($1,$2,$2) result",[id,change]);
+  assert.deepEqual((await get()).entries,[]);assert.equal((await get()).revision,2);
+  await assert.rejects(mutate({action:"manual",stopId:A.id,done:false},1),e=>e.code==="40001");
+  await db.query("update public.trips set start_date=(now() at time zone 'Asia/Seoul')::date where id=$1",[id]);
+  const apply=async action=>mutate(action,(await get()).revision);
+  await apply(rule("time"));await apply(rule("either",B.id));
+  let value=await apply({action:"automatic"});
+  assert.equal(value.entries.length,1);assert.equal(value.entries[0].source,"time");
+  const automaticChange=await latest();
+  await apply({action:"automatic"});assert.equal(await latest(),automaticChange,"no-op automatic evaluation does not write history");
+  await apply({action:"manual",stopId:A.id,done:false});await apply({action:"automatic"});
+  assert.equal((await get()).entries[0].done,false);
+  await apply({action:"resume",stopId:A.id});await apply(rule("location"));
+  for(const sample of [{accuracy:200},{timestamp:Date.now()-120000},{lat:0,lng:0},{lat:A.lat+.001,accuracy:60}]) {
+    value=await apply({action:"automatic",position:{lat:A.lat,lng:A.lng,accuracy:10,timestamp:Date.now(),...sample}});
+    assert.equal(value.entries.length,0);
+  }
+  value=await apply({action:"automatic",position:{lat:A.lat,lng:A.lng,accuracy:10,timestamp:Date.now()}});
+  assert.equal(value.entries.length,1);assert.equal(value.entries[0].source,"location");
+  assert.ok(itineraryProgressSchema.safeParse(value).success);
+  assert.equal(JSON.stringify(value).includes('"lat"'),false,"raw location is not stored");
+  const locationChange=await latest();
+  await call("select public.revert_trip_change($1,$2,$2) result",[id,locationChange]);
+  assert.deepEqual((await get()).entries,[]);
+  await assert.rejects(apply({action:"timezone",timeZone:"Invalid/Zone"}),e=>e.code==="22023");
+  await assert.rejects(apply(rule("location","unknown-stop")),e=>e.code==="42501");
+  await asUser(other);
+  await assert.rejects(mutate({action:"manual",stopId:A.id,done:true},value.revision),e=>e.code==="42501");
+  assert.equal(await get(),undefined);
+  await asUser(owner);
+  await db.query("delete from public.trips where id=$1",[id]);
+  console.log("Itinerary progress: today/time zone, GPS accuracy/freshness, manual override, revisions, history/undo and ownership passed (no network)");
+}

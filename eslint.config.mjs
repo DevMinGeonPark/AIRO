@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     ".next-*/**",
     "out/**",
     "build/**",
+    "android/**/build/**",
+    "android/.gradle/**",
     "next-env.d.ts",
     // Local release snapshots and vendored browser bundles are not our source.
     ".private/**",

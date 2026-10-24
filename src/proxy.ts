@@ -8,6 +8,7 @@ import {
   localAuth,
 } from "@/lib/supabase/config";
 import { localSessionClaims, requestOrigin, SESSION_COOKIE, SESSION_RENEW_BELOW, sessionCookie } from "@/lib/supabase/local";
+import { mobileApiPath } from "@/lib/mobile-api-path";
 
 /**
  * /app/* 보호 + 세션 쿠키 갱신.
@@ -17,7 +18,7 @@ export async function proxy(request: NextRequest) {
   const path = request.nextUrl.pathname;
   const privatePage = path === "/app" || path.startsWith("/app/");
   const api = path.startsWith("/api/");
-  if (((api && path !== "/api/mcp") || path === "/auth/signout" || path === "/auth/local") && !["GET", "HEAD", "OPTIONS"].includes(request.method)) {
+  if (((api && path !== "/api/mcp") || path === "/auth/signout" || path === "/auth/local" || path === "/auth/mobile/session") && !["GET", "HEAD", "OPTIONS"].includes(request.method)) {
     const origin = request.headers.get("origin");
     const allowed = [request.nextUrl.origin, process.env.AIRO_SITE_URL, process.env.NEXT_PUBLIC_SITE_URL];
     // Behind a TLS-terminating proxy the browser's Origin is https://<host> while Next sees http; same host is still same site.
@@ -33,6 +34,8 @@ export async function proxy(request: NextRequest) {
   }
   // MCP authenticates its own Bearer token; public pages need no auth request.
   if (path === "/api/mcp" || path === "/api/bridge/worker" || (!api && !privatePage)) return NextResponse.next();
+  // These handlers verify native tokens themselves; browser CSRF checks above still apply.
+  if (mobileApiPath(path) && request.headers.has("authorization")) return NextResponse.next();
 
   const toLogin = (response: NextResponse) => {
     if (api) return NextResponse.json({ error: "로그인이 필요합니다." }, { status: 401 });

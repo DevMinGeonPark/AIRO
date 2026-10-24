@@ -1,0 +1,26 @@
+{
+  "createdAt": "2026-09-18",
+  "signing": "Android development certificate; not a store release",
+  "artifacts": [
+    {
+      "flavor": "demo",
+      "buildType": "debug",
+      "version": "0.2.0-demo",
+      "versionCode": 2,
+      "file": "airo-android-demo-0.2.0.apk",
+      "bytes": 70099559,
+      "sha256": "09fe60ecd62583bddb47c6c100e138cb21a339e70b07907d79ebf4928adf2af5",
+      "applicationId": "com.heptivision.airo.demo"
+    },
+    {
+      "flavor": "cloud",
+      "buildType": "debug",
+      "version": "0.2.0",
+      "versionCode": 2,
+      "file": "airo-android-cloud-0.2.0.apk",
+      "bytes": 70099550,
+      "sha256": "16fa377e93dabac3acebfec8a5f90c2d5722cea682fbd70c17a6915212445335",
+      "applicationId": "com.heptivision.airo"
+    }
+  ]
+}

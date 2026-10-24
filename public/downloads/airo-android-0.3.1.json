@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "releasedAt": "2026-09-18T06:43:25.327Z",
+  "signing": "Android development certificate; not a store release",
+  "releaseNotes": [
+    "설정에서 최신 버전 확인",
+    "앱 안에서 다운로드하고 Android 설치 화면으로 연결",
+    "다운로드 취소·파일 검증·재실행 후 설치 이어가기"
+  ],
+  "artifacts": [
+    {
+      "flavor": "cloud",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo",
+      "version": "0.3.1",
+      "versionCode": 4,
+      "minSdk": 26,
+      "file": "airo-android-cloud-0.3.1.apk",
+      "bytes": 70305359,
+      "sha256": "1a5b92925e625bedee3c0f53881496a6e624f622ebf60f54667786be94d4bf77",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    },
+    {
+      "flavor": "demo",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo.demo",
+      "version": "0.3.1-demo",
+      "versionCode": 4,
+      "minSdk": 26,
+      "file": "airo-android-demo-0.3.1.apk",
+      "bytes": 70305379,
+      "sha256": "2023b001e21772206822c910fee76ab8e9e286fa6c95c817f5b2140243c4090d",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    }
+  ]
+}

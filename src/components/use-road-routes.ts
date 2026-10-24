@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ArchiveData } from "@/lib/archive";
 import type { Stop } from "@/lib/types";
+import { routablePair } from "@/lib/stop-choices";
 import type { RoadRoute } from "@/lib/road-routing";
 
 const keyOf = (a: Stop, b: Stop) => `${a.id}:${a.lng},${a.lat}>${b.id}:${b.lng},${b.lat}`;
@@ -14,7 +15,7 @@ export function useRoadRoutes(tripId: string, stops: Stop[], imported: ArchiveDa
   const [status, setStatus] = useState<"idle" | "loading" | "unavailable">("idle");
   const pairs = useMemo(() => stops.flatMap((to, index) => {
     const from = stops[index - 1];
-    if (!from || to.mode === "flight" || (from.lng === to.lng && from.lat === to.lat)) return [];
+    if (!from || !routablePair(from, to) || to.mode === "flight" || (from.lng === to.lng && from.lat === to.lat)) return [];
     const saved = from.source_id && to.source_id ? imported[`${from.source_id}->${to.source_id}`] : undefined;
     const matches = saved && Math.hypot(saved.coordinates[0][0] - from.lng, saved.coordinates[0][1] - from.lat) < .002 && Math.hypot(saved.coordinates.at(-1)![0] - to.lng, saved.coordinates.at(-1)![1] - to.lat) < .002;
     return [{ from, to, key: keyOf(from, to), saved: matches ? saved : undefined }];

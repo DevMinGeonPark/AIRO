@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "releasedAt": "2026-09-19T08:45:28.798Z",
+  "signing": "Android development certificate; not a store release",
+  "releaseNotes": [
+    "Day별 숙소 정보 버튼을 추가하고 별도 모달로 숙소·예약·지도 링크를 확인할 수 있습니다.",
+    "현재 위치 버튼을 지도 아래쪽으로 배치했습니다.",
+    "웹과 Android에서 같은 Day별 숙소 확인 흐름을 제공합니다."
+  ],
+  "artifacts": [
+    {
+      "flavor": "cloud",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo",
+      "version": "0.3.8",
+      "versionCode": 11,
+      "minSdk": 26,
+      "file": "airo-android-cloud-0.3.8.apk",
+      "bytes": 70653958,
+      "sha256": "4b903e780ede9fd217e29af3720ccd566d9fa9ff05e1595d72bb3e5e16a0aa32",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    },
+    {
+      "flavor": "demo",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo.demo",
+      "version": "0.3.8-demo",
+      "versionCode": 11,
+      "minSdk": 26,
+      "file": "airo-android-demo-0.3.8.apk",
+      "bytes": 70653982,
+      "sha256": "e3a43bc4a6ee0ba2d70c88a5babda92fd1e80b63a553bead71bf865ed2e1b590",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    }
+  ]
+}

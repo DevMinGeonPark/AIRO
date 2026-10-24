@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { registerHooks } from "node:module";
 import { readFileSync, readdirSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { PGlite } from "@electric-sql/pglite";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
@@ -16,6 +17,17 @@ registerHooks({ resolve(specifier, context, next) {
 } });
 // Tests use injected providers/in-memory transports only. Any accidental fetch fails.
 globalThis.fetch = async () => { throw new Error("Live API calls are forbidden in MCP local checks"); };
+const { isSouthKorea, mapsUrl, directionsUrl } = await import("../src/lib/place-maps.ts");
+const { defaultPredeparture, predepartureSchema } = await import("../src/lib/predeparture.ts");
+const { checkProgressSql } = await import("./check-itinerary-progress.mjs");
+for (const [lat,lng] of [[37.5665,126.978],[35.1796,129.0756],[33.4996,126.5312],[37.4602,126.4407],[37.468,126.433],[37.484,130.906],[37.242,131.869],[37.967,124.64]]) assert.equal(isSouthKorea({lat,lng}),true);
+for (const [lat,lng] of [[34.204,129.287],[33.59,130.401],[39.039,125.762],[37.9708,126.5544],[NaN,127]]) assert.equal(isSouthKorea({lat,lng}),false);
+const koreanPlace={name:"숙소, 서울 & 호텔",lat:37.5665,lng:126.978};
+assert.equal(mapsUrl(koreanPlace),`https://map.kakao.com/link/map/${encodeURIComponent(koreanPlace.name)},37.5665,126.978`);
+assert.match(directionsUrl(koreanPlace),/^https:\/\/map.kakao.com\/link\/to\//);
+assert.match(mapsUrl({...koreanPlace,lat:33.59,lng:130.401}),/^https:\/\/www.google.com\/maps\//);
+assert.equal(predepartureSchema.safeParse(defaultPredeparture()).success,true);
+assert.equal(predepartureSchema.safeParse({...defaultPredeparture(),items:[...defaultPredeparture().items,...defaultPredeparture().items]}).success,false);
 const { mutateStops } = await import("../src/lib/itinerary-mutations.ts");
 const { toolSchemas, toolParameters } = await import("../src/lib/tool-contracts.ts");
 const { bindTripTools, createToolRunner } = await import("../src/lib/tool-runtime.ts");
@@ -24,6 +36,18 @@ const { verifiedMcpIdentity, validMcpPermissions } = await import("../src/lib/mc
 const { readMcpJson } = await import("../src/lib/mcp-http.ts");
 const { nearestRoadPoint } = await import("../src/lib/route-tools.ts");
 const { providerRedirect } = await import("../src/lib/oauth-redirect.ts");
+const { bookingLink, stopAttachments } = await import("../src/lib/trip-attachments.ts");
+assert.equal(bookingLink("javascript:alert(1)"), null);
+assert.equal(bookingLink("https://user:secret@trip.com/orders"), null);
+assert.equal(bookingLink("https://kr.trip.com/order/hotel?orderId=123").href, "https://kr.trip.com/order/hotel?orderId=123&wkp=1");
+assert.equal(bookingLink("https://trip.com.evil.test/order").label, "trip.com.evil.test 예약 열기");
+const linkedDoc = {name:"예약.pdf",sha256:"a".repeat(64),mime:"application/pdf",stopIds:["A"]};
+const attachmentFixture = {documents:[linkedDoc],reservations:[]};
+assert.equal(stopAttachments({id:"A",note:null},attachmentFixture).documents.length,1);
+assert.equal(stopAttachments({id:"B",name:"same name",note:null},attachmentFixture).documents.length,0,"names never guess a document association");
+assert.equal(stopAttachments({id:"new-import-id",source_id:"A",note:null},attachmentFixture).documents.length,1,"import source IDs retain associations");
+assert.equal(stopAttachments({id:"A",note:"Trip.com 예약 확정"},attachmentFixture).links[0].href,"https://kr.trip.com/m/orders/all?wkp=1");
+assert.equal(stopAttachments({id:"A",note:"https://trip.com.evil.test/order"},attachmentFixture).links.length,0);
 const stop = (id, position, extra = {}) => ({ id, trip_id: "trip-a", name: id, lng: 12.49, lat: 41.89, day: 1, position, time: null, note: null, map_query: null, mode: "ground", ...extra });
 const original = [stop("A", 0), stop("B", 4), stop("other-day", 0, { day: 2 })];
 let result = mutateStops(original, "trip-a", { operation: "add", newId: "food", input: { name: "식당", lng: 12.491, lat: 41.891, day: 1, afterStopId: "A" } });
@@ -49,6 +73,8 @@ const trip = { id: "trip-a", title: "로마 여행", user_id: "owner-a", start_d
 let providerCalls = 0;
 const fixtures = [stop("A", 0, { lng: 0, lat: 0 }), stop("B", 1, { lng: 0.02, lat: 0 })];
 const deps = {
+  listDocuments: async () => ({ documents: [{ name: "fixture.pdf", sha256: "a".repeat(64) }] }),
+  getDocument: async () => ({ tripId: "trip-a", document: { name: "fixture.pdf", uri: `airo://trips/trip-a/documents/${"a".repeat(64)}`, mime: "application/pdf", base64: "JVBERi0xLjQKJSVFT0Y=" } }),
   listTrips: async () => [trip], getTrip: async id => id === trip.id ? { trip, stops: fixtures, messages: [{ content: "private chat" }] } : null,
   createTrip: async () => ({ error: "여행 개수 한도" }), updateTrip: async () => trip, deleteTrip: async () => {},
   addStop: async () => { throw new Error("저장 실패"); }, moveStop: async () => null, removeStop: async () => false, reorderDay: async () => [],
@@ -93,13 +119,22 @@ const [a, b] = InMemoryTransport.createLinkedPair();
 const server = createAiroMcpServer(run, ["trips:read", "trips:write"]);
 const client = new Client({ name: "offline-contract-test", version: "1" });
 await server.connect(a); await client.connect(b);
-assert.equal((await client.listTools()).tools.length, 12);
+assert.equal((await client.listTools()).tools.length, 29);
 assert.ok((await client.listResources()).resources.some(r => r.uri === "airo://trips"));
 assert.ok((await client.listPrompts()).prompts.some(p => p.name === "plan-trip"));
 assert.ok((await client.readResource({ uri: "airo://trips/trip-a" })).contents[0].text.includes("로마 여행"));
 assert.equal((await client.callTool({ name: "addStop", arguments: { tripId: trip.id, name: "x", day: 1, lng: 1, lat: 1 } })).isError, true);
 assert.equal((await client.callTool({ name: "createTrip", arguments: { title: "x" } })).isError, true, "business failures are MCP tool errors");
 assert.equal((await client.callTool({ name: "searchPlaces", arguments: { query: "x" } })).isError, true);
+const pdfResult = await client.callTool({ name: "getDocument", arguments: { tripId: trip.id, sha256: "a".repeat(64) } });
+assert.equal(pdfResult.content[0].resource.mimeType, "application/pdf");
+assert.equal("base64" in pdfResult.structuredContent.document, false, "PDF bytes use MCP blob resources, not JSON text");
+assert.equal((await client.readResource({ uri: `airo://trips/trip-a/documents/${"a".repeat(64)}` })).contents[0].blob, "JVBERi0xLjQKJSVFT0Y=");
+assert.equal(toolSchemas.updateNotificationSettings.safeParse({ tripId: "t", settings: { revision: 0, enabled: true, timeZone: "invalid", reminders: [] } }).success, false);
+assert.equal(toolSchemas.attachDocument.safeParse({ tripId: "t", name: "bad.pdf", base64: "not-a-pdf" }).success, false);
+for (const name of ["attachDocument", "setReservation", "addBudgetEntry", "updateBudgetEntry", "updateNotificationSettings", "revertChange"]) {
+  await assert.rejects(createToolRunner(deps, ["trips:read"])(name, {}), /전용/);
+}
 await client.close(); await server.close();
 
 async function transportRequest(body, headers = {}) {
@@ -114,7 +149,7 @@ async function transportRequest(body, headers = {}) {
   } finally { await server.close(); }
 }
 const listed = await transportRequest({ jsonrpc: "2.0", id: 1, method: "tools/list" });
-assert.equal(listed.status, 200); assert.equal(JSON.parse(listed.text).result.tools.length, 5);
+assert.equal(listed.status, 200); assert.equal(JSON.parse(listed.text).result.tools.length, 13);
 assert.equal((await transportRequest({ jsonrpc: "2.0", method: "notifications/initialized" })).status, 202);
 assert.equal((await transportRequest({ jsonrpc: "2.0", id: 1, method: "tools/list" }, { Accept: "application/json" })).status, 406);
 assert.equal((await transportRequest({ jsonrpc: "2.0", id: 1, method: "tools/list" }, { "MCP-Protocol-Version": "1900-01-01" })).status, 400);
@@ -165,7 +200,132 @@ try {
   assert.equal((await mutate("remove", { stopId: food.id })).removed, true);
   assert.equal((await mutate("remove", { stopId: food.id })).removed, false);
   assert.deepEqual((await order(1)).map(s => s.position), [0, 1, 2]);
+  // Every operation is one transaction/history entry, including all rows moved by reorder.
+  const history = () => call("select public.list_trip_changes($1,null,50) result", [tripId]);
+  const latest = async () => (await history()).changes[0].id;
+  const undo = (id, expected) => call("select public.revert_trip_change($1,$2,$3) result", [tripId,id,expected]);
+  const beforeReorder = await order(1);
+  await mutate("reorder", { day: 1, stopIds: [A.id, B.id] });
+  const reorderId = await latest();
+  const reordered = await order(1);
+  assert.notDeepEqual(reordered, beforeReorder);
+  const undoResult = await undo(reorderId,reorderId);
+  assert.deepEqual(await order(1),beforeReorder,"undo restores all affected stop positions together");
+  await undo(undoResult.latestChangeId,undoResult.latestChangeId);
+  assert.deepEqual(await order(1),reordered,"undo is itself reversible");
+  await assert.rejects(undo(reorderId,reorderId), e => e.code === "40001", "stale history cannot overwrite changes");
+  const page = (await history()).changes;
+  assert.deepEqual(page.map(c => BigInt(c.id)), page.map(c => BigInt(c.id)).sort((a,b) => a > b ? -1 : 1));
+  const previousPage = await call("select public.list_trip_changes($1,$2,2) result", [tripId,page[0].id]);
+  assert.ok(previousPage.changes.every(c => BigInt(c.id) < BigInt(page[0].id)));
+  const pdf = Buffer.from("%PDF-1.4\nfixture\n%%EOF");
+  const document = { name: "예약.pdf", mime: "application/pdf", base64: pdf.toString("base64"), sha256: createHash("sha256").update(pdf).digest("hex") };
+  const attach = value => call("select public.attach_trip_document($1,$2) result", [tripId,JSON.stringify(value)]);
+  await attach(document);
+  const documentId = await latest();
+  assert.deepEqual(await attach(document),document);
+  assert.equal(await latest(),documentId,"duplicate upload creates no duplicate document or history");
+  const documentChange = await call("select public.get_trip_change($1,$2) result", [tripId,documentId]);
+  assert.equal("base64" in documentChange.changes.documents.after[0],false);
+  const linked = {...document,stopIds:[A.id,B.id]};
+  assert.deepEqual(await attach(linked),linked,"reattaching a PDF links it without duplication");
+  const linkedChange = await latest();
+  assert.notEqual(linkedChange,documentId);
+  assert.deepEqual(await attach(document),linked,"older clients preserve associations when omitted");
+  const metadata = await call("select public.get_trip_attachments($1) result",[tripId]);
+  assert.equal(metadata.documents.length,1);
+  assert.equal("base64" in metadata.documents[0],false,"background refresh never transports PDF bytes");
+  assert.deepEqual(metadata.documents[0].stopIds,[A.id,B.id]);
+  await assert.rejects(attach({...document,stopIds:[crypto.randomUUID()]}),e=>e.code==="22023");
+  await undo(linkedChange,linkedChange);
+  assert.deepEqual(await attach(document),document,"link-only edits can be undone");
+  await assert.rejects(attach({ ...document,sha256:"a".repeat(64) }), e => e.code === "22023");
+  await assert.rejects(attach({ name: "missing.pdf",mime:"application/pdf" }), e => e.code === "22023");
+  const setting = (field,value,revision=0) => call("select public.set_trip_management($1,$2,$3,$4) result", [tripId,field,JSON.stringify(value),revision]);
+  const reservation = { id: crypto.randomUUID(),name:"숙소",stopId:A.id,stopIds:[B.id],bookingUrl:"https://kr.trip.com/order/hotel",documentSha256s:[document.sha256],bookingStatus:"confirmed",paymentStatus:"unpaid",reference:null,note:null };
+  assert.equal(toolSchemas.setReservation.safeParse({tripId,revision:0,reservation}).success,true);
+  assert.equal(toolSchemas.setReservation.safeParse({tripId,revision:0,reservation:{...reservation,bookingUrl:"javascript:alert(1)"}}).success,false);
+  await assert.rejects(setting("reservations",{entries:[{...reservation,bookingUrl:"https://user:secret@trip.com"}]}),e=>e.code==="22023");
+  await assert.rejects(setting("reservations",{entries:[{...reservation,documentSha256s:["a".repeat(64)]}]}),e=>e.code==="22023");
+  await assert.rejects(setting("reservations",{entries:[{...reservation,stopIds:[crypto.randomUUID()]}]}),e=>e.code==="22023");
+  let saved = await setting("reservations",{ revision:0,entries:[reservation] });
+  assert.equal(saved.entries[0].paymentStatus,"unpaid","confirmed booking does not imply paid");
+  saved = await setting("reservations",{ ...saved,entries:[{...reservation,paymentStatus:"paid"}] },1);
+  const paidId = await latest();
+  await undo(paidId,paidId);
+  const archive = () => call("select data result from public.trip_archives where trip_id=$1",[tripId]);
+  assert.equal((await archive()).reservations.entries[0].paymentStatus,"unpaid");
+  assert.equal((await archive()).reservations.revision,3,"restored revision increases to reject stale editors");
+  await assert.rejects(setting("reservations",saved,2),e=>e.code==="40001");
+  await assert.rejects(setting("reservations",{ entries:[{...reservation,stopId:crypto.randomUUID()}] },3),e=>e.code==="22023");
+  const settings = { revision:0,enabled:true,timeZone:"Asia/Seoul",reminders:[{ id:crypto.randomUUID(),title:"체크인",at:"2026-10-01T15:00:00+09:00",enabled:true }] };
+  assert.equal((await setting("notificationSettings",settings)).revision,1);
+  await assert.rejects(setting("notificationSettings",{...settings,timeZone:"invalid"},1),e=>e.code==="22023");
+  const expense = { id:crypto.randomUUID(),name:"숙소",category:"stay",day:1,amount:120,currency:"EUR",exchangeRate:1500,paid:false };
+  const saveBudget = (value,revision) => call("select public.update_trip_budget($1,$2,$3) result",[tripId,JSON.stringify(value),revision]);
+  const budget = {version:1,reserve:20000,entries:[expense]};
+  await saveBudget(budget,0);
+  const budgetBeforeEdit = await latest();
+  await saveBudget({...budget,entries:[{...expense,amount:150}]},1);
+  await assert.rejects(undo(budgetBeforeEdit,await latest()),e=>e.code==="40001","cannot overwrite newer edits to same field");
+  const budgetEdit = await latest();
+  await undo(budgetEdit,budgetEdit);
+  assert.equal((await archive()).expenseBudget.entries[0].amount,120);
+  assert.equal((await archive()).expenseBudget.revision,3);
+  assert.deepEqual((await archive()).documents,[document],"budget undo preserves PDF and settings");
+  assert.equal((await archive()).notificationSettings.enabled,true);
+  const saveTodo = (value, revision) => call("select public.update_trip_predeparture($1,$2,$3) result",[tripId,JSON.stringify(value),revision]);
+  const todo=defaultPredeparture();
+  assert.equal((await saveTodo(todo,0)).revision,1);
+  const createdTodo=await latest();
+  await undo(createdTodo,createdTodo);
+  assert.deepEqual((await archive()).predepartureChecklist,{revision:2,items:[]});
+  await assert.rejects(saveTodo(todo,1),e=>e.code==="40001");
+  const firstTodo=await saveTodo(todo,2);
+  await saveTodo({...firstTodo,items:firstTodo.items.map((item,i)=>({...item,done:i===0}))},3);
+  const editedTodo=await latest();
+  await undo(editedTodo,editedTodo);
+  assert.equal((await archive()).predepartureChecklist.revision,5);
+  assert.equal((await archive()).predepartureChecklist.items[0].done,false);
+  assert.deepEqual((await archive()).documents,[document],"Todo changes preserve PDFs");
+  await assert.rejects(saveTodo({items:[{...todo.items[0],done:"yes"}]},5),e=>e.code==="22023");
+  await assert.rejects(saveTodo({items:[todo.items[0],todo.items[0]]},5),e=>e.code==="22023");
+  const png=Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aQ1sAAAAASUVORK5CYII=","base64");
+  const image={name:"Private QR fixture",mime:"image/png",base64:png.toString("base64"),sha256:createHash("sha256").update(png).digest("hex"),width:1,height:1,sourceUrl:"https://www.vjw.digital.go.jp/main/#/vjwpic026",capturedAt:"2026-09-18T06:00:00.000Z"};
+  const attachImage=value=>call("select public.attach_trip_image($1,$2) result",[tripId,JSON.stringify(value)]);
+  const listImages=()=>call("select public.list_trip_images($1) result",[tripId]);
+  const imageMetadata={...image};delete imageMetadata.base64;
+  assert.deepEqual(await attachImage(image),imageMetadata);
+  const imageChange=await latest();
+  assert.deepEqual(await attachImage(image),imageMetadata,"identical original does not duplicate");
+  assert.equal(await latest(),imageChange);
+  assert.deepEqual(await listImages(),[imageMetadata]);
+  const publicImageChange=await call("select public.get_trip_change($1,$2) result",[tripId,imageChange]);
+  assert.equal("base64" in publicImageChange.changes.images.after[0],false,"QR bytes stay out of audit responses");
+  await undo(imageChange,imageChange);
+  assert.deepEqual(await listImages(),[]);
+  assert.deepEqual((await archive()).documents,[document]);
+  assert.equal((await archive()).predepartureChecklist.revision,5);
+  await attachImage(image);
+  await assert.rejects(attachImage({...image,mime:"image/svg+xml"}),e=>e.code==="22023");
+  await assert.rejects(attachImage({...image,sha256:"a".repeat(64)}),e=>e.code==="22023");
+  await assert.rejects(attachImage({...image,sourceUrl:"javascript:alert(1)"}),e=>e.code==="22023");
+  await assert.rejects(attachImage({...image,width:5000}),e=>e.code==="22023");
+  await assert.rejects(db.query("delete from public.trip_changes where trip_id=$1",[tripId]),e=>e.code==="42501","history cannot be erased by clients");
+  await checkProgressSql({db,call,asUser,owner,other});
+  await (await import("./check-stop-choices.mjs")).checkChoicesSql({db,call,asUser,owner,other});
+  assert.equal(await call("select count(*)::int result from public.trip_changes where change_fields is distinct from array(select jsonb_object_keys(changes))"),0,"history summaries stay in sync with grouped updates and undo");
+  const summaryBody=await call("select pg_get_functiondef('public.list_trip_changes(uuid,bigint,integer)'::regprocedure) result");
+  assert.ok(summaryBody.includes('change_fields as fields'));assert.equal(summaryBody.includes('jsonb_object_keys'),false,"listing avoids decoding PDF/image audit payloads");
   await asUser(other);
+  assert.deepEqual(await call("select public.get_trip_attachments($1) result",[tripId]),{documents:[],reservations:[]},"attachment metadata is owner isolated");
+  assert.deepEqual(await listImages(),[],"private images are owner isolated");
+  assert.deepEqual((await history()).changes,[],"history is owner isolated");
+  await assert.rejects(attachImage(image),e=>e.code==="42501");
+  await assert.rejects(saveTodo(todo,5),e=>e.code==="42501");
+  await assert.rejects(attach(document),e=>e.code==="42501");
+  await assert.rejects(setting("notificationSettings",settings),e=>e.code==="42501");
+  await assert.rejects(undo(documentId,documentId),e=>e.code==="42501");
   assert.equal((await db.query("select * from public.trips where id=$1", [tripId])).rows.length, 0);
   await assert.rejects(mutate("add", { name: "intruder", lng: 0, lat: 0, day: 1 }), /여행/);
 
@@ -180,6 +340,12 @@ try {
   assert.equal(wrongResource.claims.mcp_grant_version, undefined);
   await asUser(owner, hook.claims);
   assert.equal((await db.query("select * from public.trips")).rows.length, 1);
+  assert.ok((await history()).changes.length,"read-only connection can read history");
+  await assert.rejects(attachImage(image),e=>e.code==="42501");
+  await assert.rejects(saveTodo(todo,5),e=>e.code==="42501");
+  await assert.rejects(attach(document),e=>e.code==="42501");
+  await assert.rejects(setting("notificationSettings",settings),e=>e.code==="42501");
+  await assert.rejects(undo(documentId,documentId),e=>e.code==="42501");
   await assert.rejects(add("not allowed"), /여행|row-level|permission/i);
   assert.equal((await db.query("select * from public.api_keys")).rows.length, 0);
   await assert.rejects(db.query("insert into public.mcp_connections(user_id,client_id,client_name,redirect_uri) values($1,$2,'Escalate','https://client.test')", [owner, "00000000-0000-4000-8000-000000000099"]), /row-level/);
@@ -205,5 +371,5 @@ try {
   assert.equal((await db.query("select * from public.trips")).rows.length, 0);
   await db.exec("reset role; set role anon;");
   assert.equal((await db.query("select * from public.resolve_mcp_key('fixturehash')")).rows.length, 0);
-  console.log("MCP SQL: migrations 0001–0007, atomic insertion/reorder, retry receipts, owner isolation, OAuth/key RLS, audience hook, revocation/expiry passed (in-memory PostgreSQL)");
+  console.log("MCP SQL: migrations 0001–0016, compact history summaries, progress, private images/metadata/undo/ownership, Day 0 checklist ownership/revisions/undo, domestic maps, PDF/place links, reservation URLs, metadata isolation, budget, notifications, grouped history/undo, conflicts, OAuth/key RLS passed (in-memory PostgreSQL)");
 } finally { await db.close(); }

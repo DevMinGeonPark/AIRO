@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "releasedAt": "2026-09-18T08:21:21.984Z",
+  "signing": "Android development certificate; not a store release",
+  "releaseNotes": [
+    "Day 창 전체 접기·펼치기와 장소 상세에서 전체 일정으로 돌아가기",
+    "현지 장소명은 복사 아이콘 하나로 간단히 복사",
+    "Day 0·Day 1 출국 전 Todo를 현재 패널에서 수정하고 필요할 때 확대",
+    "Trip.com·Agoda 등 설치된 예약 앱으로 링크 열기, 삼성월렛 앱 열기",
+    "장소별 캘린더 작성 화면과 직접 선택한 기기 사진 연결",
+    "직접·시간·위치 일정 완료 저장과 화면 재생성 동작 검증"
+  ],
+  "artifacts": [
+    {
+      "flavor": "cloud",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo",
+      "version": "0.3.3",
+      "versionCode": 6,
+      "minSdk": 26,
+      "file": "airo-android-cloud-0.3.3.apk",
+      "bytes": 70914334,
+      "sha256": "f605735af44b7b6c2be7e85a0b70d0f095250b09191ef0ec2ef5e372f3ef1c57",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    },
+    {
+      "flavor": "demo",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo.demo",
+      "version": "0.3.3-demo",
+      "versionCode": 6,
+      "minSdk": 26,
+      "file": "airo-android-demo-0.3.3.apk",
+      "bytes": 70892055,
+      "sha256": "8dca1cec37f4b13ad961dcc61775c7b48eb940a7ea26e225b0a15fbe30a7c367",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "releasedAt": "2026-09-18T07:41:55.440Z",
+  "signing": "Android development certificate; not a store release",
+  "releaseNotes": [
+    "최신 웹처럼 장소 간 도로 경로와 항공 곡선을 자동 표시",
+    "왼쪽 Day 패널·지도 위 장소 상세·경로 따라가기",
+    "일정 완료 체크·시간 및 위치 자동 체크 설정",
+    "출국 전날 Todo와 QR·이미지 원본 보기",
+    "국내 네이버·카카오 지도 연결과 큰 글꼴 개선"
+  ],
+  "artifacts": [
+    {
+      "flavor": "cloud",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo",
+      "version": "0.3.2",
+      "versionCode": 5,
+      "minSdk": 26,
+      "file": "airo-android-cloud-0.3.2.apk",
+      "bytes": 70582056,
+      "sha256": "883cc5ecc4283e665bc852ce99f04db7b4f0b1aa8777c02cfa95ebe948acf703",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    },
+    {
+      "flavor": "demo",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo.demo",
+      "version": "0.3.2-demo",
+      "versionCode": 5,
+      "minSdk": 26,
+      "file": "airo-android-demo-0.3.2.apk",
+      "bytes": 70756695,
+      "sha256": "001b39dfc9e837eeda0608e949ba2ffe6c6bf41ceab8e0e877fe26cf2d9e5605",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    }
+  ]
+}

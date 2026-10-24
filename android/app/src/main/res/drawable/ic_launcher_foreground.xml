@@ -1,0 +1,3 @@
+<inset xmlns:android="http://schemas.android.com/apk/res/android" android:inset="24dp">
+    <bitmap android:src="@drawable/airo_mark" android:gravity="fill" />
+</inset>

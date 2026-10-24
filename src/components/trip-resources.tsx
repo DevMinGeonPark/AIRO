@@ -11,10 +11,14 @@ import { webUrl, type ArchivedPlace, type ArchiveData } from "@/lib/archive";
 import { importSavedSchema } from "@/lib/archive";
 import type { Stop, Trip } from "@/lib/types";
 import { bounds } from "@/lib/geo";
+import { PdfPreviewButton } from "./pdf-preview";
+import { PlaceMapActions } from "./place-map-actions";
+import { CopyPlaceName } from "./copy-place-name";
+import { TripImageList } from "./trip-image-list";
 
 export function TripResources({ trip, stops, food, photos, documents, initialSaved, hasBudget }: {
   trip: Trip; stops: Stop[]; food: ArchivedPlace[]; photos: ArchiveData["photos"];
-  documents: { name: string }[]; initialSaved: string[]; hasBudget: boolean;
+  documents: { name: string; sha256: string }[]; initialSaved: string[]; hasBudget: boolean;
 }) {
   const [query, setQuery] = useState("");
   const [day, setDay] = useState<string>("");
@@ -58,9 +62,10 @@ export function TripResources({ trip, stops, food, photos, documents, initialSav
   return <><TripSubheader trip={trip} title="자료·맛집" /><main className="trip-resources mx-auto max-w-6xl space-y-8 px-5 py-6 sm:py-8">
     <div className="flex flex-wrap items-center justify-between gap-4">
       <div><h1 className="text-2xl font-semibold">{trip.title}</h1><p className="text-muted-foreground mt-1 text-sm">여행 자료</p></div>
-      <div className="flex gap-3 text-sm"><Link className="rounded-full border px-4 py-2" href={`/app/${trip.id}/cost`}>{hasBudget ? "예산 보기" : "예산 작성"}</Link><a className="rounded-full border px-4 py-2" href={`/api/trips/${trip.id}/export`}>전체 내보내기</a></div>
+      <div className="flex flex-wrap gap-3 text-sm"><Link className="rounded-full border px-4 py-2" href={`/app/${trip.id}/manage`}>PDF 추가·예약 관리</Link><Link className="rounded-full border px-4 py-2" href={`/app/${trip.id}/manage?tab=history`}>변경 이력</Link><Link className="rounded-full border px-4 py-2" href={`/app/${trip.id}/cost`}>{hasBudget ? "예산 보기" : "예산 작성"}</Link><a className="rounded-full border px-4 py-2" href={`/api/trips/${trip.id}/export`}>전체 내보내기</a></div>
     </div>
-    {!!documents.length && <section className="rounded-2xl border p-5"><h2 className="font-semibold">원본 문서</h2><ul className="mt-3 flex flex-wrap gap-3">{documents.map((doc, i) => <li key={i}><a className="text-sm underline" href={`/api/trips/${trip.id}/documents/${i}`}>{doc.name}</a></li>)}</ul></section>}
+    {!!documents.length && <section className="rounded-2xl border p-5"><h2 className="font-semibold">원본 문서</h2><ul className="mt-3 space-y-3">{documents.map(doc => <li key={doc.sha256}><PdfPreviewButton className="min-h-11 break-all text-left text-sm underline" tripId={trip.id} document={doc}>{doc.name}</PdfPreviewButton></li>)}</ul></section>}
+    <TripImageList tripId={trip.id} />
     <section className="space-y-4">
       <h2 className="text-xl font-semibold">저장한 장소 <span className="text-muted-foreground text-sm">{food.length}곳</span></h2>
       <div className="flex flex-wrap gap-2">
@@ -74,7 +79,7 @@ export function TripResources({ trip, stops, food, photos, documents, initialSav
         <Map ref={map} cooperativeGestures locale={{ "CooperativeGesturesHandler.MobileHelpText": "두 손가락으로 지도를 움직여 보세요" }} theme={dark ? "dark" : "light"} styles={{ light: "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json", dark: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json" }} bounds={bounds(stops)} fitBoundsOptions={{ padding: 45 }} localIdeographFontFamily="system-ui, sans-serif">
           <MapControls />{visible.map((p) => <MapMarker key={p.id} longitude={p.lng} latitude={p.lat} onClick={() => focus(p)}><MarkerContent><button type="button" aria-label={`${p.nameKo || p.name} 지도에서 보기`} className="resource-map-pin"><span className={`block size-3 rounded-full border-2 border-white ${saved.includes(p.id) ? "bg-route-flight" : "bg-route-ground"}`} /></button></MarkerContent></MapMarker>)}
         </Map>
-        {picked && <div className="absolute bottom-4 left-4 max-w-64 rounded-xl border bg-background p-3 text-sm shadow"><p className="font-medium">{picked.nameKo || picked.name}</p><p>{picked.name}</p><a className="underline" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(picked.name)}`} target="_blank" rel="noreferrer">구글지도</a></div>}
+        {picked && <div className="absolute bottom-4 left-4 max-w-64 rounded-xl border bg-background p-3 text-sm shadow"><p className="select-text font-medium">{picked.nameKo || picked.name}</p><div className="flex items-center gap-1"><span className="select-text">{picked.name}</span><CopyPlaceName key={picked.id} name={picked.name} /></div><PlaceMapActions place={picked} /></div>}
       </div>}
       <p className="text-muted-foreground text-xs">지도에서 찾은 장소와 가져온 여행 자료를 함께 보관해요. 영업시간은 방문 전에 확인해 주세요.</p>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{visible.map((place) => {
@@ -83,11 +88,11 @@ export function TripResources({ trip, stops, food, photos, documents, initialSav
         const host = stops.find((s) => s.id === place.stopId || s.source_id === place.stopId);
         return <article key={place.id} className={`overflow-hidden rounded-2xl border ${selected === place.id ? "border-primary" : ""}`}>
           {photo && <div className="h-36 overflow-hidden bg-muted"><Image unoptimized width={640} height={360} src={photo} alt={place.nameKo || place.name} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-cover" /></div>}
-          <div className="space-y-2 p-4"><div className="flex items-start justify-between gap-2"><button className="text-left font-semibold" onClick={() => focus(place)}>{place.nameKo || place.name}</button><button disabled={busy} aria-label={`${place.name} 즐겨찾기`} aria-pressed={saved.includes(place.id)} onClick={() => void save([place.id], !saved.includes(place.id))} className="px-2 text-xl">{saved.includes(place.id) ? "★" : "☆"}</button></div>
-            {place.nameKo && place.nameKo !== place.name && <p className="text-muted-foreground text-xs">{place.name}</p>}
+          <div className="space-y-2 p-4"><div className="flex items-start justify-between gap-2"><button className="select-text text-left font-semibold" onClick={() => focus(place)}>{place.nameKo || place.name}</button><CopyPlaceName name={place.nameKo || place.name} /><button disabled={busy} aria-label={`${place.name} 즐겨찾기`} aria-pressed={saved.includes(place.id)} onClick={() => void save([place.id], !saved.includes(place.id))} className="px-2 text-xl">{saved.includes(place.id) ? "★" : "☆"}</button></div>
+            {place.nameKo && place.nameKo !== place.name && <div className="text-muted-foreground flex items-center gap-1 text-xs"><span className="select-text">{place.name}</span><CopyPlaceName name={place.name} /></div>}
             <p className="text-sm">{place.day === 0 ? "출국 전날" : `${place.day}일차`} · {place.cuisine || place.kind}{host ? ` · ${host.name} 근처` : ""}</p>
-            {place.addr && <p className="text-muted-foreground text-xs">{place.addr}</p>}{place.hours && <p className="text-xs">{place.hours}</p>}{place.phone && <p className="text-xs">{place.phone}</p>}
-            <div className="flex gap-3 pt-2 text-sm"><a className="underline" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name)}`} target="_blank" rel="noreferrer">구글지도</a><a className="underline" href={`https://www.google.com/maps/dir/?api=1&destination=${place.lat},${place.lng}`} target="_blank" rel="noreferrer">길찾기</a>{website && <a className="underline" href={website} target="_blank" rel="noreferrer">웹사이트</a>}</div>
+            {place.addr && <p className="text-muted-foreground select-text text-xs">{place.addr}</p>}{place.hours && <p className="text-xs">{place.hours}</p>}{place.phone && <p className="text-xs">{place.phone}</p>}
+            <PlaceMapActions place={place} />{website && <a className="inline-flex min-h-11 items-center text-sm underline" href={website} target="_blank" rel="noreferrer">웹사이트</a>}
           </div>
         </article>;
       })}</div>

@@ -1,0 +1,22 @@
+.trip-management { max-width:1000px; margin:auto; padding:24px 20px 60px; }
+.trip-management h1 { font-size:24px; font-weight:600; }
+.trip-management h2 { font-size:18px; font-weight:600; }
+.trip-management h3 { font-size:14px; font-weight:600; margin:14px 0 8px; }
+.trip-management h4 { font-size:12px; margin-top:10px; }
+.trip-management p { font-size:12px; line-height:1.7; color:var(--muted-foreground); margin:8px 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.trip-management nav,.management-actions { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:12px 0; }
+.trip-management button,.trip-management a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:8px 12px; border:1px solid var(--border); border-radius:10px; font-size:12px; overflow-wrap:anywhere; }
+.trip-management button:disabled { opacity:.45; }
+.trip-management button[aria-pressed=true],.trip-management .management-primary { background:var(--primary); color:var(--primary-foreground); }
+.management-filters { display:flex; flex-wrap:wrap; gap:12px; }
+.trip-management label { display:flex; flex-direction:column; gap:6px; margin:12px 0; min-width:0; font-size:12px; }
+.management-filters label { flex:1; min-width:160px; }
+.trip-management input:not([type=checkbox]),.trip-management select,.trip-management textarea { width:100%; min-width:0; border:1px solid var(--border); border-radius:10px; padding:10px; min-height:44px; background:var(--background); color:var(--foreground); font-size:16px; }
+.management-cards { display:grid; gap:12px; margin:16px 0; }
+.trip-management textarea { min-height:10rem; padding:16px; line-height:1.9; }
+.management-cards li,.management-editor { min-width:0; border:1px solid var(--border); border-radius:14px; padding:16px; }
+.management-choices { margin:18px 0; max-height:320px; overflow:auto; padding:8px; border:1px solid var(--border); border-radius:10px; }
+.management-choices label { flex-direction:row; align-items:center; min-height:44px; line-height:1.6; overflow-wrap:anywhere; }
+.management-choices input { flex-shrink:0; width:18px; height:18px; accent-color:var(--primary); }
+.trip-management [role=alert] { color:var(--destructive); }
+.trip-history pre { white-space:pre-wrap; overflow-wrap:anywhere; font:12px/1.7 inherit; background:var(--muted); border-radius:8px; padding:12px; }

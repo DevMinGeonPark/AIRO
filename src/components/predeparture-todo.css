@@ -1,0 +1,45 @@
+.predeparture-trigger { display:flex; align-items:center; justify-content:center; gap:8px; min-height:44px; border:1px solid var(--border); border-radius:12px; padding:8px 12px; margin:8px 0; background:var(--background); color:var(--foreground); font-size:12px; font-weight:600; }
+.day-overlay > .predeparture-trigger { margin:6px 10px 10px; width:calc(100% - 20px); }
+.predeparture-modal { position:fixed; inset:0; margin:auto; padding:0; width:min(560px, calc(100vw - 24px)); max-height:calc(100dvh - 32px); border:1px solid var(--border); border-radius:20px; color:var(--foreground); background:var(--background); box-shadow:0 24px 90px #0005; }
+.predeparture-modal[open] { display:flex; flex-direction:column; }
+.predeparture-modal[data-expanded=true] { width:min(880px,calc(100vw - 24px)); height:calc(100dvh - 32px); }
+.predeparture-modal[data-inline=true] { position:static; inset:auto; display:flex; flex-direction:column; width:100%; height:100%; min-height:0; max-height:none; margin:0; border:0; border-radius:0; box-shadow:none; }
+.predeparture-modal[data-inline=true] header { flex-wrap:wrap; padding:10px 12px; gap:4px; flex-shrink:0; }
+.predeparture-modal[data-inline=true] h2 { font-size:14px; }
+.predeparture-window-actions { display:flex; margin-left:auto; }
+.predeparture-modal[data-inline=true] .predeparture-body { padding:12px; }
+.predeparture-modal[data-inline=true] footer { padding:10px 12px; flex-wrap:wrap; flex-shrink:0; }
+.predeparture-modal[data-inline=true] footer button { width:100%; }
+.predeparture-modal[data-inline=true] footer p { flex-basis:100%; }
+.predeparture-modal[data-inline=true] .predeparture-japan { padding:10px; }
+.predeparture-body { flex:1; }
+.todo-panel-host { flex:1; min-height:0; overflow:hidden; }
+.predeparture-modal::backdrop { background:#10151db3; backdrop-filter:blur(3px); }
+.predeparture-modal header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:16px 20px; border-bottom:1px solid var(--border); }
+.predeparture-modal header p { font-size:11px; color:var(--muted-foreground); }
+.predeparture-modal h2 { margin-top:4px; font-size:20px; font-weight:600; }
+.predeparture-modal button { min-height:44px; display:inline-flex; align-items:center; justify-content:center; gap:6px; }
+.predeparture-modal header button,.predeparture-modal li > button { min-width:44px; flex-shrink:0; }
+.predeparture-modal button:disabled { opacity:.45; cursor:default; }
+.predeparture-body { overflow:auto; overscroll-behavior:contain; padding:18px 20px; min-height:0; }
+.predeparture-help,.predeparture-japan p { font-size:12px; line-height:1.7; color:var(--muted-foreground); }
+.predeparture-progress { font-size:12px; margin-top:18px; }
+.predeparture-modal progress { width:100%; height:6px; accent-color:var(--primary); }
+.predeparture-modal section { margin-top:22px; }
+.predeparture-modal h3 { font-size:14px; font-weight:600; margin-bottom:8px; }
+.predeparture-modal li { display:flex; align-items:center; border-bottom:1px solid var(--border); }
+.predeparture-modal li label { display:flex; flex:1; align-items:center; gap:10px; min-height:48px; font-size:13px; line-height:1.6; overflow-wrap:anywhere; padding:6px 0; }
+.predeparture-modal input[type=checkbox] { width:18px; height:18px; flex-shrink:0; accent-color:var(--primary); }
+.predeparture-modal [data-done=true] { text-decoration:line-through; color:var(--muted-foreground); }
+.predeparture-add { margin-top:20px; display:grid; grid-template-columns:1fr auto; gap:8px; align-items:end; }
+.predeparture-add label { display:flex; flex-direction:column; gap:5px; font-size:11px; }
+.predeparture-add label:first-child { grid-column:1 / -1; }
+.predeparture-add input,.predeparture-add select { border:1px solid var(--border); border-radius:8px; min-width:0; padding:10px; background:var(--background); color:var(--foreground); font-size:16px; width:100%; }
+.predeparture-add button,.predeparture-error button { padding:0 12px; border:1px solid var(--border); border-radius:8px; font-size:12px; }
+.predeparture-japan { background:var(--muted); padding:14px; border-radius:12px; }
+.predeparture-japan a { display:flex; align-items:center; justify-content:space-between; gap:8px; padding-top:14px; font-size:13px; }
+.predeparture-japan small { display:block; color:var(--muted-foreground); font-size:11px; margin-top:3px; }
+.predeparture-error { margin-top:12px; font-size:13px; color:var(--destructive); line-height:1.7; }
+.predeparture-modal footer { display:flex; gap:12px; align-items:center; border-top:1px solid var(--border); padding:14px 20px max(14px,env(safe-area-inset-bottom)); }
+.predeparture-modal footer p { flex:1; color:var(--muted-foreground); font-size:11px; line-height:1.6; }
+.predeparture-modal footer button { flex-shrink:0; border-radius:12px; background:var(--primary); color:var(--primary-foreground); padding:0 14px; font-size:13px; font-weight:600; }

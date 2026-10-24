@@ -41,7 +41,7 @@ export const signLocalJwt = (claims: Record<string, unknown>, ttl = SESSION_TTL)
 export function verifyLocalJwt(token: string | undefined): Record<string, unknown> | null {
   if (!token || secret.length < 32) return null;
   const [head, body, sig] = token.split(".");
-  if (!head || !body || !sig) return null;
+  if (!head || !body || !sig || token.split(".").length !== 3) return null;
   const expected = createHmac("sha256", secret).update(`${head}.${body}`).digest();
   const actual = Buffer.from(sig, "base64url");
   if (actual.length !== expected.length || !timingSafeEqual(actual, expected)) return null;

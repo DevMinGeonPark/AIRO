@@ -1,3 +1,4 @@
+import { routablePair } from "./stop-choices";
 import type { Stop } from "./types";
 
 export type TripPoint = [number, number];
@@ -20,6 +21,7 @@ export function playbackLegs(stops: Stop[], roads: PlaybackRoad[]) {
   let missing = 0;
   for (let index = 1; index < stops.length; index++) {
     const from = stops[index - 1], to = stops[index];
+    if (!routablePair(from, to)) { missing++; continue; }
     if (from.lng === to.lng && from.lat === to.lat) continue;
     const flight = to.mode === "flight";
     const path = flight ? flightPath([from.lng, from.lat], [to.lng, to.lat]) : byId.get(`${from.id}->${to.id}`)?.coordinates;

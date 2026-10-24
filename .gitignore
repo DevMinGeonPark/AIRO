@@ -59,3 +59,10 @@ __pycache__/
 /public/downloads/airo-codex-*.tar.gz
 /public/downloads/airo-plugin.zip
 /public/plugins/airo.git/
+
+# Reproducible Android installation artifacts.
+/public/downloads/airo-android-*.apk
+/public/downloads/airo-android-*.aab
+
+# PDF viewer assets are generated from the pinned package during dev/build.
+/public/vendor/pdfjs/

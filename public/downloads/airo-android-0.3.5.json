@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "releasedAt": "2026-09-18T09:32:47.715Z",
+  "signing": "Android development certificate; not a store release",
+  "releaseNotes": [
+    "체크 즉시 완료 숫자·목록·지도 반영, 저장 중에도 연속 체크와 취소",
+    "완료 핀 체크 애니메이션과 남은 경로·경로 재생에서 완료 장소 제외",
+    "체크 취소·저장 실패 시 경로 복원, 충돌 시 최신 상태에 변경 재적용",
+    "Day 설정에서 시간·GPS 자동 체크 일괄 적용, 시간 없는 장소는 GPS로 판단",
+    "시간 조건 확인과 전경 GPS 수신 개선 및 모의 GPS로 자동 완료 검증",
+    "자동 완료와 빠른 수동 체크가 겹칠 때 저장 순서 유지"
+  ],
+  "artifacts": [
+    {
+      "flavor": "cloud",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo",
+      "version": "0.3.5",
+      "versionCode": 8,
+      "minSdk": 26,
+      "file": "airo-android-cloud-0.3.5.apk",
+      "bytes": 70604806,
+      "sha256": "4547e304a9889ab3b3338decaf9199575351f1b010cfdfd29940881f36432643",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    },
+    {
+      "flavor": "demo",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo.demo",
+      "version": "0.3.5-demo",
+      "versionCode": 8,
+      "minSdk": 26,
+      "file": "airo-android-demo-0.3.5.apk",
+      "bytes": 70588446,
+      "sha256": "783fcfb653e5e62b3da988f6bd39d581bb29496f53ed86c97a706a9fadc40492",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    }
+  ]
+}
