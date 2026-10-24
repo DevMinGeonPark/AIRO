@@ -1,9 +1,13 @@
 import { parseToolInput, toolDefinitions, type ToolInput, type ToolName, type ToolPermission } from "./tool-contracts";
 import { getDayRoute, searchAlongRoute, type RouteProvider, type PlaceProvider } from "./route-tools";
+import type * as Choices from "./stop-choices-store";
 import type * as Store from "./store";
+import type * as Archive from "./archive-store";
+import { savedPlacesPage } from "./saved-places-query";
+import type * as Management from "./trip-management-store";
 
 type StoreOperations = Pick<typeof Store, "listTrips" | "getTrip" | "createTrip" | "updateTrip" | "deleteTrip" | "addStop" | "moveStop" | "removeStop" | "reorderDay">;
-export type ToolDependencies = StoreOperations & { searchPlaces: PlaceProvider; roadRoute: RouteProvider };
+export type ToolDependencies = StoreOperations & typeof Choices & typeof Management & Pick<typeof Archive, "getArchive" | "getSavedPlaces"> & { searchPlaces: PlaceProvider; roadRoute: RouteProvider };
 
 export function bindTripTools(run: (name: string, args: Record<string, unknown>) => Promise<Record<string, unknown>>, tripId: string) {
   return (name: string, args: Record<string, unknown>) => {
@@ -20,6 +24,27 @@ export function createToolRunner(deps: ToolDependencies, permissions: readonly T
     return detail;
   };
   const handlers: { [N in ToolName]: (input: ToolInput<N>) => Promise<unknown> } = {
+    addChoiceStop: a => deps.addChoiceStop(a),
+    setStopChoices: a => deps.setStopChoices(a),
+    selectStopChoice: a => deps.selectStopChoice(a),
+    listSavedPlaces: async a => {
+      const detail = await ownedTrip(a.tripId);
+      const [archive, saved] = await Promise.all([deps.getArchive(a.tripId), deps.getSavedPlaces(a.tripId)]);
+      return savedPlacesPage(archive?.data.food ?? [], saved, detail.stops, a);
+    },
+    listDocuments: a => deps.listDocuments(a),
+    getDocument: a => deps.getDocument(a),
+    attachDocument: a => deps.attachDocument(a),
+    getReservations: a => deps.getReservations(a),
+    setReservation: a => deps.setReservation(a),
+    getBudget: a => deps.getBudget(a),
+    addBudgetEntry: a => deps.addBudgetEntry(a),
+    updateBudgetEntry: a => deps.updateBudgetEntry(a),
+    getNotificationSettings: a => deps.getNotificationSettings(a),
+    updateNotificationSettings: a => deps.updateNotificationSettings(a),
+    listChanges: a => deps.listChanges(a),
+    getChange: a => deps.getChange(a),
+    revertChange: a => deps.revertChange(a),
     listTrips: async () => ({ trips: await deps.listTrips() }),
     getTrip: async a => {
       const { trip, stops, messages } = await ownedTrip(a.tripId);

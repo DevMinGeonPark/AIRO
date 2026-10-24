@@ -1,5 +1,5 @@
 /** Bounded body reader shared by the MCP transport and its offline contract checks. */
-export async function readMcpJson(request: Request, maxBytes = 262144): Promise<unknown> {
+export async function readMcpJson(request: Request, maxBytes = 3 * 1024 * 1024): Promise<unknown> {
   if (Number(request.headers.get("content-length")) > maxBytes) throw new RangeError("요청 크기가 너무 큽니다.");
   const reader = request.body?.getReader();
   if (!reader) throw new SyntaxError("JSON 요청이 필요합니다.");

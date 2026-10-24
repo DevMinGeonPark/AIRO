@@ -1,3 +1,4 @@
+import { pendingChoice } from "./stop-choices";
 import type { Place, Stop } from "./types";
 
 type Point = [number, number];
@@ -15,6 +16,7 @@ async function legsFor(stops: Stop[], route: RouteProvider, profile?: Profile) {
   const legs = [];
   for (let i = 1; i < stops.length; i++) {
     const from = stops[i - 1], to = stops[i];
+    if (pendingChoice(from) || pendingChoice(to)) throw new Error("선택형 일정의 후보를 먼저 선택하세요. getTrip의 choice.candidates를 확인하고 selectStopChoice로 확정하세요.");
     const base = { fromStopId: from.id, toStopId: to.id, from: from.name, to: to.name };
     if (to.mode === "flight") {
       legs.push({ ...base, mode: "flight" as const, route: null });

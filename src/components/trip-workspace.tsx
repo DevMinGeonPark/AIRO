@@ -9,9 +9,19 @@ import { LogoMark } from "@/components/logo";
 import { MobileNav } from "@/components/mobile-nav";
 import { useCompactViewport } from "@/components/mobile-viewport";
 import { useRoadRoutes } from "./use-road-routes";
+import { useChoiceRoads } from "./use-choice-roads";
+import { StopChoicePanel } from "./stop-choice-panel";
+import { CurrentLocationControl } from "./current-location-control";
+import { DayAccommodationModal } from "./day-accommodation-modal";
+import { PlaceNote } from "./place-note";
+import { pendingChoice } from "@/lib/stop-choices";
 import { StopEditor } from "./stop-editor";
+import { StopAttachmentActions } from "./stop-attachment-actions";
+import { emptyTripAttachments, type TripAttachments } from "@/lib/trip-attachments";
 import { useTripPlayback } from "./use-trip-playback";
 import { useTripSheet } from "./trip-sheet";
+import { useDaySwipe } from "./use-day-swipe";
+import { adjacentTripDay, localDateKey, nearestTripDay, tripDayDate } from "@/lib/trip-calendar";
 import { useAiDevices, useCodexChat } from "./use-codex-chat";
 import { deviceLabel, deviceReady } from "@/lib/ai-bridge-types";
 import { webUrl, type ArchiveData } from "@/lib/archive";
@@ -26,11 +36,22 @@ import {
   useMap,
   type MapRef,
 } from "@/components/ui/map";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AppHeader, useDarkMode } from "@/components/app-shell";
 import { PlaceSearch, type Bias } from "@/components/place-search";
-import { bounds, byDay, dateForDay, directionsUrl, mapsUrl, totalKm, tripLegs } from "@/lib/geo";
+import { bounds, byDay, dateForDay, mapsUrl, totalKm, tripLegs } from "@/lib/geo";
+import { primaryMapLabel } from "@/lib/place-maps";
+import { PlaceMapActions } from "./place-map-actions";
+import { CopyPlaceName } from "./copy-place-name";
+import { PredepartureTodo, PredepartureTodoButton } from "./predeparture-todo";
+import { useTripProgress, type TripProgressController } from "./use-trip-progress";
+import { StopProgressCheck, StopProgressDetails, TripProgressSummary } from "./trip-progress-controls";
+import { progressEntry } from "@/lib/itinerary-progress";
+import { remainingItinerary } from "@/lib/remaining-itinerary";
+import { PlaceCalendarButton } from "./place-calendar-button";
+import { PlacePhotos } from "./place-photos";
+import { photoScope } from "@/lib/place-photo-store";
 import type { Message, Place, Stop, Trip } from "@/lib/types";
 
 /** 지점 하나에 붙는 줌. CARTO 는 14 부터 상점·랜드마크 이름을 보여준다. */
@@ -69,16 +90,6 @@ function MapTapToggle({ onTap }: { onTap: () => void }) {
   return null;
 }
 
-/** 오늘과 가장 가까운 일차. 시작일이 없으면 첫날. day 0 은 출국 전날. */
-function nearestDay(startDate: string | null, days: number[]) {
-  if (!days.length) return null;
-  const start = startDate ? new Date(`${startDate}T00:00:00`) : null;
-  if (!start || Number.isNaN(start.getTime())) return days[0];
-  const today = new Date(); today.setHours(0, 0, 0, 0);
-  const current = Math.round((today.getTime() - start.getTime()) / 86400000) + 1;
-  return days.reduce((best, day) => Math.abs(day - current) < Math.abs(best - current) ? day : best);
-}
-
 type Tab = "map" | "plan" | "chat";
 
 const TABS: [Tab, string, typeof ListOrdered][] = [
@@ -93,6 +104,7 @@ export function TripWorkspace({
   initialMessages,
   roads = {},
   photos = {},
+  initialAttachments = emptyTripAttachments(),
   showSignOut = false,
 }: {
   trip: Trip;
@@ -100,6 +112,7 @@ export function TripWorkspace({
   initialMessages: Message[];
   roads?: ArchiveData["routes"];
   photos?: ArchiveData["photos"];
+  initialAttachments?: TripAttachments;
   showSignOut?: boolean;
 }) {
   const mapRef = useRef<MapRef>(null);
@@ -108,7 +121,9 @@ export function TripWorkspace({
   const planScrollRef = useRef<HTMLDivElement>(null);
   const [trip, setTrip] = useState(initialTrip);
   const [stops, setStops] = useState(initialStops);
+  const progress = useTripProgress(trip.id, stops, trip.start_date);
   const [messages, setMessages] = useState(initialMessages);
+  const [attachments, setAttachments] = useState(initialAttachments);
   const [streaming, setStreaming] = useState<string | null>(null);
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
@@ -117,6 +132,7 @@ export function TripWorkspace({
   const [tab, setTab] = useState<Tab>("map");
   const [preview, setPreview] = useState<Place | null>(null);
   const [editing, setEditing] = useState<Stop | "new" | null>(null);
+  const [choiceSaving, setChoiceSaving] = useState(false);
   const [chatError, setChatError] = useState("");
   const [chatProvider, setChatProvider] = useState<"codex" | "api">("codex");
   const ai = useAiDevices();
@@ -124,29 +140,76 @@ export function TripWorkspace({
   const syncBlocked = useRef(false);
   const syncSequence = useRef(0);
   const etag = useRef<string | null>(null);
-  useEffect(() => { syncBlocked.current = Boolean(editing) || busy || streaming !== null; }, [editing, busy, streaming]);
+  useEffect(() => { syncBlocked.current = Boolean(editing) || choiceSaving || busy || streaming !== null; }, [editing, choiceSaving, busy, streaming]);
   const dark = useDarkMode();
   const compact = useCompactViewport();
+  const [today, setToday] = useState<string | null>(null);
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    const refreshDate = () => {
+      const now = new Date();
+      setToday(localDateKey(now));
+      clearTimeout(timer);
+      const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+      timer = setTimeout(refreshDate, midnight.getTime() - now.getTime() + 50);
+    };
+    refreshDate();
+    window.addEventListener("focus", refreshDate);
+    document.addEventListener("visibilitychange", refreshDate);
+    return () => { clearTimeout(timer); window.removeEventListener("focus", refreshDate); document.removeEventListener("visibilitychange", refreshDate); };
+  }, []);
   /** 휴대폰 지도 화면: 위·아래 조작부 표시 여부. 처음엔 지도만. */
   const [chrome, setChrome] = useState(false);
   const [overlayOpen, setOverlayOpen] = useState(true);
+  const [todoOpen, setTodoOpen] = useState(false);
+  const [accommodationDay, setAccommodationDay] = useState<number | null>(null);
+  const [todoDesktopHost, setTodoDesktopHost] = useState<HTMLDivElement | null>(null), [todoMobileHost, setTodoMobileHost] = useState<HTMLDivElement | null>(null);
+  const todoTrigger = useRef<HTMLElement | null>(null);
+  const panelKey = `airo-day-panel:${trip.user_id}:${trip.id}`;
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => { try { setOverlayOpen(localStorage.getItem(panelKey) !== "collapsed"); } catch { /* Storage may be unavailable. */ } });
+    return () => cancelAnimationFrame(frame);
+  }, [panelKey]);
+  function toggleDayPanel() {
+    if (editing || todoOpen) return;
+    const next = !overlayOpen; setOverlayOpen(next);
+    try { localStorage.setItem(panelKey, next ? "open" : "collapsed"); } catch { /* Current view still works. */ }
+  }
+  function openTodo(trigger: HTMLButtonElement) { todoTrigger.current = trigger; setActiveId(null); setOverlayOpen(true); setTodoOpen(true); }
   const overlayRef = useRef<HTMLElement>(null);
   // 휴대폰에서 시트는 열림/닫힘뿐. 끝까지 내리면 지도만 남는다.
   const sheet = useTripSheet(`장소 검색 · ${stops.length}곳`, { lock: Boolean(editing), binary: compact, onClose: () => { setTab("map"); setChrome(false); } });
   /** 채팅 자동 스크롤은 사용자가 맨 아래 근처에 있을 때만. 이전 대화를 읽는 중이면 끌어내리지 않는다. */
   const stickToBottom = useRef(true);
 
-  const days = useMemo(() => byDay(stops), [stops]);
+  const days = useMemo(() => {
+    const grouped = byDay(stops);
+    for (const day of [0, 1]) if (!grouped.some(group => group.day === day)) grouped.push({ day, stops: [] });
+    return grouped.sort((a, b) => a.day - b.day);
+  }, [stops]);
   // 휴대폰에서 처음 열면 오늘과 가장 가까운 하루만. 사용자가 고르기 전(undefined)까지만 적용된다.
-  const nearest = useMemo(() => days.length > 1 ? nearestDay(trip.start_date, days.map(d => d.day)) : null, [days, trip.start_date]);
-  const activeDay = dayChoice !== undefined ? dayChoice : compact ? nearest : null;
+  const nearest = useMemo(() => today ? nearestTripDay(trip.start_date, days.map(d => d.day), today) : days[0]?.day ?? null, [days, trip.start_date, today]);
+  const activeDay = dayChoice !== undefined && (dayChoice === null || days.some(d => d.day === dayChoice)) ? dayChoice : compact ? nearest : null;
+  const dayNumbers = days.map(d => d.day);
+  const previousDay = adjacentTripDay(dayNumbers, activeDay, -1);
+  const nextDay = adjacentTripDay(dayNumbers, activeDay, 1);
+  const labelForDay = (day: number) => {
+    const label = dateForDay(trip.start_date ?? today, day);
+    return `${label}${today && tripDayDate(trip.start_date, day, today) === today ? " · 오늘" : ""}`;
+  };
   const visible = useMemo(
     () => (activeDay === null ? stops : stops.filter((s) => s.day === activeDay)),
     [stops, activeDay],
   );
-  const legs = useMemo(() => tripLegs(visible), [visible]);
-  const { routes: roadLegs, status: routeStatus, retry: retryRoutes } = useRoadRoutes(trip.id, visible, roads);
+  const mapPins = useMemo(() => visible.flatMap(stop => pendingChoice(stop)
+    ? stop.choice!.candidates.map((candidate, index) => ({ ...stop, ...candidate, id: stop.id, pinKey: `${stop.id}:${candidate.id}`, candidateLetter: String.fromCharCode(65 + index) }))
+    : [{ ...stop, pinKey: stop.id, candidateLetter: "" }]), [visible]);
+  const remaining = useMemo(() => remainingItinerary(visible, progress.data), [visible, progress.data]);
+  const legs = useMemo(() => tripLegs(remaining), [remaining]);
+  const { routes: roadLegs, status: routeStatus, retry: retryRoutes } = useRoadRoutes(trip.id, remaining, roads);
   const active = stops.find((s) => s.id === activeId) ?? null;
+  const accommodationStops = accommodationDay === null ? [] : stops.filter(stop => stop.day === accommodationDay && ((stop.mode as string) === "stay" || /숙소|호텔|hotel|hostel|airbnb|inn/i.test(`${stop.name} ${stop.note ?? ""} ${stop.map_query ?? ""}`)));
+  const choiceRoads = useChoiceRoads(trip.id, remaining, active);
 
   /** 휴대폰에서는 시트 대신 왼쪽 일정 오버레이가 지도를 가리므로, 그 높이만큼 위를 비운다. */
   const framePadding = useCallback((requested: "peek" | "half" | "full", detail = false): Padding => {
@@ -157,7 +220,7 @@ export function TripWorkspace({
     return { top: overlay + 32, left: 28, right: 28, bottom: detail ? 220 : 76 };
   }, [sheet, visible.length]);
 
-  const playback = useTripPlayback({ stops: visible, roads: roadLegs, mapRef,
+  const playback = useTripPlayback({ stops: remaining, roads: roadLegs, mapRef,
     onSelect: setActiveId, onStart: () => { setTab("map"); setActiveId(null); sheet.setSize("peek"); },
     padding: () => framePadding("peek"),
   });
@@ -199,14 +262,15 @@ export function TripWorkspace({
     if (res.status === 304) { setSyncStatus("idle"); return; }
     if (res.status === 404) { setSyncStatus("missing"); return; }
     if (!res.ok) throw new Error("여행을 다시 불러오지 못했습니다.");
-    const data = (await res.json()) as { trip: Trip; stops: Stop[]; messages: Message[] };
+    const data = (await res.json()) as { trip: Trip; stops: Stop[]; messages: Message[]; attachments?: TripAttachments };
     if (sequence !== syncSequence.current || (options?.background && syncBlocked.current)) return;
     etag.current = res.headers.get("etag");
     setTrip(data.trip);
     setStops(data.stops);
     setMessages(data.messages);
+    if (data.attachments) setAttachments(data.attachments);
     setActiveId(id => id && data.stops.some(s => s.id === id) ? id : null);
-    setActiveDay(day => day != null && !data.stops.some(s => s.day === day) ? null : day);
+    setActiveDay(day => day != null && day > 1 && !data.stops.some(s => s.day === day) ? null : day);
     setSyncStatus("idle");
   }, [trip.id]);
 
@@ -255,6 +319,17 @@ export function TripWorkspace({
     setActiveId(stop.id);
     // 편집 중에는 폼이 있는 일정 탭에 머문다 — 지도로 넘어가면 폼이 사라진다.
     if (editing) setTab("plan"); else { setTab("map"); sheet.setSize("peek"); }
+    if (stop.choice && pendingChoice(stop)) {
+      requestAnimationFrame(() => {
+        const padding = framePadding("peek", true);
+        const card = document.querySelector<HTMLElement>(".workspace-place-card");
+        const stage = document.querySelector<HTMLElement>(".workspace-panes")?.clientHeight ?? window.innerHeight;
+        padding.bottom = Math.min((card?.offsetHeight ?? 220) + 32, stage * .6);
+        padding.top = Math.min(padding.top, Math.max(24, stage - padding.bottom - 160));
+        mapRef.current?.fitBounds(bounds(stop.choice!.candidates), { padding, maxZoom: FOCUS_ZOOM, animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches });
+      });
+      return;
+    }
     mapRef.current?.flyTo({
       center: [stop.lng, stop.lat],
       zoom: FOCUS_ZOOM,
@@ -272,12 +347,13 @@ export function TripWorkspace({
     if (list.length) mapRef.current?.fitBounds(bounds(list), { padding: framePadding("half"), maxZoom: 14, animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches });
   }
 
-  /** 오버레이의 ‹ › : 전체 → 각 일차 → 전체 순환. */
+  /** 실제 일차 순서대로 이동하고 첫날·마지막 날에서는 멈춘다. */
   function stepDay(direction: 1 | -1) {
-    const order: (number | null)[] = [null, ...days.map(d => d.day)];
-    const index = order.indexOf(activeDay);
-    showDay(order[(index + direction + order.length) % order.length]);
+    if (editing) return;
+    const day = adjacentTripDay(dayNumbers, activeDay, direction);
+    if (day !== undefined) showDay(day);
   }
+  const swipe = useDaySwipe(compact && !editing && !playback.playing, activeDay, stepDay);
 
   async function send(e: React.FormEvent) {
     e.preventDefault();
@@ -348,6 +424,7 @@ export function TripWorkspace({
 
   const pane = (t: Tab) => `${tab === t || (tab !== "chat" && t !== "chat") ? "flex" : "hidden"} lg:flex flex-col min-h-0`;
   function pickTab(id: Tab) {
+    if (id === "plan") setOverlayOpen(true);
     // 편집 중에 지도로 가면 폼이 사라진다 — 저장/닫기 전까지 일정 탭에 머문다.
     if (editing && id === "map") { setTab("plan"); setChrome(true); (document.activeElement as HTMLElement | null)?.blur(); document.querySelector(".stop-editor")?.scrollIntoView({ block: "start" }); return; }
     playback.stop();
@@ -357,7 +434,7 @@ export function TripWorkspace({
     if (id === "map") (document.activeElement as HTMLElement | null)?.blur();
     if (id !== "chat") sheet.setSize("full"); // 휴대폰에서 시트는 열림(full)/닫힘(지도 탭)뿐. 편집 중에는 훅이 full 로 고정한다
   }
-  const startEditing = (stop: Stop | "new") => { playback.stop(); setEditing(stop); setTab("plan"); setChrome(true); sheet.setSize("full"); };
+  const startEditing = (stop: Stop | "new") => { playback.stop(); setOverlayOpen(true); setEditing(stop); setTab("plan"); setChrome(true); sheet.setSize("full"); };
 
   /** 이 여행의 실제 지점 이름으로 만든 예시 문장. */
   const examples = useMemo(() => {
@@ -373,7 +450,7 @@ export function TripWorkspace({
   }, [stops, days]);
 
   return (
-    <div className="trip-workspace flex h-dvh flex-col" data-tab={tab} data-chrome={chrome || tab !== "map" ? "shown" : "hidden"} data-editing={Boolean(editing)} data-playing={playback.playing} style={sheet.style}>
+    <div className="trip-workspace flex h-dvh flex-col" data-tab={tab} data-chrome={chrome || tab !== "map" ? "shown" : "hidden"} data-editing={Boolean(editing)} data-playing={playback.playing} data-day-collapsed={!overlayOpen} data-todo={todoOpen} style={sheet.style}>
       <AppHeader
         wide
         showSignOut={showSignOut}
@@ -384,7 +461,7 @@ export function TripWorkspace({
             <span className="text-muted-foreground hidden sm:inline">/</span>
             <h1 className="truncate text-sm font-medium">{trip.title}</h1>
             <span className="text-muted-foreground hidden shrink-0 rounded-full border px-2 py-0.5 text-[11px] sm:inline">
-              {days.length}일
+              {days.filter(day => day.day > 0).length}일
             </span>
             <span className="text-muted-foreground hidden shrink-0 rounded-full border px-2 py-0.5 text-[11px] sm:inline">
               {stops.length}곳
@@ -397,6 +474,7 @@ export function TripWorkspace({
         <button onClick={() => startEditing("new")} className="workspace-action bg-secondary text-primary"><Plus className="size-3.5" /> 일정 직접 추가</button>
         <Link href={`/app/${trip.id}/cost`} className="workspace-action"><Wallet className="size-3.5" /> 예산</Link>
         <Link href={`/app/${trip.id}/resources`} className="workspace-action"><FolderOpen className="size-3.5" /> 자료·맛집</Link>
+        <Link href={`/app/${trip.id}/manage?tab=history`} className="workspace-action">변경 이력</Link>
         <Link href={`/app/${trip.id}/settings`} className="workspace-action"><Settings2 className="size-3.5" /> 여행 설정</Link>
         <Link href="/app/settings/keys" className="workspace-action">MCP 연결 ↗</Link>
         {showSignOut && <a href={`/api/trips/${trip.id}/export`} className="workspace-action"><Download className="size-3.5" /> 내보내기</a>}
@@ -421,6 +499,7 @@ export function TripWorkspace({
         <MobileNav className="workspace-more" label={<><MoreHorizontal className="size-5" aria-hidden="true" />더보기</>} summaryLabel="더보기" navLabel="여행 도구 메뉴">
           <Link href={`/app/${trip.id}/cost`} prefetch={false}><Wallet className="size-4" /> 예산</Link>
           <Link href={`/app/${trip.id}/resources`} prefetch={false}><FolderOpen className="size-4" /> 자료·맛집</Link>
+          <Link href={`/app/${trip.id}/manage?tab=history`} prefetch={false}>변경 이력</Link>
           <Link href={`/app/${trip.id}/settings`} prefetch={false}><Settings2 className="size-4" /> 여행 설정</Link>
           <Link href="/app/settings/keys" prefetch={false}>MCP 연결 ↗</Link>
           {showSignOut && <a href={`/api/trips/${trip.id}/export`}><Download className="size-4" /> 내보내기</a>}
@@ -435,15 +514,17 @@ export function TripWorkspace({
           className={`${pane("plan")} workspace-itinerary bg-card w-full grow shrink-0 lg:w-64 lg:grow-0 lg:border-r xl:w-80`}
         >
           {sheet.handle}
+          {todoOpen && <div className="todo-panel-host" ref={setTodoDesktopHost} />}
           <div className="plan-tools shrink-0 space-y-3 border-b bg-secondary/30 p-4">
             <div className="flex items-center gap-2 text-xs font-semibold"><CalendarDays className="size-4 text-primary" /> 나의 일정 <span className="text-[10px] font-normal text-muted-foreground">{stops.length}개의 장소</span>
+              <button type="button" className="ml-auto hidden min-h-11 min-w-11 lg:inline-flex items-center justify-center" aria-label="Day 패널 접기" disabled={Boolean(editing)} onClick={toggleDayPanel}><ChevronLeft size={18} /></button>
               <button type="button" onClick={() => startEditing("new")} className="ml-auto inline-flex min-h-9 items-center gap-1 rounded-full border px-3 text-[11px] font-medium text-primary lg:hidden"><Plus className="size-3.5" /> 직접 추가</button>
             </div>
             <PlaceSearch
               tripId={trip.id}
               canSave={showSignOut}
               days={days.map((d) => d.day)}
-              defaultDay={activeDay ?? days[0]?.day ?? 1}
+              defaultDay={activeDay ?? 1}
               getBias={getBias}
               onOpen={() => sheet.setSize("full")}
               onPreview={setPreview}
@@ -462,7 +543,7 @@ export function TripWorkspace({
                 {playback.playing ? <Square size={14} /> : <Play size={14} />}
                 {playback.playing ? "멈추기" : activeDay === null ? "전체 경로 따라가기" : `${activeDay}일차 따라가기`}
               </button>
-              {!playback.ready && <p>{routeStatus === "loading" ? "경로 준비 중" : "도로 경로 확인 필요"}</p>}
+              {!playback.ready && <p>{remaining.length < 2 ? "남은 경유지가 2곳 이상이면 경로를 따라갑니다." : routeStatus === "loading" ? "경로 준비 중" : "도로 경로 확인 필요"}</p>}
             </div>}
             <div className="workspace-days flex gap-1.5 overflow-x-auto">
               <DayChip active={activeDay === null} onClick={() => showDay(null)}>
@@ -474,17 +555,23 @@ export function TripWorkspace({
                   active={activeDay === d.day}
                   onClick={() => showDay(activeDay === d.day ? null : d.day)}
                 >
-                  {String(d.day)}
+                  <span>{d.day === 0 ? "전날" : `${d.day}일차`}<span className="mt-0.5 block text-[10px] font-normal">{labelForDay(d.day)}</span></span>
                 </DayChip>
               ))}
             </div>
+            <div className="day-navigation flex items-center justify-between gap-2 text-xs" {...swipe}>
+              <button type="button" aria-label="이전 날" disabled={previousDay === undefined || Boolean(editing)} onClick={() => stepDay(-1)} className="min-h-11 min-w-11 disabled:opacity-30"><ChevronLeft className="mx-auto size-4" /></button>
+              <div className="text-center" aria-live="polite"><p>{today ? `오늘 ${dateForDay(today, 1)}` : "날짜 확인 중"}</p><p className="mt-1 text-[10px] text-muted-foreground">{!trip.start_date ? "시작일 미정 · 오늘을 1일차로 표시" : compact ? "좌우로 밀어 다른 날 보기" : activeDay === null ? "전체 일정" : labelForDay(activeDay)}</p></div>
+              <button type="button" aria-label="다음 날" disabled={nextDay === undefined || Boolean(editing)} onClick={() => stepDay(1)} className="min-h-11 min-w-11 disabled:opacity-30"><ChevronRight className="mx-auto size-4" /></button>
+            </div>
           </div>
 
-          <div ref={planScrollRef} className="plan-scroll min-h-0 flex-1 overflow-y-auto p-4">
+          <div ref={planScrollRef} className="plan-scroll min-h-0 flex-1 overflow-y-auto p-4" {...swipe}>
+            <TripProgressSummary controller={progress} stops={visible} startDate={trip.start_date} />
             {editing && <div className="mb-5"><StopEditor key={editing === "new" ? "new" : editing.id} tripId={trip.id} stop={editing === "new" ? undefined : editing}
-              defaults={{ day: activeDay ?? days[0]?.day ?? 1, position: days.find(d => d.day === (activeDay ?? days[0]?.day ?? 1))?.stops.length ?? 0 }}
+              defaults={{ day: activeDay ?? 1, position: days.find(d => d.day === (activeDay ?? 1))?.stops.length ?? 0 }}
               onSaved={refetch} onClose={() => setEditing(null)} /></div>}
-            {stops.length ? (
+            {(stops.length > 0 || activeDay === 0 || activeDay === 1 || activeDay === null) ? (
               <div className="space-y-6">
                 {days
                   .filter((d) => activeDay === null || d.day === activeDay)
@@ -494,13 +581,15 @@ export function TripWorkspace({
                       <section key={d.day}>
                         <header className="bg-card/95 sticky top-0 z-10 flex items-baseline gap-2 py-1.5 backdrop-blur">
                           <h2 className="text-sm font-semibold">{d.day === 0 ? "출국 전날" : `Day ${d.day}`}</h2>
-                          <span className="text-xs">{dateForDay(trip.start_date, d.day, d.stops[0]?.date)}</span>
+                          <span className="text-xs">{labelForDay(d.day)}</span>
                           <span className="text-muted-foreground text-xs">
                             {d.stops.length}곳
                             {km >= 1 && ` · 약 ${Math.round(km)}km`}
                           </span>
+                          <button type="button" className="ml-auto min-h-11 rounded-full border px-2.5 text-[11px] text-primary" aria-label={`${d.day === 0 ? "출국 전날" : `Day ${d.day}`} 숙소 정보`} onClick={() => setAccommodationDay(d.day)}>숙소</button>
                         </header>
 
+                        {d.day <= 1 && <PredepartureTodoButton onOpen={openTodo} />}
                         <ol className="mt-1 space-y-1">
                           {d.stops.map((stop) => (
                             <StopRow
@@ -508,6 +597,7 @@ export function TripWorkspace({
                               stop={stop}
                               ordinal={ordinals[stop.id] ?? 0}
                               selected={activeId === stop.id}
+                              progress={progress}
                               onSelect={() => focus(stop)}
                               onEdit={() => startEditing(stop)}
                             />
@@ -530,14 +620,15 @@ export function TripWorkspace({
 
           {stops.length > 1 && (
             <footer className="plan-footer text-muted-foreground shrink-0 border-t px-4 py-2.5 text-xs">
-              전체 {days.length}일 · {stops.length}곳 · 직선 거리 약{" "}
+              전체 {days.filter(day => day.day > 0).length}일 · {stops.length}곳 · 직선 거리 약{" "}
               {Math.round(totalKm(stops)).toLocaleString("ko-KR")}km
             </footer>
           )}
         </aside>
 
         {/* 지도 */}
-        <div className={`${pane("map")} workspace-map relative min-h-0 min-w-0 flex-1`} data-road-routes={roadLegs.length} data-route-status={routeStatus}>
+        <div className={`${pane("map")} workspace-map relative min-h-0 min-w-0 flex-1`} data-road-routes={roadLegs.length} data-route-status={routeStatus} data-remaining-stops={remaining.length}>
+          {!overlayOpen && <button type="button" className="day-panel-restore hidden lg:inline-flex" onClick={toggleDayPanel} aria-label="Day 패널 펼치기">{activeDay === null ? "전체 일정" : `Day ${activeDay}`} · 펼치기</button>}
           <Map
             ref={mapRef}
             theme={dark ? "dark" : "light"}
@@ -554,11 +645,16 @@ export function TripWorkspace({
             <InitialTripFrame stops={visible} padding={() => framePadding("half")} />
             <MapTapToggle onTap={() => setChrome(c => !c)} />
             <MapControls className="workspace-map-controls" />
+            <CurrentLocationControl onRequest={() => { playback.stop(); setActiveId(null); setPreview(null); }} onLocate={point => {
+              requestAnimationFrame(() => mapRef.current?.flyTo({ center: [point.lng, point.lat], zoom: point.accuracy > 1000 ? 12 : point.accuracy > 100 ? 14 : 16,
+                padding: framePadding("peek"), animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches }));
+            }} />
             {playback.point && <MapMarker longitude={playback.point.position[0]} latitude={playback.point.position[1]}>
               <MarkerContent><span className="trip-moving-marker" aria-label="여행 경로 재생 중" style={{ transform: `rotate(${playback.point.heading}deg)` }}>
                 {playback.point.flight ? <Plane style={{ transform: "rotate(-45deg)" }} /> : <ArrowUp />}
               </span></MarkerContent>
             </MapMarker>}
+            {choiceRoads.routes.map(road => <MapRoute key={road.id} id={`choice-${road.id}`} coordinates={road.coordinates} color={dark ? "#A9BDD8" : "#677D98"} width={2} dashArray={[3, 3]} />)}
             {roadLegs.map((road) => <MapRoute key={road.id} id={`road-${road.id}`} coordinates={road.coordinates} color={dark ? "#86A5FF" : "#335CCC"} width={3} />)}
             <MapArc
               id="flight"
@@ -580,14 +676,15 @@ export function TripWorkspace({
                 </MarkerContent>
               </MapMarker>
             )}
-            {visible.map((stop) => {
+            {mapPins.map((stop) => {
               const selected = activeId === stop.id;
+              const completed = progressEntry(progress.data, stop)?.done ?? false;
               return (
                 <MapMarker
-                  key={stop.id}
+                  key={stop.pinKey}
                   longitude={stop.lng}
                   latitude={stop.lat}
-                  onClick={() => focus(stop)}
+                  onClick={() => focus(visible.find(s => s.id === stop.id)!)}
                 >
                   {/* MarkerLabel 은 반드시 MarkerContent 의 자식이어야 한다.
                       형제로 두면 지도 컨테이너 기준 절대배치라 화면에서 사라진다.
@@ -595,12 +692,12 @@ export function TripWorkspace({
                   <MarkerContent
                     className={selected ? "scale-125 transition-transform" : "transition-transform"}
                   >
-                    <button type="button" aria-label={`${stop.name} 지도에서 보기`} className="workspace-map-pin"><span
+                    <button type="button" aria-label={`${stop.name} 지도에서 보기${completed ? " · 완료" : ""}`} className="workspace-map-pin" data-completed={completed}><span
                       className={`flex size-[19px] items-center justify-center rounded-full border-2 border-white text-[10px] leading-none font-semibold shadow-md ${
                         stop.mode === "flight" ? "bg-route-flight text-white dark:text-background" : "bg-route-ground text-primary-foreground"
                       }`}
                     >
-                      {ordinals[stop.id]}
+                      {completed ? "✓" : `${ordinals[stop.id]}${stop.candidateLetter}`}
                     </span></button>
                     {(activeDay !== null || selected) && (
                       <MarkerLabel className="bg-background/85 text-foreground rounded px-1 py-0.5 text-[11px] shadow-sm">
@@ -616,22 +713,28 @@ export function TripWorkspace({
           {/* 키보드·스크린리더용 조작부 토글. 터치는 지도 빈 곳을 누르면 된다. */}
           <button type="button" onClick={() => setChrome(c => !c)} aria-expanded={chrome} className="chrome-toggle sr-only focus:not-sr-only focus:absolute focus:top-3 focus:right-3 focus:z-20 focus:rounded-full focus:border focus:bg-card focus:px-3 focus:py-2 focus:text-xs lg:hidden">{chrome ? "조작부 숨기기" : "조작부 보기"}</button>
           {/* 휴대폰 지도 화면: 가장 가까운 하루의 일정만 왼쪽에 띄운다. 검색·편집은 일정 탭. */}
-          <section ref={overlayRef} aria-label="오늘의 일정" className="day-overlay lg:hidden" data-open={overlayOpen}>
-            <header>
-              <button type="button" aria-label="이전 날" onClick={() => stepDay(-1)}><ChevronLeft className="size-4" /></button>
-              <button type="button" className="day-overlay-title" aria-expanded={overlayOpen} onClick={() => setOverlayOpen(o => !o)}>
+          <section ref={overlayRef} aria-label="오늘의 일정" className="day-overlay lg:hidden" data-open={overlayOpen} data-todo={todoOpen} {...(todoOpen ? {} : swipe)}>
+            {!overlayOpen && <button type="button" className="day-panel-restore-mobile" onClick={toggleDayPanel} aria-label="Day 패널 펼치기">{activeDay === null ? "전체 일정" : `Day ${activeDay}`} · 펼치기</button>}
+            {overlayOpen && !todoOpen && <header>
+              <button type="button" aria-label="이전 날" disabled={previousDay === undefined} onClick={() => stepDay(-1)}><ChevronLeft className="size-4" /></button>
+              <button type="button" className="day-overlay-title" aria-expanded={overlayOpen} aria-label="Day 패널 접기" onClick={toggleDayPanel}>
                 <strong>{activeDay === null ? "전체 일정" : activeDay === 0 ? "출국 전날" : `Day ${activeDay}`}</strong>
-                <span>{activeDay !== null && dateForDay(trip.start_date, activeDay, visible[0]?.date)} {activeDay !== null && "·"} {visible.length}곳</span>
+                <span aria-live="polite">{activeDay !== null && labelForDay(activeDay)} {activeDay !== null && "·"} {visible.length}곳</span>
               </button>
-              <button type="button" aria-label="다음 날" onClick={() => stepDay(1)}><ChevronRight className="size-4" /></button>
-            </header>
-            {overlayOpen && <ol>
-              {visible.map(stop => <li key={stop.id}>
+              {activeDay !== null && <button type="button" aria-label={`${activeDay === 0 ? "출국 전날" : `Day ${activeDay}`} 숙소 정보`} className="day-overlay-stay" onClick={() => setAccommodationDay(activeDay)}>숙소</button>}
+              <button type="button" aria-label="다음 날" disabled={nextDay === undefined} onClick={() => stepDay(1)}><ChevronRight className="size-4" /></button>
+            </header>}
+            {todoOpen && <div className="todo-panel-host" ref={setTodoMobileHost} />}
+            {overlayOpen && !todoOpen && (activeDay === 0 || activeDay === 1) && <PredepartureTodoButton onOpen={openTodo} />}
+            {overlayOpen && !todoOpen && <TripProgressSummary controller={progress} stops={visible} startDate={trip.start_date} compact />}
+            {overlayOpen && !todoOpen && <ol>
+              {visible.map(stop => <li key={stop.id} data-completed={progressEntry(progress.data, stop)?.done ?? false}>
                 <button type="button" onClick={() => focus(stop)} aria-current={activeId === stop.id ? "true" : undefined}>
                   <span className={`day-overlay-ordinal ${stop.mode === "flight" ? "bg-route-flight text-white dark:text-background" : "bg-route-ground text-primary-foreground"}`}>{stop.mode === "flight" ? "✈" : ordinals[stop.id]}</span>
                   {stop.time && <span className="day-overlay-time">{stop.time}</span>}
-                  <span className="day-overlay-name">{stop.name}</span>
+                  <span className="day-overlay-name">{stop.choice ? `${stop.choice.label} · ${stop.choice.selectedId ? stop.name : `${stop.choice.candidates.length}곳 중 선택`}` : stop.name}</span>
                 </button>
+                <StopProgressCheck stop={stop} controller={progress} compact />
               </li>)}
               {!visible.length && <li className="day-overlay-empty">이 날은 아직 비어 있어요</li>}
             </ol>}
@@ -644,45 +747,35 @@ export function TripWorkspace({
           {active && !playback.playing && (
             <div className="workspace-place-card bg-background/95 absolute bottom-4 left-4 w-72 max-w-[calc(100%-2rem)] max-h-[60%] overflow-y-auto rounded-xl border p-4 shadow-lg backdrop-blur">
               <button type="button" className="place-card-close" aria-label="장소 정보 닫기" onClick={() => setActiveId(null)}><X size={18} /></button>
+              <button type="button" className="place-all-itinerary" onClick={() => showDay(null)}>전체 일정 보기</button>
               {activePhoto && <Image unoptimized width={640} height={360} src={activePhoto} alt={active.name} className="workspace-place-photo" referrerPolicy="no-referrer" />}
               <div className="text-muted-foreground text-xs">
                 Day {active.day}
                 {active.time && ` · ${active.time}`}
               </div>
-              <div className="mt-0.5 font-semibold">{active.name}</div>
-              {active.map_query && active.map_query !== active.name && (
-                <div className="text-muted-foreground text-xs">{active.map_query}</div>
-              )}
-              {active.note && <p className="mt-1.5 text-sm">{active.note}</p>}
-              <div className="mt-3 flex gap-2">
-                <a
-                  href={mapsUrl(active)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={buttonVariants({
-                    size: "sm",
-                    className: "h-8 flex-1 rounded-full max-lg:min-h-11",
-                  })}
-                >
-                  구글지도
-                </a>
-                <a
-                  href={directionsUrl(active)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={buttonVariants({
-                    size: "sm",
-                    variant: "outline",
-                    className: "h-8 flex-1 rounded-full max-lg:min-h-11",
-                  })}
-                >
-                  길찾기
-                </a>
-              </div>
+              <div className="mt-0.5 flex items-center gap-1 font-semibold"><span className="min-w-0 flex-1 select-text truncate" title={active.name}>{active.name}</span><CopyPlaceName key={active.id} name={active.map_query?.trim() || active.name} /></div>
+              {pendingChoice(active) && <p className="text-xs text-muted-foreground">{choiceRoads.loading ? "후보 경로를 확인하는 중…" : choiceRoads.failed ? "일부 후보 경로를 불러오지 못했어요. 위치를 확인하고 선택할 수 있습니다." : "점선은 후보 경로입니다. 선택하면 확정 경로로 바뀝니다."}</p>}
+              {active.choice && <StopChoicePanel key={active.id} tripId={trip.id} stop={active} onBusy={value => { syncBlocked.current = value; setChoiceSaving(value); }} onSaved={async updated => {
+                ++syncSequence.current; etag.current = null; playback.stop();
+                setStops(current => current.map(s => s.id === updated.id ? updated : s));
+                requestAnimationFrame(() => focus(updated));
+                await Promise.resolve(progress.reload()).catch(() => {});
+              }} />}
+              {!pendingChoice(active) && <>
+              {active.note && <PlaceNote key={active.id} name={active.name} note={active.note} />}
+              <PlaceMapActions place={active} />
+              <StopAttachmentActions tripId={trip.id} stop={active} attachments={attachments} />
+              <Link className="inline-flex min-h-11 items-center text-xs text-primary" href={`/app/${trip.id}/manage?stopId=${encodeURIComponent(active.id)}`}>PDF 추가·예약 관리</Link>
+              <StopProgressDetails stop={active} startDate={trip.start_date} controller={progress} />
+              <PlaceCalendarButton key={`calendar-${active.id}`} trip={trip} stop={active} timeZone={progress.data?.timeZone ?? "Asia/Seoul"} />
+              <PlacePhotos key={`photos-${trip.user_id}-${trip.id}-${active.id}`} scope={photoScope(trip.user_id,trip.id,active.source_id || active.id)} />
+              </>}
             </div>
           )}
         </div>
 
+        {todoOpen && <PredepartureTodo tripId={trip.id} date={labelForDay(0)} host={compact && tab === "map" ? todoMobileHost : todoDesktopHost} onClose={all => { setTodoOpen(false); if (all) showDay(null); requestAnimationFrame(() => todoTrigger.current?.focus({ preventScroll: true })); }} />}
+        {accommodationDay !== null && <DayAccommodationModal day={accommodationDay} stays={accommodationStops} attachments={attachments} onClose={() => setAccommodationDay(null)} />}
         {/* 채팅 */}
         <section
           className={`${pane("chat")} workspace-chat min-w-0 bg-secondary/40 w-full grow shrink-0 lg:w-72 lg:grow-0 lg:border-l xl:w-88`}
@@ -778,7 +871,7 @@ function DayChip({
 }: {
   active: boolean;
   onClick: () => void;
-  children: string;
+  children: React.ReactNode;
 }) {
   return (
     <button
@@ -799,17 +892,21 @@ function StopRow({
   stop,
   ordinal,
   selected,
+  progress,
   onSelect,
   onEdit,
 }: {
   stop: Stop;
   ordinal: number;
   selected: boolean;
+  progress: TripProgressController;
   onSelect: () => void;
   onEdit: () => void;
 }) {
   return (
-    <li className="group relative">
+    <li className="group relative stop-row-progress" data-completed={progressEntry(progress.data, stop)?.done ?? false}>
+      <StopProgressCheck stop={stop} controller={progress} compact />
+      <div className="relative min-w-0 flex-1">
       <button onClick={onEdit} className="stop-edit absolute top-2 right-2 z-10 grid size-8 place-items-center rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground" aria-label={`${stop.name} 수정`}><Pencil size={15} /></button>
       <button
         onClick={onSelect}
@@ -838,7 +935,7 @@ function StopRow({
                 {stop.time}
               </span>
             )}
-            <span className="truncate text-sm font-medium">{stop.name}</span>
+            <span className="stop-row-name truncate text-sm font-medium">{stop.choice ? `${stop.choice.label} · ${stop.choice.selectedId ? stop.name : `${stop.choice.candidates.length}곳 중 선택`}` : stop.name}</span>
           </span>
           {stop.note && (
             <span className="text-muted-foreground mt-0.5 line-clamp-2 block text-xs leading-relaxed">
@@ -852,11 +949,12 @@ function StopRow({
         href={mapsUrl(stop)}
         target="_blank"
         rel="noreferrer"
-        title="구글지도에서 열기"
+        title={`${primaryMapLabel(stop)}에서 열기`}
         className="stop-maps-link bg-background text-muted-foreground hover:text-foreground absolute right-3 bottom-1 rounded-full border px-1.5 py-0.5 text-[11px] opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
       >
         ↗
       </a>
+      </div>
     </li>
   );
 }

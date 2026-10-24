@@ -4,6 +4,8 @@ import { addStop, deleteTrip, getTrip, updateTrip } from "@/lib/store";
 import { stopInputSchema } from "@/lib/archive";
 import { z } from "zod";
 import { createHash } from "node:crypto";
+import { getTripAttachments } from "@/lib/trip-attachments-store";
+import { getTripRoads } from "@/lib/trip-map-store";
 
 /** 채팅 도구가 일정을 바꾼 뒤 클라이언트가 다시 읽어가는 경로. */
 async function handleGET(
@@ -13,9 +15,17 @@ async function handleGET(
   const { tripId } = await params;
   const detail = await getTrip(tripId);
   if (!detail) return NextResponse.json({ error: "not found" }, { status: 404 });
-  const etag = `"${createHash("sha256").update(JSON.stringify(detail)).digest("hex")}"`;
-  if (req.headers.get("if-none-match") === etag) return new Response(null, { status: 304, headers: { ETag: etag } });
-  return NextResponse.json(detail, { headers: { "cache-control": "no-store", ETag: etag } });
+  const includeRoutes = new URL(req.url).searchParams.get("include") === "routes";
+  const [attachments, roads] = await Promise.all([
+    getTripAttachments(tripId), includeRoutes ? getTripRoads(tripId) : undefined,
+  ]);
+  const payload = { ...detail, attachments, ...(includeRoutes ? { roads } : {}) };
+  const etag = `"${createHash("sha256").update(JSON.stringify(payload)).digest("hex")}"`;
+  // Cloudflare may weaken ETags while compressing the response. GET uses
+  // weak comparison, so the same snapshot should still return 304.
+  const unchanged = req.headers.get("if-none-match")?.split(",").some(value => value.trim() === "*" || value.trim().replace(/^W\//, "") === etag);
+  if (unchanged) return new Response(null, { status: 304, headers: { ETag: etag, "cache-control": "no-store" } });
+  return NextResponse.json(payload, { headers: { "cache-control": "no-store", ETag: etag } });
 }
 
 async function handleDELETE(

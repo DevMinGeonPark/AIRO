@@ -70,7 +70,9 @@
     ".next-airo-footer/types/**/*.ts",
     ".next-airo-footer/dev/types/**/*.ts",
     ".next-airo-mcp/types/**/*.ts",
-    ".next-airo-mcp/dev/types/**/*.ts"
+    ".next-airo-mcp/dev/types/**/*.ts",
+    ".next-reader/types/**/*.ts",
+    ".next-reader/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

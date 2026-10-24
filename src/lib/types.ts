@@ -1,6 +1,7 @@
 export type TravelMode = "flight" | "ground";
 
 export type Stop = {
+  choice?: import("./stop-choices").StopChoice | null;
   id: string;
   trip_id: string;
   name: string;

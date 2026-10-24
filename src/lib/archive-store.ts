@@ -1,6 +1,6 @@
 import "server-only";
 import { createClient } from "./supabase/server";
-import { archiveDataSchema, type TripArchive } from "./archive";
+import { archiveDataSchema, type ArchiveData, type TripArchive } from "./archive";
 import { getTrip } from "./store";
 import { HttpError } from "./api";
 
@@ -22,6 +22,9 @@ export async function exportTrip(tripId: string): Promise<TripArchive> {
   const detail = await getTrip(tripId);
   if (!detail) throw new HttpError(404, "여행을 찾을 수 없습니다.");
   const [archive, savedPlaceIds] = await Promise.all([getArchive(tripId), getSavedPlaces(tripId)]);
+  const stopKeys = new Map(detail.stops.map(stop => [stop.id, stop.source_id ?? stop.id]));
+  const portableId = (id: string) => stopKeys.get(id) ?? id;
+  const data: ArchiveData = archive?.data ?? { food: [], photos: {}, routes: {}, documents: [], savedPlaceIds: [] };
   return {
     format: "airo-trip", version: 1,
     source_key: detail.trip.source_key ?? `export:${tripId}`,
@@ -32,6 +35,12 @@ export async function exportTrip(tripId: string): Promise<TripArchive> {
       return { ...stop, source_id: source_id ?? id };
     }),
     messages: detail.messages.map(({ role, content, created_at }) => ({ role, content, created_at })),
-    data: { ...(archive?.data ?? { food: [], photos: {}, routes: {}, documents: [] }), savedPlaceIds },
+    data: { ...data, savedPlaceIds,
+      documents: data.documents.map(doc => ({ ...doc, ...(doc.stopIds ? { stopIds: doc.stopIds.map(portableId) } : {}) })),
+      ...(data.reservations ? { reservations: { ...data.reservations, entries: data.reservations.entries.map(entry => ({ ...entry,
+        stopId: entry.stopId ? portableId(entry.stopId) : null,
+        ...(entry.stopIds ? { stopIds: entry.stopIds.map(portableId) } : {}),
+      })) } } : {}),
+    },
   };
 }

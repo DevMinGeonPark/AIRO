@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "releasedAt": "2026-09-18T23:12:19.914Z",
+  "signing": "Android development certificate; not a store release",
+  "releaseNotes": [
+    "점심·저녁 등 한 일정에 여러 장소 후보를 묶고 선택할 수 있습니다.",
+    "후보 경로를 점선으로 비교하고 선택하면 확정 경로가 표시됩니다.",
+    "선택한 장소를 바꾸거나 다시 미정으로 돌릴 수 있으며 이전 완료 체크는 해제됩니다.",
+    "MCP와 Discord travel에서 선택형 일정을 만들고 후보를 확정할 수 있습니다."
+  ],
+  "artifacts": [
+    {
+      "flavor": "cloud",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo",
+      "version": "0.3.6",
+      "versionCode": 9,
+      "minSdk": 26,
+      "file": "airo-android-cloud-0.3.6.apk",
+      "bytes": 70762913,
+      "sha256": "29e95f0097f9029efd1aa2a23312c3a9030c6dd194a10f2c1ff048515fe39576",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    },
+    {
+      "flavor": "demo",
+      "buildType": "debug",
+      "applicationId": "com.heptivision.airo.demo",
+      "version": "0.3.6-demo",
+      "versionCode": 9,
+      "minSdk": 26,
+      "file": "airo-android-demo-0.3.6.apk",
+      "bytes": 70762927,
+      "sha256": "64e7fa0ef64665d56ddc71ca148810eeddeff1bcba37d49fa764066a73286020",
+      "signingCertificateSha256": "bd90e7e94bb3dd54227270bff041c70dbeca6252d1ca579999f256155db50ed3"
+    }
+  ]
+}

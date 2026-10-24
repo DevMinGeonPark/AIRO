@@ -1,5 +1,10 @@
 # 아이로 운영 배포
 
+## 저장 장소 MCP 배포 · 2026-09-19
+
+현재 운영 릴리스: `.private/releases/mcp-saved-places-20260919`, 빌드 `zkmTrPHHsUvuz3i_ht1IF`, 서비스 `com.heptivision.airo-app`, 리스너 `127.0.0.1:3410`. 이전 `web-app-parity-20260918`에서 이번 MCP 관련 파일만 반영했다. `listSavedPlaces`는 자료·맛집 전체/별표 즐겨찾기, 검색·일차·지역·페이지 나누기를 지원한다. DB migration·사용자 데이터 변경·유료 API 호출 없음. 프로덕션 빌드, 릴리스 내부 새 MCP 테스트 및 기존 MCP/PGlite 회귀 통과. 프리뷰와 공개 문서에 도구 노출, 로그인/모바일 인증 설정/manifest 200, 미인증 MCP·모바일 여행 API 401 확인. 기존 다운로드 34개 해시 보존. 설정 재조회로 새 릴리스 전환 확인. 현재 Hermes 세션은 이전 도구 목록을 캐시하므로 새 도구의 운영 인증 호출은 연결 새로고침 후 확인해야 한다. 롤백 설정과 결과는 `.private/deployment/mcp-saved-places-20260919/`. 아래 과거 요약 표보다 이 항목과 실제 LaunchAgent 설정이 우선한다.
+
+
 공개 주소: https://airo.dev-heptivision.com
 
 프로젝트 경로: `/Users/mini-mingeon/Travel/AIRO-app`. 개인용 원본 경로: `/Users/mini-mingeon/Travel/AIRO`.
@@ -7,7 +12,7 @@
 | 항목 | 현재 값 |
 | --- | --- |
 | 앱 리스너 | `127.0.0.1:3410` |
-| 배포 경로 | `.private/releases/pwa-20260917` |
+| 배포 경로 | `.private/releases/visit-japan-qr-20260918` |
 | 배포 빌드 | `.next-live` |
 | 앱 서비스 | `com.heptivision.airo-app` |
 | 터널 서비스 | `com.heptivision.airo-tunnel` |
@@ -15,6 +20,30 @@
 | 터널 설정 | `~/.cloudflared/airo.yml` |
 | 서비스 설정 | `~/Library/LaunchAgents/com.heptivision.airo-*.plist` |
 | 로그 | `.private/logs/` |
+
+2026-09-18 (7차) 현재: Visit Japan Web에서 사용자가 로그인한 실제 QR 원본을 인증된 여행 이미지 자료에 저장했다. Day 0 Todo와 자료·맛집에서 모달 보기·확대·크게 보기·이미지 저장·원본 사이트 이동을 제공한다. 요청한 QR 화면 주소를 표시하며 원본 바이트와 체크리스트 17개를 보존했다. 릴리스 `.private/releases/visit-japan-qr-20260918`, 빌드 `sC6cyiEerbwqgmJGwcSGp`. 이전 `native-uiux-20260918`에 해당 파일 12개만 추가·수정했다. DB `0013_trip_images.sql`을 `airo_trip_images`로 적용하고 소유권·메타데이터에서 원본 제외·이력 복원을 검증했다. Chrome 1440/390·WebKit 320, 로컬 PostgreSQL, TypeScript·ESLint·production build, 실제 인증 뷰어와 원본 해시·미인증 401을 확인했다. 실제 QR은 공개 파일·테스트 캡처에 포함하지 않았다. 근거와 롤백 설정은 `.private/deployment/visit-japan-qr-20260918/`, 상세는 [QR 이미지 자료](TRIP_IMAGES.md)에 있다.
+
+2026-09-18 (6차): Android 0.3.0과 모바일 자료 관리 API를 운영에 적용했다. 전체 지도·날짜 카드, PDF 직접 첨부·장소 연결·앱 내부 페이지/확대, 예약·예산 연결, 변경 이력 복원, 선택 자료를 전달하는 구독 대화, Android PDF/링크 공유 수신을 포함한다. 릴리스 `.private/releases/native-uiux-20260918`, 빌드 `hymNFF4Jiwt9YXqm7O-cj`. 이전 `domestic-maps-predeparture-20260918`의 웹 기능을 유지하고 검증한 서버 파일 13개와 새 APK만 추가했다. 이번 DB migration·실제 사용자 자료 변경·메일/모델 호출은 없다. Kotlin 50건, 320/390dp 기기 흐름, Cloud/Community 임시 DB 앱 검사, 서버/RLS/MCP 회귀, Lint·TypeScript·production build, 공개 웹과 APK 해시 검증 통과. 운영 인증 사전 검사 7개도 재통과했다. macOS 서비스 종료 직후 첫 bootstrap이 일시 실패해 이전 서비스를 복구한 뒤 종료 대기·재시도로 전환했고, 새 서비스와 공개 경로를 확인했다. 근거와 롤백 설정은 `.private/deployment/native-uiux-20260918/`, 세부 사항은 [0.3.0 기록](ANDROID_UIUX_IMPLEMENTATION.md)에 있다.
+
+2026-09-18 (5차): 국내 장소의 네이버지도·카카오맵·카카오 길찾기, 장소명 복사, Day 0 출국 준비 Todo 모달을 배포했다. 장소가 없어도 Day 0을 선택할 수 있고 Todo는 여행별 저장·충돌 확인·변경 이력 복원을 지원한다. 일본 비자 안내와 Visit Japan Web 공식 링크를 구분했다. 릴리스는 `.private/releases/domestic-maps-predeparture-20260918`, 빌드 ID는 `KUWLsu9em1QLl6c3z3A49`다. `0012_predeparture_checklist.sql`을 `airo_predeparture_checklist`로 적용하고 여행 4개·장소 59개·보관 자료 1개가 유지됨을 확인했다. Chrome 1440/390·WebKit 320, 로컬 PostgreSQL·RLS·이력 복원, TypeScript·ESLint·production build를 통과했다. 세부 사항은 [출국 준비 Todo](PREDEPARTURE_TODO.md), 근거·복구 설정은 `.private/deployment/domestic-maps-predeparture-20260918/`에 있다. 이전 릴리스는 `pdf-modal-20260918`이며 MCP 도구 수는 25개다.
+
+2026-09-18 (4차): PDF를 먼저 모달에서 미리보고 크게 보기·새 탭·다운로드를 선택하도록 장소 카드와 자료 목록을 변경했다. 릴리스는 `.private/releases/pdf-modal-20260918`, 빌드 ID는 `BQQUuoELhSfUuolrOK1U5`다. PDF.js 6.3.289와 worker·글꼴·CJK 자료를 앱 안에서 제공하며 PDF 원본은 모달을 열 때만 요청한다. DB 변경은 없다. Chrome 1440/390·WebKit 320에서 실제 PDF 2페이지 렌더링·페이지 이동·확대/축소·닫기/포커스 복귀·실패 후 재시도와 자료 목록의 동일 동작을 검증했다. TypeScript·ESLint·production build를 통과했다. 근거·복구 설정은 `.private/deployment/pdf-modal-20260918/`, 이전 릴리스는 `stop-attachments-20260918-final`이다.
+
+2026-09-18 (3차): MCP로 등록한 자료를 장소 상세에서 볼 수 있도록 PDF 보기·예약 링크·예약/결제 상태를 연결했다. 최종 릴리스는 `.private/releases/stop-attachments-20260918-final`, 빌드 ID는 `p0LkeZn1_BeeH6bpbnsc5`다. `0011_stop_attachments.sql`을 운영에 적용하고 기존 예약 PDF 12개를 명시된 날짜·숙소·편명에 맞춰 연결했다. UNPLAN의 첫 숙박과 연박 자료는 분리된다. 도구 수는 25개이며 `attachDocument`·`setReservation`에 연결 필드를 추가했다. 알림·결제 실행 기능을 추가하지 않았다.
+
+Chrome 1440/390·WebKit 320, MCP/PGlite·RLS·이력 복원, TypeScript·ESLint·production build를 통과했다. 운영 인증 화면에서 UNPLAN의 지도·PDF·Trip.com 버튼, PDF의 SHA-256·inline 응답, 미인증 PDF 401, 원본을 제외한 메타데이터 갱신을 확인했다. Cloudflare의 약한 ETag도 처리한다. [장소 자료 연결](STOP_ATTACHMENTS.md)에 구현과 검증 범위를 기록했다. 근거·복구용 서비스 설정은 `.private/deployment/stop-attachments-20260918/`와 `stop-attachments-20260918-final/`에 있으며 이전 MCP 릴리스와 첫 장소 자료 릴리스를 보존했다.
+
+2026-09-18 (2차): 사용자 지시 “배포부터해”에 따라 MCP 자료 관리와 PWA 일차 이동을 운영 3410에 배포했다. 릴리스는 `.private/releases/mcp-management-20260918`, 빌드 ID는 `KKVitL-mw_awO8H_1EZRz`다. 이전 Android 릴리스를 기반으로 이번 변경 파일만 반영했다. 운영 Supabase에 `0010_trip_management.sql`을 `airo_trip_management`(버전 `20260918022428`)로 적용했으며 이력 테이블·트리거 3개·함수 6개·RLS와 권한을 확인했다. 기존 여행 4개·장소 59개·보관 자료 1개가 유지됐다.
+
+공개 `https://airo.dev-heptivision.com/api/mcp`에 표준 OAuth PKCE로 인증하고 실제 `tools/list`가 25개를 반환함을 확인했다. PDF·예약/결제·예산·변경 이력/복원·알림 설정 도구 13개를 모두 포함한다. 검증용 연결은 확인 후 해제했다. PWA는 이전/다음 날 스와이프와 오늘 날짜 표시·앱 복귀 시 갱신을 포함한다. 알림은 설정 저장만 지원하며 실제 발송은 구성하지 않았다. 구현·제한은 [MCP 자료 관리](MCP_TRIP_MANAGEMENT.md)에 있다.
+
+검증: 로컬 MCP·DB·워크스페이스·날짜 테스트, Chrome/WebKit, TypeScript·변경 파일 ESLint, production build, 프리뷰의 commercial/Codex release 검사 통과. 배포 후 공개 MCP 문서·OAuth 메타데이터·모바일 로그인 설정·manifest·로그인과 미인증 API 응답도 확인했다. 근거는 `.private/deployment/mcp-management-20260918/`의 `database-ready.json`, `deployment-result.json`, `public-checks.json`, `authenticated-tools-list.json`이다. 복구용 이전 릴리스 `.private/releases/native-20260918`와 `previous-app.plist`를 보존했다. DB 변경은 추가형이며 앱 복구 시 유지한다.
+
+2026-09-18 (1차): 사용자 지시 “운영서버에 앱 API 로그인이없어 ? 추가해”에 따라 Android 앱용 로그인 설정·Bearer 인증·여행/자료 API와 0.2.0 APK를 운영 3410에 배포했다. 릴리스는 `.private/releases/native-20260918`, 빌드 ID는 `pYinSa0klGazeRSte88QN`이다. Cloud 로그인은 공개 `/auth/mobile/config`를 읽어 Supabase Google/이메일 PKCE로 진행하며, `/auth/mobile/session`은 Community 전용이므로 Cloud에서 404가 정상이다. 구독 bridge의 장소 도구는 OSM만 사용한다. 이 배포에서는 운영 DB schema와 터널 변경이 없었다.
+
+공개 검증: `/auth/mobile/config` 200·no-store, 미인증 `/api/mobile/trips`·`/api/mobile/places` 401, 홈·로그인·Codex 문서·PWA manifest 200, 두 APK의 전체 다운로드 크기와 SHA-256 일치. 근거는 `.backups/android-completion/production-api-checks.json`과 `production-package-checks.json`이다. 이후 Supabase에 앱 Redirect URL을 저장해 앱 callback과 `native_state` 유지, 기존 웹 callback, 미등록 주소 차단을 포함한 `verify:mobile-auth` 7개 검사가 모두 통과했다. 로컬 Cloudflare 관리 인증으로 메일 DNS 3개를 등록하고 Resend 도메인 인증·발송 전용 키·Supabase SMTP 설정도 완료했다. DNS 6개 검사와 SMTP TLS 인증(235), 설정 재조회가 통과했으며 실제 메일은 보내지 않았다. 무료 플랜과 초과 과금 비활성화를 유지한다. 남은 실제 계정·기기 검증은 [Android E2E 점검](ANDROID_E2E.md)에 정리했다.
+
+복구용 이전 릴리스 `.private/releases/pwa-20260917`와 `.private/deployment/native-20260918/previous-app.plist`를 보존했다. 서비스 등록은 `bootout` 이후 해제·포트 종료를 기다린 다음 `bootstrap`한다. 초기 즉시 재등록의 오류 5는 기존 서비스 복구 후 대기를 넣어 재적용했으며 최종 성공 기록은 `deployment-result.json`에 있다.
 
 2026-09-17 (3차) 현재: 홈 화면 설치(PWA) 지원을 운영 3410에 배포했다(커밋 `892addd`). `src/app/manifest.ts`(`/manifest.webmanifest`: standalone, `start_url` `/app`, 검정 배경·테마, 192/512/maskable 아이콘은 `public/icons/`에 `src/app/icon.svg`로 sharp 렌더), `layout.tsx`의 `manifest`·`appleWebApp`(제목 "아이로", 상태 표시줄 black-translucent — 헤더들이 이미 safe-area를 채운다), proxy matcher에서 매니페스트·아이콘 제외. 서비스 워커는 넣지 않았다(오프라인 범위 없음, 네이티브 앱은 별도 개발 예정). 검증: tsc·lint, 릴리스 빌드, 3103에서 매니페스트 JSON·아이콘·메타 태그 확인, `verify-commercial-release`·`verify-codex-release` 통과 후 LaunchAgent 전환. 공개 주소에서 `/manifest.webmanifest`(application/manifest+json)·아이콘 200 확인. 이전 설정 `.private/deployment/pwa-20260917/previous-app.plist`, 이전 릴리스 `immersive-map-20260917` 보존. 실제 iOS "홈 화면에 추가"·Android 설치 프롬프트는 미확인 — Android Chrome이 프롬프트를 안 띄우면 최소 서비스 워커 추가 검토.
 
@@ -130,3 +159,14 @@ Production build·TypeScript·변경 파일 ESLint, Chrome·WebKit 16개 서체/
 검증: production build·TypeScript·ESLint, Chrome/WebKit 320/390/768/1440 화면에서 푸터 정렬·링크·맨 위로 이동·지도 드로잉/이동점/재생/정지/장소 선택과 정적 완성 경로를 확인했다. 자료: `assets/validation/footer/`. 이전 `.next-airo-route-motion`와 서비스 설정 백업을 보존한다.
 
 배포 후 공개 사이트 Chrome 1920px·WebKit 390px 및 테일스케일 Chrome 320px에서 기존 지도/누적 경유/카메라 유지와 새 푸터 빌드를 확인했다. 빌드 ID·결과: `assets/validation/footer/release/checks.json`. 검증용 3018 리스너는 종료했다.
+
+
+2026-09-18 Android 0.3.1 자체 업데이트: 당시 활성 release `visit-japan-qr-20260918`의 `public/downloads/`에 Cloud/Demo 0.3.1 APK와 버전별·고정 최신 JSON을 추가했다. 웹 빌드 ID `sC6cyiEerbwqgmJGwcSGp`·LaunchAgent 설정을 유지하며 public 경로 인식을 위해 현재 서비스를 재시작했다. 인증 설정 health 200, 공개 manifest 200과 APK 전체 SHA-256 일치, Android 설치 화면을 통한 교체·로그인/여행 보존을 확인했다. 위치는 **내 정보 → 설정 → 앱 업데이트**. 기존 0.3.0 이하는 이번 APK를 한 번 직접 설치한다. [구현·배포·검증 기록](ANDROID_UPDATES.md), 증거 `.private/deployment/android-updater-20260918/`.
+
+
+2026-09-18 일정 진행 체크·Day 1 준비 목록: `.private/releases/itinerary-progress-20260918`을 운영 3410에 배포했다. 빌드 `e1JPMyPOwbRBBTXzvQnpQ`. Day 0·Day 1에서 같은 Todo/QR을 열고, 장소별 직접·위치·시간·위치 또는 시간 완료 체크와 완료 시각을 저장한다. 위치는 권한을 켠 뒤 화면이 보일 때만 확인하며, 자동 체크는 실제 오늘 일정에 한정한다. 직접 해제는 자동 재체크를 막는다. `0014_itinerary_progress.sql` 적용 전후 준비물 17개·PDF 15개·QR 1개·일정 61개를 보존했다. 기존 Android 0.3.1 다운로드 파일 해시도 유지했다. PostgreSQL 조건/충돌/소유권/이력 복원, Chrome 1440/390·WebKit 320, TypeScript·ESLint·production build를 통과했다. 공개 미인증 API 401과 로그인한 운영 화면에서 Day 1 Todo 17개·Visit Japan 링크·체크 방법 네 가지를 확인했다. [동작과 사용 범위](ITINERARY_PROGRESS.md), 검증/롤백 자료 `.private/deployment/itinerary-progress-20260918/`.
+
+
+2026-09-18 Android 기능의 웹·PWA 대응: `.private/releases/web-app-parity-20260918`을 운영 3410에 배포했다. 빌드 `tZePJTDKKjfVcg3x44h2M`. Day 패널 접기·패널 안 Todo와 확대/축소·전체 일정 복귀·현지명 복사·예약 앱 링크·ICS 캘린더·브라우저 로컬 사진을 추가했다. PDF 첨부/장소 연결, 예약 상태/결제 편집과 예산 연결, 변경 이력 조회/되돌리기를 기존 앱 API와 같은 계정 자료에 연결했다. Android 0.3.5에 맞춰 즉시 체크/연속 취소/충돌 복구, 완료 핀/남은 경로, Day 일괄 규칙도 반영했다. 삼성월렛은 웹의 공식 안내·설치 링크이며 사진은 브라우저 로컬에만 보관한다.
+
+검증: production build·TypeScript·ESLint·Chrome 1440/390·WebKit 320, 느린 응답 중 체크/취소/중간 경유지 제외/복원, IndexedDB 원본 저장, PDF/예약 실패·충돌·이력 재검토, 로컬 PostgreSQL 웹 쿠키 저장/앱 bearer 조회·RLS·CSRF를 통과했다. 공개 200/비인증 API 401과 Android 0.3.5/code 8 업데이트 manifest를 확인했으며 기존 다운로드 34개 해시를 유지했다. 운영 이력 목록의 첨부 원본 JSON 반복 해제로 간헐적 timeout을 발견해 `0015_history_summary.sql`로 작은 항목명 요약 열을 추가했다. 원본 이력 20건/92,424,502 bytes, 일정 61개·PDF 15개·Todo 17개·QR 1개를 적용 전후 보존했다. 별도 과금 API/AI 호출 없음. [대응 범위와 사용 방법](WEB_APP_PARITY.md), 배포/DB 롤백 및 검증 기록 `.private/deployment/web-app-parity-20260918/`.

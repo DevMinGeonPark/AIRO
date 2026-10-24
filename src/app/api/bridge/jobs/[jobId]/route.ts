@@ -21,7 +21,9 @@ export const POST = apiRoute(async (request, context: Context) => {
   try {
     const args = { ...call.arguments };
     if (["addStop", "moveStop", "removeStop", "reorderDay"].includes(call.tool)) args.requestId = `bridge-${call.id}`;
-    result = { success: true, data: await tripToolRunner(call.tripId)(call.tool, args) };
+    // A native job can be resumed by a web tab. Keep every subscription-bridge
+    // execution on OSM, regardless of the transport used to tick the job.
+    result = { success: true, data: await tripToolRunner(call.tripId, { allowGoogle: false })(call.tool, args) };
   } catch (error) { result = { success: false, error: error instanceof Error ? error.message : "일정을 변경하지 못했습니다." }; }
   await bridgeRpc("finish_call", id, { callId: call.id, result });
   return Response.json({ changed: result.success });

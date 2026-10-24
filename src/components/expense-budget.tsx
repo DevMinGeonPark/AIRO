@@ -9,16 +9,20 @@ import { Input } from "./ui/input";
 import { EXPENSE_CATEGORIES, EXPENSE_CURRENCIES, expenseBudgetSchema, expenseSchema, expenseTotals, type Expense, type ExpenseBudgetState } from "@/lib/expense-budget";
 import { byDay, dateForDay } from "@/lib/geo";
 import type { Stop, Trip } from "@/lib/types";
+import type { ArchiveData } from "@/lib/archive";
 
 const won = (value: number) => `${Math.round(value).toLocaleString("ko-KR")}원`;
 const blank = () => ({ name: "", amount: "", currency: "KRW" as Expense["currency"], rate: "1", category: "food" as Expense["category"], day: "", paid: false });
 
-export function ExpenseBudget({ trip, stops, initial, hasOriginal }: {
-  trip: Trip; stops: Stop[]; initial: ExpenseBudgetState; hasOriginal: boolean;
+export function ExpenseBudget({ trip, stops, initial, hasOriginal, initialReservation }: {
+  trip: Trip; stops: Stop[]; initial: ExpenseBudgetState; hasOriginal: boolean; initialReservation?: NonNullable<ArchiveData["reservations"]>["entries"][number];
 }) {
+  const linked=initialReservation?initial.entries.find(entry=>entry.reservationId===initialReservation.id):undefined;
+  const selectedStop=stops.find(stop=>[...(initialReservation?.stopIds??[]),initialReservation?.stopId].some(id=>id===stop.id||id===stop.source_id));
   const [budget, setBudget] = useState(initial);
-  const [draft, setDraft] = useState(blank);
-  const [editing, setEditing] = useState<string | null>(null);
+  const [draft, setDraft] = useState(()=>linked?{name:linked.name,amount:String(linked.amount),currency:linked.currency,rate:String(linked.exchangeRate),category:linked.category,day:linked.day===null?"":String(linked.day),paid:linked.paid}:initialReservation?{...blank(),name:initialReservation.name,category:"other" as Expense["category"],day:selectedStop?String(selectedStop.day):"",paid:initialReservation.paymentStatus==="paid"}:blank());
+  const [editing, setEditing] = useState<string | null>(linked?.id??null);
+  const [linkedReservation,setLinkedReservation]=useState<string|null>(initialReservation?.id??null);
   const [reserve, setReserve] = useState(String(initial.reserve));
   const [day, setDay] = useState("");
   const [busy, setBusy] = useState(false);
@@ -64,14 +68,16 @@ export function ExpenseBudget({ trip, stops, initial, hasOriginal }: {
 
   async function submit(event: React.FormEvent) {
     event.preventDefault();
+    if(linkedReservation&&budget.entries.some(entry=>entry.reservationId===linkedReservation&&entry.id!==editing)){setError("이 예약에 연결된 지출이 이미 있습니다. 목록의 기존 항목을 수정해 주세요.");return;}
     if (editing && !budget.entries.some(entry => entry.id === editing)) { setError("다른 곳에서 삭제된 항목입니다. 새 항목으로 다시 작성해 주세요."); return; }
-    const parsed = expenseSchema.safeParse({ id: editing ?? crypto.randomUUID(), name: draft.name, amount: draft.amount === "" ? NaN : Number(draft.amount), currency: draft.currency,
+    const parsed = expenseSchema.safeParse({ reservationId: linkedReservation??budget.entries.find(entry => entry.id === editing)?.reservationId, id: editing ?? crypto.randomUUID(), name: draft.name, amount: draft.amount === "" ? NaN : Number(draft.amount), currency: draft.currency,
       exchangeRate: draft.currency === "KRW" ? 1 : Number(draft.rate), category: draft.category, day: draft.day === "" ? null : Number(draft.day), paid: draft.paid });
     if (!parsed.success) { setError("항목 이름·금액·환율을 확인해 주세요."); return; }
     const entries = editing ? budget.entries.map(entry => entry.id === editing ? parsed.data : entry) : [...budget.entries, parsed.data];
-    if (await save({ ...budget, entries })) { setDraft(blank()); setEditing(null); }
+    if (await save({ ...budget, entries })) { setDraft(blank()); setEditing(null); setLinkedReservation(null); }
   }
   function edit(entry: Expense) {
+    setLinkedReservation(entry.reservationId??null);
     setEditing(entry.id);
     setDraft({ name: entry.name, amount: String(entry.amount), currency: entry.currency, rate: String(entry.exchangeRate), category: entry.category, day: entry.day === null ? "" : String(entry.day), paid: entry.paid });
     document.querySelector<HTMLInputElement>("#expense-name")?.focus();
@@ -91,6 +97,7 @@ export function ExpenseBudget({ trip, stops, initial, hasOriginal }: {
       <p className="text-xs leading-relaxed text-muted-foreground">원화 합계는 항목에 직접 입력한 계산용 환율을 사용합니다. 실제 결제 금액이나 현재 환율과 다를 수 있어요.</p>
       <section className="rounded-2xl border bg-card p-5 sm:p-6" aria-labelledby="expense-form-heading">
         <h2 id="expense-form-heading" className="flex items-center gap-2 font-semibold"><Wallet className="size-4 text-primary" />{editing ? "지출 수정" : "지출 추가"}</h2>
+        {linkedReservation&&<p className="mt-2 text-xs text-muted-foreground">예약에 연결된 지출입니다. 금액·환율을 확인한 뒤 저장하세요.</p>}
         <form onSubmit={submit} className="mt-5 space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="space-y-2 text-xs">항목 이름<Input id="expense-name" aria-label="지출 항목 이름" placeholder="예: 첫날 숙소, 공항 이동" maxLength={200} value={draft.name} onChange={event => setDraft({ ...draft, name: event.target.value })} disabled={busy} required /></label>
@@ -105,7 +112,7 @@ export function ExpenseBudget({ trip, stops, initial, hasOriginal }: {
           </div>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <label className="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" className="size-4 accent-primary" checked={draft.paid} onChange={event => setDraft({ ...draft, paid: event.target.checked })} disabled={busy} />이미 결제했어요</label>
-            <div className="flex gap-2">{editing && <Button type="button" variant="outline" disabled={busy} onClick={() => { setEditing(null); setDraft(blank()); }}>취소</Button>}<Button type="submit" disabled={busy || !draft.name.trim() || draft.amount === ""}><Plus className="size-4" />{busy ? "저장 중…" : editing ? "수정 저장" : "항목 추가"}</Button></div>
+            <div className="flex gap-2">{(editing||linkedReservation) && <Button type="button" variant="outline" disabled={busy} onClick={() => { setEditing(null); setLinkedReservation(null); setDraft(blank()); }}>취소</Button>}<Button type="submit" disabled={busy || !draft.name.trim() || draft.amount === ""}><Plus className="size-4" />{busy ? "저장 중…" : editing ? "수정 저장" : "항목 추가"}</Button></div>
           </div>
         </form>
       </section>

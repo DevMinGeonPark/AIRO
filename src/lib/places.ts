@@ -186,18 +186,19 @@ export async function searchPlaces(
   near?: { lat: number; lng: number },
   limit = 10,
   bbox?: BBox,
+  options: { allowGoogle?: boolean } = {},
 ): Promise<SearchResult> {
   const q = query.trim();
   if (!q) return { places: [], source: "none", reason: "빈 질의" };
   const n = Math.min(Math.max(limit, 1), 20);
-  const key = `${q}|${near ? `${near.lat.toFixed(2)},${near.lng.toFixed(2)}` : ""}|${bbox?.map((v) => v.toFixed(1)).join(",") ?? ""}|${n}`;
+  const key = `${options.allowGoogle === false ? "osm" : "auto"}|${q}|${near ? `${near.lat.toFixed(2)},${near.lng.toFixed(2)}` : ""}|${bbox?.map((v) => v.toFixed(1)).join(",") ?? ""}|${n}`;
 
   const hit = cache.get(key);
   if (hit && Date.now() - hit.at < TTL_MS) return hit.value;
 
   // Google knows ratings, hours and which places people actually go to, so it
   // wins whenever a key is configured. OSM stays as the free fallback.
-  if (googleConfigured) {
+  if (options.allowGoogle !== false && googleConfigured) {
     try {
       const places = await searchGoogle(q, near, n);
       if (places.length) {

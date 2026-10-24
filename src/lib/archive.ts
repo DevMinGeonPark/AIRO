@@ -1,5 +1,10 @@
 import { z } from "zod";
+import { stopChoiceSchema } from "./stop-choices";
 import { expenseBudgetSchema } from "./expense-budget";
+import { predepartureSchema } from "./predeparture";
+import { tripImageSchema } from "./trip-images";
+import { itineraryProgressSchema } from "./itinerary-progress";
+import { reservationsSchema, notificationSettingsSchema, linkedStopIdsSchema } from "./trip-management";
 
 const text = z.string().max(20000);
 const nullableText = text.nullish();
@@ -41,6 +46,7 @@ export const stopInputSchema = z.object({
   mode: z.enum(["flight", "ground"]).optional(),
 });
 const archivedStop = stopInputSchema.extend({
+  choice: stopChoiceSchema.nullish(),
   source_id: z.string().min(1).max(200), date: nullableText,
 });
 const foodSchema = z.object({
@@ -56,7 +62,12 @@ export const archiveDataSchema = z.object({
   routes: z.record(z.string(), z.object({ coordinates: z.array(z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)])).min(2), distance: money, duration: money })).default({}),
   budget: budgetSchema.optional(),
   expenseBudget: expenseBudgetSchema.optional(),
-  documents: z.array(z.object({ name: z.string().min(1).max(300), mime: z.literal("application/pdf"), base64: z.string().regex(/^[A-Za-z0-9+/]*={0,2}$/), sha256: z.string().regex(/^[a-f0-9]{64}$/) })).max(20).default([]),
+  reservations: reservationsSchema.optional(),
+  notificationSettings: notificationSettingsSchema.optional(),
+  predepartureChecklist: predepartureSchema.optional(),
+  images: z.array(tripImageSchema).max(10).optional(),
+  itineraryProgress: itineraryProgressSchema.optional(),
+  documents: z.array(z.object({ name: z.string().min(1).max(300), mime: z.literal("application/pdf"), base64: z.string().regex(/^[A-Za-z0-9+/]*={0,2}$/), sha256: z.string().regex(/^[a-f0-9]{64}$/), stopIds: linkedStopIdsSchema.optional() })).max(20).default([]),
   savedPlaceIds: z.array(z.string().max(200)).max(10000).default([]),
   originalTrip: z.unknown().optional(),
   sourceFiles: z.record(z.string(), z.string()).optional(),
