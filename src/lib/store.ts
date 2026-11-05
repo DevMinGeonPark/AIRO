@@ -4,16 +4,14 @@ import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 import { createAnonClient } from "./supabase/user-client";
 import { createClient, getUser } from "./supabase/server";
 import { currentActor } from "./actor";
-import { supabaseConfigured, demoEnabled, localAuth } from "./supabase/config";
+import { supabaseConfigured, demoEnabled } from "./supabase/config";
 import { stopInputSchema } from "./archive";
 import { sortStops } from "./geo";
 import { mutateStops, type Placement, type StopPatch, type StopMutation } from "./itinerary-mutations";
-import { atTripLimit, tripLimit } from "@/ee/plans";
 import {
   type ApiKey,
   type ChatRole,
   type Message,
-  type Plan,
   type Stop,
   type Trip,
   type TravelMode,
@@ -164,19 +162,6 @@ export async function currentUserId(): Promise<string | null> {
   return (await getUser())?.id ?? null;
 }
 
-export async function currentPlan(): Promise<Plan> {
-  if (localAuth) return "pro"; // db-init seeds the owner as pro; the SQL trigger is the real gate
-  if (!supabaseConfigured) return "free";
-  const supabase = await createClient();
-  const { data, error } = await supabase!
-    .from("subscriptions")
-    .select("plan,status")
-    .eq("status", "active")
-    .maybeSingle();
-  if (error) throw new Error(error.message);
-  return data?.plan === "pro" ? "pro" : "free";
-}
-
 export async function listTrips(): Promise<Trip[]> {
   if (!supabaseConfigured) return demo().trips;
   const supabase = await createClient();
@@ -233,13 +218,6 @@ export async function createTrip(
   }
   const retry = demoReceipt(requestId, { operation: "createTrip", title, startDate });
   if (retry.previous) return retry.previous as { trip: Trip };
-  const trips = await listTrips();
-  const plan = await currentPlan();
-  if (atTripLimit(plan, trips.length))
-    return {
-      error: `무료 플랜은 여행 ${tripLimit(plan)}개까지 만들 수 있어요. 프로로 올리면 무제한입니다.`,
-    };
-
   const trip: Trip = { id: uid(), user_id: DEMO_USER, title, start_date: startDate, created_at: new Date().toISOString() };
   demo().trips.unshift(trip);
   const result = { trip };
@@ -514,8 +492,7 @@ export async function resolveApiToken(token: string): Promise<string | null> {
 }
 
 /**
- * What one conversation actually cost us. Without this the pricing plan is a
- * guess; with it, "무료 몇 회" becomes a number we can defend.
+ * What one conversation cost in API tokens, so the owner can see their own spend.
  * ponytail: demo mode keeps rows in the same file as everything else. With
  * Supabase configured this needs a `usage` table — see the TODO below.
  */

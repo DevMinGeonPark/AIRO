@@ -40,9 +40,8 @@ import com.heptivision.airo.core.model.*
         "지난 여행" -> it.status() == "지난 여행"
         else -> true
     } }
-    val limit = state.data?.plan == "free" && trips.size >= 3
     Scaffold(containerColor = Ink, floatingActionButton = {
-        if (!limit && state.data != null) ExtendedFloatingActionButton(onClick = { model.clearFormError(); creating = true }, icon = { Icon(Icons.Outlined.Add, null) }, text = { Text("새 여행") }, modifier = Modifier.semantics { contentDescription = "새 여행" }, containerColor = AirBlue, contentColor = Ink, shape = RoundedCornerShape(18.dp))
+        if (state.data != null) ExtendedFloatingActionButton(onClick = { model.clearFormError(); creating = true }, icon = { Icon(Icons.Outlined.Add, null) }, text = { Text("새 여행") }, modifier = Modifier.semantics { contentDescription = "새 여행" }, containerColor = AirBlue, contentColor = Ink, shape = RoundedCornerShape(18.dp))
     }) { padding ->
         PullToRefreshBox(isRefreshing = state.loading && state.data != null, onRefresh = model::refresh, modifier = Modifier.fillMaxSize().padding(padding)) {
             LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = 24.dp, end = 24.dp, top = 20.dp, bottom = 100.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
@@ -74,7 +73,6 @@ import com.heptivision.airo.core.model.*
                     }
                 }
                 items(visible, key = { it.trip.id }) { summary -> TripCard(summary) { onOpen(summary.trip.id) } }
-                if (limit) item { Text("무료 플랜의 여행 3개를 모두 사용하고 있어요.", color = Muted, style = MaterialTheme.typography.bodySmall) }
                 if (trips.isNotEmpty()) item { Text("${trips.size}개의 여행 · 아래로 당겨 새로고침", color = Muted, style = MaterialTheme.typography.labelSmall) }
             }
         }

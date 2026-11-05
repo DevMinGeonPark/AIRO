@@ -10,7 +10,8 @@ create table public.mcp_settings (
   singleton boolean primary key default true check (singleton),
   resource text not null check (resource like 'https://%/api/mcp' or resource like 'http://localhost:%/api/mcp')
 );
-insert into public.mcp_settings(singleton,resource) values(true,'https://airo.dev-heptivision.com/api/mcp');
+-- Placeholder. Set to {AIRO_SITE_URL}/api/mcp when enabling MCP OAuth (SELF_HOSTING.md).
+insert into public.mcp_settings(singleton,resource) values(true,'http://localhost:3002/api/mcp');
 alter table public.mcp_settings enable row level security;
 revoke all on public.mcp_settings from anon,authenticated;
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { listApiKeys, currentPlan } from "@/lib/store";
+import { listApiKeys } from "@/lib/store";
 import { supabaseConfigured } from "@/lib/supabase/config";
 import { SetupNotice } from "@/components/setup-notice";
 import { AppHeader } from "@/components/app-shell";
@@ -11,10 +11,10 @@ import { mcpResource, mcpOAuthEnabled, mcpApiKeyEnabled } from "@/lib/mcp-config
 export const dynamic = "force-dynamic";
 
 export default async function KeysPage() {
-  const [keys, plan, connections] = await Promise.all([listApiKeys(), currentPlan(), listMcpConnections()]);
+  const [keys, connections] = await Promise.all([listApiKeys(), listMcpConnections()]);
   return (
     <div className="min-h-dvh">
-      <AppHeader plan={plan} showSignOut={supabaseConfigured} />
+      <AppHeader showSignOut={supabaseConfigured} />
       <SetupNotice configured={supabaseConfigured} />
 
       <main className="mx-auto max-w-4xl px-5 py-8 sm:px-6 sm:py-14">

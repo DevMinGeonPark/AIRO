@@ -39,12 +39,10 @@ for file in /migrations/*.sql; do
   echo "applied $name"
 done
 
-# Single owner. The pro subscription row is what lifts the 3-trip limit in the SQL trigger.
+# Single owner.
 "${psql[@]}" <<SQL
 insert into auth.users (id, email) values ('$OWNER', '${AIRO_OWNER_EMAIL//\'/\'\'}')
   on conflict (id) do update set email = excluded.email;
-insert into public.subscriptions (user_id, plan, status) values ('$OWNER', 'pro', 'active')
-  on conflict (user_id) do update set plan = 'pro', status = 'active';
 notify pgrst, 'reload schema';
 SQL
 echo "AIRO database ready"

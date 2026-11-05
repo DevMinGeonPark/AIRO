@@ -8,7 +8,6 @@
     "test:mobile-api": "node scripts/test-mobile-api.mjs",
     "test:codex": "node scripts/test-codex-bridge.mjs",
     "plugin:build": "node scripts/build-codex-plugin.mjs",
-    "plugin:package": "node scripts/package-codex-plugin.mjs",
     "test:workspace": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/test-workspace-data.mjs && node scripts/test-workspace-ui.mjs",
     "test:mcp:local": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/test-mcp-local.mjs",
     "test:mcp:saved": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/test-saved-places-mcp.mjs",

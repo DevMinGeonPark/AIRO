@@ -1,0 +1,20 @@
+{
+  "name": "airo",
+  "interface": {
+    "displayName": "AIRO"
+  },
+  "plugins": [
+    {
+      "name": "airo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/airo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

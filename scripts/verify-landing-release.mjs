@@ -115,7 +115,7 @@ for (const [type, base, width, height, theme] of [
     assert.equal(await page.locator('.globe-mapcn').getAttribute('data-camera'), arrivalCamera);
     await page.waitForTimeout(1600);
     await page.screenshot({ path: `${output}/conversation-${width}-${theme}.png` });
-    for (const path of ['/login', '/pricing', '/docs/mcp']) {
+    for (const path of ['/login', '/docs/mcp']) {
       await page.goto(base + path, { waitUntil: 'networkidle' });
       await expect(page.locator('.airo-logo').first()).toHaveCSS('color', theme === 'dark' ? 'rgb(134, 165, 255)' : 'rgb(51, 92, 204)');
     }

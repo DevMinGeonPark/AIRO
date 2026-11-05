@@ -9,7 +9,7 @@ function Get-VerifiedArchive($Path, $Url, $Hash) {
     Move-Item -Force -LiteralPath "$Path.part" -Destination $Path
   }
 }
-Get-VerifiedArchive (Join-Path $airoCache 'bridge.tar.gz') 'https://airo.dev-heptivision.com/downloads/airo-codex-0.2.1-win32-x64.tar.gz' '5f9e6a816f06f1dc050d1b36c8176c47b7d4dedfadcb5a471946added658f7d7'
+Get-VerifiedArchive (Join-Path $airoCache 'bridge.tar.gz') 'https://github.com/DevMinGeonPark/AIRO/releases/download/codex-bridge-0.2.1/airo-codex-0.2.1-win32-x64.tar.gz' '5f9e6a816f06f1dc050d1b36c8176c47b7d4dedfadcb5a471946added658f7d7'
 Get-VerifiedArchive (Join-Path $airoCache 'codex.tar.gz') 'https://registry.npmjs.org/@openai/codex/-/codex-0.154.0-win32-x64.tgz' '27eedae55e37ed1da4078b36a6ef9e4ffe8546a60fd6df5ee6408fdd16aff8ea'
 tar -xzf (Join-Path $airoCache 'bridge.tar.gz') -C $airoCache
 if ($LASTEXITCODE -ne 0) { throw '설치 파일을 열지 못했습니다.' }

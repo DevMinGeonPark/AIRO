@@ -69,9 +69,9 @@ for (const [engine, browserType] of [['chromium', chromium], ['webkit', webkit]]
     assert.ok(!(card.x<controls.x+controls.width&&card.x+card.width>controls.x&&card.y<controls.y+controls.height&&card.y+card.height>controls.y),`${width}: conversation overlaps toolbar`);
    }
    if(width===320||width===844) await page.screenshot({path:`${output}/${engine}-landing-${width}.png`});
-   for(const path of ['/login','/pricing','/docs/mcp']) {
+   for(const path of ['/login','/credits/photos','/docs/mcp']) {
     await page.goto(base+path,{waitUntil:'networkidle'});await fit(page);
-    if(width<768&&path==='/pricing') {await page.getByLabel('메뉴 열기',{exact:true}).click();await expect(page.getByRole('navigation',{name:'모바일 주 메뉴'})).toBeVisible();await page.keyboard.press('Escape');}
+    if(width<768&&path==='/credits/photos') {await page.getByLabel('메뉴 열기',{exact:true}).click();await expect(page.getByRole('navigation',{name:'모바일 주 메뉴'})).toBeVisible();await page.keyboard.press('Escape');}
     if(width<768&&path==='/docs/mcp') await expect(page.getByRole('navigation',{name:'앱 메뉴'})).toBeVisible();
    }
    if(auth) {

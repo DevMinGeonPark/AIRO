@@ -21,7 +21,7 @@ class DemoTripRepository(private val store: SecretStore, private val bundledRoad
         trips = next
     }
     private fun requireTrip(id: String) = trips.firstOrNull { it.trip.id == id } ?: throw ApiException(404, "여행을 찾을 수 없습니다.")
-    override suspend fun list() = lock.withLock { TripList(trips.map { TripSummary(it.trip, it.stops) }, "pro") }
+    override suspend fun list() = lock.withLock { TripList(trips.map { TripSummary(it.trip, it.stops) }) }
     override suspend fun detail(id: String) = lock.withLock { requireTrip(id).let { it.copy(attachments = it.resources.attachments(), roads = if (id == "demo-rome") bundledRoads + it.roads else it.roads) } }
     override suspend fun create(input: TripInput) = lock.withLock {
         Trip(UUID.randomUUID().toString(), "demo", input.title, input.startDate).also { commit(listOf(TripDetail(it)) + trips) }

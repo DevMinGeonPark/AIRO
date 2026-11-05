@@ -7,8 +7,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RouteThumb } from "@/components/route-thumb";
-import type { Plan, Stop, Trip } from "@/lib/types";
-import { atTripLimit, tripLimit } from "@/ee/plans";
+import type { Stop, Trip } from "@/lib/types";
 
 type Summary = { trip: Trip; stops: Stop[] };
 
@@ -27,14 +26,13 @@ function period(startDate: string | null, days: number, firstDay = 1, lastDay = 
   return `${md(from)} – ${md(to)}`;
 }
 
-export function TripList({ initial, plan }: { initial: Summary[]; plan: Plan }) {
+export function TripList({ initial }: { initial: Summary[] }) {
   const router = useRouter();
   const [trips, setTrips] = useState(initial);
   const [title, setTitle] = useState("");
   const [startDate, setStartDate] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const atLimit = atTripLimit(plan, trips.length);
 
   async function create(e: React.FormEvent) {
     e.preventDefault();
@@ -76,13 +74,12 @@ export function TripList({ initial, plan }: { initial: Summary[]; plan: Plan }) 
           placeholder="새 여행 이름 (예: 간사이 4일)"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          disabled={atLimit}
           className="col-span-2 h-11 rounded-full px-4 sm:col-span-1"
         />
-        <Input type="date" aria-label="1일차 시작일" className="h-11 min-w-0 rounded-full" value={startDate} onChange={(e) => setStartDate(e.target.value)} disabled={atLimit} />
+        <Input type="date" aria-label="1일차 시작일" className="h-11 min-w-0 rounded-full" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
         <Button
           type="submit"
-          disabled={busy || atLimit || !title.trim()}
+          disabled={busy || !title.trim()}
           className="h-11 shrink-0 rounded-full px-5"
         >
           <Plus className="size-4" /> 만들기
@@ -90,14 +87,6 @@ export function TripList({ initial, plan }: { initial: Summary[]; plan: Plan }) 
       </form>
       </div>
 
-      {atLimit && (
-        <p className="text-muted-foreground mt-3 text-sm">
-          무료 플랜은 여행 {tripLimit(plan)}개까지입니다.{" "}
-          <Link href="/pricing" className="text-primary hover:underline dark:text-primary">
-            요금제 보기 ›
-          </Link>
-        </p>
-      )}
       {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
 
       {trips.length ? (

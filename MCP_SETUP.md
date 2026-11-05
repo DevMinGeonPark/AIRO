@@ -1,8 +1,4 @@
-# AIRO MCP — 설정과 마지막 API 검증
-
-2026-09-10: AIRO 운영 DB에 `0006`·`0007`·`0008`을 적용했다. Supabase OAuth Server, `/app/connect`, Dynamic Client Registration, `public.airo_mcp_token_hook`을 활성화하고 대시보드를 다시 열어 저장값을 확인했다. 현재 서명 키는 ECC P-256이며 기존 키와 Google 로그인 설정은 유지했다. 앱의 `MCP_OAUTH_ENABLED=true`를 설정했다.
-
-API 키용 서버 서명은 미설정이므로 새 API 키를 발급하지 않으며 사용자는 OAuth 로그인 연결을 이용한다. 실제 외부 도구에서 사용자 로그인·여행 권한 승인을 거친 토큰 발급과 편집은 아직 별도 확인이 필요하다. 최종 배포 빌드는 `DEPLOYMENT.md`, 계정형 서비스 기능은 `COMMERCIAL_SERVICE.md`를 참고한다.
+# AIRO MCP — 설정과 검증 (Supabase 구성)
 
 ## 구현된 흐름
 
@@ -27,10 +23,9 @@ API 키용 서버 서명은 미설정이므로 새 API 키를 발급하지 않�
 
 새 코드는 `create_trip_once`, `mutate_itinerary`, `resolve_mcp_key`, `consume_mcp_request` RPC를 사용하므로 **새 앱 빌드로 전환하기 전에 두 마이그레이션이 필요하다.** 초기 테이블을 다시 만들거나 운영 자료를 가져오는 작업은 필요 없다. 적용 전 운영 DB의 일반적인 백업/복구 절차를 따른다.
 
-`mcp_settings.resource`의 초기값은 `https://airo.dev-heptivision.com/api/mcp`다. 다른 배포 주소라면 SQL Editor에서 실제 주소로 수정한다. 이 값은 `NEXT_PUBLIC_SITE_URL`에 `/api/mcp`를 붙인 값과 정확히 같아야 한다.
+`mcp_settings.resource`의 초기값은 자리표시자 `http://localhost:3002/api/mcp`다. OAuth를 켜기 전에 SQL Editor에서 실제 주소로 수정한다. 이 값은 `NEXT_PUBLIC_SITE_URL`에 `/api/mcp`를 붙인 값과 정확히 같아야 한다.
 
 ```sql
--- 다른 환경을 사용하는 경우에만 실제 주소로 변경
 update public.mcp_settings
 set resource = 'https://실제-아이로-주소/api/mcp'
 where singleton;
@@ -104,7 +99,7 @@ NEXT_DIST_DIR=.next-airo-mcp npm run build
 1. **로그인·키 발급:** 이메일 로그인 후 조회 전용 키와 편집 키를 각각 만든다. 발급·복사·목록·만료 표시를 확인한다.
 2. **연결:** 사용하는 MCP 클라이언트에서 initialize → tools/list를 확인한다. 조회 전용에는 13개, 편집에는 29개 도구가 표시되어야 한다.
 3. **계정 격리:** A 계정 키에서 B 계정의 여행 ID를 조회/수정하면 거절되어야 한다.
-4. **여행 생성:** 같은 `requestId`로 `createTrip`을 두 번 보내도 여행이 하나만 만들어져야 한다. 무료 여행 개수 제한과 재시도 결과도 확인한다.
+4. **여행 생성:** 같은 `requestId`로 `createTrip`을 두 번 보내도 여행이 하나만 만들어져야 한다. 재시도 결과도 확인한다.
 5. **핵심 여행 흐름:** 실제 장소 두 곳 A/B를 검색해 저장 → `searchAlongRoute`로 식당 선택 → `afterStopId=A`로 식당 추가 → 식당의 ID 뒤에 카페 추가. 일정은 **A → 식당 → 카페 → B**가 되어야 한다.
 6. **중복·순서:** 식당 추가를 같은 `requestId`로 재시도한다. 하나만 남아야 한다. 다른 날로 옮기기, 일부 ID만 재정렬하기, 없는 장소/잘못된 좌표/중복 ID도 확인한다. 실패한 작업은 기존 순서를 바꾸지 않아야 한다.
 7. **실제 지도:** Valhalla 경로와 장소 공급자의 응답을 확인한다. 실제 도로를 표시하고, 실패 시 오류가 보이며 직선으로 대체하지 않아야 한다. 평점·영업 정보는 공급자가 준 경우에만 표시한다.

@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import type { Plan } from "@/lib/types";
-import { planLabel } from "@/ee/plans";
 
 /* ── 다크 모드 ──────────────────────────────────────────────────────
  * 상태는 <html class="dark"> 하나. 헤더 토글이 그걸 뒤집고, 지도처럼
@@ -69,13 +67,11 @@ function isActive(pathname: string, href: string) {
  * `wide` 는 워크스페이스처럼 화면을 꽉 채우는 라우트용.
  */
 export function AppHeader({
-  plan,
   showSignOut,
   wide,
   center,
   back,
 }: {
-  plan?: Plan;
   showSignOut?: boolean;
   wide?: boolean;
   /** 헤더 가운데에 끼워 넣을 것 (워크스페이스의 여행 제목 등) */
@@ -118,14 +114,6 @@ export function AppHeader({
         )}
 
         <div className="ml-auto flex shrink-0 items-center gap-1.5">
-          {plan && (
-            <Link
-              href="/pricing"
-              className="text-muted-foreground hover:text-foreground hidden rounded-full border px-2.5 py-1 text-xs transition-colors sm:block"
-            >
-              {planLabel(plan)}
-            </Link>
-          )}
           <DarkToggle />
           {showSignOut && (
             <form action="/auth/signout" method="post" className={back ? "hidden lg:block" : ""}>

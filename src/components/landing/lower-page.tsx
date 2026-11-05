@@ -64,7 +64,7 @@ export function EditorialFooter() {
           <p>계획은 가볍게,<br />여행은 깊게.</p>
         </div>
         <nav className="lower-footer-links" aria-label="푸터 메뉴">
-          <div><h3>아이로와 여행</h3><Link href="/app" prefetch={false}>내 여행</Link><Link href="/pricing" prefetch={false}>요금제</Link><Link href="/login" prefetch={false}>로그인</Link></div>
+          <div><h3>아이로와 여행</h3><Link href="/app" prefetch={false}>내 여행</Link><a href="https://github.com/DevMinGeonPark/AIRO">소스 코드</a><Link href="/login" prefetch={false}>로그인</Link></div>
           <div><h3>도움이 필요할 때</h3><a href="#mcp">AI 도구 연결 <ArrowUpRight size={12} /></a><Link href="/app/settings/keys" prefetch={false}>API 키 관리</Link><Link href="/credits/photos" prefetch={false}>사진 출처</Link></div>
         </nav>
         <button type="button" className="lower-footer-to-top" onClick={toTop} aria-label="페이지 맨 위로 이동"><ArrowUp size={16} /><span>맨 위로</span></button>

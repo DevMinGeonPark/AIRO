@@ -25,7 +25,7 @@ class UpdateRepositoryTest {
     private fun manifest(value: UpdateArtifact = artifact) = UpdateManifest(1, "2026-09-18", listOf("설정에서 업데이트"), listOf(value))
     private fun release(value: UpdateArtifact = artifact) = UpdateRelease(value, "2026-09-18", listOf("설정에서 업데이트"))
     private fun client(server: MockWebServer) = OkHttpClient.Builder().addInterceptor { chain ->
-        assertEquals("airo.dev-heptivision.com", chain.request().url.host)
+        assertEquals(java.net.URI(com.heptivision.airo.BuildConfig.API_BASE_URL).host, chain.request().url.host)
         assertEquals("https", chain.request().url.scheme)
         assertNull(chain.request().header("Authorization"))
         chain.proceed(chain.request().newBuilder().url(server.url(chain.request().url.encodedPath)).build())

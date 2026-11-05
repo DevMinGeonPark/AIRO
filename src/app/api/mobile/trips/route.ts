@@ -1,7 +1,5 @@
 import { apiRoute } from "@/lib/api";
-import { currentPlan, listTripSummaries } from "@/lib/store";
+import { listTripSummaries } from "@/lib/store";
 
-export const GET = apiRoute(async () => {
-  const [trips, plan] = await Promise.all([listTripSummaries(), currentPlan()]);
-  return Response.json({ trips, plan });
-}, true);
+// `plan` is kept for Android clients <= 0.3.8, which show a trip limit when it is "free".
+export const GET = apiRoute(async () => Response.json({ trips: await listTripSummaries(), plan: "pro" }), true);

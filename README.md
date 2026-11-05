@@ -1,12 +1,12 @@
 # AIRO — Personal AI Roadmap Orchestrator
 
-**아이로(AIRO)** 는 *AI Roadmap Orchestrator* 의 줄임말입니다. 여행이라는 개인의 로드맵을 여러 AI 도구가 함께 편집하도록 조율하는 서비스입니다.
+**아이로(AIRO)** 는 *AI Roadmap Orchestrator* 의 줄임말입니다. 여행이라는 개인의 로드맵을 여러 AI 도구가 함께 편집하도록 조율하는, 내 서버에 올려 쓰는(self-hosted) 소프트웨어입니다.
 
 > 어디로든, AI와 함께.
 
 떠오른 생각을 대화로 던지면 일정이 됩니다. 그 일정은 지도 위 실제 도로를 따라 그려지고, 저장한 장소와 예약 자료, 예산이 일정 곁에 모입니다. 웹뿐 아니라 Claude, Cursor, Codex, ChatGPT 어디에서든 같은 여행을 보고 고칠 수 있습니다.
 
-운영 주소: https://airo.dev-heptivision.com
+작성자가 직접 쓰는 인스턴스: https://airo.dev-heptivision.com (공개 서비스가 아닙니다. 직접 쓰려면 [셀프호스팅](SELF_HOSTING.md))
 
 ## 실제 동작
 
@@ -189,19 +189,19 @@ sequenceDiagram
 
 AIRO 서버는 OpenAI 토큰을 받지 않습니다. 기기 비밀은 사용자 PC의 로컬 파일에만 있고 DB에는 SHA-256만 저장합니다. 도구는 워커가 아니라 로그인한 브라우저가 실행하므로 편집 권한은 끝까지 사용자 세션에 묶입니다.
 
-## 두 가지 에디션
+## 셀프호스팅
 
-| | **Cloud** | **Community (self-hosted)** |
+AIRO는 내 서버에 올려 쓰는 소프트웨어입니다. 요금제·한도·결제가 없습니다.
+
+| | **Community** | **Supabase** |
 | --- | --- | --- |
-| 어디서 | https://airo.dev-heptivision.com | 내 서버. `docker compose up -d` |
-| 계정 | 이메일·Google 로그인 | 소유자 1명, 비밀번호 |
-| 저장소 | Supabase | 내 PostgreSQL + PostgREST |
-| AI | 서버 키 또는 내 Codex | 내 OpenAI 키 또는 내 Codex |
-| MCP | API 키 + OAuth | API 키 |
-| 요금 | 무료 여행 3개, 유료 플랜 예정 | 없음. 한도 없음 |
-| 라이선스 | 코어 AGPL-3.0 + `src/ee/` 상용 | AGPL-3.0 |
+| 용도 | 나 혼자 | 가족·친구 등 여러 사용자 |
+| 계정 | 소유자 1명, 비밀번호 | 이메일·Google 로그인 |
+| 저장소 | 내 PostgreSQL + PostgREST (`docker compose up -d`) | 내 Supabase 프로젝트 |
+| AI | 내 OpenAI 키 또는 내 Codex | 같음 |
+| MCP | API 키 | API 키 + OAuth |
 
-같은 저장소, 같은 커밋, 같은 SQL입니다. 환경변수 `NEXT_PUBLIC_AIRO_EDITION=community` 하나로 갈립니다. 설치는 [SELF_HOSTING.md](SELF_HOSTING.md).
+같은 코드, 같은 SQL입니다. 설치는 [SELF_HOSTING.md](SELF_HOSTING.md).
 
 ## 기술 스택
 
@@ -216,7 +216,7 @@ npm run dev        # http://localhost:3002
 
 Supabase 설정이 없으면 개발 서버는 `.demo-db.json` 파일 저장소로 동작합니다. 운영 빌드에서는 이 경로가 닫힙니다.
 
-> **데모 저장소의 범위.** 여행·일정 편집, 지도·도로 경로, 장소 검색, MCP의 일정 도구 13개만 동작합니다. 예산·자료·예약·변경 이력·선택형 일정·진행 체크는 계정 데이터베이스가 필요해 데모에서는 숨겨집니다. 전체 기능은 [Community Edition](SELF_HOSTING.md)(docker compose, 5분)으로 확인하세요. 실제 계정 기능을 쓰려면 `.env.local.example`을 참고해 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL`을 넣고 `supabase/migrations/0001~0016`를 순서대로 적용합니다.
+> **데모 저장소의 범위.** 여행·일정 편집, 지도·도로 경로, 장소 검색, MCP의 일정 도구 13개만 동작합니다. 예산·자료·예약·변경 이력·선택형 일정·진행 체크는 계정 데이터베이스가 필요해 데모에서는 숨겨집니다. 전체 기능은 [Community Edition](SELF_HOSTING.md)(docker compose, 5분)으로 확인하세요. 실제 계정 기능을 쓰려면 `.env.local.example`을 참고해 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL`을 넣고 `supabase/migrations/`를 번호 순서대로 적용합니다([SELF_HOSTING.md](SELF_HOSTING.md#여러-사용자로-운영-supabase)).
 
 | 목적 | 명령 |
 | --- | --- |
@@ -224,26 +224,24 @@ Supabase 설정이 없으면 개발 서버는 `.demo-db.json` 파일 저장소�
 | 운영 빌드와 분리해 검증 | `NEXT_DIST_DIR=.next-check npm run build` |
 | 도구 계약·DB·API 통합 | `npm run test:database` · `npm run test:integration` (전용 테스트 DB + 작성자 비공개 fixture `.private/` 필요 — 외부 기여자는 `test:mcp:local`이 같은 마이그레이션을 메모리 PostgreSQL로 검증) |
 | MCP | `npm run test:mcp:local` |
-| Codex 브리지 | `npm run test:codex` · `npm run plugin:build` · `npm run plugin:package` |
+| Codex 브리지 | `npm run test:codex` · `npm run plugin:build` |
 | 랜딩·모바일 | `npm run test:landing` · `npm run test:mobile` |
 
-테스트는 프레임워크 없이 `scripts/test-*.mjs` 단일 스크립트입니다. 전제 조건과 전체 목록은 [OPERATIONS.md](OPERATIONS.md)에 있습니다.
+테스트는 프레임워크 없이 `scripts/test-*.mjs` 단일 스크립트입니다. CI에서 도는 오프라인 검사는 [CONTRIBUTING.md](CONTRIBUTING.md)에 있습니다.
 
 ## 문서
 
 | 문서 | 내용 |
 | --- | --- |
-| [OPERATIONS.md](OPERATIONS.md) | 개발·운영 연결·개인 자료 이식·검증 절차 |
-| [SELF_HOSTING.md](SELF_HOSTING.md) | Community Edition을 내 서버에 docker compose로 올리기 |
-| [AUTH_SETUP.md](AUTH_SETUP.md) | Supabase Auth·Google 로그인 설정 |
+| [SELF_HOSTING.md](SELF_HOSTING.md) | 내 서버에 올리기 — docker compose(1인) 또는 Supabase(여러 사용자·Google 로그인) |
 | [MCP_SETUP.md](MCP_SETUP.md) · [MCP_IMPLEMENTATION.md](MCP_IMPLEMENTATION.md) | MCP 서버 설정과 구현 |
 | [CODEX_CONNECTION.md](CODEX_CONNECTION.md) | Codex 브리지 구조와 계정 경계 |
 | [BRAND.md](BRAND.md) · [DESIGN.md](DESIGN.md) | 로고·색상·화면 기준 |
 
 ## 상태
 
-결제와 공개 공유는 아직 없습니다. Cloud 무료 플랜은 여행 3개입니다. Codex 플러그인의 공식 디렉터리 등록은 진행 중이며 지금은 Git 마켓플레이스 설치를 제공합니다.
+공개 공유는 아직 없습니다. Codex 플러그인의 공식 디렉터리 등록은 진행 중이며 지금은 Git 마켓플레이스 설치를 제공합니다.
 
 ## 라이선스
 
-코어는 [AGPL-3.0](LICENSE)입니다. 내 서버에 올려 쓰는 데 아무 제한이 없고, 이 코드를 고쳐 남에게 서비스로 제공하면 그 소스도 공개해야 합니다. `src/ee/`(호스팅 플랜·결제)는 [별도 상용 라이선스](src/ee/LICENSE)이며 Community Edition에서는 비활성입니다.
+코어는 [AGPL-3.0](LICENSE)입니다. 내 서버에 올려 쓰는 데 아무 제한이 없고, 이 코드를 고쳐 남에게 서비스로 제공하면 그 소스도 공개해야 합니다.

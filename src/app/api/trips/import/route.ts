@@ -26,9 +26,6 @@ export const POST = apiRoute(async (request: Request) => {
   }
   const client = await createClient();
   const { data, error } = await client!.rpc("import_trip", { p_archive: parsed.data });
-  if (error) {
-    if (error.code === "P0001" && error.message.includes("무료 플랜")) throw new HttpError(409, error.message);
-    throw new Error(error.message);
-  }
+  if (error) throw new Error(error.message);
   return NextResponse.json(data, { status: data.imported ? 201 : 200 });
 }, true);
