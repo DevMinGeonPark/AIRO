@@ -13,7 +13,7 @@
 
 ## 5분 설치
 
-필요한 것: Docker + docker compose v2.
+필요한 것: Docker + docker compose v2.24 이상(`env_file`의 `required` 문법).
 
 ```sh
 git clone https://github.com/DevMinGeonPark/AIRO.git && cd AIRO
@@ -21,7 +21,7 @@ cp community.env.example .env
 # .env 열어서 세 값 채우기:
 #   POSTGRES_PASSWORD   openssl rand -hex 24 (영숫자만)
 #   AIRO_JWT_SECRET     openssl rand -hex 32
-#   AIRO_OWNER_PASSWORD 로그인 비밀번호
+#   AIRO_OWNER_PASSWORD 로그인 비밀번호(16자 이상, 짧으면 앱이 시작하지 않음)
 docker compose up -d
 ```
 
@@ -83,7 +83,9 @@ COMMUNITY_BASE_URL=http://localhost:3002 AIRO_OWNER_PASSWORD=... npm run test:co
 
 ## 알아둘 것
 
-- 비밀번호 시도는 서버 전체로 15분에 5회(소유자 1명이라 IP 구분 없음). 프로세스 재시작 시 초기화.
+- 비밀번호 시도는 서버 전체로 15분에 5회(소유자 1명이라 IP 구분 없음). 프로세스 재시작 시 초기화. 인터넷에 공개하면 누군가 틀린 비밀번호를 계속 보내 소유자 로그인을 막을 수 있으니, Tailscale·사설망·접근 제어가 있는 프록시 뒤에 두세요.
+- 앱 포트는 기본 `127.0.0.1`에만 열립니다(`AIRO_BIND`). LAN에 열려면 `AIRO_BIND=0.0.0.0` — 평문 HTTP라 같은 망에서 비밀번호·세션을 엿볼 수 있으니 TLS 프록시를 권장합니다.
+- `OPENAI_API_KEY`·`GOOGLE_MAPS_API_KEY`는 `.env` 파일에서만 읽습니다. 셸에 export한 값은 컨테이너로 넘어가지 않습니다(모르는 과금 방지). Google Places는 사용자당 시간당 `GOOGLE_PLACES_HOURLY_LIMIT`(기본 60)회를 넘으면 OSM으로 대체합니다.
 - 세션 쿠키는 30일 JWT이며 사용 중이면 자동 연장됩니다. 로그아웃은 브라우저 쿠키만 지웁니다. 유출이 의심되면 `AIRO_OWNER_PASSWORD`를 바꾸고 재시작하세요 — 기존 세션이 전부 무효화됩니다.
 - Codex 플러그인과 브리지 실행 파일은 클라우드가 배포합니다. 내 서버는 `/docs/codex/install` 안내문에 자기 주소만 넣어 주면 되므로 이미지에 다운로드 파일이 없습니다. `AIRO_ORIGIN`은 https 주소이거나 사설망(localhost·10.x·192.168.x·100.64~127.x·172.16~31.x·`.local`)의 http 주소만 받습니다.
 - HTTPS는 앞단(Tailscale Serve, Cloudflare Tunnel, Caddy)에 맡깁니다. 앱은 `AIRO_SITE_URL`이 `https:`면 쿠키에 `Secure`를 붙입니다.

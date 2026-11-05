@@ -1,5 +1,6 @@
 import "server-only";
 import { decodePolyline } from "./polyline";
+import { siteUrl } from "./supabase/config";
 
 export type RoadRoute = { coordinates: [number, number][]; distance: number; duration: number; profile: "pedestrian" | "auto" };
 const cache = new Map<string, { at: number; value: RoadRoute }>();
@@ -22,7 +23,7 @@ export function roadRoute(from: [number, number], to: [number, number], profile:
     await new Promise(resolve => setTimeout(resolve, Math.max(0, nextRequest - Date.now())));
     nextRequest = Date.now() + 1200;
     const response = await fetch("https://valhalla1.openstreetmap.de/route", {
-      method: "POST", headers: { "Content-Type": "application/json", "User-Agent": "AIRO/0.1 (https://airo.dev-heptivision.com)" },
+      method: "POST", headers: { "Content-Type": "application/json", "User-Agent": `AIRO/0.4 (${siteUrl})` },
       body: JSON.stringify({ locations: [from, to].map(([lon, lat]) => ({ lon, lat, type: "break" })), costing: profile, units: "kilometers" }),
       signal: AbortSignal.timeout(15_000), cache: "no-store",
     });

@@ -126,8 +126,9 @@ try {
 
   const list = await rpc("tools/list");
   const names = list.body.result.tools.map((t) => t.name).sort();
-  // Full contract lives in src/lib/tool-contracts.ts (29 tools); check count + core subset.
-  assert.equal(names.length, 29, "29개 도구가 노출돼야 한다");
+  // Demo mode hides the 16 account-DB tools (ACCOUNT_DB_TOOLS in src/lib/tool-contracts.ts): 29 - 16 = 13.
+  assert.equal(names.length, 13, "데모 모드에서는 13개 도구가 노출돼야 한다");
+  assert.ok(!names.includes("getBudget"), "계정 DB 도구는 데모에서 숨겨야 한다");
   for (const core of ["addStop", "createTrip", "getTrip", "listTrips", "moveStop", "removeStop", "reorderDay", "searchPlaces"])
     assert.ok(names.includes(core), `핵심 도구 ${core} 누락`);
 

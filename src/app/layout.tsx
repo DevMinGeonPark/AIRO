@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { siteUrl } from "@/lib/supabase/config";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "./mobile.css";
@@ -22,7 +23,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "아이로 AIRO — 어디로든, AI와 함께.",
   applicationName: "아이로 AIRO",
-  metadataBase: new URL("https://airo.dev-heptivision.com"),
+  metadataBase: new URL(siteUrl),
   // 홈 화면 설치(PWA). 매니페스트는 src/app/manifest.ts, 아이콘은 public/icons.
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "아이로", statusBarStyle: "black-translucent" },

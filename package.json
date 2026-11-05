@@ -82,5 +82,8 @@
     "shadcn": "^4.23.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

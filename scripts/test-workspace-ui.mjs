@@ -201,8 +201,9 @@ try {
     await expect(todoModal.getByLabel("새 할 일",{exact:true})).toHaveValue("비자 서류 준비");
     await todoModal.getByLabel("분류",{exact:true}).selectOption("documents");
     await todoModal.getByRole("button",{name:"추가",exact:true}).click();
-    await expect(todoModal.getByRole("link",{name:/일본 비자 안내/})).toHaveAttribute("href","https://www.kr.emb-japan.go.jp/itpr_ko/visa_application.html");
-    await expect(todoModal.getByRole("link",{name:"Visit Japan Web · QR 화면 로그인 후 여행을 선택해 주세요",exact:true})).toHaveAttribute("href",imageFixture.sourceUrl);
+    // Fixture trip is in Rome: Japan-only guides (tripInJapan) must stay hidden.
+    await expect(todoModal.getByRole("link",{name:/일본 비자 안내/})).toHaveCount(0);
+    await expect(todoModal.getByRole("link",{name:/Visit Japan Web/})).toHaveCount(0);
     await page.screenshot({path:new URL(`todo-${label}.png`,output).pathname});
     assert.ok(await todoModal.evaluate(element=>element.scrollWidth<=element.clientWidth+1),"Todo fits narrow screens");
     todoFailure=true;

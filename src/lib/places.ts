@@ -4,12 +4,16 @@ import { Agent } from "undici";
 
 import { matchCategory, type Category } from "./categories";
 import { googleConfigured, searchGoogle } from "./places-google";
+import { currentActor } from "./actor";
+import { getUser } from "./supabase/server";
+import { siteUrl } from "./supabase/config";
 import type { Place } from "./types";
 export type { Place };
 
 export type SearchResult = { places: Place[]; source: string; reason?: string };
 
 /** 지도 뷰포트 [west, south, east, north] */
+/** [minLng, minLat, maxLng, maxLat] (Photon order). */
 export type BBox = [number, number, number, number];
 
 const TTL_MS = 5 * 60_000;
@@ -18,7 +22,8 @@ const CACHE_MAX = 200;
 const cache = new Map<string, { at: number; value: SearchResult }>();
 
 // HTTP 헤더는 Latin-1 만 담을 수 있다. 한글을 넣으면 fetch 가 통째로 던진다.
-const UA = "airo/0.1 (+https://airo.dev-heptivision.com)";
+// OSM usage policy wants a contact URL: identify this install, not the hosted cloud.
+const UA = `airo/0.4 (+${siteUrl})`;
 
 async function getJSON(url: string, headers: Record<string, string> = {}) {
   const res = await fetch(url, {
@@ -181,6 +186,19 @@ async function searchCategory(
  * Nominatim 순으로 한 단계씩 넓힌다.
  * 둘 다 실패해도 던지지 않는다 — 빈 배열 + reason 으로 UI 가 안 깨지게.
  */
+// Google Places is billed per request; cap it per user so one account cannot run up the operator bill.
+// Over the cap the search silently uses the free OSM path.
+// ponytail: in-memory per process (restart resets); move to a DB counter like consume_chat_request if AIRO runs multi-instance.
+const GOOGLE_HOURLY_LIMIT = Math.max(0, Number(process.env.GOOGLE_PLACES_HOURLY_LIMIT || 60) || 0);
+const googleUse = new Map<string, number[]>();
+async function googleAllowed() {
+  const id = currentActor()?.userId ?? (await getUser().catch(() => null))?.id ?? "anonymous";
+  const now = Date.now(), recent = (googleUse.get(id) ?? []).filter((at) => now - at < 3_600_000);
+  if (recent.length >= GOOGLE_HOURLY_LIMIT) { googleUse.set(id, recent); return false; }
+  recent.push(now); googleUse.set(id, recent);
+  return true;
+}
+
 export async function searchPlaces(
   query: string,
   near?: { lat: number; lng: number },
@@ -198,7 +216,7 @@ export async function searchPlaces(
 
   // Google knows ratings, hours and which places people actually go to, so it
   // wins whenever a key is configured. OSM stays as the free fallback.
-  if (options.allowGoogle !== false && googleConfigured) {
+  if (options.allowGoogle !== false && googleConfigured && await googleAllowed()) {
     try {
       const places = await searchGoogle(q, near, n);
       if (places.length) {
@@ -248,6 +266,11 @@ export async function searchPlaces(
     near ? `${base}&lat=${near.lat}&lon=${near.lng}&zoom=13&location_bias_scale=1` : base,
   ]);
 
+  // Every fallback must respect the caller's scope: bbox when given, else 300km around near
+  // (an Osaka query used to return Incheon bars, and an Overpass timeout leaked Tokyo results).
+  const inScope = (p: Place) => bbox
+    ? p.lng >= bbox[0] && p.lat >= bbox[1] && p.lng <= bbox[2] && p.lat <= bbox[3]
+    : !near || metres(near, p) < 300_000;
   const reasons: string[] = [];
   let result: SearchResult = { places: [], source: "none" };
 
@@ -255,9 +278,7 @@ export async function searchPlaces(
     try {
       const data = (await getJSON(url)) as { features?: PhotonFeature[] };
       const all = (data.features ?? []).map(fromPhoton);
-      // 좌표를 줬는데 300km 밖 결과가 오면 그건 "근처"가 아니다 (오사카 질의에
-      // 인천 술집이 걸리던 문제).
-      const places = near ? all.filter((p) => metres(near, p) < 300_000) : all;
+      const places = all.filter(inScope);
       if (places.length) {
         result = { places, source };
         break;
@@ -273,7 +294,7 @@ export async function searchPlaces(
     try {
       const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=${n}&accept-language=ko`;
       const data = (await getJSON(url)) as NominatimHit[];
-      const places = data.map(fromNominatim);
+      const places = data.map(fromNominatim).filter(inScope);
       if (places.length) result = { places, source: "nominatim" };
       else {
         reasons.push("nominatim: 결과 없음");

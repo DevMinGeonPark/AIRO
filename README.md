@@ -12,7 +12,7 @@
 
 ![AIRO 데모 — 지구본에서 도시를 고르고, 일정을 도로 따라 재생하고, 주변 카페를 일정에 넣고, 예산을 적는 흐름](assets/demo/airo-demo.gif)
 
-위 영상은 개발 서버의 데모 저장소에서 Playwright로 녹화한 것입니다. AI 호출 없이 실행되는 부분만 담았습니다. 순서는 이렇습니다.
+위 영상은 개발 서버에서 Playwright로 녹화한 것입니다. AI 호출 없이 실행되는 부분만 담았습니다. 순서는 이렇습니다.
 
 1. 랜딩 지구본에서 로마를 고른다. 지구본은 5초마다 보이는 도시를 하나씩 옮겨 다니며(영상에서는 바르셀로나), 도시 일정 미리보기와 하단 섹션이 따라 바뀐다.
 2. 여행 작업 화면에서 "전체 경로 따라가기"를 누른다. 이동 점이 OSM 실제 도로 위를 움직인다.
@@ -39,7 +39,7 @@
 - **선택형 일정.** 점심·저녁처럼 한 칸에 후보 2~8곳을 묶어 두고 경로를 비교한 뒤 사용자가 고르면 확정한다. AI가 임의로 확정하지 않는다.
 - **변경 이력과 되돌리기.** 일정·여행 정보·PDF·예산·예약·알림 변경이 이력으로 남고, 이후 같은 자료가 바뀌지 않았다면 되돌릴 수 있다.
 - **AI 도구 연동.** MCP(Model Context Protocol) 서버로 Claude·Cursor·ChatGPT 같은 외부 클라이언트가 계정 여행을 읽고 편집한다. Codex 사용자는 자기 컴퓨터를 브리지로 연결해 웹·모바일 채팅을 자기 Codex 구독으로 처리한다.
-- **모바일 우선.** 접기·반 펼치기·펼치기가 되는 일정 시트. 320px부터 검증한 레이아웃. 설치형 PWA와 별도로 Kotlin·Jetpack Compose 네이티브 Android 앱([android/](android/README.md))이 같은 서버의 여행·예산·자료를 공유한다.
+- **모바일 우선.** 접고 펼치는 일정 시트(넓은 화면 3단, 휴대폰 2단). 320px부터 검증한 레이아웃. 설치형 PWA와 별도로 Kotlin·Jetpack Compose 네이티브 Android 앱([android/](android/README.md))이 같은 서버의 여행·예산·자료를 공유한다.
 
 ## 구조
 
@@ -214,13 +214,15 @@ npm ci
 npm run dev        # http://localhost:3002
 ```
 
-Supabase 설정이 없으면 개발 서버는 `.demo-db.json` 파일 저장소로 동작합니다. 운영 빌드에서는 이 경로가 닫힙니다. 실제 계정 기능을 쓰려면 `.env.local.example`을 참고해 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL`을 넣고 `supabase/migrations/0001~0016`를 순서대로 적용합니다.
+Supabase 설정이 없으면 개발 서버는 `.demo-db.json` 파일 저장소로 동작합니다. 운영 빌드에서는 이 경로가 닫힙니다.
+
+> **데모 저장소의 범위.** 여행·일정 편집, 지도·도로 경로, 장소 검색, MCP의 일정 도구 13개만 동작합니다. 예산·자료·예약·변경 이력·선택형 일정·진행 체크는 계정 데이터베이스가 필요해 데모에서는 숨겨집니다. 전체 기능은 [Community Edition](SELF_HOSTING.md)(docker compose, 5분)으로 확인하세요. 실제 계정 기능을 쓰려면 `.env.local.example`을 참고해 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL`을 넣고 `supabase/migrations/0001~0016`를 순서대로 적용합니다.
 
 | 목적 | 명령 |
 | --- | --- |
 | 빌드 / 린트 | `npm run build` · `npm run lint` |
 | 운영 빌드와 분리해 검증 | `NEXT_DIST_DIR=.next-check npm run build` |
-| 도구 계약·DB·API 통합 | `npm run test:database` · `npm run test:integration` (전용 테스트 DB 필요) |
+| 도구 계약·DB·API 통합 | `npm run test:database` · `npm run test:integration` (전용 테스트 DB + 작성자 비공개 fixture `.private/` 필요 — 외부 기여자는 `test:mcp:local`이 같은 마이그레이션을 메모리 PostgreSQL로 검증) |
 | MCP | `npm run test:mcp:local` |
 | Codex 브리지 | `npm run test:codex` · `npm run plugin:build` · `npm run plugin:package` |
 | 랜딩·모바일 | `npm run test:landing` · `npm run test:mobile` |

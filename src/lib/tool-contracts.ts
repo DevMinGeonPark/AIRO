@@ -147,6 +147,10 @@ export const toolDefinitions: Record<ToolName, Definition> = {
 };
 
 export function parseToolInput<N extends ToolName>(name: N, value: unknown): ToolInput<N> {
+  // PostgreSQL text/jsonb rejects NUL; fail as a clear input error instead of a DB 500.
+  let nul = false;
+  JSON.stringify(value ?? null, (_key, v) => { if (typeof v === "string" && v.includes("\0")) nul = true; return v; });
+  if (nul) throw new Error("입력에 NUL 문자(\\u0000)는 사용할 수 없습니다.");
   return toolSchemas[name].parse(value) as ToolInput<N>;
 }
 
@@ -155,3 +159,8 @@ export function toolParameters(name: ToolName) {
   void _schema;
   return schema as { type: "object"; properties: Record<string, unknown>; required?: string[]; additionalProperties?: boolean };
 }
+
+/** Backed by account-DB RPCs only (trip-management-store, stop-choices-store); hidden in demo mode where they always fail. */
+export const ACCOUNT_DB_TOOLS: ReadonlySet<ToolName> = new Set<ToolName>(["addChoiceStop", "setStopChoices", "selectStopChoice", "listDocuments", "getDocument", "attachDocument",
+  "getReservations", "setReservation", "getBudget", "addBudgetEntry", "updateBudgetEntry", "getNotificationSettings", "updateNotificationSettings",
+  "listChanges", "getChange", "revertChange"]);

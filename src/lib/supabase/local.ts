@@ -16,11 +16,11 @@ export const SESSION_RENEW_BELOW = 7 * 24 * 60 * 60;
 const secret = process.env.AIRO_JWT_SECRET ?? "";
 const password = process.env.AIRO_OWNER_PASSWORD ?? "";
 export const ownerEmail = process.env.AIRO_OWNER_EMAIL ?? "owner@localhost";
-export const localConfigured = !localAuth || Boolean(SUPABASE_URL && secret.length >= 32 && password);
+export const localConfigured = !localAuth || Boolean(SUPABASE_URL && secret.length >= 32 && password.length >= 16);
 
 export function assertLocalConfigured() {
   if (localConfigured) return;
-  const missing = [!SUPABASE_URL && "AIRO_POSTGREST_URL", secret.length < 32 && "AIRO_JWT_SECRET (32+ chars)", !password && "AIRO_OWNER_PASSWORD"].filter(Boolean);
+  const missing = [!SUPABASE_URL && "AIRO_POSTGREST_URL", secret.length < 32 && "AIRO_JWT_SECRET (32+ chars)", password.length < 16 && "AIRO_OWNER_PASSWORD (16+ chars)"].filter(Boolean);
   throw new Error(`Community edition needs ${missing.join(", ")}.`);
 }
 

@@ -9,7 +9,7 @@ npm ci
 npm run dev        # http://localhost:3002, Supabase 미설정 시 데모 모드(.demo-db.json)
 ```
 
-데모 모드는 외부 서비스 없이 동작합니다. `OPENAI_API_KEY`가 없으면 채팅은 스크립트 응답을 돌려줍니다.
+데모 모드는 외부 서비스 없이 동작합니다(일정·지도·검색·MCP 일정 도구만, 나머지는 Community Edition에서). Node 24(`.nvmrc`)를 권장합니다. `OPENAI_API_KEY`가 없으면 채팅은 스크립트 응답을 돌려줍니다.
 
 ## PR 전에 돌릴 것
 
@@ -30,8 +30,8 @@ UI를 바꿨다면 Playwright 점검도 돌려 주세요.
 npx playwright install chromium webkit
 npm run test:workspace
 # smoke는 데이터를 만들고 지우므로 별도 데모 저장소에서 돌립니다
-DEMO_DB_PATH=/tmp/airo-smoke.json npm run dev &
-node scripts/smoke.mjs
+DEMO_DB_PATH=/tmp/airo-smoke.json npm run dev -- -p 3130 &
+BASE=http://localhost:3130 node scripts/smoke.mjs   # 실시간 OSM(Photon/Overpass)에 의존 — 외부 서비스가 느리면 실패할 수 있음
 ```
 
 ## 규칙

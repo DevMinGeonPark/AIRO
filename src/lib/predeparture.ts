@@ -25,3 +25,11 @@ export const japanPreparationLinks = [
   { title: "일본 비자 안내·신청 방법", description: "주대한민국일본국대사관", url: "https://www.kr.emb-japan.go.jp/itpr_ko/visa_application.html" },
   { title: "Visit Japan Web · QR 화면", description: "로그인 후 여행을 선택해 주세요", url: VISIT_JAPAN_QR_URL },
 ];
+
+// ponytail: rough bounding boxes (no Korea/Taiwan overlap); swap for a real country lookup if more countries get guides.
+const JAPAN_BOXES: [number, number, number, number][] = [
+  [129.6, 30, 135.5, 36], [135.5, 33, 142.2, 41.6], [139.3, 41.3, 146, 45.6], [122.9, 24, 131.4, 28.5],
+];
+/** Japan-only guides (Visit Japan Web, visa) show only when the trip has a stop in Japan. */
+export const tripInJapan = (stops: readonly { lat: number; lng: number }[]) =>
+  stops.some(({ lat, lng }) => JAPAN_BOXES.some(([w, s, e, n]) => lng >= w && lng <= e && lat >= s && lat <= n));

@@ -31,6 +31,7 @@ export default async function TripPage({
       photos={(result?.data?.photos as ArchiveData["photos"]) ?? {}}
       initialAttachments={attachments}
       showSignOut={supabaseConfigured}
+      accountDb={supabaseConfigured}
     />
   );
 }
