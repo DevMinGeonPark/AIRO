@@ -146,4 +146,4 @@ curl -sS "$AIRO_URL/api/mcp" \
 
 ## 선택형 일정
 
-점심·저녁 등 같은 번호/시간의 장소 후보는 `addChoiceStop`으로 미정 생성하고 `setStopChoices`로 구성, `selectStopChoice`로 확정·해제한다. [후보 입력·권한·충돌·Hermes 연결 설명](docs/ops/STOP_CHOICES.md)을 참고한다.
+점심·저녁 등 같은 번호/시간의 장소 후보는 `addChoiceStop`으로 미정 생성하고 `setStopChoices`로 구성, `selectStopChoice`로 확정·해제한다. 후보 입력·권한·충돌·Hermes 연결 설명을 참고한다.

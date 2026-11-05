@@ -2,11 +2,11 @@
 
 Kotlin/Jetpack Compose 네이티브 클라이언트. 기존 Next.js 서버의 여행·예산·자료·Codex 구독 연결을 공유한다. WebView 앱이 아니다.
 
-현재 버전은 **0.3.8 / versionCode 11**다. Day별 숙소 정보 버튼을 누르면 그날 숙소와 예약·지도 링크를 별도 모달에서 확인한다. 지도 오른쪽 위의 현재 위치 버튼으로 내 위치를 표시하고 지도를 이동한다. [현재 위치 검증](../docs/ops/CURRENT_LOCATION.md). 점심·저녁 등 한 칸에 여러 장소 후보를 묶고, 점선 경로 비교 후 선택해 확정한다. 후보 변경·선택 해제·MCP 설정을 지원한다. [선택형 일정 검증](../docs/ops/STOP_CHOICES.md). 체크 즉시 화면 반영, 저장 중 연속 체크·취소, 완료 핀 애니메이션, 완료 장소를 남은 경로/재생에서 제외하고 실패·취소 시 복원한다. Day 설정에서 시간·GPS 체크를 일괄 적용할 수 있다. [변경·검증 기록](../docs/ops/ANDROID_PROGRESS_RESPONSE.md).
+현재 버전은 **0.3.8 / versionCode 11**다. Day별 숙소 정보 버튼을 누르면 그날 숙소와 예약·지도 링크를 별도 모달에서 확인한다. 지도 오른쪽 위의 현재 위치 버튼으로 내 위치를 표시하고 지도를 이동한다. 현재 위치 검증. 점심·저녁 등 한 칸에 여러 장소 후보를 묶고, 점선 경로 비교 후 선택해 확정한다. 후보 변경·선택 해제·MCP 설정을 지원한다. 선택형 일정 검증. 체크 즉시 화면 반영, 저장 중 연속 체크·취소, 완료 핀 애니메이션, 완료 장소를 남은 경로/재생에서 제외하고 실패·취소 시 복원한다. Day 설정에서 시간·GPS 체크를 일괄 적용할 수 있다. 변경·검증 기록.
 
-0.3.1 이상 사용자는 **내 정보 → 설정 → 앱 업데이트**로 설치한다. 0.3.0 이하는 [0.3.8 APK](https://airo.dev-heptivision.com/downloads/airo-android-cloud-0.3.8.apk)를 한 번 직접 설치한다. 앱을 삭제하지 않아야 로그인·로컬 자료가 유지된다. [이전 Day·Todo·앱 링크·사진 기능](../docs/ops/ANDROID_NATIVE_LINKS.md)은 유지한다.
+0.3.1 이상 사용자는 **내 정보 → 설정 → 앱 업데이트**로 설치한다. 0.3.0 이하는 [0.3.8 APK](https://airo.dev-heptivision.com/downloads/airo-android-cloud-0.3.8.apk)를 한 번 직접 설치한다. 앱을 삭제하지 않아야 로그인·로컬 자료가 유지된다. 이전 Day·Todo·앱 링크·사진 기능은 유지한다.
 
-0.3.0은 전체 지도·날짜 카드, 장소별 PDF·예약, 직접 PDF 추가와 앱 내부 미리보기, 예약·예산 연결, 변경 이력, 자료를 활용하는 AI 대화와 Android 공유 받기를 제공한다. 구현 범위와 검증 결과는 [최신 UI/UX 구현 기록](../docs/ops/ANDROID_UIUX_IMPLEMENTATION.md)을 따른다.
+0.3.0은 전체 지도·날짜 카드, 장소별 PDF·예약, 직접 PDF 추가와 앱 내부 미리보기, 예약·예산 연결, 변경 이력, 자료를 활용하는 AI 대화와 Android 공유 받기를 제공한다. 구현 범위와 검증 결과는 최신 UI/UX 구현 기록을 따른다.
 
 ## 실행
 
@@ -64,7 +64,7 @@ Cloud 운영 설정:
 3. 이메일 템플릿이 Supabase의 `ConfirmationURL`을 사용하고 등록된 앱 redirect를 유지하는지 확인한다.
 4. 실제 기기에서 Google·이메일 로그인, 취소, 재실행, 로그아웃을 확인한다. 자동 테스트의 Auth 서버는 가짜 제공자이므로 운영 Supabase/Google 설정 확인을 대신하지 않는다.
 
-운영 설정 사전 검사는 저장소 루트에서 `npm run verify:mobile-auth`로 실행한다. 공개 설정·Google/이메일 활성화·앱 callback과 `native_state` 유지·기존 웹 callback·미등록 주소 차단·미인증 API를 확인한다. Google 인증 시작 요청은 즉시 취소하며 실제 사용자 로그인·이메일 발송·모델 호출은 하지 않는다. 결과는 `.backups/android-completion/mobile-auth-preflight.json`에 저장된다. 실제 계정 E2E 순서는 [Android E2E 점검](../docs/ops/ANDROID_E2E.md)을 따른다.
+운영 설정 사전 검사는 저장소 루트에서 `npm run verify:mobile-auth`로 실행한다. 공개 설정·Google/이메일 활성화·앱 callback과 `native_state` 유지·기존 웹 callback·미등록 주소 차단·미인증 API를 확인한다. Google 인증 시작 요청은 즉시 취소하며 실제 사용자 로그인·이메일 발송·모델 호출은 하지 않는다. 결과는 `.backups/android-completion/mobile-auth-preflight.json`에 저장된다. 실제 계정 E2E 순서는 Android E2E 점검을 따른다.
 
 Community는 기존 `AIRO_OWNER_PASSWORD`, `AIRO_JWT_SECRET`, PostgREST 설정을 사용한다. 새로 별도 비밀번호 저장소를 만들지 않는다. 로그인 오류 횟수 제한과 웹 CSRF 검사를 유지한다.
 
@@ -104,4 +104,4 @@ ANDROID_SERIAL=emulator-5556 node scripts/test-mobile-api.mjs --native-ui
 
 R8 최적화된 unsigned APK와 AAB를 생성한다. 배포자는 보관 중인 릴리스 키로 Android Studio의 **Generate Signed App Bundle / APK**를 사용해 서명한다. 비밀 키를 Git·공개 다운로드에 넣지 않는다. 기존 앱 업데이트는 동일한 서명 키와 증가한 versionCode가 필요하다. 이 저장소는 소유자 릴리스 키를 임의 생성하거나 스토어에 게시하지 않는다.
 
-출처는 [CREDITS.md](CREDITS.md), 실제 검사/배포 상태는 [ANDROID_COMPLETION.md](../docs/ops/ANDROID_COMPLETION.md)를 따른다.
+출처는 [CREDITS.md](CREDITS.md), 실제 검사/배포 상태는 ANDROID_COMPLETION.md를 따른다.

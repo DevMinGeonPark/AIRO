@@ -2,7 +2,7 @@
   "androidVersion": "0.3.8",
   "reviewedAt": "2026-09-19T08:48:05.871Z",
   "webRelease": "day-accommodation-20260919",
-  "note": "Reviewed Day accommodation modal and the moved current-location control on web/native; existing choice and completion behavior preserved. See docs/ops/DAY_ACCOMMODATION.md.",
+  "note": "Reviewed Day accommodation modal and the moved current-location control on web/native; existing choice and completion behavior preserved. See (internal ops record) DAY_ACCOMMODATION.md.",
   "sources": {
     "src/components/trip-workspace.tsx": "a73341d46b4055e7c84aa35872a4272d313615f982de69651ff228d291a83e9d",
     "src/app/trip-workspace.css": "9b6d84c8cf242d4cae585d192ef6a64e9b92665128e2734ceb7a8e1efb2dd099",

@@ -235,12 +235,10 @@ Supabase 설정이 없으면 개발 서버는 `.demo-db.json` 파일 저장소�
 | --- | --- |
 | [OPERATIONS.md](OPERATIONS.md) | 개발·운영 연결·개인 자료 이식·검증 절차 |
 | [SELF_HOSTING.md](SELF_HOSTING.md) | Community Edition을 내 서버에 docker compose로 올리기 |
-| [docs/ops/DEPLOYMENT.md](docs/ops/DEPLOYMENT.md) | Cloud 운영 배포 기록과 현재 값 |
 | [AUTH_SETUP.md](AUTH_SETUP.md) | Supabase Auth·Google 로그인 설정 |
 | [MCP_SETUP.md](MCP_SETUP.md) · [MCP_IMPLEMENTATION.md](MCP_IMPLEMENTATION.md) | MCP 서버 설정과 구현 |
 | [CODEX_CONNECTION.md](CODEX_CONNECTION.md) | Codex 브리지 구조와 계정 경계 |
 | [BRAND.md](BRAND.md) · [DESIGN.md](DESIGN.md) | 로고·색상·화면 기준 |
-| [docs/ops/UNIFICATION.md](docs/ops/UNIFICATION.md) · [docs/ops/COMMERCIAL_SERVICE.md](docs/ops/COMMERCIAL_SERVICE.md) | 개인 서비스에서 계정형 서비스로 옮긴 기록 |
 
 ## 상태
 
