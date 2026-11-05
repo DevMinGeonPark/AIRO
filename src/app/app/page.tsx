@@ -1,4 +1,4 @@
-import { listTripSummaries, currentPlan } from "@/lib/store";
+import { listTripSummaries } from "@/lib/store";
 import { supabaseConfigured } from "@/lib/supabase/config";
 import { SetupNotice } from "@/components/setup-notice";
 import { AppHeader } from "@/components/app-shell";
@@ -7,10 +7,10 @@ import { TripList } from "@/components/trip-list";
 export const dynamic = "force-dynamic";
 
 export default async function TripsPage() {
-  const [summaries, plan] = await Promise.all([listTripSummaries(), currentPlan()]);
+  const summaries = await listTripSummaries();
   return (
     <div className="min-h-dvh">
-      <AppHeader plan={plan} showSignOut={supabaseConfigured} />
+      <AppHeader showSignOut={supabaseConfigured} />
       <SetupNotice configured={supabaseConfigured} />
 
       <main className="mx-auto max-w-6xl px-5 py-8 sm:px-6 sm:py-14">
@@ -24,7 +24,6 @@ export default async function TripsPage() {
             trip: s.trip,
             stops: s.stops,
           }))}
-          plan={plan}
         />
       </main>
     </div>

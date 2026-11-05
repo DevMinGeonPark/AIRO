@@ -39,7 +39,6 @@ BASE=http://localhost:3130 node scripts/smoke.mjs   # 실시간 OSM(Photon/Overp
 - 도구(tool)를 추가·변경할 때는 `src/lib/tool-contracts.ts` 한 곳만 고칩니다. 웹 채팅·MCP·Codex 브리지가 같은 계약을 공유합니다.
 - DB 변경은 `supabase/migrations/`에 새 번호의 마이그레이션으로 추가하고 RLS를 함께 작성합니다.
 - `service_role` 키를 사용하는 코드는 받지 않습니다.
-- `src/ee/`는 별도 상용 라이선스입니다. 이 디렉터리에 대한 기여는 받지 않습니다.
 
 ## 라이선스
 

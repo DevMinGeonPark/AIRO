@@ -330,7 +330,7 @@ try {
   await assert.rejects(mutate("add", { name: "intruder", lng: 0, lat: 0, day: 1 }), /여행/);
 
   const clientId = "00000000-0000-4000-8000-000000000010", grantVersion = "00000000-0000-4000-8000-000000000011";
-  const resource = "https://airo.dev-heptivision.com/api/mcp";
+  const resource = "http://localhost:3002/api/mcp";
   await asUser(owner);
   await db.query("insert into public.mcp_connections(user_id,client_id,client_name,redirect_uri,grant_version,permissions) values($1,$2,'Fixture AI','https://client.test/callback',$3,array['trips:read'])", [owner, clientId, grantVersion]);
   await db.exec("reset role");

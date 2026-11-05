@@ -23,7 +23,7 @@ for(const [platform,target] of platforms){
   const listing=spawnSync('tar',['-tzf','-'],{input:bytes,encoding:'utf8',maxBuffer:1048576});
   const binaries=listing.stdout.split('\n').filter(path=>/^package\/vendor\/[a-z0-9_-]+\/(bin|codex)\/codex(\.exe)?$/.test(path));
   if(listing.status!==0||binaries.length!==1)throw Error('Official Codex binary not found');
-  manifest.platforms[platform]={bridgeUrl:`https://airo.dev-heptivision.com/downloads/${name}`,bridgeSha256:digest(await readFile(resolve(output,name))),codexUrl:meta.dist.tarball,codexSha256:digest(bytes),codexPath:binaries[0]};
+  manifest.platforms[platform]={bridgeUrl:`https://github.com/DevMinGeonPark/AIRO/releases/download/codex-bridge-0.2.1/${name}`,bridgeSha256:digest(await readFile(resolve(output,name))),codexUrl:meta.dist.tarball,codexSha256:digest(bytes),codexPath:binaries[0]};
 }
 await writeFile('plugins/airo/assets/runtime.json',JSON.stringify(manifest,null,2)+'\n');
 await copyFile('public/brand/airo-mark-swift-gpt.png','plugins/airo/assets/icon.png');

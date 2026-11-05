@@ -41,7 +41,6 @@ export type Message = {
   created_at: string;
 };
 
-export type Plan = "free" | "pro";
 
 /** token_hash 는 서버 밖으로 절대 나가지 않는다. */
 export type ApiKey = {

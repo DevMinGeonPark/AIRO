@@ -4,15 +4,15 @@ AIRO uses a paired local Codex App Server for web/mobile chat by default. The ex
 
 ## User flow
 
-Open https://airo.dev-heptivision.com/app/settings/ai, copy the connection request, and send it to Codex on the computer that will process the conversation. Codex installs `airo@airo` and runs the plugin's platform setup script. The user signs into AIRO and approves the matching pairing code. The travel chat shows Codex, the actual paired device name, and heartbeat status; during a job it keeps showing the assigned device even if another device becomes available.
+Open `/app/settings/ai` on your AIRO server, copy the connection request, and send it to Codex on the computer that will process the conversation. Codex installs `airo@airo` and runs the plugin's platform setup script. The user signs into AIRO and approves the matching pairing code. The travel chat shows Codex, the actual paired device name, and heartbeat status; during a job it keeps showing the assigned device even if another device becomes available.
 
-The public installation instructions are `/docs/codex/install`; the public Git marketplace is `/plugins/airo.git`. An official Codex plugin share URL could not be issued: `plugin/share/save` returned HTTP 404 for the workspace upload endpoint on 2026-09-10. No directory listing or official one-click installation is claimed. If a valid share URL is later issued, `AIRO_CODEX_INSTALL_URL` can enable the install link.
+The public installation instructions are `/docs/codex/install`; the Git marketplace is this repository (`codex plugin marketplace add DevMinGeonPark/AIRO --sparse .agents --sparse plugins/airo`); bridge binaries are assets of the `codex-bridge-0.2.1` GitHub release. An official Codex plugin share URL could not be issued: `plugin/share/save` returned HTTP 404 for the workspace upload endpoint on 2026-09-10. No directory listing or official one-click installation is claimed. If a valid share URL is later issued, `AIRO_CODEX_INSTALL_URL` can enable the install link.
 
 The paired computer must remain awake and online. Reopening the plugin's connect skill restarts a stopped bridge. Native automatic login/startup installation is not included. Claude Code can already edit trips through MCP; its AIRO web-chat bridge is not enabled.
 
-## Self-hosted servers (plugin 0.2.1+)
+## Server address
 
-The plugin and bridge binaries are always distributed from the cloud host. The bridge pairs with `AIRO_ORIGIN` (default `https://airo.dev-heptivision.com`); a Community Edition server prints its own address in `/docs/codex/install`, and the connect skill passes it as `AIRO_ORIGIN=<address>` when running the connect script. The origin is stored with the device record, so switching servers starts a new pairing. Only https origins, or http on private/Tailscale addresses, are accepted.
+The bridge pairs with `AIRO_ORIGIN`. Each AIRO server prints its own address in `/docs/codex/install`, and the connect skill passes it as `AIRO_ORIGIN=<address>` when running the connect script. (The 0.2.1 binaries still carry the original author's instance as a compiled-in fallback; it is unused when `AIRO_ORIGIN` is set and goes away with the next bridge build.) The origin is stored with the device record, so switching servers starts a new pairing. Only https origins, or http on private/Tailscale addresses, are accepted.
 
 ## Account boundary
 
@@ -24,7 +24,7 @@ The plugin and bridge binaries are always distributed from the cloud host. The b
 
 ## Release
 
-`npm run plugin:build` cross-compiles the bridge with Bun and verifies pinned official Codex npm runtimes. `npm run plugin:package` packages the reviewed plugin as a static Git marketplace and ZIP. Both commands must run before a production build and generated `public/downloads` plus `public/plugins/airo.git` must be included in the deployment snapshot. No `.private` contents are published.
+`npm run plugin:build` cross-compiles the bridge with Bun and verifies pinned official Codex npm runtimes. Upload the generated `public/downloads/airo-codex-<version>-*.tar.gz` to a `codex-bridge-<version>` GitHub release; `runtime.json` and the connect scripts pin their SHA-256. The plugin itself is served from `plugins/airo` in this repository. No `.private` contents are published.
 
 The bundled official Codex runtime is pinned to 0.154.0. The previous globally installed 0.144.1 could not serve the configured model. No model substitution was used. Packages target macOS arm64/x64, Linux arm64/x64, and Windows x64. An actual subscription model turn was verified on macOS arm64. A clean Linux arm64 container installed the public plugin, ran the checksum-verifying platform bootstrap and compiled bridge, initialized App Server, and correctly reported missing Codex login. The other compiled targets are not claimed as end-to-end tested.
 

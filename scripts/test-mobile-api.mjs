@@ -147,7 +147,7 @@ alter default privileges in schema public grant select,insert,update,delete on t
   const summary = await request('/api/mobile/trips');
   assert.equal(summary.status, 200, JSON.stringify(summary));
   assert.equal(summary.data.trips[0].trip.id, id);
-  assert.equal(summary.data.plan, 'free');
+  assert.equal(summary.data.plan, 'pro'); // legacy field: never 'free' so old Android clients show no limit
   assert.match(summary.headers.get('cache-control'), /no-store/);
   assert.equal((await request(`/api/trips/${id}`, { bearer: token(other), headers: { Cookie: cookie(owner) } })).status, 404, 'Bearer identity must win over a different cookie');
   assert.equal((await request(`/api/trips/${id}`, { bearer: token(), headers: { Cookie: cookie(other) } })).status, 200);
@@ -389,7 +389,7 @@ alter default privileges in schema public grant select,insert,update,delete on t
   // Start the same server code in Community mode with only the disposable DB.
   app.kill('SIGTERM'); await new Promise(resolve => app.once('exit', resolve));
   const communityOwner = '00000000-0000-4000-8000-000000000001';
-  sql(`insert into auth.users(id,email) values('${communityOwner}','community@example.test'); insert into public.subscriptions(user_id,plan,status) values('${communityOwner}','pro','active') on conflict(user_id) do update set plan='pro',status='active';`);
+  sql(`insert into auth.users(id,email) values('${communityOwner}','community@example.test');`);
   app = spawn(process.execPath, ['node_modules/next/dist/bin/next', 'dev', '--hostname', '127.0.0.1', '-p', '3156'], { env: { ...process.env, NEXT_DIST_DIR: '.next-native-community', NEXT_PUBLIC_AIRO_EDITION: 'community', AIRO_POSTGREST_URL: 'http://127.0.0.1:3155', AIRO_JWT_SECRET: key, AIRO_OWNER_PASSWORD: 'native-fixture-password', AIRO_OWNER_EMAIL: 'community@example.test', AIRO_SITE_URL: base, NEXT_PUBLIC_SITE_URL: base, OPENAI_API_KEY: '', GOOGLE_MAPS_API_KEY: '' }, stdio: ['ignore','pipe','pipe'] });
   for (const stream of [app.stdout, app.stderr]) stream.on('data', chunk => { log += chunk; });
   await waitFor(async () => (await (await fetch(`${base}/auth/mobile/config`)).json()).edition === 'community', 'Community config');

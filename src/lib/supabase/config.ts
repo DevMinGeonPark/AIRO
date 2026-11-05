@@ -1,7 +1,7 @@
 /**
- * Edition switch. `cloud` (default) = Supabase Auth + hosted plans (src/ee).
+ * Edition switch. `cloud` (default) = multi-user on Supabase Auth.
  * `community` = self-hosted single owner: password login, PostgREST straight
- * on your own PostgreSQL, no billing, unlimited trips. See SELF_HOSTING.md.
+ * on your own PostgreSQL. Both are self-hosted; see SELF_HOSTING.md.
  */
 export const edition: "cloud" | "community" =
   process.env.NEXT_PUBLIC_AIRO_EDITION === "community" ? "community" : "cloud";

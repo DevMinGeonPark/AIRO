@@ -4,7 +4,7 @@
   "description": "내 Codex를 AIRO 웹 채팅에 연결하고 여행 일정을 함께 수정합니다.",
   "author": {
     "name": "AIRO",
-    "url": "https://airo.dev-heptivision.com"
+    "url": "https://github.com/DevMinGeonPark/AIRO"
   },
   "skills": "./skills/",
   "interface": {
@@ -15,7 +15,7 @@
     "category": "Productivity",
     "capabilities": ["Interactive", "Write"],
     "brandColor": "#86A5FF",
-    "websiteURL": "https://airo.dev-heptivision.com",
+    "websiteURL": "https://github.com/DevMinGeonPark/AIRO",
     "composerIcon": "./assets/icon.png",
     "logo": "./assets/icon.png",
     "defaultPrompt": ["아이로 웹 채팅 연결", "아이로 연결 상태 확인"]

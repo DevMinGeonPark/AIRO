@@ -23,7 +23,7 @@ const cache = new Map<string, { at: number; value: SearchResult }>();
 
 // HTTP 헤더는 Latin-1 만 담을 수 있다. 한글을 넣으면 fetch 가 통째로 던진다.
 // OSM usage policy wants a contact URL: identify this install, not the hosted cloud.
-const UA = `airo/0.4 (+${siteUrl})`;
+const UA = `airo/0.5 (+${siteUrl})`;
 
 async function getJSON(url: string, headers: Record<string, string> = {}) {
   const res = await fetch(url, {

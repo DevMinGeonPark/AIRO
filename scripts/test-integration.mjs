@@ -82,7 +82,7 @@ try {
   await page.getByRole("heading", { name: "출국 전날", exact: true }).waitFor();
   await page.screenshot({ path: ".private/verification/mobile.png" });
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth), false, "Mobile content overflows");
-  for (const path of ["/app", "/app/settings/keys", "/app/settings/import", `/app/${tripId}/settings`, `/app/${tripId}/resources`, `/app/${tripId}/cost`, "/docs/mcp", "/pricing", "/login"]) {
+  for (const path of ["/app", "/app/settings/keys", "/app/settings/import", `/app/${tripId}/settings`, `/app/${tripId}/resources`, `/app/${tripId}/cost`, "/docs/mcp", "/login"]) {
     await page.goto(base + path, { waitUntil: "networkidle" });
     assert.match(await page.locator("body").innerText(), /아이로|airo/i, `AIRO branding at ${path}`);
     assert.match(await page.title(), /아이로|airo/i);

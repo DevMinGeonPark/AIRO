@@ -34,7 +34,7 @@ import java.time.format.DateTimeFormatter
     val mode: String = "ground",
 )
 @Serializable data class TripSummary(val trip: Trip, val stops: List<Stop> = emptyList())
-@Serializable data class TripList(val trips: List<TripSummary>, val plan: String = "free")
+@Serializable data class TripList(val trips: List<TripSummary>)
 @Serializable data class Message(val id: String, val role: String, val content: String)
 @Serializable data class TripDetail(val trip: Trip, val stops: List<Stop> = emptyList(), val messages: List<Message> = emptyList(),
     val expenseBudget: ExpenseBudget = ExpenseBudget(), val resources: TripResources = TripResources(), val archive: ArchiveFile? = null,

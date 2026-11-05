@@ -76,7 +76,7 @@ export function RouteLine({ className = "" }: { className?: string }) {
 const navLinks = [
   { href: "/#기능", label: "기능" },
   { href: "/#mcp", label: "MCP 연동" },
-  { href: "/pricing", label: "요금제" },
+  { href: "https://github.com/DevMinGeonPark/AIRO", label: "소스 코드" },
   { href: "/app", label: "내 여행" },
 ];
 
@@ -114,7 +114,7 @@ const footerCols: { title: string; items: { label: string; href?: string }[] }[]
     title: "제품",
     items: [
       { label: "내 여행", href: "/app" },
-      { label: "요금제", href: "/pricing" },
+      { label: "셀프호스팅", href: "https://github.com/DevMinGeonPark/AIRO/blob/main/SELF_HOSTING.md" },
       { label: "로그인", href: "/login" },
     ],
   },

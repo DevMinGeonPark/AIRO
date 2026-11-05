@@ -14,7 +14,7 @@ import java.security.MessageDigest
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 
-const val UPDATE_ORIGIN = "https://airo.dev-heptivision.com"
+val UPDATE_ORIGIN: String = com.heptivision.airo.BuildConfig.API_BASE_URL
 private const val MAX_APK_BYTES = 200L * 1024 * 1024
 
 class UpdateException(message: String) : IOException(message)
