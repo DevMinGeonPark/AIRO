@@ -15,6 +15,7 @@ import { PdfPreviewButton } from "./pdf-preview";
 import { PlaceMapActions } from "./place-map-actions";
 import { CopyPlaceName } from "./copy-place-name";
 import { TripImageList } from "./trip-image-list";
+import { tripInJapan } from "@/lib/predeparture";
 
 export function TripResources({ trip, stops, food, photos, documents, initialSaved, hasBudget }: {
   trip: Trip; stops: Stop[]; food: ArchivedPlace[]; photos: ArchiveData["photos"];
@@ -65,7 +66,7 @@ export function TripResources({ trip, stops, food, photos, documents, initialSav
       <div className="flex flex-wrap gap-3 text-sm"><Link className="rounded-full border px-4 py-2" href={`/app/${trip.id}/manage`}>PDF 추가·예약 관리</Link><Link className="rounded-full border px-4 py-2" href={`/app/${trip.id}/manage?tab=history`}>변경 이력</Link><Link className="rounded-full border px-4 py-2" href={`/app/${trip.id}/cost`}>{hasBudget ? "예산 보기" : "예산 작성"}</Link><a className="rounded-full border px-4 py-2" href={`/api/trips/${trip.id}/export`}>전체 내보내기</a></div>
     </div>
     {!!documents.length && <section className="rounded-2xl border p-5"><h2 className="font-semibold">원본 문서</h2><ul className="mt-3 space-y-3">{documents.map(doc => <li key={doc.sha256}><PdfPreviewButton className="min-h-11 break-all text-left text-sm underline" tripId={trip.id} document={doc}>{doc.name}</PdfPreviewButton></li>)}</ul></section>}
-    <TripImageList tripId={trip.id} />
+    <TripImageList tripId={trip.id} japan={tripInJapan(stops)} />
     <section className="space-y-4">
       <h2 className="text-xl font-semibold">저장한 장소 <span className="text-muted-foreground text-sm">{food.length}곳</span></h2>
       <div className="flex flex-wrap gap-2">

@@ -46,6 +46,7 @@ import { PlaceMapActions } from "./place-map-actions";
 import { CopyPlaceName } from "./copy-place-name";
 import { PredepartureTodo, PredepartureTodoButton } from "./predeparture-todo";
 import { useTripProgress, type TripProgressController } from "./use-trip-progress";
+import { tripInJapan } from "@/lib/predeparture";
 import { StopProgressCheck, StopProgressDetails, TripProgressSummary } from "./trip-progress-controls";
 import { progressEntry } from "@/lib/itinerary-progress";
 import { remainingItinerary } from "@/lib/remaining-itinerary";
@@ -106,6 +107,7 @@ export function TripWorkspace({
   photos = {},
   initialAttachments = emptyTripAttachments(),
   showSignOut = false,
+  accountDb = true,
 }: {
   trip: Trip;
   initialStops: Stop[];
@@ -114,6 +116,8 @@ export function TripWorkspace({
   photos?: ArchiveData["photos"];
   initialAttachments?: TripAttachments;
   showSignOut?: boolean;
+  /** false in demo mode: progress/history endpoints return 503 there. */
+  accountDb?: boolean;
 }) {
   const mapRef = useRef<MapRef>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
@@ -567,7 +571,7 @@ export function TripWorkspace({
           </div>
 
           <div ref={planScrollRef} className="plan-scroll min-h-0 flex-1 overflow-y-auto p-4" {...swipe}>
-            <TripProgressSummary controller={progress} stops={visible} startDate={trip.start_date} />
+            {accountDb && <TripProgressSummary controller={progress} stops={visible} startDate={trip.start_date} />}
             {editing && <div className="mb-5"><StopEditor key={editing === "new" ? "new" : editing.id} tripId={trip.id} stop={editing === "new" ? undefined : editing}
               defaults={{ day: activeDay ?? 1, position: days.find(d => d.day === (activeDay ?? 1))?.stops.length ?? 0 }}
               onSaved={refetch} onClose={() => setEditing(null)} /></div>}
@@ -726,7 +730,7 @@ export function TripWorkspace({
             </header>}
             {todoOpen && <div className="todo-panel-host" ref={setTodoMobileHost} />}
             {overlayOpen && !todoOpen && (activeDay === 0 || activeDay === 1) && <PredepartureTodoButton onOpen={openTodo} />}
-            {overlayOpen && !todoOpen && <TripProgressSummary controller={progress} stops={visible} startDate={trip.start_date} compact />}
+            {accountDb && overlayOpen && !todoOpen && <TripProgressSummary controller={progress} stops={visible} startDate={trip.start_date} compact />}
             {overlayOpen && !todoOpen && <ol>
               {visible.map(stop => <li key={stop.id} data-completed={progressEntry(progress.data, stop)?.done ?? false}>
                 <button type="button" onClick={() => focus(stop)} aria-current={activeId === stop.id ? "true" : undefined}>
@@ -774,7 +778,7 @@ export function TripWorkspace({
           )}
         </div>
 
-        {todoOpen && <PredepartureTodo tripId={trip.id} date={labelForDay(0)} host={compact && tab === "map" ? todoMobileHost : todoDesktopHost} onClose={all => { setTodoOpen(false); if (all) showDay(null); requestAnimationFrame(() => todoTrigger.current?.focus({ preventScroll: true })); }} />}
+        {todoOpen && <PredepartureTodo tripId={trip.id} japan={tripInJapan(stops)} date={labelForDay(0)} host={compact && tab === "map" ? todoMobileHost : todoDesktopHost} onClose={all => { setTodoOpen(false); if (all) showDay(null); requestAnimationFrame(() => todoTrigger.current?.focus({ preventScroll: true })); }} />}
         {accommodationDay !== null && <DayAccommodationModal day={accommodationDay} stays={accommodationStops} attachments={attachments} onClose={() => setAccommodationDay(null)} />}
         {/* 채팅 */}
         <section

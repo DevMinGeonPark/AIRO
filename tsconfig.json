@@ -72,7 +72,11 @@
     ".next-airo-mcp/types/**/*.ts",
     ".next-airo-mcp/dev/types/**/*.ts",
     ".next-reader/types/**/*.ts",
-    ".next-reader/dev/types/**/*.ts"
+    ".next-reader/dev/types/**/*.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    ".next-release-check/types/**/*.ts",
+    ".next-release-check/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

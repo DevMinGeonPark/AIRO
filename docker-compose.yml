@@ -38,7 +38,13 @@ services:
     depends_on:
       - postgrest
     ports:
-      - "${AIRO_PORT:-3002}:3002"
+      # Loopback by default. Put a TLS reverse proxy in front, or set AIRO_BIND=0.0.0.0 to expose on the LAN (HTTP: cookies are not Secure).
+      - "${AIRO_BIND:-127.0.0.1}:${AIRO_PORT:-3002}:3002"
+    # Paid API keys are read from .env only (never from the shell environment), so an exported
+    # OPENAI_API_KEY / GOOGLE_MAPS_API_KEY in your shell cannot silently reach the container.
+    env_file:
+      - path: .env
+        required: true
     environment:
       AIRO_POSTGREST_URL: http://postgrest:3000
       AIRO_JWT_SECRET: ${AIRO_JWT_SECRET}
@@ -46,9 +52,6 @@ services:
       AIRO_OWNER_EMAIL: ${AIRO_OWNER_EMAIL:-owner@localhost}
       AIRO_SITE_URL: ${AIRO_SITE_URL:-http://localhost:3002}
       MCP_ALLOWED_ORIGINS: ${MCP_ALLOWED_ORIGINS:-}
-      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
-      GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY:-}
 
 volumes:
   airo-db:

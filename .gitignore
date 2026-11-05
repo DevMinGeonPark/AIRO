@@ -66,3 +66,6 @@ __pycache__/
 
 # PDF viewer assets are generated from the pinned package during dev/build.
 /public/vendor/pdfjs/
+
+# Operational work log (kept locally, not published)
+docs/ops/

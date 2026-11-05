@@ -6,6 +6,7 @@ import { mcpMetadataUrl, mcpOAuthEnabled, mcpOriginAllowed } from "@/lib/mcp-con
 import { readMcpJson } from "@/lib/mcp-http";
 import { toolDefinitions, type ToolName } from "@/lib/tool-contracts";
 import { runTool } from "@/lib/tools";
+import { siteUrl, supabaseConfigured } from "@/lib/supabase/config";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -46,7 +47,7 @@ async function handle(request: Request) {
         if (quota.error) throw new Error("MCP 요청 한도를 확인하지 못했습니다.");
         if (quota.data !== true) return finish(rpcError(429, "MCP 요청이 많습니다. 잠시 후 다시 시도하세요.", { "Retry-After": "60" }), request);
       }
-      const server = createAiroMcpServer(runTool, actor.permissions);
+      const server = createAiroMcpServer(runTool, actor.permissions, { accountDb: supabaseConfigured, siteUrl });
       const transport = new WebStandardStreamableHTTPServerTransport({ sessionIdGenerator: undefined, enableJsonResponse: true });
       try {
         await server.connect(transport);

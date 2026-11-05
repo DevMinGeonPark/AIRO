@@ -18,7 +18,7 @@ const chat = async (tripId, message) => {
   const res = await fetch(BASE + "/api/chat", {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ tripId, message }),
+    body: JSON.stringify({ tripId, message, provider: "api" }), // demo mode: no OPENAI_API_KEY → scripted reply
   });
   assert.equal(res.status, 200, "chat 200");
   const text = await res.text();
@@ -126,11 +126,11 @@ try {
 
   const list = await rpc("tools/list");
   const names = list.body.result.tools.map((t) => t.name).sort();
-  assert.deepEqual(
-    names,
-    ["addStop", "createTrip", "getTrip", "listTrips", "moveStop", "removeStop", "reorderDay", "searchPlaces"].sort(),
-    "8개 도구가 노출돼야 한다",
-  );
+  // Demo mode hides the 16 account-DB tools (ACCOUNT_DB_TOOLS in src/lib/tool-contracts.ts): 29 - 16 = 13.
+  assert.equal(names.length, 13, "데모 모드에서는 13개 도구가 노출돼야 한다");
+  assert.ok(!names.includes("getBudget"), "계정 DB 도구는 데모에서 숨겨야 한다");
+  for (const core of ["addStop", "createTrip", "getTrip", "listTrips", "moveStop", "removeStop", "reorderDay", "searchPlaces"])
+    assert.ok(names.includes(core), `핵심 도구 ${core} 누락`);
 
   const listTrips = await rpc("tools/call", { name: "listTrips", arguments: {} });
   const trips = JSON.parse(listTrips.body.result.content[0].text).trips;
